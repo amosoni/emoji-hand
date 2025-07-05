@@ -1,0 +1,22 @@
+{
+  "appTitle": "Emoji Translate",
+  "appDesc": "Make your text more expressive",
+  "Normal": "Normal",
+  "Savage": "Savage",
+  "GenZ Slang": "GenZ Slang",
+  "translateButton": "Translate",
+  "resultPlaceholder": "Translation will appear here",
+  "shareButton": "Share",
+  "Try": "Try:",
+  "realtime.title": "Real-time Emoji Translation",
+  "realtime.connected": "Connected",
+  "realtime.disconnected": "Disconnected",
+  "realtime.connect": "Connect",
+  "realtime.send": "Send",
+  "realtime.inputPlaceholder": "Type your message...",
+  "realtime.translating": "Translating...",
+  "realtime.startConversation": "Start a conversation to see real-time emoji translation!",
+  "modes.normal": "Normal",
+  "modes.savage": "Savage",
+  "modes.genz": "GenZ Slang"
+} 

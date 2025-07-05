@@ -1,0 +1,17 @@
+{
+  "appTitle": "Emoji Translate",
+  "inputPlaceholder": "Type your message...",
+  "translateButton": "Add Emoji Magic ✨",
+  "normalMode": "Normal",
+  "savageMode": "Savage 🔥",
+  "genzMode": "GenZ Slang",
+  "resultPlaceholder": "Translation will appear here...",
+  "freeUsesLeft": "{{count}} free uses left today",
+  "noFreeUses": "No free uses left. Please unlock premium.",
+  "unlockPremiumTitle": "Unlock unlimited savage/GenZ translations!",
+  "unlockPremiumDesc": "Get unlimited access for just $1.99/week",
+  "unlockPremiumBtn": "Unlock Premium",
+  "continueNormalBtn": "Continue with normal mode",
+  "shareButton": "Share / Copy",
+  "hotEmojis": "🔥 Hot Emojis"
+} 

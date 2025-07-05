@@ -1,0 +1,22 @@
+{
+  "appTitle": "表情翻译",
+  "appDesc": "让你的文字更有表现力",
+  "Normal": "普通",
+  "Savage": "毒舌",
+  "GenZ Slang": "GenZ俚语",
+  "translateButton": "翻译",
+  "resultPlaceholder": "翻译结果会显示在这里",
+  "shareButton": "分享",
+  "Try": "试试：",
+  "realtime.title": "实时表情翻译",
+  "realtime.connected": "已连接",
+  "realtime.disconnected": "未连接",
+  "realtime.connect": "连接",
+  "realtime.send": "发送",
+  "realtime.inputPlaceholder": "输入你的内容...",
+  "realtime.translating": "翻译中...",
+  "realtime.startConversation": "开始对话，体验实时表情翻译！",
+  "modes.normal": "普通",
+  "modes.savage": "毒舌",
+  "modes.genz": "GenZ俚语"
+} 

@@ -1,0 +1,11 @@
+# CursorRules for Emoji Translate
+
+- 采用React函数组件，Hooks优先
+- 统一使用Tailwind CSS进行样式开发
+- 组件命名采用大驼峰法（如 Translator.jsx）
+- 服务/工具函数命名采用小驼峰
+- 国际化文本全部抽离到locales目录
+- 严格敏感词过滤，遵守GDPR和欧美主流合规要求
+- 代码注释英文为主，重要逻辑需注释
+- commit message 采用英文，风格：feat/fix/chore: 描述
+- 严禁硬编码API密钥，全部用.env管理 
