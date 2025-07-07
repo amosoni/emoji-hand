@@ -2,10 +2,25 @@ import "~/styles/globals.css";
 // import "../i18n"; // 不要在Server Component引入
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+// import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import ClientProviders from "../components/ClientProviders";
+import { ClerkProvider } from "@clerk/nextjs";
+import { LoginModalProvider } from "../../components/LoginModalContext";
+import LoginModal from "../../components/LoginModal";
+
+const clerkLocaleMap = {
+  zh: "zh-CN",
+  en: "en",
+  ko: "ko",
+  ja: "ja",
+  fr: "fr",
+  de: "de",
+  es: "es",
+  it: "it",
+  pt: "pt-BR",
+  ru: "ru",
+};
 
 export const metadata: Metadata = {
   title: "Emoji Hand - Instantly Add Fun Emoji to Your Text | emojihand",
@@ -36,20 +51,34 @@ export const metadata: Metadata = {
   }
 };
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh" className={`${geist.variable}`}>
+    <html lang="zh">
+      <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-68FV3N1QZR"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-68FV3N1QZR');
+            `,
+          }}
+        />
+      </head>
       <body>
-        <ClientProviders>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
-        </ClientProviders>
+        <ClerkProvider>
+          <LoginModalProvider>
+            <TRPCReactProvider>
+              {children}
+              <LoginModal />
+            </TRPCReactProvider>
+          </LoginModalProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

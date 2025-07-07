@@ -11,8 +11,16 @@ import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
-import { auth } from "~/server/auth";
 import { db } from "~/server/db";
+import { getAuth } from '@clerk/nextjs/server';
+
+function headersToObject(headers: Headers): Record<string, string> {
+  const obj: Record<string, string> = {};
+  headers.forEach((value, key) => {
+    obj[key] = value;
+  });
+  return obj;
+}
 
 /**
  * 1. CONTEXT
@@ -26,9 +34,22 @@ import { db } from "~/server/db";
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = async (opts: { headers: Headers }) => {
-  const session = await auth();
-
+export const createTRPCContext = async (opts: { req?: Request | any }) => {
+  let session = null;
+  if (process.env.NODE_ENV === "development") {
+    // 本地开发环境，mock 一个假用户
+    session = {
+      userId: "dev-user-id",
+      sessionId: "dev-session-id",
+      sessionClaims: {
+        email: "dev@example.com",
+      },
+      // 可根据需要添加其它字段
+    };
+  } else {
+    // 生产环境用 Clerk
+    session = opts.req ? getAuth(opts.req) : null;
+  }
   return {
     db,
     session,
@@ -121,13 +142,8 @@ export const publicProcedure = t.procedure.use(timingMiddleware);
 export const protectedProcedure = t.procedure
   .use(timingMiddleware)
   .use(({ ctx, next }) => {
-    if (!ctx.session?.user) {
+    if (!ctx.session || !ctx.session.userId) {
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
-    return next({
-      ctx: {
-        // infers the `session` as non-nullable
-        session: { ...ctx.session, user: ctx.session.user },
-      },
-    });
+    return next();
   });

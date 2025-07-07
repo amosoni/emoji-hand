@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 你的配置项
+  experimental: {
+    serverActions: {},
+  },
 };
+
 export default nextConfig; 

@@ -63,6 +63,17 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    // Creem 支付和积分相关字段
+    points            Int      @default(0)
+    premiumExpireAt   DateTime?
+    creemCustomerId   String?
+    createdAt         DateTime @default(now())
+    updatedAt         DateTime @updatedAt
+    // 新增积分/配额系统字段
+    freeUsesWeekly     Int      @default(3)
+    premiumUsesWeekly  Int      @default(0)
+    quotaResetAt       DateTime?
+    freeUsesDaily      Int      @default(0)
 }
 
 model VerificationToken {

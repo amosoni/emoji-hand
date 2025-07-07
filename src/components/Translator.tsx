@@ -7,6 +7,11 @@ import ShareButton from "./ShareButton";
 import { applyBrandSponsorship } from "~/utils/helpers";
 import '../i18n';
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
+import i18n from 'i18next';
+import { api as trpc } from "~/trpc/react";
+import { useLoginModal } from "../../components/LoginModalContext";
+// i18n.changeLanguage('en'); // 移除全局强制切换，保留自动检测
 
 interface ChatMessage {
   role: "user" | "assistant";
@@ -25,11 +30,21 @@ export default function Translator() {
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { user } = useUser();
+  const { show } = useLoginModal();
+
+  // 用 Clerk metadata 判断会员和配额
+  const isPremium = !!user?.publicMetadata?.premiumExpireAt && new Date(user.publicMetadata.premiumExpireAt as string) > new Date();
+  const freeUsesWeekly = user?.publicMetadata?.freeUsesWeekly ?? 0;
+  const premiumUsesWeekly = user?.publicMetadata?.premiumUsesWeekly ?? 0;
 
   // 随机头像列表
   const avatarList = Array.from({ length: 28 }, (_, i) => `/images/beanhead (${i + 1}).svg`);
   const [aiAvatar] = useState(() => avatarList[Math.floor(Math.random() * avatarList.length)]);
   const [userAvatar] = useState(() => avatarList[Math.floor(Math.random() * avatarList.length)]);
+
+  // 判断是否会员
+  const availableModes = isPremium ? ["normal", "savage", "genz"] : ["normal"];
 
   useEffect(() => {
     const saved = localStorage.getItem("freeUses");
@@ -37,50 +52,12 @@ export default function Translator() {
     else localStorage.setItem("freeUses", "5");
   }, []);
 
-  const translate = api.emoji.translate.useMutation({
-    onSuccess: (data) => {
-      setError(null);
-      const resultWithBrand = applyBrandSponsorship(data.result);
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: resultWithBrand,
-          timestamp: new Date(),
-        },
-      ]);
-      setIsLoading(false);
-      // 统计数据
-      fetch("/api/track-translation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          original: inputText,
-          translated: resultWithBrand,
-          mode,
-          timestamp: Date.now(),
-        }),
-      });
-      // 统计 emoji 热度
-      fetch("/api/emoji-stats", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ translated: resultWithBrand }),
-      });
-    },
-    onError: (err) => {
-      setIsLoading(false);
-      setError(t('realtime.error', 'Network error, please try again.'));
-    },
-  });
-
   const handleSend = () => {
+    if (!user) {
+      show(); // 未登录弹出登录弹窗
+      return;
+    }
     if (!inputText.trim() || isLoading) return;
-    // 移除免费次数和付费墙限制
-    // if (mode !== "normal" && freeUses <= 0) {
-    //   setShowPaywall(true);
-    //   return;
-    // }
     setMessages((prev) => [
       ...prev,
       {
@@ -90,12 +67,18 @@ export default function Translator() {
       },
     ]);
     setIsLoading(true);
-    translate.mutate({ text: inputText, mode });
-    // if (mode !== "normal" && freeUses > 0) {
-    //   const newUses = freeUses - 1;
-    //   setFreeUses(newUses);
-    //   localStorage.setItem("freeUses", newUses.toString());
-    // }
+    // 这里可接入新接口或直接模拟回复
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "[DEMO] 这里是模拟回复，后端接口已移除。",
+          timestamp: new Date(),
+        },
+      ]);
+      setIsLoading(false);
+    }, 1000);
     setInputText("");
   };
 
@@ -108,16 +91,48 @@ export default function Translator() {
 
   return (
     <div className="w-full max-w-3xl mx-auto p-6">
+      {/* 移除 userProfile 相关 UI，保留风格选择器和弹窗 */}
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 flex flex-col min-h-[500px]" style={{ minHeight: 500 }}>
         {error && (
           <div className="mb-2 px-4 py-2 bg-red-500/80 text-white rounded text-center animate-fade-in">
             {error}
           </div>
         )}
+        {premiumUsesWeekly === 0 && freeUsesWeekly === 0 && (
+          <div className="mt-4 p-4 bg-yellow-200 text-yellow-900 rounded text-center font-bold">
+            {t('quota.exhausted', '今日额度已用完，升级会员仅需 $9.99/month，立即解锁每天15次全部风格和GPT-4.0!')}
+          </div>
+        )}
         {/* 模式选择器 */}
-        <div className="mb-4">
-          <ModeSelector mode={mode} setMode={setMode} />
+        <div className="flex gap-2 mb-4">
+          {(["normal", "savage", "genz"] as const).map((modeOption) => (
+            <button
+              key={modeOption}
+              className={`px-4 py-2 rounded-lg font-bold text-lg transition ${mode === modeOption ? "bg-pink-200 text-pink-700" : "bg-pink-100 text-pink-500"} ${!availableModes.includes(modeOption) ? "opacity-50 cursor-not-allowed" : ""}`}
+              onClick={() => {
+                if (!availableModes.includes(modeOption)) {
+                  setShowPaywall(true);
+                  return;
+                }
+                setMode(modeOption);
+              }}
+              title={!availableModes.includes(modeOption) ? t('paywall.desc', '升级会员解锁全部风格和GPT-4.0') : ""}
+            >
+              {modeOption === "normal" && `${t('style.normal', 'Normal')} ✨`}
+              {modeOption === "savage" && `${t('style.savage', 'Savage')} 🔥`}
+              {modeOption === "genz" && `${t('style.genz', 'GenZ Slang')} 😎`}
+            </button>
+          ))}
         </div>
+        {showPaywall && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+            <div className="bg-white rounded-lg p-8 shadow-lg text-center">
+              <h2 className="text-xl font-bold mb-2">{t('paywall.title', '会员专属风格')}</h2>
+              <p className="mb-4">{t('paywall.desc', '升级会员即可解锁全部风格和GPT-4.0！')}</p>
+              <button className="bg-pink-500 text-white px-6 py-2 rounded-lg font-bold" onClick={() => setShowPaywall(false)}>{t('paywall.iknow', '我知道了')}</button>
+            </div>
+          </div>
+        )}
         {/* 聊天历史区 */}
         <div className="flex-1 bg-black/20 rounded-lg p-4 mb-4 custom-scrollbar-hide">
           {messages.length === 0 ? (

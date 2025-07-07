@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
   const { translated } = await req.json();
   // 简单统计每个 emoji 出现次数
   const emojis = (translated.match(/\p{Emoji}/gu) || []);
-  emojis.forEach(e => {
+  emojis.forEach((e: string) => {
     stats[e] = (stats[e] || 0) + 1;
   });
   return NextResponse.json({ success: true });

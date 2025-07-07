@@ -1,56 +1,44 @@
 "use client";
-import { useTranslation } from "react-i18next";
-import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import { Listbox } from '@headlessui/react';
+import { useTranslation } from 'react-i18next';
 
-const LANGUAGES = [
-  { code: "en", label: "English", flag: "/flags/us.svg" },
-  { code: "es", label: "Español", flag: "/flags/es.svg" },
-  { code: "fr", label: "Français", flag: "/flags/fr.svg" },
+const languages = [
+  { code: 'en', name: 'English', country: 'us' },
+  { code: 'zh', name: '中文', country: 'cn' },
+  { code: 'es', name: 'Español', country: 'es' },
+  { code: 'fr', name: 'Français', country: 'fr' },
+  { code: 'ja', name: '日本語', country: 'jp' },
+  { code: 'ko', name: '한국어', country: 'kr' },
+  { code: 'pt', name: 'Português', country: 'br' },
+  { code: 'de', name: 'Deutsch', country: 'de' },
+  { code: 'it', name: 'Italiano', country: 'it' },
+  { code: 'ru', name: 'Русский', country: 'ru' },
 ];
+
+function getFlagUrl(country: string) {
+  return `https://flagcdn.com/w20/${country}.png`;
+}
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const current = LANGUAGES.find(l => l.code === i18n.language) ?? LANGUAGES[0];
-  if (!current) return null;
+  const selected = (languages.find(l => l.code === i18n.language) || languages[0])!;
+  // const browserLang = typeof window !== 'undefined' ? (navigator.language || navigator.languages?.[0] || 'en').split('-')[0] : 'en';
+  // if (i18n.language === browserLang) return null;
 
   return (
-    <div ref={ref} className="relative z-50 select-none" style={{ minWidth: 48 }}>
-      <button
-        className="flex items-center gap-1 bg-white text-black rounded px-2 py-1 shadow hover:bg-gray-100 focus:outline-none"
-        onClick={() => setOpen(v => !v)}
-        aria-label="Change language"
-      >
-        <Image src={current.flag} alt={current.label + ' flag'} width={24} height={18} className="w-6 h-6 rounded-sm" />
-      </button>
-      {open && (
-        <div className="absolute right-0 mt-2 w-32 bg-white rounded shadow-lg border border-gray-200">
-          {LANGUAGES.map(lang => (
-            <button
-              key={lang.code}
-              className={`w-full flex items-center gap-2 px-3 py-2 text-left hover:bg-gray-100 ${i18n.language === lang.code ? 'font-bold' : ''}`}
-              onClick={() => { i18n.changeLanguage(lang.code); setOpen(false); }}
-              aria-label={`Switch to ${lang.label}`}
-            >
-              <span className="text-lg"><Image src={lang.flag} alt={lang.label + ' flag'} width={20} height={15} className="w-5 h-5 rounded-sm inline-block" /></span>
-              <span>{lang.label}</span>
-            </button>
+    <div className="flex items-center justify-center relative">
+      <Listbox value={selected} onChange={lang => i18n.changeLanguage(lang.code)}>
+        <Listbox.Button className="flex items-center justify-center px-2 py-2 rounded-lg bg-white/20 font-bold w-full">
+          <img src={getFlagUrl(selected.country)} alt={selected.name} width={24} height={18} className="rounded-sm" />
+        </Listbox.Button>
+        <Listbox.Options className="bg-white/30 backdrop-blur-md rounded-lg shadow-lg mb-1 absolute bottom-full left-0 w-full z-10">
+          {languages.map(lang => (
+            <Listbox.Option key={lang.code} value={lang} className="cursor-pointer px-2 py-2 hover:bg-pink-100 flex items-center justify-center">
+              <img src={getFlagUrl(lang.country)} alt={lang.name} width={24} height={18} className="rounded-sm" />
+            </Listbox.Option>
           ))}
-        </div>
-      )}
+        </Listbox.Options>
+      </Listbox>
     </div>
   );
 } 

@@ -7,6 +7,7 @@ export function applyBrandSponsorship(text: string): string {
       { name: "Apple", emoji: "", text: "Think Different" }
     ];
     const brand = brands[Math.floor(Math.random() * brands.length)];
+    if (!brand) return text;
     return `${text} ${brand.emoji} *${brand.text}*`;
   }
   return text;
