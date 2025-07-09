@@ -46,7 +46,7 @@
   "highlight3Desc": "Normal, Savage, and GenZ Slang modes for every vibe.",
   "hotEmojis": "hotEmojis",
   "unlockPremiumTitle": "Unlock Premium",
-  "unlockPremiumDesc": "Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience for just",
+  "unlockPremiumDesc": "Up to 20 savage/GenZ translations per day, exclusive emoji packs, and ad-free experience for just",
   "unlockPremiumBtn": "Unlock Premium",
   "faqTitle": "Frequently Asked Questions about Emoji Hand",
   "faq1Q": "What is Emoji Hand?",
@@ -118,5 +118,86 @@
   "privacy.section6": "6. Contact",
   "privacy.contact": "For any privacy-related questions, please contact us via the customer support email shown at the bottom of the page.",
   "privacy.section7": "7. Policy Changes",
-  "privacy.change": "We may update this Privacy Policy from time to time. Changes will be posted on this page."
+  "privacy.change": "We may update this Privacy Policy from time to time. Changes will be posted on this page.",
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "accessibility": "Accessibility",
+    "copyright": "Copyright"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "intro": "Welcome to Emoji Hand (hereinafter referred to as 'this website' or 'we'). Please read these terms carefully before using the website. By using the website, you agree to all the terms.",
+    "section1": "Service Content",
+    "list1": [
+      "This website provides users with digital services such as AI emoji translation, membership services, and quota management.",
+      "Some features are only available to members, and regular users have a daily free quota limit."
+    ],
+    "section2": "User Obligations",
+    "list2": [
+      "Users must comply with national laws and regulations and must not use the website for illegal activities.",
+      "Users must not upload or transmit illegal, infringing, or inappropriate content.",
+      "Users should properly safeguard their account information and are responsible for losses caused by account leakage."
+    ],
+    "section3": "Membership and Quota",
+    "list3": [
+      "Membership services are paid subscriptions. Members enjoy higher daily quotas and more features during the validity period.",
+      "After membership expires, users are downgraded to regular users, and the quota is restored to the regular level.",
+      "Quotas are reset daily, and member quotas differ from regular user quotas."
+    ],
+    "section4": "Payment and Refunds",
+    "list4": [
+      "All payments are processed by third-party platforms (such as Creem), and we do not store your payment card information.",
+      "Membership services are digital goods and are non-refundable after purchase, except in special circumstances. Please contact customer service email."
+    ],
+    "section5": "Disclaimer",
+    "list5": [
+      "This website strives to provide stable services but does not guarantee uninterrupted or error-free service.",
+      "The website is not responsible for service interruptions, data loss, etc., caused by force majeure or third-party reasons."
+    ],
+    "section6": "Dispute Resolution",
+    "dispute": "For disputes arising from these terms of service, both parties should resolve them amicably. If negotiation fails, you may file a lawsuit in the court where the website operator is located.",
+    "section7": "Contact Information",
+    "contact": "For any service-related questions, please contact us via the customer support email shown at the bottom of the page.",
+    "section8": "Terms Changes",
+    "change": "We reserve the right to modify these terms of service based on actual circumstances. Changes will be announced on this page, and continued use will be deemed acceptance of the changes."
+  },
+  "terms.section9": "Prohibited Content and Conduct",
+  "terms.list9": [
+    "It is strictly forbidden to upload, distribute, or generate any pornographic, violent, hateful, discriminatory, fraudulent, malicious software, privacy-infringing, intellectual property-infringing, or illegal content.",
+    "If such behavior is detected, the platform reserves the right to suspend or terminate the account and cooperate with relevant authorities for investigation."
+  ],
+  "terms.section10": "Age Restriction and Protection of Minors",
+  "terms.list10": [
+    "This service is only available to users aged 16 and above. Minors must use the service with the consent of their guardians.",
+    "If you are a minor, please read and use this service under the guidance of your guardian."
+  ],
+  "terms.section11": "Data Deletion and Export",
+  "terms.list11": [
+    "Users may request deletion or export of their personal data at any time via the settings page or customer support email. The platform will process such requests within a reasonable time frame."
+  ],
+  "autoRenewNote": "Membership is auto-renewing. You can cancel your subscription at any time on the payment platform. After cancellation, membership benefits remain until the end of the current billing period.",
+  "accessibilityTitle": "Accessibility Statement",
+  "accessibilityContent": "This website is committed to providing an accessible experience for all users, including people with disabilities. If you have accessibility suggestions, please contact us via the support email.",
+  "copyrightTitle": "Copyright & Trademark Statement",
+  "copyrightContent": "Emoji Hand and its logo are owned by emojihand.com. Some content, fonts, or icons may be from third parties and are copyrighted by their respective owners. Unauthorized use, reproduction, or distribution of this website's content is prohibited.",
+  "login.passwordLabel": "Password",
+  "login.passwordPlaceholder": "Enter your password",
+  "login.success": "Login successful!",
+  "login.error": "Login failed",
+  "register.title": "Create your account",
+  "register.desc": "Welcome! Please fill in the details to get started.",
+  "register.usernameLabel": "Username",
+  "register.usernamePlaceholder": "Enter your username",
+  "register.emailLabel": "Email address",
+  "register.emailPlaceholder": "Enter your email address",
+  "register.passwordLabel": "Password",
+  "register.passwordPlaceholder": "Enter your password",
+  "register.loading": "Registering...",
+  "register.continue": "Continue",
+  "register.success": "Registration successful!",
+  "register.error": "Registration failed",
+  "register.hasAccount": "Already have an account?",
+  "register.signin": "Sign in"
 } 

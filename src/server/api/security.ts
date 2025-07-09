@@ -1,4 +1,3 @@
-import { clerkClient } from '@clerk/clerk-sdk-node';
 import { logSecurityEvent, SecurityEventType } from './monitoring';
 
 // 内存存储（生产环境建议用 Redis）
@@ -65,107 +64,109 @@ export const checkDeviceFingerprint = async (userId: string, deviceInfo: {
   userAgent: string;
   timestamp: string;
 }) => {
-  const user = await clerkClient.users.getUser(userId);
-  const deviceHistory = (user.publicMetadata.deviceHistory as any[]) || [];
+  // 用户相关逻辑用占位符或注释替换
+  // const user = await clerkClient.users.getUser(userId);
+  // const deviceHistory = (user.publicMetadata.deviceHistory as any[]) || [];
   
   // 添加新设备记录
-  deviceHistory.push(deviceInfo);
+  // deviceHistory.push(deviceInfo);
   
   // 只保留最近10条记录
-  if (deviceHistory.length > 10) {
-    deviceHistory.splice(0, deviceHistory.length - 10);
-  }
+  // if (deviceHistory.length > 10) {
+  //   deviceHistory.splice(0, deviceHistory.length - 10);
+  // }
   
   // 检查短时间内设备变化
-  const recentDevices = deviceHistory.filter(
-    device => Date.now() - new Date(device.timestamp).getTime() < 24 * 60 * 60 * 1000 // 24小时内
-  );
+  // const recentDevices = deviceHistory.filter(
+  //   device => Date.now() - new Date(device.timestamp).getTime() < 24 * 60 * 60 * 1000 // 24小时内
+  // );
   
-  const uniqueIPs = new Set(recentDevices.map(d => d.ip));
-  const uniqueUserAgents = new Set(recentDevices.map(d => d.userAgent));
+  // const uniqueIPs = new Set(recentDevices.map(d => d.ip));
+  // const uniqueUserAgents = new Set(recentDevices.map(d => d.userAgent));
   
   // 如果24小时内IP或User-Agent变化过多，标记为可疑
-  if (uniqueIPs.size > 3 || uniqueUserAgents.size > 3) {
-    await clerkClient.users.updateUser(userId, {
-      publicMetadata: {
-        ...user.publicMetadata,
-        deviceHistory,
-        suspiciousActivity: true,
-        suspiciousReason: 'Multiple devices detected',
-      },
-    });
+  // if (uniqueIPs.size > 3 || uniqueUserAgents.size > 3) {
+  //   await clerkClient.users.updateUser(userId, {
+  //     publicMetadata: {
+  //       ...user.publicMetadata,
+  //       deviceHistory,
+  //       suspiciousActivity: true,
+  //       suspiciousReason: 'Multiple devices detected',
+  //     },
+  //   });
     
-    // 记录设备指纹警报
-    await logSecurityEvent({
-      type: SecurityEventType.DEVICE_FINGERPRINT_ALERT,
-      userId,
-      ip: deviceInfo.ip,
-      userAgent: deviceInfo.userAgent,
-      details: { uniqueIPs: uniqueIPs.size, uniqueUserAgents: uniqueUserAgents.size },
-    });
+  //   // 记录设备指纹警报
+  //   await logSecurityEvent({
+  //     type: SecurityEventType.DEVICE_FINGERPRINT_ALERT,
+  //     userId,
+  //     ip: deviceInfo.ip,
+  //     userAgent: deviceInfo.userAgent,
+  //     details: { uniqueIPs: uniqueIPs.size, uniqueUserAgents: uniqueUserAgents.size },
+  //   });
     
-    return false;
-  }
+  //   return false;
+  // }
   
-  await clerkClient.users.updateUser(userId, {
-    publicMetadata: {
-      ...user.publicMetadata,
-      deviceHistory,
-    },
-  });
+  // await clerkClient.users.updateUser(userId, {
+  //   publicMetadata: {
+  //     ...user.publicMetadata,
+  //     deviceHistory,
+  //   },
+  // });
   
   return true;
 };
 
 // 异常使用模式检测
 export const checkAbnormalUsage = async (userId: string) => {
-  const user = await clerkClient.users.getUser(userId);
-  const usageHistory = (user.publicMetadata.usageHistory as any[]) || [];
+  // 用户相关逻辑用占位符或注释替换
+  // const user = await clerkClient.users.getUser(userId);
+  // const usageHistory = (user.publicMetadata.usageHistory as any[]) || [];
   
   // 添加当前使用记录
-  usageHistory.push({
-    timestamp: new Date().toISOString(),
-  });
+  // usageHistory.push({
+  //   timestamp: new Date().toISOString(),
+  // });
   
   // 只保留最近100条记录
-  if (usageHistory.length > 100) {
-    usageHistory.splice(0, usageHistory.length - 100);
-  }
+  // if (usageHistory.length > 100) {
+  //   usageHistory.splice(0, usageHistory.length - 100);
+  // }
   
   // 检查1分钟内的使用频率
-  const oneMinuteAgo = new Date(Date.now() - 60 * 1000);
-  const recentUsage = usageHistory.filter(
-    usage => new Date(usage.timestamp) > oneMinuteAgo
-  );
+  // const oneMinuteAgo = new Date(Date.now() - 60 * 1000);
+  // const recentUsage = usageHistory.filter(
+  //   usage => new Date(usage.timestamp) > oneMinuteAgo
+  // );
   
-  if (recentUsage.length > 5) {
-    await clerkClient.users.updateUser(userId, {
-      publicMetadata: {
-        ...user.publicMetadata,
-        usageHistory,
-        suspiciousActivity: true,
-        suspiciousReason: 'High frequency usage',
-      },
-    });
+  // if (recentUsage.length > 5) {
+  //   await clerkClient.users.updateUser(userId, {
+  //     publicMetadata: {
+  //       ...user.publicMetadata,
+  //       usageHistory,
+  //       suspiciousActivity: true,
+  //       suspiciousReason: 'High frequency usage',
+  //     },
+  //   });
     
-    // 记录异常使用事件
-    await logSecurityEvent({
-      type: SecurityEventType.ABNORMAL_USAGE,
-      userId,
-      ip: null,
-      userAgent: null,
-      details: { recentUsageCount: recentUsage.length, timeWindow: '1 minute' },
-    });
+  //   // 记录异常使用事件
+  //   await logSecurityEvent({
+  //     type: SecurityEventType.ABNORMAL_USAGE,
+  //     userId,
+  //     ip: null,
+  //     userAgent: null,
+  //     details: { recentUsageCount: recentUsage.length, timeWindow: '1 minute' },
+  //   });
     
-    return false;
-  }
+  //   return false;
+  // }
   
-  await clerkClient.users.updateUser(userId, {
-    publicMetadata: {
-      ...user.publicMetadata,
-      usageHistory,
-    },
-  });
+  // await clerkClient.users.updateUser(userId, {
+  //   publicMetadata: {
+  //     ...user.publicMetadata,
+  //     usageHistory,
+  //   },
+  // });
   
   return true;
 };
@@ -192,8 +193,10 @@ export const addToIPBlacklist = async (ip: string) => {
 
 // 检查可疑用户
 export const checkSuspiciousUser = async (userId: string) => {
-  const user = await clerkClient.users.getUser(userId);
-  return !user.publicMetadata.suspiciousActivity;
+  // 用户相关逻辑用占位符或注释替换
+  // const user = await clerkClient.users.getUser(userId);
+  // return !user.publicMetadata.suspiciousActivity;
+  return false; // Placeholder
 };
 
 // 综合安全检查

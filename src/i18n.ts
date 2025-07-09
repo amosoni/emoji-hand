@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+// import LanguageDetector from 'i18next-browser-languagedetector';
 
 import zh from '../public/locales/zh/translation.json';
 import en from '../public/locales/en/translation.json';
@@ -16,7 +16,7 @@ import ru from '../public/locales/ru/translation.json';
 const languages = ['en','zh','es','fr','ja','ko','pt','de','it','ru'];
 
 i18n
-  .use(LanguageDetector)
+  // .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
@@ -33,10 +33,10 @@ i18n
     },
     fallbackLng: 'en',
     supportedLngs: languages,
-    detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
-      caches: ['localStorage'],
-    },
+    // detection: {
+    //   order: ['localStorage', 'navigator', 'htmlTag'],
+    //   caches: ['localStorage'],
+    // },
     interpolation: { escapeValue: false },
   });
 

@@ -7,7 +7,7 @@ import ShareButton from "./ShareButton";
 import { applyBrandSponsorship } from "~/utils/helpers";
 import '../i18n';
 import Image from "next/image";
-import { useUser } from "@clerk/nextjs";
+import { useSession } from "next-auth/react";
 import i18n from 'i18next';
 import { api as trpc } from "~/trpc/react";
 import { useLoginModal } from "../../components/LoginModalContext";
@@ -30,13 +30,14 @@ export default function Translator() {
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { user } = useUser();
+  const { data: session } = useSession();
+  const user = session?.user;
   const { show } = useLoginModal();
 
   // 用 Clerk metadata 判断会员和配额
-  const isPremium = !!user?.publicMetadata?.premiumExpireAt && new Date(user.publicMetadata.premiumExpireAt as string) > new Date();
-  const freeUsesWeekly = user?.publicMetadata?.freeUsesWeekly ?? 0;
-  const premiumUsesWeekly = user?.publicMetadata?.premiumUsesWeekly ?? 0;
+  // const isPremium = !!user?.premiumExpireAt && new Date(user.premiumExpireAt as string) > new Date();
+  // const freeUsesWeekly = user?.freeUsesWeekly ?? 0;
+  // const premiumUsesWeekly = user?.premiumUsesWeekly ?? 0;
 
   // 随机头像列表
   const avatarList = Array.from({ length: 28 }, (_, i) => `/images/beanhead (${i + 1}).svg`);
@@ -44,7 +45,7 @@ export default function Translator() {
   const [userAvatar] = useState(() => avatarList[Math.floor(Math.random() * avatarList.length)]);
 
   // 判断是否会员
-  const availableModes = isPremium ? ["normal", "savage", "genz"] : ["normal"];
+  const availableModes = ["normal"];
 
   useEffect(() => {
     const saved = localStorage.getItem("freeUses");
@@ -98,11 +99,11 @@ export default function Translator() {
             {error}
           </div>
         )}
-        {premiumUsesWeekly === 0 && freeUsesWeekly === 0 && (
+        {/* {premiumUsesWeekly === 0 && freeUsesWeekly === 0 && (
           <div className="mt-4 p-4 bg-yellow-200 text-yellow-900 rounded text-center font-bold">
             {t('quota.exhausted', '今日额度已用完，升级会员仅需 $9.99/month，立即解锁每天15次全部风格和GPT-4.0!')}
           </div>
-        )}
+        )} */}
         {/* 模式选择器 */}
         <div className="flex gap-2 mb-4">
           {(["normal", "savage", "genz"] as const).map((modeOption) => (

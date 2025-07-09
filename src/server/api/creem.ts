@@ -1,49 +1,18 @@
 import { createTRPCRouter, protectedProcedure } from '~/server/api/trpc';
 import { z } from 'zod'
 import axios from 'axios'
-import { clerkClient } from '@clerk/clerk-sdk-node';
+// 删除 import { clerkClient } from '@clerk/clerk-sdk-node';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // 每日配额检查函数
 const checkDailyQuota = async (userId: string) => {
-  const user = await clerkClient.users.getUser(userId);
-  const today = new Date().toDateString();
-  const lastResetDate = user.publicMetadata.lastResetDate;
-  const isPremium = !!user.publicMetadata.premiumExpireAt && new Date(user.publicMetadata.premiumExpireAt as string) > new Date();
-  
-  // 如果是新的一天，重置配额
-  if (lastResetDate !== today) {
-    await clerkClient.users.updateUser(userId, {
-      publicMetadata: {
-        lastResetDate: today,
-        dailyUsage: 0,
-        freeUsesDaily: 5, // 免费用户每日5次
-        premiumUsesDaily: 20, // 会员每日20次
-      },
-    });
-    return { canUse: true, remaining: isPremium ? 20 : 5 };
-  }
-  
-  const dailyUsage = Number(user.publicMetadata.dailyUsage) || 0;
-  const maxUsage = isPremium ? 20 : 5;
-  
-  if (dailyUsage >= maxUsage) {
-    throw new Error('Daily quota exceeded');
-  }
-  
-  return { canUse: true, remaining: maxUsage - dailyUsage };
+  // 用户配额等用占位符或注释替换
+  return { canUse: true, remaining: 5 }; // 示例：免费用户每日5次
 };
 
 // 增加使用次数
 const incrementDailyUsage = async (userId: string) => {
-  const user = await clerkClient.users.getUser(userId);
-  const currentUsage = Number(user.publicMetadata.dailyUsage) || 0;
-  
-  await clerkClient.users.updateUser(userId, {
-    publicMetadata: {
-      dailyUsage: currentUsage + 1,
-    },
-  });
+  // 用户配额等用占位符或注释替换
 };
 
 export const creemRouter = createTRPCRouter({
@@ -79,31 +48,15 @@ export const creemRouter = createTRPCRouter({
   creemPaymentSuccess: protectedProcedure.input(z.object({ days: z.number().default(30) })).mutation(async ({ ctx, input }) => {
     const userId = ctx.session?.userId;
     if (!userId) throw new Error('No userId in session');
-    const user = await clerkClient.users.getUser(userId);
-    const now = new Date();
-    // 取当前会员到期时间，若已过期则从现在算起
-    const oldExpire = user.publicMetadata.premiumExpireAt ? new Date(user.publicMetadata.premiumExpireAt as string) : now;
-    const base = oldExpire > now ? oldExpire : now;
-    const newExpire = new Date(base.getTime() + input.days * 24 * 60 * 60 * 1000);
-    await clerkClient.users.updateUser(userId, {
-      publicMetadata: {
-        premiumExpireAt: newExpire.toISOString(),
-        premiumUsesDaily: 20, // 会员每日额度
-      },
-    });
-    return { premiumExpireAt: newExpire.toISOString(), premiumUsesDaily: 20 };
+    // 用户配额等用占位符或注释替换
+    return { premiumExpireAt: new Date(Date.now() + input.days * 24 * 60 * 60 * 1000).toISOString(), premiumUsesDaily: 20 };
   }),
 
   // 每日定时重置配额（可由定时任务或管理员调用）
   resetDailyQuota: protectedProcedure.mutation(async ({ ctx }) => {
     const userId = ctx.session?.userId;
     if (!userId) throw new Error('No userId in session');
-    await clerkClient.users.updateUser(userId, {
-      publicMetadata: {
-        freeUsesDaily: 3,
-        premiumUsesDaily: 20,
-      },
-    });
+    // 用户配额等用占位符或注释替换
     return { freeUsesDaily: 3, premiumUsesDaily: 20 };
   }),
 
@@ -111,22 +64,7 @@ export const creemRouter = createTRPCRouter({
   consumeQuota: protectedProcedure.mutation(async ({ ctx }) => {
     const userId = ctx.session?.userId;
     if (!userId) throw new Error('No userId in session');
-    const user = await clerkClient.users.getUser(userId);
-    let { freeUsesDaily = 0, premiumUsesDaily = 0, premiumExpireAt } = user.publicMetadata as any;
-    freeUsesDaily = Number(freeUsesDaily) || 0;
-    premiumUsesDaily = Number(premiumUsesDaily) || 0;
-    const now = new Date();
-    const isPremium = !!premiumExpireAt && new Date(premiumExpireAt) > now;
-    if (isPremium && premiumUsesDaily > 0) {
-      premiumUsesDaily -= 1;
-      await clerkClient.users.updateUser(userId, { publicMetadata: { premiumUsesDaily } });
-      return { premiumUsesDaily, freeUsesDaily };
-    } else if (freeUsesDaily > 0) {
-      freeUsesDaily -= 1;
-      await clerkClient.users.updateUser(userId, { publicMetadata: { freeUsesDaily } });
-      return { premiumUsesDaily, freeUsesDaily };
-    } else {
-      throw new Error('No quota left');
-    }
+    // 用户配额等用占位符或注释替换
+    return { premiumUsesDaily: 0, freeUsesDaily: 0 };
   }),
 }); 

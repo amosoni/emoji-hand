@@ -46,7 +46,7 @@
   "highlight3Desc": "Normale, Selvaggio e Slang GenZ per ogni stile.",
   "hotEmojis": "Emoji popolari",
   "unlockPremiumTitle": "Sblocca Premium",
-  "unlockPremiumDesc": "Ottieni traduzioni illimitate Selvaggio/GenZ, pacchetti emoji esclusivi e nessuna pubblicità a soli",
+  "unlockPremiumDesc": "Ottieni fino a 20 traduzioni Selvaggio/GenZ al giorno, pacchetti emoji esclusivi e nessuna pubblicità a soli",
   "unlockPremiumBtn": "Sblocca Premium",
   "faqTitle": "Domande frequenti su Emoji Hand",
   "faq1Q": "Cos'è Emoji Hand?",
@@ -85,35 +85,108 @@
   "profile.points": "Punti",
   "profile.tips": "Premium: 20/giorno, Gratuito: 5/giorno. I punti possono essere usati per più quota o abbonamento.",
   "profile.upgrade": "Passa a Premium",
-  "privacy.title": "Informativa sulla Privacy",
-  "privacy.intro": "La presente Informativa sulla Privacy si applica a tutti gli utenti di Emoji Hand (di seguito 'il Sito' o 'noi'). Ci impegniamo a proteggere le tue informazioni personali e la tua privacy.",
-  "privacy.section1": "1. Informazioni che raccogliamo",
-  "privacy.list1": [
-    "Informazioni di registrazione/accesso (come e-mail, account di terze parti)",
-    "Informazioni sull'account come stato di membro, quota, registri di utilizzo",
-    "Informazioni di pagamento (gestite da piattaforme di terze parti come Creem; non memorizziamo i dati della tua carta)",
-    "Log di accesso al sito, informazioni sul dispositivo, informazioni sul browser, ecc."
-  ],
-  "privacy.section2": "2. Utilizzo delle informazioni",
-  "privacy.list2": [
-    "Per autenticazione, servizi di abbonamento, gestione delle quote",
-    "Per il miglioramento del prodotto e l'analisi statistica",
-    "Per inviarti notifiche importanti, informazioni di servizio, ecc."
-  ],
-  "privacy.section3": "3. Condivisione e divulgazione delle informazioni",
-  "privacy.list3": [
-    "Non condividiamo le tue informazioni personali con terze parti, salvo quando necessario per adempiere a obblighi di legge o per proteggere i nostri diritti e interessi.",
-    "I pagamenti sono gestiti da piattaforme di terze parti e sono soggetti alle loro politiche sulla privacy."
-  ],
-  "privacy.section4": "4. Sicurezza delle informazioni",
-  "privacy.content4": "Adottiamo misure di sicurezza ragionevoli per proteggere le tue informazioni personali da accessi, usi o divulgazioni non autorizzati.",
-  "privacy.section5": "5. I tuoi diritti",
-  "privacy.list5": [
-    "Puoi accedere, correggere o eliminare le tue informazioni personali in qualsiasi momento tramite le impostazioni del tuo account.",
-    "Puoi contattarci per esercitare i tuoi diritti sulla privacy."
-  ],
-  "privacy.section6": "6. Modifiche all'informativa",
-  "privacy.content6": "Ci riserviamo il diritto di modificare la presente Informativa sulla Privacy in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina ed entreranno in vigore immediatamente.",
-  "privacy.section7": "7. Contatto",
-  "privacy.content7": "Se hai domande o dubbi su questa Informativa sulla Privacy, puoi contattarci tramite le informazioni fornite sul sito web."
+  "privacy": {
+    "title": "Informativa sulla Privacy",
+    "intro": "La presente Informativa sulla Privacy spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali quando utilizzi Emoji Hand.",
+    "section1": "1. Informazioni raccolte",
+    "list1": [
+      "Informazioni sull'account: e-mail, informazioni di accesso social, ecc.",
+      "Cronologia di utilizzo del servizio: richieste di traduzione, frequenza di utilizzo, ecc.",
+      "Informazioni di pagamento: i pagamenti premium vengono elaborati tramite piattaforme di pagamento di terze parti."
+    ],
+    "section2": "2. Finalità dell'uso delle informazioni",
+    "list2": [
+      "Fornitura e miglioramento del servizio",
+      "Assistenza clienti e risposta alle richieste",
+      "Gestione dei pagamenti premium e delle iscrizioni",
+      "Conformità agli obblighi legali"
+    ],
+    "section3": "3. Condivisione e divulgazione delle informazioni",
+    "list3": [
+      "Non condividiamo le tue informazioni personali con terze parti, salvo quando necessario per adempiere a obblighi legali o proteggere i nostri diritti e interessi.",
+      "I pagamenti vengono elaborati su piattaforme di terze parti e si applicano le loro politiche sulla privacy."
+    ],
+    "section4": "4. Sicurezza delle informazioni",
+    "security": "Adottiamo misure di sicurezza ragionevoli per proteggere le tue informazioni da accessi, divulgazioni, alterazioni o distruzioni non autorizzate.",
+    "section5": "5. I tuoi diritti",
+    "list5": [
+      "Puoi accedere, modificare o eliminare le tue informazioni personali in qualsiasi momento tramite le impostazioni dell'account.",
+      "Puoi contattarci per esercitare i tuoi diritti sulla privacy."
+    ],
+    "section6": "6. Modifiche alla politica",
+    "contact": "Per qualsiasi domanda relativa alla privacy, contattaci tramite l'e-mail di supporto clienti indicata in fondo alla pagina.",
+    "section7": "7. Contatto",
+    "change": "Potremmo aggiornare periodicamente la presente Informativa sulla Privacy. Le modifiche saranno pubblicate su questa pagina."
+  },
+  "terms": {
+    "title": "Termini di Servizio",
+    "intro": "Benvenuto su Emoji Hand (di seguito denominato 'questo sito' o 'noi'). Si prega di leggere attentamente questi termini prima di utilizzare il sito. L'utilizzo del sito implica l'accettazione di tutti i termini.",
+    "section1": "Contenuto del Servizio",
+    "list1": [
+      "Questo sito fornisce servizi digitali come la traduzione di emoji tramite IA, servizi di abbonamento e gestione delle quote.",
+      "Alcune funzionalità sono disponibili solo per i membri, gli utenti normali hanno un limite giornaliero gratuito."
+    ],
+    "section2": "Obblighi dell'Utente",
+    "list2": [
+      "Gli utenti devono rispettare le leggi nazionali e non utilizzare il sito per attività illegali.",
+      "Gli utenti non devono caricare o trasmettere contenuti illegali, in violazione o inappropriati.",
+      "Gli utenti devono proteggere adeguatamente le informazioni del proprio account e sono responsabili delle perdite causate dalla fuga di dati dell'account."
+    ],
+    "section3": "Abbonamento e Quote",
+    "list3": [
+      "I servizi di abbonamento sono a pagamento. I membri godono di quote giornaliere più elevate e di più funzionalità durante il periodo di validità.",
+      "Dopo la scadenza dell'abbonamento, gli utenti tornano ad essere utenti normali e la quota viene ripristinata al livello normale.",
+      "Le quote vengono azzerate ogni giorno e differiscono tra membri e utenti normali."
+    ],
+    "section4": "Pagamento e Rimborsi",
+    "list4": [
+      "Tutti i pagamenti sono elaborati da piattaforme di terze parti (come Creem) e non memorizziamo le informazioni della tua carta di pagamento.",
+      "I servizi di abbonamento sono beni digitali e non sono rimborsabili dopo l'acquisto, salvo circostanze particolari. Si prega di contattare l'e-mail del servizio clienti."
+    ],
+    "section5": "Esclusione di Responsabilità",
+    "list5": [
+      "Questo sito si impegna a fornire servizi stabili ma non garantisce un servizio ininterrotto o privo di errori.",
+      "Il sito non è responsabile per interruzioni del servizio, perdita di dati, ecc., causati da forza maggiore o da terzi."
+    ],
+    "section6": "Risoluzione delle Controversie",
+    "dispute": "Per le controversie derivanti da questi termini di servizio, entrambe le parti dovrebbero risolverle amichevolmente. Se la negoziazione fallisce, è possibile intentare una causa presso il tribunale in cui si trova l'operatore del sito.",
+    "section7": "Informazioni di Contatto",
+    "contact": "Per qualsiasi domanda relativa al servizio, contattaci tramite l'e-mail del servizio clienti indicata in fondo alla pagina.",
+    "section8": "Modifiche ai Termini",
+    "change": "Ci riserviamo il diritto di modificare questi termini di servizio in base alle circostanze reali. Le modifiche saranno annunciate su questa pagina e l'uso continuato sarà considerato accettazione delle modifiche."
+  },
+  "footer": {
+    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di Servizio",
+    "contact": "Contatto",
+    "accessibility": "Accessibilità",
+    "copyright": "Copyright"
+  },
+  "autoRenewNote": "L'abbonamento si rinnova automaticamente. Puoi annullare l'abbonamento in qualsiasi momento sulla piattaforma di pagamento. Dopo la cancellazione, i vantaggi dell'abbonamento rimangono fino alla fine del periodo di fatturazione in corso.",
+  "accessibilityTitle": "Accessibility Statement",
+  "accessibilityContent": "This website is committed to providing an accessible experience for all users, including people with disabilities. If you have accessibility suggestions, please contact us via the support email.",
+  "copyrightTitle": "Copyright & Trademark Statement",
+  "copyrightContent": "Emoji Hand and its logo are owned by emojihand.com. Some content, fonts, or icons may be from third parties and are copyrighted by their respective owners. Unauthorized use, reproduction, or distribution of this website's content is prohibited.",
+  "cookieConsent": {
+    "text": "Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza, analizzare il traffico e per finalità di marketing. Utilizzando questo sito, accetti la nostra Informativa sulla Privacy.",
+    "accept": "Accetta"
+  },
+  "login.passwordLabel": "Password",
+  "login.passwordPlaceholder": "Inserisci la tua password",
+  "login.success": "Accesso riuscito!",
+  "login.error": "Accesso fallito",
+  "register.title": "Crea il tuo account",
+  "register.desc": "Benvenuto! Compila i dati per iniziare.",
+  "register.usernameLabel": "Nome utente",
+  "register.usernamePlaceholder": "Inserisci il tuo nome utente",
+  "register.emailLabel": "Indirizzo email",
+  "register.emailPlaceholder": "Inserisci il tuo indirizzo email",
+  "register.passwordLabel": "Password",
+  "register.passwordPlaceholder": "Inserisci la tua password",
+  "register.loading": "Registrazione in corso...",
+  "register.continue": "Continua",
+  "register.success": "Registrazione avvenuta con successo!",
+  "register.error": "Registrazione fallita",
+  "register.hasAccount": "Hai già un account?",
+  "register.signin": "Accedi"
 } 

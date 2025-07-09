@@ -46,7 +46,7 @@
   "highlight3Desc": "Normal, Wild und GenZ Slang für jeden Stil.",
   "hotEmojis": "Beliebte Emojis",
   "unlockPremiumTitle": "Premium freischalten",
-  "unlockPremiumDesc": "Unbegrenzte Wild/GenZ-Übersetzungen, exklusive Emoji-Pakete und werbefreie Nutzung für nur",
+  "unlockPremiumDesc": "Bis zu 20 Wild/GenZ-Übersetzungen pro Tag, exklusive Emoji-Pakete und werbefreie Nutzung für nur",
   "unlockPremiumBtn": "Premium freischalten",
   "faqTitle": "Häufig gestellte Fragen zu Emoji Hand",
   "faq1Q": "Was ist Emoji Hand?",
@@ -79,35 +79,126 @@
   "quota.exhausted": "Tageslimit erreicht. Upgrade auf Premium für $9.99/Monat, um 20 Nutzungen/Tag, alle Stile und GPT-4.0 freizuschalten!",
   "profile": "Profil",
   "signOut": "Abmelden",
-  "privacy.title": "Datenschutzerklärung",
-  "privacy.intro": "Diese Datenschutzerklärung gilt für alle Nutzer von Emoji Hand (im Folgenden 'die Website' oder 'wir'). Wir verpflichten uns, Ihre persönlichen Daten und Ihre Privatsphäre zu schützen.",
-  "privacy.section1": "1. Welche Informationen wir sammeln",
-  "privacy.list1": [
-    "Registrierungs-/Anmeldeinformationen (wie E-Mail, Drittanbieter-Konten)",
-    "Kontoinformationen wie Mitgliedsstatus, Kontingent, Nutzungsprotokolle",
-    "Zahlungsinformationen (verarbeitet von Drittanbietern wie Creem; wir speichern Ihre Kartendaten nicht)",
-    "Zugriffsprotokolle der Website, Geräteinformationen, Browserinformationen usw."
-  ],
-  "privacy.section2": "2. Verwendung der Informationen",
-  "privacy.list2": [
-    "Zur Authentifizierung, für Mitgliederdienste, Kontingentverwaltung",
-    "Zur Produktverbesserung und statistischen Analyse",
-    "Um Ihnen wichtige Benachrichtigungen, Serviceinformationen usw. zu senden"
-  ],
-  "privacy.section3": "3. Weitergabe und Offenlegung von Informationen",
-  "privacy.list3": [
-    "Wir geben Ihre persönlichen Daten nicht an Dritte weiter, es sei denn, dies ist zur Erfüllung gesetzlicher Verpflichtungen oder zum Schutz unserer Rechte und Interessen erforderlich.",
-    "Zahlungen werden von Drittanbietern verarbeitet und unterliegen deren Datenschutzrichtlinien."
-  ],
-  "privacy.section4": "4. Informationssicherheit",
-  "privacy.content4": "Wir ergreifen angemessene Sicherheitsmaßnahmen, um Ihre persönlichen Daten vor unbefugtem Zugriff, Nutzung oder Offenlegung zu schützen.",
-  "privacy.section5": "5. Ihre Rechte",
-  "privacy.list5": [
-    "Sie können Ihre persönlichen Daten jederzeit über Ihre Kontoeinstellungen einsehen, korrigieren oder löschen.",
+  "privacy": {
+    "title": "Datenschutzrichtlinie",
+    "intro": "Diese Datenschutzrichtlinie erklärt, wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen, wenn Sie Emoji Hand nutzen.",
+    "section1": "1. Erhobene Informationen",
+    "list1": [
+      "Kontoinformationen: E-Mail, Social-Login-Informationen usw.",
+      "Nutzungsverlauf des Dienstes: Übersetzungsanfragen, Nutzungshäufigkeit usw.",
+      "Zahlungsinformationen: Premium-Zahlungen werden über Drittanbieter-Zahlungsplattformen abgewickelt."
+    ],
+    "section2": "2. Zweck der Verwendung von Informationen",
+    "list2": [
+      "Bereitstellung und Verbesserung des Dienstes",
+      "Kundensupport und Beantwortung von Anfragen",
+      "Verwaltung von Premium-Zahlungen und Mitgliedschaften",
+      "Einhaltung gesetzlicher Verpflichtungen"
+    ],
+    "section3": "3. Weitergabe und Offenlegung von Informationen",
+    "list3": [
+      "Wir geben Ihre personenbezogenen Daten nicht an Dritte weiter, es sei denn, dies ist zur Erfüllung gesetzlicher Verpflichtungen oder zum Schutz unserer Rechte und Interessen erforderlich.",
+      "Zahlungen werden auf Drittanbieter-Plattformen abgewickelt, und deren Datenschutzrichtlinien gelten."
+    ],
+    "section4": "4. Informationssicherheit",
+    "security": "Wir ergreifen angemessene Sicherheitsmaßnahmen, um Ihre Informationen vor unbefugtem Zugriff, Offenlegung, Änderung oder Zerstörung zu schützen.",
+    "section5": "5. Ihre Rechte",
+    "list5": [
+      "Sie können jederzeit über die Kontoeinstellungen auf Ihre personenbezogenen Daten zugreifen, sie ändern oder löschen.",
     "Sie können uns kontaktieren, um Ihre Datenschutzrechte auszuüben."
   ],
-  "privacy.section6": "6. Änderungen der Richtlinie",
-  "privacy.content6": "Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern. Änderungen werden auf dieser Seite veröffentlicht und treten sofort in Kraft.",
-  "privacy.section7": "7. Kontakt",
-  "privacy.content7": "Wenn Sie Fragen oder Bedenken zu dieser Datenschutzerklärung haben, können Sie uns über die auf der Website angegebenen Kontaktdaten erreichen."
+    "section6": "6. Änderungen der Richtlinie",
+    "contact": "Bei Fragen zum Datenschutz wenden Sie sich bitte an die am Seitenende angegebene Support-E-Mail-Adresse.",
+    "section7": "7. Kontakt",
+    "change": "Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite veröffentlicht."
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen",
+    "intro": "Willkommen bei Emoji Hand (im Folgenden als 'diese Website' oder 'wir' bezeichnet). Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie die Website nutzen. Die Nutzung der Website gilt als Zustimmung zu allen Bedingungen.",
+    "section1": "Dienstleistungsinhalt",
+    "list1": [
+      "Diese Website bietet digitale Dienste wie KI-Emoji-Übersetzung, Mitgliedschaftsdienste und Kontingentverwaltung.",
+      "Einige Funktionen sind nur für Mitglieder verfügbar, normale Nutzer haben ein tägliches Freikontingent."
+    ],
+    "section2": "Pflichten des Nutzers",
+    "list2": [
+      "Nutzer müssen die nationalen Gesetze und Vorschriften einhalten und die Website nicht für illegale Aktivitäten nutzen.",
+      "Nutzer dürfen keine illegalen, rechtsverletzenden oder unangemessenen Inhalte hochladen oder übertragen.",
+      "Nutzer sollten ihre Kontoinformationen ordnungsgemäß schützen und sind für Verluste durch Kontolecks selbst verantwortlich."
+    ],
+    "section3": "Mitgliedschaft und Kontingent",
+    "list3": [
+      "Mitgliedschaftsdienste sind kostenpflichtige Abonnements. Mitglieder genießen während der Gültigkeitsdauer höhere Tageskontingente und mehr Funktionen.",
+      "Nach Ablauf der Mitgliedschaft werden Nutzer zu normalen Nutzern herabgestuft und das Kontingent wird auf das normale Niveau zurückgesetzt.",
+      "Kontingente werden täglich zurückgesetzt, und die Kontingente für Mitglieder unterscheiden sich von denen für normale Nutzer."
+    ],
+    "section4": "Zahlung und Rückerstattung",
+    "list4": [
+      "Alle Zahlungen werden von Drittanbieter-Plattformen (wie Creem) verarbeitet, und wir speichern Ihre Zahlungskartendaten nicht.",
+      "Mitgliedschaftsdienste sind digitale Güter und nach dem Kauf nicht erstattungsfähig, außer in besonderen Fällen. Bitte wenden Sie sich an die Kundenservice-E-Mail."
+    ],
+    "section5": "Haftungsausschluss",
+    "list5": [
+      "Diese Website bemüht sich, stabile Dienste bereitzustellen, garantiert jedoch keinen unterbrechungsfreien oder fehlerfreien Service.",
+      "Die Website haftet nicht für Dienstunterbrechungen, Datenverluste usw., die durch höhere Gewalt oder Dritte verursacht werden."
+    ],
+    "section6": "Streitbeilegung",
+    "dispute": "Bei Streitigkeiten aus diesen Nutzungsbedingungen sollten beide Parteien diese gütlich beilegen. Scheitert die Verhandlung, können Sie eine Klage bei dem Gericht einreichen, an dem sich der Betreiber der Website befindet.",
+    "section7": "Kontaktinformationen",
+    "contact": "Bei Fragen zum Service wenden Sie sich bitte an die am Seitenende angegebene Kundenservice-E-Mail-Adresse.",
+    "section8": "Änderungen der Bedingungen",
+    "change": "Wir behalten uns das Recht vor, diese Nutzungsbedingungen je nach den tatsächlichen Umständen zu ändern. Änderungen werden auf dieser Seite bekannt gegeben, und die fortgesetzte Nutzung gilt als Zustimmung zu den Änderungen.",
+    "section9": "Verbotene Inhalte und Verhaltensweisen",
+    "list9": [
+      "Es ist strengstens untersagt, pornografische, gewalttätige, hasserfüllte, diskriminierende, betrügerische, schädliche Software, die Privatsphäre oder geistige Eigentumsrechte anderer verletzende oder illegale Inhalte hochzuladen, zu verbreiten oder zu generieren.",
+      "Bei Feststellung eines solchen Verhaltens behält sich die Plattform das Recht vor, das Konto zu sperren oder zu kündigen und mit den zuständigen Behörden zusammenzuarbeiten."
+    ],
+    "section10": "Altersbeschränkung und Jugendschutz",
+    "list10": [
+      "Dieser Service ist nur für Nutzer ab 16 Jahren verfügbar. Minderjährige müssen den Service mit Zustimmung ihrer Erziehungsberechtigten nutzen.",
+      "Wenn Sie minderjährig sind, nutzen Sie diesen Service bitte unter Anleitung Ihres Erziehungsberechtigten."
+    ],
+    "section11": "Datenlöschung und -export",
+    "list11": [
+      "Nutzer können jederzeit über die Einstellungsseite oder die Support-E-Mail die Löschung oder den Export ihrer persönlichen Daten beantragen. Die Plattform wird solche Anfragen innerhalb eines angemessenen Zeitraums bearbeiten."
+    ],
+    "autoRenewNote": "Membership is auto-renewing. You can cancel your subscription at any time on the payment platform. After cancellation, membership benefits remain until the end of the current billing period.",
+    "accessibilityTitle": "Barrierefreiheitserklärung",
+    "accessibilityContent": "Diese Website ist bestrebt, allen Nutzern, einschließlich Menschen mit Behinderungen, ein barrierefreies Erlebnis zu bieten. Wenn Sie Vorschläge zur Barrierefreiheit haben, kontaktieren Sie uns bitte per Support-E-Mail.",
+    "copyrightTitle": "Urheberrechts- und Markenrechtserklärung",
+    "copyrightContent": "Emoji Hand und das Logo sind Eigentum von emojihand.com. Einige Inhalte, Schriftarten oder Symbole stammen möglicherweise von Dritten und sind urheberrechtlich geschützt. Die unbefugte Nutzung, Vervielfältigung oder Verbreitung der Inhalte dieser Website ist untersagt."
+  },
+  "footer": {
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "contact": "Kontakt",
+    "accessibility": "Barrierefreiheit",
+    "copyright": "Urheberrecht"
+  },
+  "cookieConsent": {
+    "text": "Wir verwenden Cookies und ähnliche Technologien, um Ihre Erfahrung zu verbessern, den Datenverkehr zu analysieren und zu Marketingzwecken. Durch die Nutzung dieser Website stimmen Sie unserer Datenschutzrichtlinie zu.",
+    "accept": "Akzeptieren"
+  },
+  "login": {
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "success": "Anmeldung erfolgreich!",
+    "error": "Anmeldung fehlgeschlagen"
+  },
+  "register": {
+    "title": "Konto erstellen",
+    "desc": "Willkommen! Bitte füllen Sie die Angaben aus, um zu starten.",
+    "usernameLabel": "Benutzername",
+    "usernamePlaceholder": "Geben Sie Ihren Benutzernamen ein",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "loading": "Registrierung...",
+    "continue": "Weiter",
+    "success": "Registrierung erfolgreich!",
+    "error": "Registrierung fehlgeschlagen",
+    "hasAccount": "Sie haben bereits ein Konto?",
+    "signin": "Anmelden"
+  }
 } 

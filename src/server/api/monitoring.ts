@@ -1,5 +1,3 @@
-import { clerkClient } from '@clerk/clerk-sdk-node';
-
 // 安全事件类型
 export enum SecurityEventType {
   RATE_LIMIT_EXCEEDED = 'rate_limit_exceeded',
@@ -48,26 +46,7 @@ export const logSecurityEvent = async (event: Omit<SecurityEvent, 'timestamp'>) 
   });
   
   // 如果是严重事件，更新用户元数据
-  if (event.userId && (
-    event.type === SecurityEventType.SUSPICIOUS_ACTIVITY ||
-    event.type === SecurityEventType.ABNORMAL_USAGE ||
-    event.type === SecurityEventType.DEVICE_FINGERPRINT_ALERT
-  )) {
-    try {
-      const user = await clerkClient.users.getUser(event.userId);
-      await clerkClient.users.updateUser(event.userId, {
-        publicMetadata: {
-          ...user.publicMetadata,
-          securityEvents: [
-            ...(user.publicMetadata.securityEvents as any[] || []),
-            securityEvent,
-          ].slice(-10), // 只保留最近10个安全事件
-        },
-      });
-    } catch (error) {
-      console.error('Failed to update user security metadata:', error);
-    }
-  }
+  // 删除 clerkClient 相关逻辑和 try-catch
 };
 
 // 获取安全事件统计

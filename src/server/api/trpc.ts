@@ -12,7 +12,6 @@ import superjson from "superjson";
 import { ZodError } from "zod";
 
 import { db } from "~/server/db";
-import { getAuth } from '@clerk/nextjs/server';
 
 function headersToObject(headers: Headers): Record<string, string> {
   const obj: Record<string, string> = {};
@@ -48,7 +47,7 @@ export const createTRPCContext = async (opts: { req?: Request | any }) => {
     };
   } else {
     // 生产环境用 Clerk
-    session = opts.req ? getAuth(opts.req) : null;
+    // 删除 Clerk 相关 session 逻辑
   }
   return {
     db,

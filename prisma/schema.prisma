@@ -74,6 +74,9 @@ model User {
     premiumUsesWeekly  Int      @default(0)
     quotaResetAt       DateTime?
     freeUsesDaily      Int      @default(0)
+    // 新增注册/登录字段
+    username           String?  @unique
+    passwordHash       String?
 }
 
 model VerificationToken {
