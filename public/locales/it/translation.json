@@ -88,15 +88,20 @@
     "signup": "Registrati"
   },
   "quota.exhausted": "Quota giornaliera esaurita. Passa a Premium per $9,99/mese e sblocca 20 utilizzi al giorno, tutti gli stili e GPT-4.0!",
-  "profile.noName": "Nessun nickname impostato",
-  "profile.status": "Stato abbonamento",
-  "profile.premium": "Utente Premium",
-  "profile.free": "Utente Gratuito",
-  "profile.expire": "Scadenza Premium",
-  "profile.quota": "Quota giornaliera residua",
-  "profile.points": "Punti",
-  "profile.tips": "Premium: 20/giorno, Gratuito: 5/giorno. I punti possono essere usati per più quota o abbonamento.",
-  "profile.upgrade": "Passa a Premium",
+  "profile": {
+    "points": "Punti",
+    "createdAt": "Data di registrazione",
+    "freeUsesDaily": "Quota giornaliera gratuita",
+    "freeUsesWeekly": "Quota settimanale gratuita",
+    "premiumUsesWeekly": "Quota settimanale premium",
+    "premiumExpireAt": "Premium fino a",
+    "premium": "Utente Premium",
+    "free": "Utente gratuito",
+    "upgrade": "Passa a Premium",
+    "upgrading": "Reindirizzamento...",
+    "paymentFailed": "Impossibile ottenere il link di pagamento",
+    "profileTitle": "Profilo"
+  },
   "privacy": {
     "title": "Informativa sulla Privacy",
     "intro": "La presente Informativa sulla Privacy spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali quando utilizzi Emoji Hand.",
@@ -174,7 +179,7 @@
     "accessibility": "Accessibilità",
     "copyright": "Copyright"
   },
-  "autoRenewNote": "L'abbonamento si rinnova automaticamente. Puoi annullare l'abbonamento in qualsiasi momento sulla piattaforma di pagamento. Dopo la cancellazione, i vantaggi dell'abbonamento rimangono fino alla fine del periodo di fatturazione in corso.",
+  "autoRenewNote": "L’abbonamento si rinnova automaticamente. Puoi annullare l’abbonamento in qualsiasi momento sulla piattaforma di pagamento. Dopo la cancellazione, i vantaggi dell’abbonamento rimangono fino alla fine del periodo di fatturazione in corso.",
   "accessibilityTitle": "Accessibility Statement",
   "accessibilityContent": "This website is committed to providing an accessible experience for all users, including people with disabilities. If you have accessibility suggestions, please contact us via the support email.",
   "copyrightTitle": "Copyright & Trademark Statement",

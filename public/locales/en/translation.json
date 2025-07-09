@@ -88,7 +88,20 @@
     "signup": "Sign up"
   },
   "quota.exhausted": "Daily quota used up. Upgrade to Premium for $9.99/month to unlock 20 uses per day and all styles including GPT-4.0!",
-  "profile": "Profile",
+  "profile": {
+    "points": "Points",
+    "createdAt": "Registered at",
+    "freeUsesDaily": "Free daily quota",
+    "freeUsesWeekly": "Free weekly quota",
+    "premiumUsesWeekly": "Premium weekly quota",
+    "premiumExpireAt": "Premium until",
+    "premium": "Premium User",
+    "free": "Free User",
+    "profileTitle": "Profile",
+    "upgrade": "Upgrade to Premium",
+    "upgrading": "Redirecting...",
+    "paymentFailed": "Failed to get payment link"
+  },
   "signOut": "Sign Out",
   "profile.noName": "No nickname set",
   "profile.status": "Membership Status",

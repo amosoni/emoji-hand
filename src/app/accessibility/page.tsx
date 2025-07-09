@@ -12,8 +12,8 @@ export default function AccessibilityPage() {
       <NavBar />
       <div className="flex-1 flex flex-col items-center justify-center">
         <div className="max-w-3xl w-full mx-auto p-8 mt-8 text-white">
-          <h1 className="text-3xl font-bold mb-4">{t('accessibilityTitle')}</h1>
-          <p className="mb-4">{t('accessibilityContent')}</p>
+          <h1 className="text-3xl font-bold mb-4">{t('accessibilityTitle', '可访问性声明')}</h1>
+          <p className="mb-4">{t('accessibilityContent', '本网站致力于为所有用户（包括残障人士）提供无障碍访问体验。如有无障碍建议，请通过客服邮箱联系我们。')}</p>
         </div>
       </div>
       <Footer />

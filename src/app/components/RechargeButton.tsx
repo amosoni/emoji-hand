@@ -1,6 +1,8 @@
 import { api } from '~/trpc/react';
+import { useTranslation } from 'react-i18next';
 
 export function RechargeButton() {
+  const { t } = useTranslation();
   const { mutate: createCheckout, isPending } = api.creem.createCheckoutSession.useMutation({
     onSuccess: (data: any) => {
       // 兼容 url 或 checkoutUrl 字段
@@ -8,7 +10,7 @@ export function RechargeButton() {
       if (url) {
         window.location.href = url;
       } else {
-        alert('支付链接获取失败');
+        alert(t('profile.paymentFailed'));
       }
     }
   })
@@ -23,8 +25,9 @@ export function RechargeButton() {
         })
       }
       disabled={isPending}
+      className="px-4 py-1 rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-bold shadow hover:scale-105 transition"
     >
-      {isPending ? '跳转中...' : '充值100积分'}
+      {isPending ? t('profile.upgrading') : t('profile.upgrade')}
     </button>
   )
 } 

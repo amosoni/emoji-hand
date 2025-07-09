@@ -12,8 +12,8 @@ export default function CopyrightPage() {
       <NavBar />
       <div className="flex-1 flex flex-col items-center justify-center">
         <div className="max-w-3xl w-full mx-auto p-8 mt-8 text-white">
-          <h1 className="text-3xl font-bold mb-4">{t('copyrightTitle')}</h1>
-          <p className="mb-4">{t('copyrightContent')}</p>
+          <h1 className="text-3xl font-bold mb-4">{t('copyrightTitle', '版权与商标声明')}</h1>
+          <p className="mb-4">{t('copyrightContent', 'Emoji Hand 及其标识归 emojihand.com 所有。部分内容、字体或图标可能来自第三方，版权归原作者所有。未经授权，禁止擅自使用、复制或分发本网站内容。')}</p>
         </div>
       </div>
       <Footer />

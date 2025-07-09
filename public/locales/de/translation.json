@@ -87,7 +87,20 @@
     "signup": "Registrieren",
     "button": "Anmelden"
   },
-  "profile.tips": "Premium: 20/Tag, Kostenlos: 5/Tag. Punkte können für mehr Kontingent oder Mitgliedschaft verwendet werden.",
+  "profile": {
+    "points": "Punkte",
+    "createdAt": "Registriert am",
+    "freeUsesDaily": "Tägliches Freikontingent",
+    "freeUsesWeekly": "Wöchentliches Freikontingent",
+    "premiumUsesWeekly": "Premium Wochenkontingent",
+    "premiumExpireAt": "Premium bis",
+    "premium": "Premium Nutzer",
+    "free": "Kostenloser Nutzer",
+    "upgrade": "Auf Premium upgraden",
+    "upgrading": "Weiterleitung...",
+    "paymentFailed": "Zahlungslink konnte nicht abgerufen werden"
+  },
+  "profileTitle": "Profil",
   "quota.exhausted": "Tageslimit erreicht. Upgrade auf Premium für $9.99/Monat, um 20 Nutzungen/Tag, alle Stile und GPT-4.0 freizuschalten!",
   "profile": "Profil",
   "signOut": "Abmelden",
@@ -174,7 +187,7 @@
     "list11": [
       "Nutzer können jederzeit über die Einstellungsseite oder die Support-E-Mail die Löschung oder den Export ihrer persönlichen Daten beantragen. Die Plattform wird solche Anfragen innerhalb eines angemessenen Zeitraums bearbeiten."
     ],
-    "autoRenewNote": "Membership is auto-renewing. You can cancel your subscription at any time on the payment platform. After cancellation, membership benefits remain until the end of the current billing period.",
+    "autoRenewNote": "Die Mitgliedschaft wird automatisch verlängert. Sie können Ihr Abonnement jederzeit auf der Zahlungsplattform kündigen. Nach der Kündigung bleiben die Mitgliedschaftsvorteile bis zum Ende des aktuellen Abrechnungszeitraums erhalten.",
     "accessibilityTitle": "Barrierefreiheitserklärung",
     "accessibilityContent": "Diese Website ist bestrebt, allen Nutzern, einschließlich Menschen mit Behinderungen, ein barrierefreies Erlebnis zu bieten. Wenn Sie Vorschläge zur Barrierefreiheit haben, kontaktieren Sie uns bitte per Support-E-Mail.",
     "copyrightTitle": "Urheberrechts- und Markenrechtserklärung",

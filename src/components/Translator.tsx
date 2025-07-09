@@ -45,7 +45,9 @@ export default function Translator() {
   const [userAvatar] = useState(() => avatarList[Math.floor(Math.random() * avatarList.length)]);
 
   // 判断是否会员
-  const availableModes = ["normal"];
+  const premiumExpireAt = typeof user === 'object' && user && 'premiumExpireAt' in user ? (user as { premiumExpireAt?: string | null }).premiumExpireAt : null;
+  const isPremium = !!premiumExpireAt && new Date(premiumExpireAt) > new Date();
+  const availableModes = isPremium ? ["normal", "savage", "genz"] : ["normal"];
 
   useEffect(() => {
     const saved = localStorage.getItem("freeUses");

@@ -88,7 +88,20 @@
     "signup": "Cadastre-se"
   },
   "quota.exhausted": "Cota diária esgotada. Faça upgrade para Premium por $9,99/mês e desbloqueie 20 usos diários, todos os estilos e GPT-4.0!",
-  "profile": "Perfil",
+  "profile": {
+    "points": "Pontos",
+    "createdAt": "Data de registro",
+    "freeUsesDaily": "Cota diária gratuita",
+    "freeUsesWeekly": "Cota semanal gratuita",
+    "premiumUsesWeekly": "Cota semanal premium",
+    "premiumExpireAt": "Premium até",
+    "premium": "Usuário Premium",
+    "free": "Usuário gratuito",
+    "upgrade": "Atualizar para Premium",
+    "upgrading": "Redirecionando...",
+    "paymentFailed": "Falha ao obter o link de pagamento"
+  },
+  "profileTitle": "Perfil",
   "signOut": "Sair",
   "profile.noName": "Sem apelido definido",
   "profile.status": "Status de assinatura",

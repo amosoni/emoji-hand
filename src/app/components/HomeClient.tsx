@@ -14,6 +14,7 @@ import i18n from "../../i18n";
 import Footer from './Footer';
 import { useTranslation } from 'react-i18next';
 import { useLoginModal } from '../../../components/LoginModalContext';
+import { useSession } from 'next-auth/react';
 
 // 1. 定义 User 类型
 interface User {
@@ -30,7 +31,9 @@ function ClientOnly({ children }: { children: React.ReactNode }) {
 }
 
 export default function HomeClient({ hello }: { hello: unknown }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { data: session } = useSession();
+  const user = session?.user as User | undefined;
   // const createCheckout = trpc.creem.createCheckoutSession.useMutation();
   // 用户菜单逻辑
   const [open, setOpen] = useState(false);
@@ -46,10 +49,13 @@ export default function HomeClient({ hello }: { hello: unknown }) {
 
   // user/show/clerkLocale/productId 相关逻辑全部注释或用占位符替换
   // 登录、头像、会员、付费等相关按钮全部用 alert('待实现') 占位
-  const user: User | null = null; // Placeholder for user data
   const showData = false; // Placeholder for show data
   const clerkLocale = 'en'; // Placeholder for clerk locale
   const productId = 'prod_123'; // Placeholder for product ID
+
+  useEffect(() => {
+    setOpen(false); // 语言切换时自动关闭菜单，下次打开就是新语言
+  }, [i18n.language]);
 
   return (
     <ClientOnly>
@@ -79,8 +85,8 @@ export default function HomeClient({ hello }: { hello: unknown }) {
                   </button>
                   {open && (
                     <div className="absolute right-0 top-12 bg-white/90 rounded-lg shadow-lg py-2 min-w-[140px] z-50 flex flex-col text-gray-900">
-                    <Link href="/profile" className="px-4 py-2 hover:bg-pink-100 rounded transition text-left">Profile</Link>
-                    <button onClick={() => window.location.href = '/sign-out'} className="px-4 py-2 hover:bg-pink-100 rounded text-left">Sign Out</button>
+                    <Link href="/profile" className="px-4 py-2 hover:bg-pink-100 rounded transition text-left">{t('profileTitle', '个人中心')}</Link>
+                    <button onClick={() => window.location.href = '/sign-out'} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
                     </div>
                   )}
                 </div>

@@ -104,5 +104,20 @@
   "register.success": "登録成功！",
   "register.error": "登録に失敗しました",
   "register.hasAccount": "すでにアカウントをお持ちですか？",
-  "register.signin": "ログイン"
+  "register.signin": "ログイン",
+  "profile": {
+    "points": "ポイント",
+    "createdAt": "登録日",
+    "freeUsesDaily": "1日あたりの無料クォータ",
+    "freeUsesWeekly": "週あたりの無料クォータ",
+    "premiumUsesWeekly": "プレミアム週クォータ",
+    "premiumExpireAt": "プレミアム有効期限",
+    "premium": "プレミアム会員",
+    "free": "一般会員",
+    "upgrade": "プレミアムにアップグレード",
+    "upgrading": "リダイレクト中...",
+    "paymentFailed": "支払いリンクの取得に失敗しました",
+    "autoRenewNote": "プレミアムは自動更新です。お支払いプラットフォームでいつでも解約できます。解約後も現在の請求期間が終了するまで会員特典は有効です。"
+  },
+  "profileTitle": "プロフィール"
 } 

@@ -2,8 +2,8 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function resetDailyQuota() {
-  // 免费用户每日额度重置为2
-  await prisma.user.updateMany({ data: { freeUsesDaily: 2 } });
+  // 免费用户每日额度重置为5
+  await prisma.user.updateMany({ data: { freeUsesDaily: 5 } });
   // 会员用户每日额度重置为20
   await prisma.user.updateMany({
     where: { premiumExpireAt: { gt: new Date() } },

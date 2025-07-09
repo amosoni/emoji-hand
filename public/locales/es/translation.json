@@ -88,7 +88,20 @@
     "button": "Iniciar sesión"
   },
   "quota.exhausted": "Cuota diaria agotada. ¡Mejora a Premium por $9.99/mes y desbloquea 20 usos diarios, todos los estilos y GPT-4.0!",
-  "profile": "Perfil",
+  "profile": {
+    "points": "Puntos",
+    "createdAt": "Fecha de registro",
+    "freeUsesDaily": "Cuota diaria gratuita",
+    "freeUsesWeekly": "Cuota semanal gratuita",
+    "premiumUsesWeekly": "Cuota semanal premium",
+    "premiumExpireAt": "Premium hasta",
+    "premium": "Usuario Premium",
+    "free": "Usuario gratuito",
+    "upgrade": "Actualizar a Premium",
+    "upgrading": "Redirigiendo...",
+    "paymentFailed": "No se pudo obtener el enlace de pago"
+  },
+  "profileTitle": "Perfil",
   "signOut": "Cerrar sesión",
   "profile.noName": "Sin apodo",
   "profile.status": "Estado de membresía",

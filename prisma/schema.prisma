@@ -73,7 +73,7 @@ model User {
     freeUsesWeekly     Int      @default(3)
     premiumUsesWeekly  Int      @default(0)
     quotaResetAt       DateTime?
-    freeUsesDaily      Int      @default(0)
+    freeUsesDaily      Int      @default(5)
     // 新增注册/登录字段
     username           String?  @unique
     passwordHash       String?

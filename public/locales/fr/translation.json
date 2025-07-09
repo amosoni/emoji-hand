@@ -88,7 +88,20 @@
     "signup": "S'inscrire"
   },
   "quota.exhausted": "Quota du jour épuisé. Passez à Premium pour 9,99$/mois et débloquez 20 utilisations/jour, tous les styles et GPT-4.0 !",
-  "profile": "Profil",
+  "profile": {
+    "points": "Points",
+    "createdAt": "Date d'inscription",
+    "freeUsesDaily": "Quota gratuit quotidien",
+    "freeUsesWeekly": "Quota gratuit hebdomadaire",
+    "premiumUsesWeekly": "Quota premium hebdomadaire",
+    "premiumExpireAt": "Premium jusqu'à",
+    "premium": "Utilisateur Premium",
+    "free": "Utilisateur gratuit",
+    "upgrade": "Passer à Premium",
+    "upgrading": "Redirection...",
+    "paymentFailed": "Échec de l'obtention du lien de paiement",
+    "profileTitle": "Profil"
+  },
   "signOut": "Déconnexion",
   "profile.noName": "Aucun pseudo défini",
   "profile.status": "Statut d'abonnement",
@@ -176,7 +189,7 @@
     "accessibility": "Accessibilité",
     "copyright": "Droits d'auteur"
   },
-  "autoRenewNote": "L'abonnement est renouvelé automatiquement. Vous pouvez annuler votre abonnement à tout moment sur la plateforme de paiement. Après l'annulation, les avantages de l'abonnement restent valables jusqu'à la fin de la période de facturation en cours.",
+  "autoRenewNote": "L’abonnement est renouvelé automatiquement. Vous pouvez annuler votre abonnement à tout moment sur la plateforme de paiement. Après l’annulation, les avantages de l’abonnement restent valables jusqu’à la fin de la période de facturation en cours.",
   "accessibilityTitle": "Déclaration d'accessibilité",
   "accessibilityContent": "Ce site s'engage à offrir une expérience accessible à tous les utilisateurs, y compris les personnes en situation de handicap. Si vous avez des suggestions concernant l'accessibilité, veuillez nous contacter par e-mail de support.",
   "copyrightTitle": "Déclaration de droits d'auteur et de marque déposée",

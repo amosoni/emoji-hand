@@ -9,7 +9,9 @@
   "translateButton": "翻译",
   "resultPlaceholder": "翻译结果会显示在这里",
   "shareButton": "分享",
-  "Try": "试试：",
+  "tryPrefix": "试试：",
+  "tryExample": "今晚一起嗨",
+  "tryResult": "🎉🕺✨",
   "realtime.title": "实时表情翻译",
   "realtime.connected": "已连接",
   "realtime.disconnected": "未连接",
@@ -95,15 +97,18 @@
     "exhausted": "今日额度已用完，升级会员仅需 $9.99/month，立即解锁每天15次全部风格和GPT-4.0!"
   },
   "profile": {
-    "noName": "未设置昵称",
-    "status": "会员状态",
+    "points": "积分",
+    "createdAt": "注册时间",
+    "freeUsesDaily": "每日免费额度",
+    "freeUsesWeekly": "每周免费额度",
+    "premiumUsesWeekly": "会员每周额度",
+    "premiumExpireAt": "会员到期时间",
     "premium": "会员用户",
     "free": "普通用户",
-    "expire": "会员到期",
-    "quota": "今日剩余配额",
-    "points": "当前积分",
-    "tips": "会员每日20次，普通用户每日5次。积分可用于兑换会员或额外额度。",
-    "upgrade": "升级会员"
+    "upgrade": "升级会员",
+    "upgrading": "跳转中...",
+    "paymentFailed": "支付链接获取失败",
+    "profileTitle": "个人中心"
   },
   "privacy": {
     "title": "隐私政策",
@@ -146,7 +151,7 @@
     "accessibility": "可访问性声明",
     "accessibilityContent": "本网站致力于为所有用户（包括残障人士）提供无障碍访问体验。如有无障碍建议，请通过客服邮箱联系我们。",
     "copyright": "版权与商标声明",
-    "copyrightContent": "Emoji Hand 及其标识为 emojihand.com 所有。网站部分内容、字体或图标可能来自第三方，版权归原作者所有。未经授权，禁止擅自使用、复制或分发本网站内容。"
+    "copyrightContent": "Emoji Hand 及其标识归 emojihand.com 所有。部分内容、字体或图标可能来自第三方，版权归原作者所有。未经授权，禁止擅自使用、复制或分发本网站内容。"
   },
   "terms": {
     "title": "服务条款",
