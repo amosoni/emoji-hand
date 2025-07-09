@@ -15,6 +15,13 @@ import Footer from './Footer';
 import { useTranslation } from 'react-i18next';
 import { useLoginModal } from '../../../components/LoginModalContext';
 
+// 1. 定义 User 类型
+interface User {
+  imageUrl?: string;
+  fullName?: string;
+  primaryEmailAddress?: { emailAddress: string };
+}
+
 function ClientOnly({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -22,7 +29,7 @@ function ClientOnly({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-export default function HomeClient({ hello }: { hello: any }) {
+export default function HomeClient({ hello }: { hello: unknown }) {
   const { t } = useTranslation();
   // const createCheckout = trpc.creem.createCheckoutSession.useMutation();
   // 用户菜单逻辑
@@ -39,7 +46,7 @@ export default function HomeClient({ hello }: { hello: any }) {
 
   // user/show/clerkLocale/productId 相关逻辑全部注释或用占位符替换
   // 登录、头像、会员、付费等相关按钮全部用 alert('待实现') 占位
-  const user: any = null; // Placeholder for user data
+  const user: User | null = null; // Placeholder for user data
   const showData = false; // Placeholder for show data
   const clerkLocale = 'en'; // Placeholder for clerk locale
   const productId = 'prod_123'; // Placeholder for product ID
@@ -56,19 +63,18 @@ export default function HomeClient({ hello }: { hello: any }) {
               {!user ? (
                 <button
                   className="bg-white/20 hover:bg-pink-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
-                onClick={show}
+                  onClick={show}
                 >
-                {/* {t('login', '登录 / Login')} */}
-                Login
+                  {t('login.button', 'Login')}
                 </button>
               ) : (
                 <div className="relative flex items-center gap-2" ref={menuRef}>
                   <button onClick={() => setOpen(v => !v)} className="focus:outline-none">
                     <img
-                    src={user?.imageUrl || '/images/beanhead (1).svg'}
-                    alt={user?.fullName || 'User'}
+                    src={user?.imageUrl ?? '/images/beanhead (1).svg'}
+                    alt={user?.fullName ?? 'User'}
                       className="w-9 h-9 rounded-full border-2 border-white shadow"
-                    title={user?.fullName || user?.primaryEmailAddress?.emailAddress || 'User'}
+                    title={user?.fullName ?? user?.primaryEmailAddress?.emailAddress ?? 'User'}
                     />
                   </button>
                   {open && (
