@@ -131,11 +131,11 @@ export default function LoginModal() {
               required
               autoFocus
             />
-            <label className="modal-label">{t('login.passwordLabel', 'Password')}</label>
+            <label className="modal-label">{t('login.passwordLabel')}</label>
             <input
               className="modal-input"
               type="password"
-              placeholder={t('login.passwordPlaceholder', 'Enter your password')}
+              placeholder={t('login.passwordPlaceholder')}
               value={password}
               onChange={e => setPassword(e.target.value)}
               required

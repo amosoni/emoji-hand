@@ -103,6 +103,8 @@
     "profileTitle": "Profil"
   },
   "signOut": "Déconnexion",
+  "profileTitle": "Profil",
+  "autoRenewNote": "L’abonnement est renouvelé automatiquement. Vous pouvez annuler votre abonnement à tout moment sur la plateforme de paiement. Après l’annulation, les avantages de l’abonnement restent valables jusqu’à la fin de la période de facturation en cours.",
   "profile.noName": "Aucun pseudo défini",
   "profile.status": "Statut d'abonnement",
   "profile.premium": "Utilisateur Premium",
@@ -189,7 +191,6 @@
     "accessibility": "Accessibilité",
     "copyright": "Droits d'auteur"
   },
-  "autoRenewNote": "L’abonnement est renouvelé automatiquement. Vous pouvez annuler votre abonnement à tout moment sur la plateforme de paiement. Après l’annulation, les avantages de l’abonnement restent valables jusqu’à la fin de la période de facturation en cours.",
   "accessibilityTitle": "Déclaration d'accessibilité",
   "accessibilityContent": "Ce site s'engage à offrir une expérience accessible à tous les utilisateurs, y compris les personnes en situation de handicap. Si vous avez des suggestions concernant l'accessibilité, veuillez nous contacter par e-mail de support.",
   "copyrightTitle": "Déclaration de droits d'auteur et de marque déposée",

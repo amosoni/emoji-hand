@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { openai } from '~/server/openai';
 import { prisma } from '~/server/db';
 // 删除 import { clerkClient } from '@clerk/clerk-sdk-node';
-import { performSecurityCheck } from './security';
+import { performSecurityCheck } from '@/server/api/security';
 
 // 每日配额检查函数
 const checkDailyQuota = async (userId: string) => {

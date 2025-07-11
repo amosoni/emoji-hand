@@ -1,11 +1,10 @@
 "use client";
-import PageContainer from "../components/PageContainer";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import NavBar from '../../components/NavBar';
+import Footer from '../../components/Footer';
 import { useTranslation } from "react-i18next";
 import { useSession } from "next-auth/react";
 // import { api } from "~/trpc/react";
-import { RechargeButton } from '../components/RechargeButton';
+import { RechargeButton } from '../../components/RechargeButton';
 
 // 在顶部添加 User 类型定义
 interface User {

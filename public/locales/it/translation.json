@@ -100,7 +100,8 @@
     "upgrade": "Passa a Premium",
     "upgrading": "Reindirizzamento...",
     "paymentFailed": "Impossibile ottenere il link di pagamento",
-    "profileTitle": "Profilo"
+    "profileTitle": "Profilo",
+    "signOut": "Disconnetti"
   },
   "privacy": {
     "title": "Informativa sulla Privacy",

@@ -103,6 +103,7 @@
     "paymentFailed": "Failed to get payment link"
   },
   "signOut": "Sign Out",
+  "profileTitle": "Profile",
   "profile.noName": "No nickname set",
   "profile.status": "Membership Status",
   "profile.premium": "Premium User",

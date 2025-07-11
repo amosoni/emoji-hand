@@ -1,4 +1,4 @@
-import { api } from '~/trpc/react';
+import { api } from '@/trpc/react';
 import { useTranslation } from 'react-i18next';
 
 export function RechargeButton() {

@@ -101,8 +101,6 @@
     "paymentFailed": "Zahlungslink konnte nicht abgerufen werden"
   },
   "profileTitle": "Profil",
-  "quota.exhausted": "Tageslimit erreicht. Upgrade auf Premium für $9.99/Monat, um 20 Nutzungen/Tag, alle Stile und GPT-4.0 freizuschalten!",
-  "profile": "Profil",
   "signOut": "Abmelden",
   "privacy": {
     "title": "Datenschutzrichtlinie",

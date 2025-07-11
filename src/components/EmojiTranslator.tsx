@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { api } from '~/utils/api';
-import { CaptchaModal } from './CaptchaModal';
+import { CaptchaModal } from '@/components/CaptchaModal';
 
 export const EmojiTranslator = () => {
   const [inputText, setInputText] = useState('');

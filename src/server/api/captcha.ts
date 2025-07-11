@@ -1,6 +1,6 @@
 import { createTRPCRouter, protectedProcedure } from '~/server/api/trpc';
 import { z } from 'zod';
-import { logSecurityEvent, SecurityEventType } from './monitoring';
+import { logSecurityEvent, SecurityEventType } from '@/server/api/monitoring';
 
 // 简单的数学验证码生成
 const generateMathCaptcha = () => {

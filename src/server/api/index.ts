@@ -1,5 +1,5 @@
-import { createTRPCRouter } from './trpc';
-import { creemRouter } from './creem';
+import { createTRPCRouter } from '@/server/api/trpc';
+import { creemRouter } from '@/server/api/creem';
  
 export const appRouter = createTRPCRouter({
   creem: creemRouter,

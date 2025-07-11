@@ -1,4 +1,4 @@
-import { logSecurityEvent, SecurityEventType } from './monitoring';
+import { logSecurityEvent, SecurityEventType } from '@/server/api/monitoring';
 
 // 内存存储（生产环境建议用 Redis）
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();

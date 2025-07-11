@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import i18n from "../../i18n";
+import NavBar from '../../components/NavBar';
+import Footer from '../../components/Footer';
+import i18n from "@/i18n";
 import { useTranslation } from 'react-i18next';
 
 export default function AccessibilityPage() {

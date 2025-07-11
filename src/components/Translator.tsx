@@ -1,16 +1,16 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import ModeSelector from "./ModeSelector";
-import { api } from "~/utils/api";
-import ShareButton from "./ShareButton";
-import { applyBrandSponsorship } from "~/utils/helpers";
+import ModeSelector from "@/components/ModeSelector";
+import { api } from "@/utils/api";
+import ShareButton from "@/components/ShareButton";
+import { applyBrandSponsorship } from "@/utils/helpers";
 import '../i18n';
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import i18n from 'i18next';
-import { api as trpc } from "~/trpc/react";
-import { useLoginModal } from "../../components/LoginModalContext";
+import { api as trpc } from "@/trpc/react";
+import { useLoginModal } from "@/components/LoginModalContext";
 // i18n.changeLanguage('en'); // 移除全局强制切换，保留自动检测
 
 interface ChatMessage {

@@ -72,10 +72,16 @@
   "case4Desc": "“家族群聊用 Emoji Hand 更欢乐，重要时刻一起庆祝！”",
   "login": {
     "button": "登录",
-    "passwordLabel": "密码",
-    "passwordPlaceholder": "请输入密码",
-    "success": "登录成功！",
-    "error": "登录失败"
+    "title": "登录到表情之手",
+    "desc": "欢迎！请登录以继续",
+    "google": "使用 Google 登录",
+    "or": "或",
+    "emailLabel": "邮箱地址或用户名",
+    "emailPlaceholder": "请输入邮箱地址或用户名",
+    "loading": "登录中...",
+    "continue": "继续",
+    "noAccount": "还没有账号？",
+    "signup": "注册"
   },
   "register": {
     "title": "创建账号",
@@ -107,8 +113,7 @@
     "free": "普通用户",
     "upgrade": "升级会员",
     "upgrading": "跳转中...",
-    "paymentFailed": "支付链接获取失败",
-    "profileTitle": "个人中心"
+    "paymentFailed": "支付链接获取失败"
   },
   "privacy": {
     "title": "隐私政策",
@@ -208,5 +213,6 @@
   "cookieConsent": {
     "text": "我们使用Cookie和类似技术以提升体验、分析流量和营销。继续使用即表示同意我们的隐私政策。",
     "accept": "同意"
-  }
+  },
+  "signOut": "退出登录"
 } 

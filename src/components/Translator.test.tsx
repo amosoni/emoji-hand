@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Translator from './Translator';
+import Translator from '@/components/Translator';
 import '../i18n';
 
 jest.mock('~/utils/api', () => ({

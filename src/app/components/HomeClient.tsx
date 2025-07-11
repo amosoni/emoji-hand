@@ -2,19 +2,20 @@
 import Link from "next/link";
 import Head from "next/head";
 import HomeHero from './HomeHero';
-import Translator from "~/components/Translator";
-import EmojiStats from "~/components/EmojiStats";
-import LanguageSwitcher from "~/components/LanguageSwitcher";
-import { LatestPost } from "~/app/_components/post";
-import ShareFooter from "~/components/ShareFooter";
+import Translator from "../../components/Translator";
+import EmojiStats from "../../components/EmojiStats";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
+import { LatestPost } from "@/app/_components/post";
+import ShareFooter from "../../components/ShareFooter";
 // import { useTranslation } from 'react-i18next';
 // import { api as trpc } from "~/trpc/react";
 import { useState, useRef, useEffect } from 'react';
-import i18n from "../../i18n";
+import i18n from "@/i18n";
 import Footer from './Footer';
 import { useTranslation } from 'react-i18next';
-import { useLoginModal } from '../../../components/LoginModalContext';
+import { useLoginModal } from '../../components/LoginModalContext';
 import { useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 
 // 1. 定义 User 类型
 interface User {
@@ -86,7 +87,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
                   {open && (
                     <div className="absolute right-0 top-12 bg-white/90 rounded-lg shadow-lg py-2 min-w-[140px] z-50 flex flex-col text-gray-900">
                     <Link href="/profile" className="px-4 py-2 hover:bg-pink-100 rounded transition text-left">{t('profileTitle', '个人中心')}</Link>
-                    <button onClick={() => window.location.href = '/sign-out'} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
+                    <button onClick={() => signOut({ callbackUrl: '/' })} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
                     </div>
                   )}
                 </div>
@@ -179,7 +180,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
               {/* {createCheckout.isPending ? t('loading', 'Loading...') : t('unlockPremiumBtn', 'Unlock Premium')} */}
               {t('unlockPremiumBtn', 'Unlock Premium')}
               </button>
-            <p className="text-xs text-gray-700 mt-3 text-center">{t('autoRenewNote', '会员为自动续费，您可随时在支付平台取消订阅，取消后会员权益在本周期结束后失效。')}</p>
+            <p className="text-xs text-gray-700 mt-3 text-center">{t('autoRenewNote')}</p>
             </div>
           </section>
           {/* FAQ/帮助区 */}

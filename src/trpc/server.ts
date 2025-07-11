@@ -2,7 +2,7 @@ import "server-only";
 
 import { appRouter, type AppRouter } from "~/server/api/root";
 import { createTRPCContext } from "~/server/api/trpc";
-import { createQueryClient } from "./query-client";
+import { createQueryClient } from "@/trpc/query-client";
 import { cache } from "react";
 
 /**

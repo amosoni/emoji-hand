@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { useLoginModal } from "../../../components/LoginModalContext";
+import { useLoginModal } from "@/components/LoginModalContext";
 
 export default function NavBar() {
   const { t, i18n } = useTranslation();
