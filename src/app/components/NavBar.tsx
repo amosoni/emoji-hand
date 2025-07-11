@@ -18,8 +18,13 @@ export default function NavBar() {
   let locale = params?.locale;
   if (Array.isArray(locale)) locale = locale[0];
   if (!locale || !supported.includes(locale)) {
-    const match = (pathname ?? '').match(/^\/([a-z]{2})\b/);
-    locale = match && supported.includes(match[1]) ? match[1] : 'zh';
+    const regex = /^\/([a-z]{2})\b/;
+    const match = regex.exec(pathname ?? '');
+    if (match && typeof match[1] === 'string' && supported.includes(match[1])) {
+      locale = match[1];
+    } else {
+      locale = 'zh';
+    }
   }
   locale = typeof locale === 'string' && locale ? locale : 'zh';
 
