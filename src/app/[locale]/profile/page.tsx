@@ -24,10 +24,6 @@ export default function ProfilePage() {
   const { data: session } = useSession();
   // 在获取 user 时加类型断言
   const user = session?.user as User | undefined;
-  console.log('当前 user:', user);
-  if (typeof window !== 'undefined') {
-    window.alert('当前 user: ' + JSON.stringify(user));
-  }
   // const { data: profile } = api.profile.getProfile.useQuery(undefined, { enabled: !!user });
   return (
     <div className="min-h-screen bg-gradient-to-r from-yellow-400 via-orange-300 to-pink-500">

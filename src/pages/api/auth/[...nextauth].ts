@@ -57,9 +57,7 @@ export default NextAuth({
   },
   callbacks: {
     async session({ session, token }) {
-      console.log('session callback token:', token);
       const user = await prisma.user.findUnique({ where: { id: token.sub } });
-      console.log('session callback db user:', user);
       if (!session.user || !token?.sub) return session;
       // 查数据库补全 profile 字段
       if (user) {
