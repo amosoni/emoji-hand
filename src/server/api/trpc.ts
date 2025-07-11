@@ -52,7 +52,12 @@ export const createTRPCContext = async (opts: { req?: Request | any, res?: any }
     session = await getServerSession(opts.req, opts.res, authOptions);
   }
   // 兼容 session.user.id => userId，便于 protectedProcedure 校验
-  const userId = session?.user?.id || session?.userId;
+  let userId: string | undefined;
+  if (session && 'user' in session && (session as any).user?.id) {
+    userId = (session as any).user.id;
+  } else if (session && 'userId' in session) {
+    userId = (session as any).userId;
+  }
   const sessionWithUserId = { ...session, userId };
   return {
     db,

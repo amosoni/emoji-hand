@@ -21,7 +21,12 @@ export const creemRouter = createTRPCRouter({
     successUrl: z.string(),
     cancelUrl: z.string(),
   })).mutation(async ({ ctx, input }) => {
-    const email = ctx.session?.sessionClaims?.email;
+    let email: string | undefined;
+    if ('user' in (ctx.session ?? {})) {
+      email = (ctx.session as any).user?.email;
+    } else if ('sessionClaims' in (ctx.session ?? {})) {
+      email = (ctx.session as any).sessionClaims?.email;
+    }
     if (!email) throw new Error('No email in session');
     console.log('createCheckoutSession input:', input);
     const proxy = process.env.CREEM_API_PROXY;
