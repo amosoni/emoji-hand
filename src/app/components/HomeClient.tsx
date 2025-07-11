@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { useLoginModal } from '../../components/LoginModalContext';
 import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
-import { RechargeButton } from '../../components/RechargeButton';
+import { RechargeButton } from './RechargeButton';
 
 // 1. 定义 User 类型
 interface User {

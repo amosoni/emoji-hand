@@ -55,12 +55,14 @@ export default function Translator() {
     else localStorage.setItem("freeUses", "5");
   }, []);
 
+  const { mutateAsync, isPending } = trpc.emoji.translate.useMutation();
+
   const handleSend = async () => {
     if (!user) {
       show(); // 未登录弹出登录弹窗
       return;
     }
-    if (!inputText.trim() || isLoading) return;
+    if (!inputText.trim() || isPending) return;
     setMessages((prev) => [
       ...prev,
       {
@@ -72,7 +74,7 @@ export default function Translator() {
     setIsLoading(true);
     setError(null);
     try {
-      const res = await trpc.emoji.translate.mutate({ text: inputText, mode });
+      const res = await mutateAsync({ text: inputText, mode });
       setMessages((prev) => [
         ...prev,
         {
@@ -82,7 +84,7 @@ export default function Translator() {
         },
       ]);
     } catch (err: any) {
-      setError(err?.message || '服务异常');
+      setError(err?.message ?? '服务异常');
     }
     setIsLoading(false);
     setInputText("");
@@ -189,7 +191,7 @@ export default function Translator() {
                   )}
                 </div>
               ))}
-              {isLoading && (
+              {isPending && (
                 <div className="flex justify-start">
                   <div className="bg-white/10 text-white px-4 py-2 rounded-lg">
                     <div className="flex items-center gap-2">
@@ -210,7 +212,7 @@ export default function Translator() {
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={t("realtime.inputPlaceholder", "Type your message...")}
-            disabled={isLoading}
+            disabled={isPending}
             rows={1}
             aria-label="Type your message"
             className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-500 disabled:opacity-50 resize-none min-h-[48px] max-h-40 overflow-y-auto"
@@ -218,7 +220,7 @@ export default function Translator() {
           />
           <button
             onClick={handleSend}
-            disabled={!inputText.trim() || isLoading}
+            disabled={!inputText.trim() || isPending}
             className="px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-500 text-white rounded-lg transition-colors"
             aria-label="Send message"
           >
