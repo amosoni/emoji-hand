@@ -19,7 +19,7 @@ export function RechargeButton() {
     <button
       onClick={() =>
         createCheckout({
-          productId: 'your_creem_product_id',
+          productId: 'prod_3M7LPqQ8RoK6bcS3qkbrUQ',
           successUrl: window.location.origin + '/pay/success',
           cancelUrl: window.location.origin + '/pay/cancel',
         })
