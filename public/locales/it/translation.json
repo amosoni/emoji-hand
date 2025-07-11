@@ -94,14 +94,18 @@
     "freeUsesDaily": "Quota giornaliera gratuita",
     "freeUsesWeekly": "Quota settimanale gratuita",
     "premiumUsesWeekly": "Quota settimanale premium",
-    "premiumExpireAt": "Premium fino a",
+    "premiumExpireAt": "Scadenza Premium",
     "premium": "Utente Premium",
-    "free": "Utente gratuito",
+    "free": "Utente Gratuito",
     "upgrade": "Passa a Premium",
     "upgrading": "Reindirizzamento...",
     "paymentFailed": "Impossibile ottenere il link di pagamento",
     "profileTitle": "Profilo",
-    "signOut": "Disconnetti"
+    "noName": "Nessun soprannome impostato",
+    "status": "Stato dell'abbonamento",
+    "expire": "Scadenza Premium",
+    "quota": "Quota giornaliera rimanente",
+    "tips": "Premium: 20/giorno, Gratuito: 5/giorno. I punti possono essere utilizzati per quote extra o abbonamento."
   },
   "privacy": {
     "title": "Informativa sulla Privacy",

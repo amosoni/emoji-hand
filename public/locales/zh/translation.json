@@ -115,7 +115,13 @@
     "free": "普通用户",
     "upgrade": "升级会员",
     "upgrading": "跳转中...",
-    "paymentFailed": "支付链接获取失败"
+    "paymentFailed": "支付链接获取失败",
+    "profileTitle": "个人中心",
+    "noName": "未设置昵称",
+    "status": "会员状态",
+    "expire": "会员到期",
+    "quota": "今日剩余额度",
+    "tips": "会员：每日20次，普通：每日5次。积分可用于兑换更多额度或会员。"
   },
   "privacy": {
     "title": "隐私政策",

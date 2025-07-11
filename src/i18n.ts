@@ -13,7 +13,7 @@ import de from '../public/locales/de/translation.json';
 import it from '../public/locales/it/translation.json';
 import ru from '../public/locales/ru/translation.json';
 
-const languages = ['en','zh','es','fr','ja','ko','pt','de','it','ru'];
+const languages = ['en','zh','zh-CN','es','fr','ja','ko','pt','de','it','ru'];
 
 void i18n
   .use(LanguageDetector)
@@ -21,6 +21,7 @@ void i18n
   .init({
     resources: {
       zh: { translation: zh },
+      'zh-CN': { translation: zh }, // 新增
       en: { translation: en },
       es: { translation: es },
       fr: { translation: fr },
@@ -44,6 +45,10 @@ void i18n
 // 只允许切换到支持的语言，否则强制切en
 if (!languages.includes(i18n.language)) {
   void i18n.changeLanguage('en');
+}
+// 检测到 zh-CN 时自动切换为 zh
+if (i18n.language === 'zh-CN') {
+  void i18n.changeLanguage('zh');
 }
 
 export default i18n; 
