@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useLoginModal } from "@/components/LoginModalContext";
+import { useParams, usePathname } from 'next/navigation';
 
 export default function NavBar() {
   const { t, i18n } = useTranslation();
@@ -11,6 +12,16 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { show } = useLoginModal();
+  const params = useParams();
+  const pathname = usePathname();
+  const supported = ['zh','en','ja','ko','es','fr','pt','de','it','ru'];
+  let locale = params?.locale;
+  if (Array.isArray(locale)) locale = locale[0];
+  if (!locale || !supported.includes(locale)) {
+    const match = (pathname ?? '').match(/^\/([a-z]{2})\b/);
+    locale = match && supported.includes(match[1]) ? match[1] : 'zh';
+  }
+  locale = typeof locale === 'string' && locale ? locale : 'zh';
 
   useEffect(() => {
     setOpen(false); // 语言切换时自动关闭菜单，下次打开就是新语言
@@ -46,7 +57,9 @@ export default function NavBar() {
             </button>
             {open && (
               <div className="absolute right-0 top-12 bg-white/90 rounded-lg shadow-lg py-2 min-w-[140px] z-50 flex flex-col text-gray-900">
-                <Link href="/profile" className="px-4 py-2 hover:bg-pink-100 rounded transition text-left">{t('profileTitle', '个人中心')}</Link>
+                <button className="px-4 py-2 hover:bg-pink-100 rounded transition text-left w-full text-inherit" onClick={() => {
+                  window.location.href = '/zh/profile';
+                }}>{t('profileTitle')}</button>
                 <button onClick={() => signOut()} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
               </div>
             )}

@@ -31,7 +31,8 @@ void i18n
       it: { translation: it },
       ru: { translation: ru },
     },
-    fallbackLng: 'en',
+    lng: 'zh', // 默认语言设为中文
+    fallbackLng: 'zh', // fallback 也设为中文
     supportedLngs: languages,
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
