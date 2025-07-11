@@ -23,7 +23,15 @@ export default NextAuth({
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
-        const user = await prisma.user.findFirst({ where: { email: credentials.email } }) as {
+        // 支持用邮箱或用户名登录
+        const user = await prisma.user.findFirst({
+          where: {
+            OR: [
+              { email: credentials.email },
+              { username: credentials.email }
+            ]
+          }
+        }) as {
           id: string;
           name?: string;
           username?: string;

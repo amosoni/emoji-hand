@@ -81,7 +81,9 @@
     "loading": "登录中...",
     "continue": "继续",
     "noAccount": "还没有账号？",
-    "signup": "注册"
+    "signup": "注册",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "请输入密码"
   },
   "register": {
     "title": "创建账号",
