@@ -55,7 +55,7 @@ export default function Translator() {
     else localStorage.setItem("freeUses", "5");
   }, []);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!user) {
       show(); // 未登录弹出登录弹窗
       return;
@@ -70,18 +70,21 @@ export default function Translator() {
       },
     ]);
     setIsLoading(true);
-    // 这里可接入新接口或直接模拟回复
-    setTimeout(() => {
+    setError(null);
+    try {
+      const res = await trpc.emoji.translate.mutate({ text: inputText, mode });
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "[DEMO] 这里是模拟回复，后端接口已移除。",
+          content: res.result,
           timestamp: new Date(),
         },
       ]);
-      setIsLoading(false);
-    }, 1000);
+    } catch (err: any) {
+      setError(err?.message || '服务异常');
+    }
+    setIsLoading(false);
     setInputText("");
   };
 

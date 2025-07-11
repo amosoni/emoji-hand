@@ -16,6 +16,7 @@ import { useTranslation } from 'react-i18next';
 import { useLoginModal } from '../../components/LoginModalContext';
 import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
+import { RechargeButton } from '../../components/RechargeButton';
 
 // 1. 定义 User 类型
 interface User {
@@ -169,18 +170,8 @@ export default function HomeClient({ hello }: { hello: unknown }) {
             <div className="bg-white/30 border-2 border-transparent bg-clip-padding rounded-2xl shadow-xl p-8 flex flex-col items-center max-w-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('unlockPremiumTitle', 'Unlock Premium')}</h3>
               <p className="text-gray-800 mb-4 text-center">{t('unlockPremiumDesc', 'Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience for just')} <span className="font-bold text-[#EC4899]">$9.99/month</span>.</p>
-              <button
-                className="bg-gradient-to-r from-[#A259FF] to-[#43A1FF] text-white px-10 py-3 rounded-xl font-bold text-lg shadow-md transition hover:scale-105 hover:from-pink-400 hover:to-yellow-300 active:scale-95"
-              onClick={() => {
-                // 付费逻辑后续用 NextAuth.js 替换
-                alert('付费功能待实现');
-              }}
-              // disabled={createCheckout.isPending}
-              >
-              {/* {createCheckout.isPending ? t('loading', 'Loading...') : t('unlockPremiumBtn', 'Unlock Premium')} */}
-              {t('unlockPremiumBtn', 'Unlock Premium')}
-              </button>
-            <p className="text-xs text-gray-700 mt-3 text-center">{t('autoRenewNote')}</p>
+              <RechargeButton />
+              <p className="text-xs text-gray-700 mt-3 text-center">{t('terms.autoRenewNote')}</p>
             </div>
           </section>
           {/* FAQ/帮助区 */}
