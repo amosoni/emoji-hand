@@ -12,6 +12,8 @@ import superjson from "superjson";
 import { ZodError } from "zod";
 
 import { db } from "~/server/db";
+import { getServerSession } from "next-auth";
+import { authOptions } from "~/pages/api/auth/[...nextauth]";
 
 function headersToObject(headers: Headers): Record<string, string> {
   const obj: Record<string, string> = {};
@@ -33,7 +35,7 @@ function headersToObject(headers: Headers): Record<string, string> {
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = async (opts: { req?: Request | any }) => {
+export const createTRPCContext = async (opts: { req?: Request | any, res?: any }) => {
   let session = null;
   if (process.env.NODE_ENV === "development") {
     // 本地开发环境，mock 一个假用户
@@ -45,13 +47,16 @@ export const createTRPCContext = async (opts: { req?: Request | any }) => {
       },
       // 可根据需要添加其它字段
     };
-  } else {
-    // 生产环境用 Clerk
-    // 删除 Clerk 相关 session 逻辑
+  } else if (opts.req && opts.res) {
+    // 生产环境，解析 next-auth session
+    session = await getServerSession(opts.req, opts.res, authOptions);
   }
+  // 兼容 session.user.id => userId，便于 protectedProcedure 校验
+  const userId = session?.user?.id || session?.userId;
+  const sessionWithUserId = { ...session, userId };
   return {
     db,
-    session,
+    session: sessionWithUserId,
     ...opts,
   };
 };

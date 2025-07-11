@@ -5,7 +5,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from '~/server/db';
 import bcrypt from 'bcryptjs';
 
-export default NextAuth({
+export const authOptions = {
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
@@ -75,4 +75,6 @@ export default NextAuth({
       return session;
     },
   },
-}); 
+};
+
+export default NextAuth(authOptions); 
