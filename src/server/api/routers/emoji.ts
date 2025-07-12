@@ -9,7 +9,7 @@ export const emojiRouter = createTRPCRouter({
     .input(z.object({ text: z.string(), mode: z.string(), model: z.string().optional() }))
     .mutation(async ({ ctx, input }) => {
       const userId = ctx.session?.userId;
-      console.log('userId from session:', userId);
+      console.log('emoji.translate userId from session:', userId);
       if (!userId) throw new Error('No userId in session');
       // 获取用户信息
       const user = await prisma.user.findUnique({ where: { id: userId } });
