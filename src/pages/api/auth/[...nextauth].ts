@@ -60,7 +60,7 @@ export const authOptions = {
   callbacks: {
     async session({ session, token }: { session: Session; token: JWT }) {
       const user = await prisma.user.findUnique({ where: { id: token.sub } });
-      if (!session.user || !token?.sub) return session;
+      if (!session.user?.id || !token?.sub) return session;
       // 查数据库补全 profile 字段
       if (user) {
         session.user.id = user.id;
@@ -75,6 +75,20 @@ export const authOptions = {
         // 其它字段可按需补充
       }
       return session;
+    },
+  },
+  cookies: {
+    sessionToken: {
+      name: process.env.NODE_ENV === "production"
+        ? "__Secure-next-auth.session-token"
+        : "next-auth.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+        domain: "emojihand.com",
+      },
     },
   },
 };
