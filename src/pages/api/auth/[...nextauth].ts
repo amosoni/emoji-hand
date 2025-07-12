@@ -55,7 +55,7 @@ export const authOptions = {
     // 可添加更多第三方登录
   ],
   session: {
-    strategy: 'jwt' as const,
+    strategy: 'database' as const,
   },
   // 已彻底回退 cookies 字段，恢复 next-auth 默认 cookie 策略
   callbacks: {
