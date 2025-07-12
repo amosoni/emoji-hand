@@ -33,6 +33,26 @@ const generateMathCaptcha = () => {
 // 验证码存储（生产环境建议用 Redis）
 const captchaStore = new Map<string, { answer: string; expires: number }>();
 
+// 安全获取 headers 工具
+type HeadersLike = { get: (key: string) => unknown };
+function hasHeaders(obj: unknown): obj is { headers: HeadersLike } {
+  return !!obj && typeof obj === 'object' && 'headers' in obj && typeof (obj as { headers?: unknown }).headers === 'object' && typeof (obj as { headers: HeadersLike }).headers.get === 'function';
+}
+function getHeader(ctx: unknown, key: string): string | null {
+  if (hasHeaders(ctx) && ctx.headers) {
+    const value = ctx.headers.get(key);
+    return typeof value === 'string' ? value : null;
+  }
+  if (
+    ctx && typeof ctx === 'object' && 'req' in ctx && hasHeaders((ctx as { req?: unknown }).req)
+  ) {
+    const req = (ctx as { req: { headers: HeadersLike } }).req;
+    const value = req.headers.get(key);
+    return typeof value === 'string' ? value : null;
+  }
+  return null;
+}
+
 export const captchaRouter = createTRPCRouter({
   // 生成验证码
   generate: protectedProcedure
@@ -50,8 +70,8 @@ export const captchaRouter = createTRPCRouter({
       await logSecurityEvent({
         type: SecurityEventType.CAPTCHA_REQUIRED,
         userId: typeof ctx.session?.userId === 'string' ? ctx.session.userId : undefined,
-        ip: ctx.req?.headers.get('x-forwarded-for'),
-        userAgent: ctx.req?.headers.get('user-agent'),
+        ip: getHeader(ctx, 'x-forwarded-for'),
+        userAgent: getHeader(ctx, 'user-agent'),
         details: { captchaId, question: captcha.question },
       });
       
@@ -74,8 +94,8 @@ export const captchaRouter = createTRPCRouter({
         await logSecurityEvent({
           type: SecurityEventType.CAPTCHA_FAILED,
           userId: typeof ctx.session?.userId === 'string' ? ctx.session.userId : undefined,
-          ip: ctx.req?.headers.get('x-forwarded-for'),
-          userAgent: ctx.req?.headers.get('user-agent'),
+          ip: getHeader(ctx, 'x-forwarded-for'),
+          userAgent: getHeader(ctx, 'user-agent'),
           details: { captchaId: input.captchaId, reason: 'Captcha not found or expired' },
         });
         throw new Error('Captcha not found or expired');
@@ -86,8 +106,8 @@ export const captchaRouter = createTRPCRouter({
         await logSecurityEvent({
           type: SecurityEventType.CAPTCHA_FAILED,
           userId: typeof ctx.session?.userId === 'string' ? ctx.session.userId : undefined,
-          ip: ctx.req?.headers.get('x-forwarded-for'),
-          userAgent: ctx.req?.headers.get('user-agent'),
+          ip: getHeader(ctx, 'x-forwarded-for'),
+          userAgent: getHeader(ctx, 'user-agent'),
           details: { captchaId: input.captchaId, reason: 'Captcha expired' },
         });
         throw new Error('Captcha expired');
@@ -97,8 +117,8 @@ export const captchaRouter = createTRPCRouter({
         await logSecurityEvent({
           type: SecurityEventType.CAPTCHA_FAILED,
           userId: typeof ctx.session?.userId === 'string' ? ctx.session.userId : undefined,
-          ip: ctx.req?.headers.get('x-forwarded-for'),
-          userAgent: ctx.req?.headers.get('user-agent'),
+          ip: getHeader(ctx, 'x-forwarded-for'),
+          userAgent: getHeader(ctx, 'user-agent'),
           details: { captchaId: input.captchaId, reason: 'Incorrect answer', providedAnswer: input.answer },
         });
         throw new Error('Incorrect answer');
@@ -111,8 +131,8 @@ export const captchaRouter = createTRPCRouter({
       await logSecurityEvent({
         type: SecurityEventType.CAPTCHA_SUCCESS,
         userId: typeof ctx.session?.userId === 'string' ? ctx.session.userId : undefined,
-        ip: ctx.req?.headers.get('x-forwarded-for'),
-        userAgent: ctx.req?.headers.get('user-agent'),
+        ip: getHeader(ctx, 'x-forwarded-for'),
+        userAgent: getHeader(ctx, 'user-agent'),
         details: { captchaId: input.captchaId },
       });
       
