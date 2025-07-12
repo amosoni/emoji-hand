@@ -70,7 +70,7 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     };
   } else if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
     try {
-      session = await getServerSession(opts.req, opts.res, authOptions);
+    session = await getServerSession(opts.req, opts.res, authOptions);
     } catch (e) {
       session = null;
     }
@@ -91,6 +91,8 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
       userId = (session as { id?: string }).id;
     }
   }
+  console.error('context session:', session);
+  console.error('context userId:', userId);
   const sessionWithUserId = { ...session, userId };
   return {
     db,
