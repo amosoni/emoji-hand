@@ -14,6 +14,7 @@ import { ZodError } from "zod";
 import { db } from "~/server/db";
 import { getServerSession } from "next-auth";
 import { authOptions } from "~/pages/api/auth/[...nextauth]";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 function headersToObject(headers: Headers): Record<string, string> {
   const obj: Record<string, string> = {};
@@ -21,6 +22,26 @@ function headersToObject(headers: Headers): Record<string, string> {
     obj[key] = value;
   });
   return obj;
+}
+
+// 类型守卫：判断 req 是否为 Node/NextApiRequest
+interface MaybeNodeRequest {
+  getHeader?: (...args: unknown[]) => unknown;
+  headers?: Record<string, unknown> & { get?: (...args: unknown[]) => unknown };
+}
+function isNodeRequest(req: unknown): req is MaybeNodeRequest {
+  return !!req && (
+    typeof (req as MaybeNodeRequest).getHeader === "function" ||
+    typeof (req as MaybeNodeRequest).headers === "object" ||
+    typeof (req as MaybeNodeRequest).headers?.get === "function"
+  );
+}
+
+function isNextApiRequest(req: unknown): req is NextApiRequest {
+  return !!req && typeof (req as NextApiRequest).headers === "object" && typeof (req as NextApiRequest).method === "string";
+}
+function isNextApiResponse(res: unknown): res is NextApiResponse {
+  return !!res && typeof (res as NextApiResponse).status === "function";
 }
 
 /**
@@ -35,7 +56,7 @@ function headersToObject(headers: Headers): Record<string, string> {
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = async (opts: { req?: Request | any, res?: any }) => {
+export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) => {
   let session = null;
   if (process.env.NODE_ENV === "development") {
     // 本地开发环境，mock 一个假用户
@@ -47,17 +68,15 @@ export const createTRPCContext = async (opts: { req?: Request | any, res?: any }
       },
       // 可根据需要添加其它字段
     };
-  } else if (opts.req && opts.res) {
-    // 生产环境，解析 next-auth session
-    session = await getServerSession(opts.req, opts.res, authOptions);
+  } else if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
+    try {
+      session = await getServerSession(opts.req, opts.res, authOptions);
+    } catch (e) {
+      session = null;
+    }
   }
   // 兼容 session.user.id => userId，便于 protectedProcedure 校验
-  let userId: string | undefined;
-  if (session && 'user' in session && (session as any).user?.id) {
-    userId = (session as any).user.id;
-  } else if (session && 'userId' in session) {
-    userId = (session as any).userId;
-  }
+  const userId = getUserIdFromSession(session);
   const sessionWithUserId = { ...session, userId };
   return {
     db,
@@ -151,8 +170,29 @@ export const publicProcedure = t.procedure.use(timingMiddleware);
 export const protectedProcedure = t.procedure
   .use(timingMiddleware)
   .use(({ ctx, next }) => {
-    if (!ctx.session || !ctx.session.userId) {
+    if (!ctx.session?.userId) {
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
     return next();
   });
+
+// 类型守卫：判断 session 是否有 user.id
+function getUserIdFromSession(session: unknown): string | undefined {
+  if (
+    session && typeof session === 'object'
+  ) {
+    if ('user' in session && typeof (session as { user?: { id?: unknown } }).user === 'object') {
+      const user = (session as { user?: { id?: unknown } }).user;
+      if (user && typeof user === 'object' && 'id' in user && typeof (user as { id?: unknown }).id === 'string') {
+        return (user as { id: string }).id;
+      }
+    }
+    if ('userId' in session && typeof (session as { userId?: unknown }).userId === 'string') {
+      return (session as { userId: string }).userId;
+    }
+    if ('id' in session && typeof (session as { id?: unknown }).id === 'string') {
+      return (session as { id: string }).id;
+    }
+  }
+  return undefined;
+}
