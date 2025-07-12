@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useLoginModal } from "./LoginModalContext";
 import { useTranslation } from 'react-i18next';
-import { signIn } from 'next-auth/react';
+import { signIn, getSession } from 'next-auth/react';
 import { useState } from 'react';
 
 export default function LoginModal() {
@@ -33,6 +33,7 @@ export default function LoginModal() {
       if (res.ok) {
         setSuccess(true);
         await signIn('credentials', { email, password, redirect: false });
+        await getSession(); // 强制刷新 session
         close();
       } else {
         setError(data.error || t('register.error', 'Registration failed'));
@@ -53,6 +54,7 @@ export default function LoginModal() {
       const res = await signIn('credentials', { email, password, redirect: false });
       if (res?.ok) {
         setSuccess(true);
+        await getSession(); // 强制刷新 session
         close();
       } else {
         setError(t('login.error', 'Login failed'));
