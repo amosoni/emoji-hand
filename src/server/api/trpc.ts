@@ -75,8 +75,22 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
       session = null;
     }
   }
-  // 兼容 session.user.id => userId，便于 protectedProcedure 校验
-  const userId = getUserIdFromSession(session);
+  // 直接兜底提取 userId
+  let userId: string | undefined;
+  if (session && typeof session === 'object') {
+    // 兼容 next-auth session
+    if ('user' in session && session.user && typeof session.user === 'object' && 'id' in session.user) {
+      userId = (session.user as { id?: string }).id;
+    }
+    // 兼容 mock/session.userId
+    if (!userId && 'userId' in session) {
+      userId = (session as { userId?: string }).userId;
+    }
+    // 兜底：session.id
+    if (!userId && 'id' in session) {
+      userId = (session as { id?: string }).id;
+    }
+  }
   const sessionWithUserId = { ...session, userId };
   return {
     db,
