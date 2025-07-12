@@ -57,18 +57,7 @@ export const authOptions = {
   session: {
     strategy: 'jwt' as const,
   },
-  // 只自定义 sessionToken 的 domain，保证 tRPC 路由和 next-auth 路由一致，兼容 signOut
-  cookies: {
-    sessionToken: {
-      name: process.env.NODE_ENV === "production"
-        ? "__Secure-next-auth.session-token"
-        : "next-auth.session-token",
-      options: {
-        domain: "emojihand.com",
-      },
-    },
-  },
-  // cookies 字段已回退，恢复默认策略，保证 signOut 正常
+  // 已彻底回退 cookies 字段，恢复 next-auth 默认 cookie 策略
   callbacks: {
     async session({ session, token }: { session: Session; token: JWT }) {
       const user = await prisma.user.findUnique({ where: { id: token.sub } });
