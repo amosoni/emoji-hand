@@ -87,7 +87,7 @@ export const authOptions = {
         sameSite: "lax",
         path: "/",
         secure: process.env.NODE_ENV === "production",
-        domain: "emojihand.com",
+        // domain: "emojihand.com", // 移除 domain 字段
       },
     },
   },
