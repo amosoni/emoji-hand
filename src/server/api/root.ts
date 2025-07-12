@@ -1,5 +1,5 @@
 import { createTRPCRouter } from "~/server/api/trpc";
-import { emojiRouter } from "~/server/api/emoji";
+import { emojiRouter } from "~/server/api/routers/emoji";
 import { creemRouter } from "~/server/api/creem";
 import { captchaRouter } from "~/server/api/captcha";
 
