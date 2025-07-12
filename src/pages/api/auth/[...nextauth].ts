@@ -77,20 +77,6 @@ export const authOptions = {
       return session;
     },
   },
-  cookies: {
-    sessionToken: {
-      name: process.env.NODE_ENV === "production"
-        ? "__Secure-next-auth.session-token"
-        : "next-auth.session-token",
-      options: {
-        httpOnly: true,
-        sameSite: "lax",
-        path: "/",
-        secure: process.env.NODE_ENV === "production",
-        // domain: "emojihand.com", // 移除 domain 字段
-      },
-    },
-  },
 };
 
 export default NextAuth(authOptions); 
