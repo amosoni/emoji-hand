@@ -32,11 +32,13 @@ void i18n
       it: { translation: it },
       ru: { translation: ru },
     },
-    lng: 'zh', // 默认语言设为中文
-    fallbackLng: 'zh', // fallback 也设为中文
+    lng: 'en', // 默认语言设为英文
+    fallbackLng: 'en', // fallback 也设为英文
     supportedLngs: languages,
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['path', 'localStorage', 'navigator', 'htmlTag'],
+      lookupFromPathIndex: 0,
+      lookupLocalStorage: 'i18nextLng',
       caches: ['localStorage'],
     },
     interpolation: { escapeValue: false },

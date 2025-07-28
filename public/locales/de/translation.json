@@ -21,6 +21,7 @@
   "modes.normal": "Normal",
   "modes.savage": "Wild",
   "modes.genz": "GenZ Slang",
+  "modes.tiktok": "TikTok",
   "paywall.title": "Mitglieder-exklusive Stile",
   "paywall.desc": "Upgrade, um alle Stile und GPT-4.0 freizuschalten!",
   "paywall.iknow": "Verstanden",
@@ -229,5 +230,179 @@
     "error": "Registrierung fehlgeschlagen",
     "hasAccount": "Sie haben bereits ein Konto?",
     "signin": "Anmelden"
+  },
+  "style.tiktok": "TikTok",
+  "nav": {
+    "tiktok": "TikTok-Modus",
+    "tiktokEmojis": "TikTok-Emoji-Anleitung"
+  },
+  "pages": {
+    "tiktok": {
+      "title": "TikTok-Emojis",
+      "subtitle": "Verwandeln Sie Ihre Nachrichten in TikTok-Style-Ausdrücke mit übertriebenen, lustigen und fesselnden Emojis!",
+      "officialEmojis": "Offizielle TikTok-Emojis",
+      "officialEmojisDesc": "Wählen Sie offizielle TikTok-Emojis und erleben Sie die authentische TikTok-Emoji-Kultur!",
+      "tryTitle": "TikTok-Modus ausprobieren",
+      "tryDesc": "Wählen Sie den \"TikTok\"-Modus im Übersetzer unten, um die Magie zu erleben!"
+    },
+    "tiktokEmojis": {
+      "title": "TikTok-Emojis - Vollständiger Leitfaden zu versteckten Emojis und Bedeutungen",
+      "subtitle": "Entdecken Sie alle TikTok-Emojis einschließlich versteckter Kurzcodes wie [smile], [happy], [loveface]. Erfahren Sie, wie Sie TikTok-Emojis verwenden, ihre Bedeutungen und erhalten Sie die vollständige Liste der offiziellen TikTok-Emoji-Codes.",
+      "faq": {
+        "title": "Häufig gestellte Fragen zu TikTok-Emojis",
+        "q1": {
+          "title": "Was sind TikTok-Emojis?",
+          "answer": "TikTok-Emojis sind eine Sammlung von benutzerdefinierten Emoji-Zeichen und versteckten Kurzcodes, die Benutzer in Kommentaren, Beschriftungen und Nachrichten auf der TikTok-Plattform verwenden können. Diese umfassen sowohl Standard-Unicode-Emojis als auch TikTok-spezifische versteckte Emojis, die über Kurzcodes wie [smile], [happy] und [loveface] zugänglich sind."
+        },
+        "q2": {
+          "title": "Wie verwende ich TikTok-Emojis?",
+          "answer": "Um TikTok-Emojis zu verwenden, geben Sie einfach den Kurzcode in eckigen Klammern ein (z.B. [smile]) in Ihrem Kommentar oder Ihrer Beschriftung. TikTok konvertiert diese Kurzcodes automatisch in das entsprechende Emoji. Sie können auch Standard-Emoji-Tastaturen verwenden oder Emojis direkt aus anderen Quellen kopieren und einfügen."
+        },
+        "q3": {
+          "title": "Was sind die beliebtesten TikTok-Emojis?",
+          "answer": "Zu den beliebtesten TikTok-Emojis gehören [smile], [happy], [loveface], [wronged], [cry], [laugh], [cool], [angry] und [surprised]. Diese Emojis werden häufig in Kommentaren und Beschriftungen verwendet, um Emotionen und Reaktionen auszudrücken."
+        },
+        "q4": {
+          "title": "Sind TikTok-Emojis dasselbe wie normale Emojis?",
+          "answer": "TikTok unterstützt sowohl Standard-Unicode-Emojis (wie 😂, ❤️, 🔥) als auch seine eigenen benutzerdefinierten versteckten Emojis, die über Kurzcodes zugänglich sind. Die versteckten Emojis haben einen einzigartigen visuellen Stil, der auf allen Geräten und Plattformen konsistent ist."
+        },
+        "q5": {
+          "title": "Kann ich TikTok-Emojis auf anderen Plattformen verwenden?",
+          "answer": "TikToks versteckte Emojis (über Kurzcodes zugänglich) sind spezifisch für die TikTok-Plattform und werden auf anderen Social-Media-Plattformen nicht wie beabsichtigt angezeigt. Standard-Unicode-Emojis funktionieren jedoch auf allen Plattformen."
+        }
+      },
+      "try": {
+        "title": "Probieren Sie unseren TikTok-Emoji-Übersetzer",
+        "desc": "Verwandeln Sie Ihren Text in TikTok-Style-Ausdrücke mit unserem KI-gestützten Emoji-Übersetzer!",
+        "button": "Jetzt TikTok-Modus ausprobieren"
+      }
+    }
+  },
+  "tiktok": {
+    "page": {
+      "official": {
+        "title": "🎵 Offizielle TikTok-Emojis",
+        "desc": "Wähle offizielle TikTok-Emojis und erlebe die authentische TikTok-Emoji-Kultur!"
+      }
+    },
+    "demo": {
+      "selected": {
+        "title": "Ausgewählter Inhalt:",
+        "emoji": "Emoji:",
+        "shortcode": "Kurzcode:"
+      }
+    },
+    "emoji": {
+      "default": "TikTok-Emoji",
+      "example": "Beispiel:"
+    },
+    "picker": {
+      "shortcodes": "Kurzcodes",
+      "combinations": "Kombinationen",
+      "popular": "Beliebt",
+      "categories": "Kategorien",
+      "instructions": {
+        "title": "Verwendungsanweisungen",
+        "tip1": "Klicken Sie auf Kurzcodes, um sie direkt in das Eingabefeld einzufügen",
+        "tip2": "Kombinations-Emojis eignen sich zum Ausdrücken komplexer Emotionen",
+        "tip3": "Beliebte Emojis werden von TikTok-Nutzern am häufigsten verwendet",
+        "tip4": "Kategorisierte Emojis sind nach Funktion organisiert, um das Finden zu erleichtern"
+      }
+    },
+    "description": "Verwandeln Sie Ihren Text in TikTok-Style-Ausdrücke mit übertriebenen, lustigen und fesselnden Emojis!",
+    "feature1": {
+      "title": "Dramatische Ausdrücke",
+      "desc": "Übertriebene Emotionen und Reaktionen wie TikTok-Creators"
+    },
+    "feature2": {
+      "title": "Trendige Vibes",
+      "desc": "Neueste Emoji-Trends und virale Ausdrücke"
+    },
+    "feature3": {
+      "title": "Kreativer Stil",
+      "desc": "Einzigartige Kombinationen, die in sozialen Medien herausstechen"
+    },
+    "examples": {
+      "title": "TikTok-Style-Beispiele",
+      "scream": "Klassische TikTok-Schock-Ausdruckskombination",
+      "stun": "Verwirrung oder Schock ausdrücken",
+      "lovely": "Perfektion und Liebe ausdrücken",
+      "speechless": "Sprachlos oder schockiert über Worte hinaus",
+      "excited": "Extreme Aufregung und Liebe ausdrücken",
+      "proud": "Ausdrücken, dass dies genau der Inhalt ist, den ich wollte"
+    },
+    "popular": {
+      "title": "Beliebte TikTok-Emojis"
+    },
+    "howToUse": {
+      "title": "Wie man den TikTok-Modus verwendet",
+      "tip1": {
+        "title": "Tipp 1: Seien Sie dramatisch",
+        "desc": "Verwenden Sie übertriebene Ausdrücke und Reaktionen"
+      },
+      "tip2": {
+        "title": "Tipp 2: Bleiben Sie trendy",
+        "desc": "Folgen Sie aktuellen Emoji-Trends und viralen Ausdrücken"
+      },
+      "tip3": {
+        "title": "Tipp 3: Seien Sie kreativ",
+        "desc": "Mischen und kombinieren Sie Emojis für einzigartige Kombinationen"
+      },
+      "tip4": {
+        "title": "Tipp 4: Zeigen Sie Persönlichkeit",
+        "desc": "Lassen Sie Ihre Persönlichkeit durch Ihre Emoji-Auswahl leuchten"
+      }
+    },
+    "guide": {
+      "tabs": {
+        "shortcodes": "Versteckte Kurzcodes",
+        "meanings": "Emoji-Bedeutungen",
+        "combinations": "Beliebte Kombinationen",
+        "popular": "Am Beliebtesten"
+      },
+      "intro": {
+        "title": "Was sind TikTok-Emojis?",
+        "p1": "TikTok-Emojis sind eine einzigartige Sammlung von benutzerdefinierten Emoji-Zeichen und versteckten Kurzcodes, die Benutzer in Kommentaren, Beschriftungen und Nachrichten auf der TikTok-Plattform verwenden können. Im Gegensatz zu Standard-Emojis hat TikTok sein eigenes \"verstecktes Emoji\"-System, das es Benutzern ermöglicht, über Kurzcodes auf spezielle Emoji-Zeichen zuzugreifen.",
+        "p2": "Diese versteckten Emojis werden durch Eingabe spezifischer Kurzcodes in eckigen Klammern zugänglich, wie",
+        "p2_2": "oder",
+        "p2_3": "Wenn Sie diese Kurzcodes in TikTok-Kommentaren oder -Beschriftungen eingeben, werden sie automatisch in die entsprechenden benutzerdefinierten Emoji-Grafiken konvertiert.",
+        "p3": "TikTok unterstützt alle plattformnativen Emojis, aber diese versteckten Emojis bieten einen einzigartigen visuellen Stil, der auf allen Geräten und Plattformen konsistent ist und sie bei TikTok-Nutzern beliebt macht, um spezifische Emotionen und Reaktionen auszudrücken."
+      },
+      "howto": {
+        "title": "Wie man TikTok-Emojis verwendet",
+        "method1": {
+          "title": "Methode 1: Kurzcodes",
+          "step1": "Geben Sie den Kurzcode in eckigen Klammern ein (z.B.",
+          "step2": "TikTok konvertiert es automatisch in das Emoji",
+          "step3": "Funktioniert in Kommentaren, Beschriftungen und Nachrichten"
+        },
+        "method2": {
+          "title": "Methode 2: Direktes Emoji",
+          "step1": "Verwenden Sie die Emoji-Tastatur Ihres Geräts",
+          "step2": "Kopieren und fügen Sie Emojis aus anderen Quellen ein",
+          "step3": "Funktioniert mit allen Standard-Unicode-Emojis"
+        }
+      },
+      "shortcodes": {
+        "title": "Versteckte TikTok-Emoji-Kurzcodes"
+      },
+      "meanings": {
+        "title": "TikTok-Emoji-Bedeutungen"
+      },
+      "combinations": {
+        "title": "Beliebte TikTok-Emoji-Kombinationen"
+      },
+      "popular": {
+        "title": "Beliebteste TikTok-Emojis"
+      },
+      "categories": {
+        "title": "TikTok-Emoji-Kategorien",
+        "reactions": "Reaktionen",
+        "emotions": "Emotionen",
+        "actions": "Aktionen",
+        "emphasis": "Betonung",
+        "special": "Besondere"
+      }
+    }
   }
 } 

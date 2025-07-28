@@ -1,226 +1,483 @@
 {
-  "appTitle": "表情之手",
-  "appSlogan": "终极表情翻译器",
-  "appDescBold": "Emoji Hand（表情之手）是你的一站式工具，能将任意文字秒变有趣、富有表现力的表情消息。",
-  "appDesc": "由AI驱动，Emoji Hand帮你用更多情感、创意和风格表达自我。立即体验，让你的话语更出彩！",
-  "Normal": "普通",
-  "Savage": "毒舌",
-  "GenZ Slang": "GenZ俚语",
-  "translateButton": "翻译",
-  "resultPlaceholder": "翻译结果会显示在这里",
-  "shareButton": "分享",
-  "tryPrefix": "试试：",
-  "tryExample": "今晚一起嗨",
+  "appTitle": "emoji hand",
+  "appSlogan": "The Ultimate Emoji Translator",
+  "appDescBold": "Emoji Hand (emojihand) is your one-stop tool to instantly turn any text into fun, expressive emoji messages.",
+  "appDesc": "Powered by AI, Emoji Hand helps you communicate with more emotion, creativity, and style. Try it now and make your words stand out!",
+  "Normal": "Normal",
+  "Savage": "Savage",
+  "GenZ Slang": "GenZ Slang",
+  "translateButton": "Translate",
+  "resultPlaceholder": "Translation will appear here",
+  "shareButton": "Share",
+  "Try": "Try:",
+  "realtime.title": "Real-time Emoji Translation",
+  "realtime.connected": "Connected",
+  "realtime.disconnected": "Disconnected",
+  "realtime.connect": "Connect",
+  "realtime.send": "Send",
+  "realtime.inputPlaceholder": "Type your message...",
+  "realtime.translating": "Translating...",
+  "realtime.startConversation": "Start a conversation to see real-time emoji translation!",
+  "modes.normal": "Normal",
+  "modes.savage": "Savage",
+  "modes.genz": "GenZ Slang",
+  "modes.tiktok": "TikTok",
+  "paywall.title": "Member-Only Styles",
+  "paywall.desc": "Upgrade to unlock all styles and GPT-4.0!",
+  "paywall.iknow": "Got it",
+  "whyUseTitle": "Why Use Emoji Hand?",
+  "feature1Title": "Spice Up Your Chats",
+  "feature1Desc": "Make your messages more lively and engaging on WhatsApp, Telegram, Discord, and more.",
+  "feature2Title": "Social Media Magic",
+  "feature2Desc": "Stand out on Twitter, Instagram, TikTok, and Facebook with creative emoji-powered posts.",
+  "feature3Title": "Multi-language Support",
+  "feature3Desc": "Translate and emoji-fy your text in English, Spanish, French, and more.",
+  "whatUsersSay": "What Users Say",
+  "user1Quote": "Emoji Hand makes my group chats so much more fun!",
+  "user1Name": "Alex, Student",
+  "user2Quote": "Perfect for spicing up my social media posts. Love the GenZ mode!",
+  "user2Name": "Jamie, Content Creator",
+  "user3Quote": "Super easy to use and the emoji suggestions are spot on.",
+  "user3Name": "Taylor, Marketer",
+  "highlight1Title": "AI Smart Emoji",
+  "highlight1Desc": "Context-aware emoji translation powered by GPT.",
+  "highlight2Title": "Multi-language",
+  "highlight2Desc": "Supports English, Spanish, French, and more.",
+  "highlight3Title": "Trendy Modes",
+  "highlight3Desc": "Normal, Savage, and GenZ Slang modes for every vibe.",
+  "hotEmojis": "hotEmojis",
+  "unlockPremiumTitle": "Unlock Premium",
+  "unlockPremiumDesc": "Up to 20 savage/GenZ translations per day, exclusive emoji packs, and ad-free experience for just",
+  "unlockPremiumBtn": "Unlock Premium",
+  "faqTitle": "Frequently Asked Questions about Emoji Hand",
+  "faq1Q": "What is Emoji Hand?",
+  "faq1A": "Emoji Hand is an AI-powered tool that instantly adds the most relevant emojis to your text, making your messages more expressive and fun.",
+  "faq2Q": "Is Emoji Hand free?",
+  "faq2A": "Yes! You can use normal mode for free. Premium features are available for a small fee.",
+  "faq3Q": "How does the AI work?",
+  "faq3A": "We use OpenAI's GPT to understand your text and add the most relevant emojis based on context and style.",
+  "faq4Q": "Can I use Emoji Hand on my phone?",
+  "faq4A": "Absolutely! Emoji Hand is fully responsive and works great on mobile devices.",
+  "aboutTitle": "About Emoji Hand",
+  "aboutDesc": "Emoji Hand was born from the idea that everyone deserves to express themselves more vividly online. Our mission is to make digital communication more fun, emotional, and creative—one emoji at a time. Whether you’re chatting with friends, posting on social media, or just want to brighten someone’s day, Emoji Hand is here to help!",
+  "howUseTitle": "How People Use Emoji Hand",
+  "case1Title": "Remote Teams",
+  "case1Desc": "We use Emoji Hand to make our Slack standups more lively and keep the team spirit high!",
+  "case2Title": "Event Planners",
+  "case2Desc": "Perfect for sending out fun, engaging invitations and reminders with a personal touch.",
+  "case3Title": "Content Creators",
+  "case3Desc": "My followers love the extra flair in my posts—Emoji Hand makes my content pop!",
+  "case4Title": "Families & Friends",
+  "case4Desc": "We use Emoji Hand to add fun to our family group chats and celebrate special moments together.",
+  "style.normal": "Normal",
+  "style.savage": "Savage",
+  "style.genz": "GenZ Slang",
+  "style.tiktok": "TikTok",
+  "tiktok.description": "Transform your text into TikTok-style expressions with exaggerated, fun, and engaging emojis!",
+  "tiktok.feature1.title": "Dramatic Expressions",
+  "tiktok.feature1.desc": "Exaggerated emotions and reactions like TikTok creators",
+  "tiktok.feature2.title": "Trendy Vibes",
+  "tiktok.feature2.desc": "Latest emoji trends and viral expressions",
+  "tiktok.feature3.title": "Creative Style",
+  "tiktok.feature3.desc": "Unique combinations that stand out on social media",
+  "tiktok.examples.title": "TikTok Style Examples",
+  "tiktok.popular.title": "Popular TikTok Emojis",
+  "tiktok.tips.title": "How to Use TikTok Mode",
+  "tiktok.tips.tip1.title": "Tip 1: Be Dramatic",
+  "tiktok.tips.tip1.desc": "Use exaggerated expressions and reactions",
+  "tiktok.tips.tip2.title": "Tip 2: Stay Trendy",
+  "tiktok.tips.tip2.desc": "Follow current emoji trends and viral expressions",
+  "tiktok.tips.tip3.title": "Tip 3: Be Creative",
+  "tiktok.tips.tip3.desc": "Mix and match emojis for unique combinations",
+  "tiktok.tips.tip4.title": "Tip 4: Show Personality",
+  "tiktok.tips.tip4.desc": "Let your personality shine through your emoji choices",
+  "tiktok.page.title": "TikTok Emojis",
+  "tiktok.page.subtitle": "Transform your messages into TikTok-style expressions with exaggerated, fun, and engaging emojis!",
+  "tiktok.page.official.title": "🎵 抖音官方表情",
+  "tiktok.page.official.desc": "选择抖音官方表情，体验真实的抖音表情文化！",
+  "tiktok.picker.shortcodes": "短代码",
+  "tiktok.picker.combinations": "组合表情",
+  "tiktok.picker.popular": "热门表情",
+  "tiktok.picker.categories": "分类",
+  "tiktok.page.try.title": "尝试抖音模式",
+  "tiktok.page.try.desc": "在下面的翻译器中选择\"抖音风格\"模式来体验魔法！",
+  "tiktok.emojis.page.title": "抖音表情 - 隐藏表情符号完整指南与含义",
+      "nav": {
+      "tiktok": "抖音模式",
+      "tiktokEmojis": "抖音表情指南"
+    },
+  "pages": {
+    "tiktok": {
+      "title": "抖音表情",
+      "subtitle": "将你的消息转换为抖音风格的表情表达，使用夸张、有趣、富有感染力的表情符号！",
+      "officialEmojis": "抖音官方表情",
+      "officialEmojisDesc": "选择抖音官方表情，体验真实的抖音表情文化！",
+      "tryTitle": "尝试抖音模式",
+      "tryDesc": "在下面的翻译器中选择\"抖音风格\"模式来体验魔法！"
+    },
+    "tiktokEmojis": {
+      "title": "抖音表情 - 隐藏表情符号完整指南与含义",
+      "subtitle": "发现所有抖音表情，包括隐藏短代码如 ",
+      "subtitle2": "学习如何使用抖音表情、它们的含义，并获取官方抖音表情代码的完整列表。",
+      "faq": {
+        "title": "关于抖音表情的常见问题",
+        "q1": {
+          "title": "什么是抖音表情？",
+          "answer": "抖音表情是用户可以在抖音平台的评论、标题和消息中使用的自定义表情符号字符和隐藏短代码的集合。这些包括标准Unicode表情符号和可以通过短代码（如 ",
+          "answer2": "和 "
+        },
+        "q2": {
+          "title": "如何使用抖音表情？",
+          "answer": "要使用抖音表情，只需在评论或标题中的方括号内输入短代码（例如，",
+          "answer2": "）。抖音会自动将这些短代码转换为相应的表情符号。您也可以使用标准表情键盘或直接从其他来源复制粘贴表情符号。"
+        },
+        "q3": {
+          "title": "最受欢迎的抖音表情有哪些？",
+          "answer": "一些最受欢迎的抖音表情包括 ",
+          "answer2": "和 ",
+          "answer3": "这些表情符号经常在评论和标题中使用，以表达情感和反应。"
+        },
+        "q4": {
+          "title": "抖音表情与普通表情符号相同吗？",
+          "answer": "抖音支持标准Unicode表情符号（如 ",
+          "answer2": "）和通过短代码访问的自定义隐藏表情符号。隐藏表情符号具有独特的视觉风格，在所有设备和平台上保持一致，使其在抖音用户中很受欢迎，用于表达特定的情感和反应。"
+        },
+        "q5": {
+          "title": "我可以在其他平台上使用抖音表情吗？",
+          "answer": "抖音的隐藏表情符号（通过短代码访问）是抖音平台特有的，在其他社交媒体平台上不会按预期显示。但是，标准Unicode表情符号在所有平台上都可以使用。"
+        }
+      },
+      "try": {
+        "title": "尝试我们的抖音表情翻译器",
+        "desc": "使用我们的人工智能表情翻译器，将您的文本转换为抖音风格的表达！",
+        "button": "立即尝试抖音模式"
+      }
+    }
+  },
+  "tiktok.emojis.page.subtitle": "Discover all TikTok emojis including hidden shortcodes like [smile], [happy], [loveface]. Learn how to use TikTok emojis, their meanings, and get the complete list of official TikTok emoji codes.",
+  "tiktok.emojis.faq.title": "Frequently Asked Questions About TikTok Emojis",
+  "tiktok.emojis.faq.q1": "What are TikTok emojis?",
+  "tiktok.emojis.faq.a1": "TikTok emojis are a collection of custom emoji characters and hidden shortcodes that users can use in comments, captions, and messages on the TikTok platform. These include both standard Unicode emojis and TikTok-specific hidden emojis that can be accessed through shortcodes like [smile], [happy], and [loveface].",
+  "tiktok.emojis.faq.q2": "How do I use TikTok emojis?",
+  "tiktok.emojis.faq.a2": "To use TikTok emojis, simply type the shortcode in square brackets (e.g., [smile]) in your comment or caption. TikTok will automatically convert these shortcodes into the corresponding emoji. You can also use standard emoji keyboards or copy-paste emojis directly.",
+  "tiktok.emojis.faq.q3": "What are the most popular TikTok emojis?",
+  "tiktok.emojis.faq.a3": "Some of the most popular TikTok emojis include [smile], [happy], [loveface], [wronged], [cry], [laugh], [cool], [angry], and [surprised]. These emojis are frequently used in comments and captions to express emotions and reactions.",
+  "tiktok.emojis.faq.q4": "Are TikTok emojis the same as regular emojis?",
+  "tiktok.emojis.faq.a4": "TikTok supports both standard Unicode emojis (like 😂, ❤️, 🔥) and its own custom hidden emojis accessed through shortcodes. The hidden emojis have a unique visual style that's consistent across all devices and platforms.",
+  "tiktok.emojis.faq.q5": "Can I use TikTok emojis on other platforms?",
+  "tiktok.emojis.faq.a5": "TikTok's hidden emojis (accessed via shortcodes) are specific to the TikTok platform and won't display as intended on other social media platforms. However, standard Unicode emojis work across all platforms.",
+  "tiktok.emojis.try.title": "Try Our TikTok Emoji Translator",
+  "tiktok.emojis.try.desc": "Transform your text into TikTok-style expressions with our AI-powered emoji translator!",
+  "tiktok.emojis.try.button": "🎵 立即尝试抖音模式",
+  "tiktok": {
+    "guide": {
+      "tabs": {
+        "shortcodes": "隐藏短代码",
+        "meanings": "表情含义",
+        "combinations": "热门组合",
+        "popular": "最受欢迎"
+      },
+      "intro": {
+        "title": "什么是抖音表情？",
+        "p1": "抖音表情是用户可以在抖音平台的评论、标题和消息中使用的自定义表情符号字符和隐藏短代码的独特集合。与标准表情符号不同，抖音有自己的\"隐藏表情\"系统，允许用户通过短代码访问特殊表情符号字符。",
+        "p2": "这些隐藏表情符号通过在方括号中键入特定短代码来访问，例如",
+        "p2_2": "或",
+        "p2_3": "当您在抖音评论或标题中键入这些短代码时，它们会自动转换为相应的自定义表情图形。",
+        "p3": "抖音支持所有平台原生表情符号，但这些隐藏表情符号提供了独特的视觉风格，在所有设备和平台上保持一致，使其在抖音用户中很受欢迎，用于表达特定的情感和反应。"
+      },
+      "howto": {
+        "title": "如何使用抖音表情",
+        "method1": {
+          "title": "方法1：短代码",
+          "step1": "在方括号中键入短代码（例如，",
+          "step2": "抖音会自动将其转换为表情符号",
+          "step3": "在评论、标题和消息中有效"
+        },
+        "method2": {
+          "title": "方法2：直接表情",
+          "step1": "使用设备的表情键盘",
+          "step2": "从其他来源复制粘贴表情符号",
+          "step3": "适用于所有标准Unicode表情符号"
+        }
+      },
+      "shortcodes": {
+        "title": "隐藏抖音表情短代码"
+      },
+      "meanings": {
+        "title": "抖音表情含义"
+      },
+      "combinations": {
+        "title": "热门抖音表情组合"
+      },
+      "popular": {
+        "title": "最受欢迎的抖音表情"
+      },
+      "categories": {
+        "title": "抖音表情分类",
+        "reactions": "反应表情",
+        "emotions": "情感表情",
+        "actions": "动作表情",
+        "emphasis": "强调表情",
+        "special": "特殊表情"
+      }
+    }
+  },
+  "tiktok": {
+    "demo": {
+      "selected": {
+        "title": "选中的内容：",
+        "emoji": "表情：",
+        "shortcode": "短代码："
+      }
+    },
+    "emoji": {
+      "default": "抖音表情",
+      "example": "示例："
+    },
+    "picker": {
+      "instructions": {
+        "title": "使用说明",
+        "tip1": "点击短代码可直接插入到输入框",
+        "tip2": "组合表情适合表达复杂情感",
+        "tip3": "热门表情是抖音用户最常用的",
+        "tip4": "分类表情按功能组织，便于查找"
+      }
+    },
+    "description": "将你的消息转换为抖音风格的表情表达，使用夸张、有趣、富有感染力的表情符号！",
+    "feature1": {
+      "title": "戏剧化表达",
+      "desc": "夸张的情感反应，像抖音创作者一样"
+    },
+    "feature2": {
+      "title": "潮流氛围",
+      "desc": "最新的表情趋势和病毒式表达"
+    },
+    "feature3": {
+      "title": "创意风格",
+      "desc": "在社交媒体上脱颖而出的独特组合"
+    },
+    "examples": {
+      "title": "抖音风格示例",
+      "scream": "抖音经典震惊表情组合",
+      "stun": "表达无法理解或震惊",
+      "lovely": "表达完美和喜爱",
+      "speechless": "无语或震惊到说不出话",
+      "excited": "表达极度兴奋和喜爱",
+      "proud": "表达这正是想要的内容"
+    },
+    "popular": {
+      "title": "热门抖音表情"
+    },
+    "guide": {
+      "tabs": {
+        "shortcodes": "隐藏短代码",
+        "meanings": "表情含义",
+        "combinations": "热门组合",
+        "popular": "最受欢迎"
+      },
+      "intro": {
+        "title": "什么是抖音表情？",
+        "p1": "抖音表情是用户可以在抖音平台的评论、标题和消息中使用的自定义表情符号字符和隐藏短代码的独特集合。与标准表情符号不同，抖音有自己的\"隐藏表情\"系统，允许用户通过短代码访问特殊表情符号字符。",
+        "p2": "这些隐藏表情符号通过在方括号中键入特定短代码来访问，例如",
+        "p2_2": "或",
+        "p2_3": "当您在抖音评论或标题中键入这些短代码时，它们会自动转换为相应的自定义表情图形。",
+        "p3": "抖音支持所有平台原生表情符号，但这些隐藏表情符号提供了独特的视觉风格，在所有设备和平台上保持一致，使其在抖音用户中很受欢迎，用于表达特定的情感和反应。"
+      },
+      "howto": {
+        "title": "如何使用抖音表情",
+        "method1": {
+          "title": "方法1：短代码",
+          "step1": "在方括号中键入短代码（例如，",
+          "step2": "抖音会自动将其转换为表情符号",
+          "step3": "在评论、标题和消息中有效"
+        },
+        "method2": {
+          "title": "方法2：直接表情",
+          "step1": "使用设备的表情键盘",
+          "step2": "从其他来源复制粘贴表情符号",
+          "step3": "适用于所有标准Unicode表情符号"
+        }
+      },
+      "shortcodes": {
+        "title": "隐藏抖音表情短代码"
+      },
+      "meanings": {
+        "title": "抖音表情含义"
+      },
+      "combinations": {
+        "title": "热门抖音表情组合"
+      },
+      "popular": {
+        "title": "最受欢迎的抖音表情"
+      },
+      "categories": {
+        "title": "抖音表情分类",
+        "reactions": "反应表情",
+        "emotions": "情感表情",
+        "actions": "动作表情",
+        "emphasis": "强调表情",
+        "special": "特殊表情"
+      }
+    }
+  },
+  "tryPrefix": "Try:",
+  "tryExample": "Let's party tonight",
   "tryResult": "🎉🕺✨",
-  "realtime.title": "实时表情翻译",
-  "realtime.connected": "已连接",
-  "realtime.disconnected": "未连接",
-  "realtime.connect": "连接",
-  "realtime.send": "发送",
-  "realtime.inputPlaceholder": "输入你的内容...",
-  "realtime.translating": "翻译中...",
-  "realtime.startConversation": "开始对话，体验实时表情翻译！",
-  "modes.normal": "普通",
-  "modes.savage": "毒舌",
-  "modes.genz": "GenZ俚语",
-  "paywall.title": "会员专属风格",
-  "paywall.desc": "升级会员即可解锁全部风格和GPT-4.0！",
-  "paywall.iknow": "我知道了",
-  "whyUseTitle": "为什么选择 Emoji Hand？",
-  "feature1Title": "让聊天更有趣",
-  "feature1Desc": "让你的消息在微信、QQ、Telegram、Discord等平台更生动有趣。",
-  "feature2Title": "社交媒体魔法",
-  "feature2Desc": "在微博、抖音、B站、朋友圈等平台用创意表情内容脱颖而出。",
-  "feature3Title": "多语言支持",
-  "feature3Desc": "支持中文、英文、日语、韩语等多语言表情翻译。",
-  "whatUsersSay": "用户怎么说",
-  "user1Quote": "“Emoji Hand 让我的群聊变得更有趣！”",
-  "user1Name": "Alex，学生",
-  "user2Quote": "“社交媒体发帖更有范儿，GenZ模式超喜欢！”",
-  "user2Name": "Jamie，内容创作者",
-  "user3Quote": "“超级易用，表情推荐很贴心。”",
-  "user3Name": "Taylor，市场人",
-  "highlight1Title": "AI 智能表情",
-  "highlight1Desc": "基于GPT的上下文智能表情翻译。",
-  "highlight2Title": "多语言",
-  "highlight2Desc": "支持中文、英文、日语、韩语等。",
-  "highlight3Title": "潮流风格",
-  "highlight3Desc": "普通、毒舌、GenZ俚语多种风格随心选。",
-  "hotEmojis": "热门表情",
-  "unlockPremiumTitle": "解锁会员",
-  "unlockPremiumDesc": "升级会员，享受每日20次毒舌/GenZ翻译、专属表情包、无广告体验，仅需",
-  "unlockPremiumBtn": "立即解锁会员",
-  "faqTitle": "Emoji Hand 常见问题",
-  "faq1Q": "Emoji Hand 是什么？",
-  "faq1A": "Emoji Hand 是一款AI驱动的表情翻译工具，能让你的文字秒变有趣、富有表现力。",
-  "faq2Q": "Emoji Hand 免费吗？",
-  "faq2A": "普通模式永久免费，会员功能需付费解锁。",
-  "faq3Q": "AI 是如何工作的？",
-  "faq3A": "我们用OpenAI GPT理解你的内容，并根据上下文智能推荐表情。",
-  "faq4Q": "手机能用吗？",
-  "faq4A": "当然！Emoji Hand 完全响应式，手机体验也很棒。",
-  "aboutTitle": "关于 Emoji Hand",
-  "aboutDesc": "Emoji Hand 诞生于让每个人都能更生动表达自我的想法。我们的使命是让数字沟通更有趣、更有情感、更有创意——每次只需一个表情。无论你是在和朋友聊天、发社交动态，还是想让某人的一天更美好，Emoji Hand 都能帮到你！",
-  "howUseTitle": "Emoji Hand 的使用场景",
-  "case1Title": "远程团队",
-  "case1Desc": "“我们用 Emoji Hand 让 Slack 早会更有活力，团队氛围更棒！”",
-  "case2Title": "活动策划",
-  "case2Desc": "“发邀请、发提醒都更有趣更吸引人！”",
-  "case3Title": "内容创作者",
-  "case3Desc": "“我的粉丝超喜欢帖子里的表情，Emoji Hand 让内容更出彩！”",
-  "case4Title": "家庭与朋友",
-  "case4Desc": "“家族群聊用 Emoji Hand 更欢乐，重要时刻一起庆祝！”",
   "login": {
-    "button": "登录",
-    "title": "登录到表情之手",
-    "desc": "欢迎！请登录以继续",
-    "google": "使用 Google 登录",
-    "or": "或",
-    "emailLabel": "邮箱地址或用户名",
-    "emailPlaceholder": "请输入邮箱地址或用户名",
-    "loading": "登录中...",
-    "continue": "继续",
-    "noAccount": "还没有账号？",
-    "signup": "注册",
-    "passwordLabel": "密码",
-    "passwordPlaceholder": "请输入密码"
+    "button": "Login",
+    "title": "Sign in to emojihand",
+    "desc": "Welcome! Please sign in to continue",
+    "google": "Continue with Google",
+    "or": "or",
+    "emailLabel": "Email address or username",
+    "emailPlaceholder": "Enter email or username",
+    "loading": "Logging in...",
+    "continue": "Continue",
+    "noAccount": "Don't have an account?",
+    "signup": "Sign up"
   },
-  "register": {
-    "title": "创建账号",
-    "desc": "欢迎！请填写以下信息开始注册。",
-    "usernameLabel": "用户名",
-    "usernamePlaceholder": "请输入用户名",
-    "emailLabel": "邮箱地址",
-    "emailPlaceholder": "请输入邮箱地址",
-    "passwordLabel": "密码",
-    "passwordPlaceholder": "请输入密码",
-    "loading": "注册中...",
-    "continue": "继续",
-    "success": "注册成功！",
-    "error": "注册失败",
-    "hasAccount": "已有账号？",
-    "signin": "登录"
-  },
-  "quota": {
-    "exhausted": "今日额度已用完，升级会员仅需 $9.99/month，立即解锁每天15次全部风格和GPT-4.0!"
-  },
+  "quota.exhausted": "Daily quota used up. Upgrade to Premium for $9.99/month to unlock 20 uses per day and all styles including GPT-4.0!",
   "profile": {
-    "points": "积分",
-    "createdAt": "注册时间",
-    "freeUsesDaily": "每日免费额度",
-    "freeUsesWeekly": "每周免费额度",
-    "premiumUsesWeekly": "会员每周额度",
-    "premiumExpireAt": "会员到期时间",
-    "premium": "会员用户",
-    "free": "普通用户",
-    "upgrade": "升级会员",
-    "upgrading": "跳转中...",
-    "paymentFailed": "支付链接获取失败",
-    "profileTitle": "个人中心",
-    "noName": "未设置昵称",
-    "status": "会员状态",
-    "expire": "会员到期",
-    "quota": "今日剩余额度",
-    "tips": "会员：每日20次，普通：每日5次。积分可用于兑换更多额度或会员。"
+    "points": "Points",
+    "createdAt": "Registered at",
+    "freeUsesDaily": "Free daily quota",
+    "freeUsesWeekly": "Free weekly quota",
+    "premiumUsesWeekly": "Premium weekly quota",
+    "premiumExpireAt": "Premium Expiry",
+    "premium": "Premium User",
+    "free": "Free User",
+    "upgrade": "Upgrade to Premium",
+    "upgrading": "Redirecting...",
+    "paymentFailed": "Failed to get payment link",
+    "profileTitle": "Profile",
+    "noName": "No nickname set",
+    "status": "Membership Status",
+    "expire": "Premium Expiry",
+    "quota": "Daily Quota Left",
+    "tips": "Premium: 20/day, Free: 5/day. Points can be used for extra quota or membership."
   },
-  "privacy": {
-    "title": "隐私政策",
-    "intro": "本隐私政策适用于 Emoji Hand（以下简称“本网站”或“我们”）的所有用户。我们致力于保护您的个人信息和隐私安全。",
-    "section1": "1. 我们收集的信息",
-    "list1": [
-      "注册/登录信息（如邮箱、第三方账号）",
-      "会员状态、配额、使用记录等账户信息",
-      "支付相关信息（由第三方支付平台如 Creem 处理，我们不存储您的支付卡信息）",
-      "站点访问日志、设备信息、浏览器信息等"
-    ],
-    "section2": "2. 信息用途",
-    "list2": [
-      "用于身份验证、会员服务、配额管理",
-      "用于产品改进、统计分析",
-      "用于向您发送重要通知、服务变更、活动信息等"
-    ],
-    "section3": "3. 第三方服务",
-    "list3": [
-      "我们使用 Clerk 进行用户认证，相关信息受 Clerk 隐私政策保护",
-      "我们使用 Creem 进行支付，支付信息受 Creem 隐私政策保护",
-      "我们可能集成第三方分析工具（如 Google Analytics）"
-    ],
-    "section4": "4. 信息安全",
-    "security": "我们采取合理的安全措施保护您的信息不被未经授权访问、披露、篡改或毁坏。",
-    "section5": "5. 用户权利",
-    "list5": [
-      "您有权访问、更正或删除您的个人信息",
-      "如需注销账号或行使其它权利，请通过页面底部客服邮箱联系我们"
-    ],
-    "section6": "6. 联系方式",
-    "contact": "如有任何隐私相关问题，请通过页面底部显示的客服邮箱与我们联系。",
-    "section7": "7. 政策变更",
-    "change": "我们可能会不定期更新本隐私政策，变更后会在本页面公示。"
-  },
+  "signOut": "Sign Out",
+  "profileTitle": "Profile",
+  "profile.noName": "No nickname set",
+  "profile.status": "Membership Status",
+  "profile.premium": "Premium User",
+  "profile.free": "Free User",
+  "profile.expire": "Premium Expiry",
+  "profile.quota": "Daily Quota Left",
+  "profile.points": "Points",
+  "profile.tips": "Premium: 20/day, Free: 5/day. Points can be used for extra quota or membership.",
+  "profile.upgrade": "Upgrade to Premium",
+  "privacy.title": "Privacy Policy",
+  "privacy.intro": "This Privacy Policy applies to all users of Emoji Hand (hereinafter referred to as 'the Website' or 'we'). We are committed to protecting your personal information and privacy.",
+  "privacy.section1": "1. Information We Collect",
+  "privacy.list1": [
+    "Registration/login information (such as email, third-party accounts)",
+    "Account information such as membership status, quota, usage records",
+    "Payment information (processed by third-party platforms such as Creem; we do not store your card information)",
+    "Site access logs, device information, browser information, etc."
+  ],
+  "privacy.section2": "2. Use of Information",
+  "privacy.list2": [
+    "For authentication, membership services, quota management",
+    "For product improvement and statistical analysis",
+    "To send you important notifications, service changes, event information, etc."
+  ],
+  "privacy.section3": "3. Third-Party Services",
+  "privacy.list3": [
+    "We use Clerk for user authentication, subject to Clerk's privacy policy",
+    "We use Creem for payments, subject to Creem's privacy policy",
+    "We may integrate third-party analytics tools (such as Google Analytics)"
+  ],
+  "privacy.section4": "4. Information Security",
+  "privacy.security": "We take reasonable security measures to protect your information from unauthorized access, disclosure, alteration, or destruction.",
+  "privacy.section5": "5. User Rights",
+  "privacy.list5": [
+    "You have the right to access, correct, or delete your personal information",
+    "To delete your account or exercise other rights, please contact us via the customer support email at the bottom of the page"
+  ],
+  "privacy.section6": "6. Contact",
+  "privacy.contact": "For any privacy-related questions, please contact us via the customer support email shown at the bottom of the page.",
+  "privacy.section7": "7. Policy Changes",
+  "privacy.change": "We may update this Privacy Policy from time to time. Changes will be posted on this page.",
   "footer": {
-    "privacy": "隐私政策",
-    "terms": "服务条款",
-    "contact": "联系方式",
-    "accessibility": "可访问性声明",
-    "accessibilityContent": "本网站致力于为所有用户（包括残障人士）提供无障碍访问体验。如有无障碍建议，请通过客服邮箱联系我们。",
-    "copyright": "版权与商标声明",
-    "copyrightContent": "Emoji Hand 及其标识归 emojihand.com 所有。部分内容、字体或图标可能来自第三方，版权归原作者所有。未经授权，禁止擅自使用、复制或分发本网站内容。"
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "accessibility": "Accessibility",
+    "copyright": "Copyright"
   },
   "terms": {
-    "title": "服务条款",
-    "intro": "欢迎使用 Emoji Hand（以下简称“本网站”或“我们”）。请您在使用本网站前仔细阅读本服务条款，使用本网站即表示您同意本条款的全部内容。",
-    "section1": "服务内容",
+    "title": "Terms of Service",
+    "intro": "Welcome to Emoji Hand (hereinafter referred to as 'this website' or 'we'). Please read these terms carefully before using the website. By using the website, you agree to all the terms.",
+    "section1": "Service Content",
     "list1": [
-      "本网站为用户提供 AI 表情符号翻译、会员服务、配额管理等数字服务。",
-      "部分功能仅对会员用户开放，普通用户有每日免费额度限制。"
+      "This website provides users with digital services such as AI emoji translation, membership services, and quota management.",
+      "Some features are only available to members, and regular users have a daily free quota limit."
     ],
-    "section2": "用户义务",
+    "section2": "User Obligations",
     "list2": [
-      "用户应遵守国家法律法规，不得利用本网站从事违法违规活动。",
-      "用户不得上传、传播违法、侵权、低俗等内容。",
-      "用户应妥善保管账号信息，因账号泄露造成的损失由用户自行承担。"
+      "Users must comply with national laws and regulations and must not use the website for illegal activities.",
+      "Users must not upload or transmit illegal, infringing, or inappropriate content.",
+      "Users should properly safeguard their account information and are responsible for losses caused by account leakage."
     ],
-    "section3": "会员与配额",
+    "section3": "Membership and Quota",
     "list3": [
-      "会员服务为付费订阅，会员有效期内享有每日更高配额和更多功能。",
-      "会员到期后自动降为普通用户，配额恢复为普通额度。",
-      "配额每日自动重置，会员与普通用户配额不同。"
+      "Membership services are paid subscriptions. Members enjoy higher daily quotas and more features during the validity period.",
+      "After membership expires, users are downgraded to regular users, and the quota is restored to the regular level.",
+      "Quotas are reset daily, and member quotas differ from regular user quotas."
     ],
-    "section4": "支付与退款",
+    "section4": "Payment and Refunds",
     "list4": [
-      "所有支付由第三方平台（如 Creem）处理，我们不存储您的支付卡信息。",
-      "会员服务为数字商品，购买后不支持无理由退款，特殊情况请联系客服邮箱。"
+      "All payments are processed by third-party platforms (such as Creem), and we do not store your payment card information.",
+      "Membership services are digital goods and are non-refundable after purchase, except in special circumstances. Please contact customer service email."
     ],
-    "section5": "免责声明",
+    "section5": "Disclaimer",
     "list5": [
-      "本网站致力于提供稳定服务，但不保证服务不会中断或无错误。",
-      "因不可抗力或第三方原因导致的服务中断、数据丢失等，本网站不承担责任。"
+      "This website strives to provide stable services but does not guarantee uninterrupted or error-free service.",
+      "The website is not responsible for service interruptions, data loss, etc., caused by force majeure or third-party reasons."
     ],
-    "section6": "争议解决",
-    "dispute": "因本服务条款产生的争议，双方应友好协商解决，协商不成时，可向本网站运营方所在地法院提起诉讼。",
-    "section7": "联系方式",
-    "contact": "如有任何服务相关问题，请通过页面底部显示的客服邮箱与我们联系。",
-    "section8": "条款变更",
-    "change": "我们有权根据实际情况修改本服务条款，变更后将在本页面公示，用户继续使用即视为同意变更内容。",
-    "section9": "禁止内容与行为",
-    "list9": [
-      "严禁上传、传播或生成任何色情、暴力、仇恨、歧视、诈骗、恶意软件、侵犯他人隐私或知识产权、违法违规等内容。",
-      "如发现用户有上述行为，平台有权暂停或终止其账号，并配合相关部门调查。"
-    ],
-    "section10": "适用年龄与未成年人保护",
-    "list10": [
-      "本服务仅面向年满16周岁的用户，未成年人须在监护人同意下使用。",
-      "如您为未成年人，请在监护人指导下阅读并使用本服务。"
-    ],
-    "section11": "数据删除与导出",
-    "list11": [
-      "用户可随时通过设置页面或联系客服邮箱申请删除或导出个人数据，平台将在合理时间内处理。"
-    ],
-    "autoRenewNote": "会员为自动续费，您可随时在支付平台取消订阅，取消后会员权益在本周期结束后失效。"
+    "section6": "Dispute Resolution",
+    "dispute": "For disputes arising from these terms of service, both parties should resolve them amicably. If negotiation fails, you may file a lawsuit in the court where the website operator is located.",
+    "section7": "Contact Information",
+    "contact": "For any service-related questions, please contact us via the customer support email shown at the bottom of the page.",
+    "section8": "Terms Changes",
+    "change": "We reserve the right to modify these terms of service based on actual circumstances. Changes will be announced on this page, and continued use will be deemed acceptance of the changes."
   },
-  "cookieConsent": {
-    "text": "我们使用Cookie和类似技术以提升体验、分析流量和营销。继续使用即表示同意我们的隐私政策。",
-    "accept": "同意"
-  },
-  "signOut": "退出登录"
+  "terms.section9": "Prohibited Content and Conduct",
+  "terms.list9": [
+    "It is strictly forbidden to upload, distribute, or generate any pornographic, violent, hateful, discriminatory, fraudulent, malicious software, privacy-infringing, intellectual property-infringing, or illegal content.",
+    "If such behavior is detected, the platform reserves the right to suspend or terminate the account and cooperate with relevant authorities for investigation."
+  ],
+  "terms.section10": "Age Restriction and Protection of Minors",
+  "terms.list10": [
+    "This service is only available to users aged 16 and above. Minors must use the service with the consent of their guardians.",
+    "If you are a minor, please read and use this service under the guidance of your guardian."
+  ],
+  "terms.section11": "Data Deletion and Export",
+  "terms.list11": [
+    "Users may request deletion or export of their personal data at any time via the settings page or customer support email. The platform will process such requests within a reasonable time frame."
+  ],
+  "autoRenewNote": "Membership is auto-renewing. You can cancel your subscription at any time on the payment platform. After cancellation, membership benefits remain until the end of the current billing period.",
+  "accessibilityTitle": "Accessibility Statement",
+  "accessibilityContent": "This website is committed to providing an accessible experience for all users, including people with disabilities. If you have accessibility suggestions, please contact us via the support email.",
+  "copyrightTitle": "Copyright & Trademark Statement",
+  "copyrightContent": "Emoji Hand and its logo are owned by emojihand.com. Some content, fonts, or icons may be from third parties and are copyrighted by their respective owners. Unauthorized use, reproduction, or distribution of this website's content is prohibited.",
+  "login.passwordLabel": "Password",
+  "login.passwordPlaceholder": "Enter your password",
+  "login.success": "Login successful!",
+  "login.error": "Login failed",
+  "register.title": "Create your account",
+  "register.desc": "Welcome! Please fill in the details to get started.",
+  "register.usernameLabel": "Username",
+  "register.usernamePlaceholder": "Enter your username",
+  "register.emailLabel": "Email address",
+  "register.emailPlaceholder": "Enter your email address",
+  "register.passwordLabel": "Password",
+  "register.passwordPlaceholder": "Enter your password",
+  "register.loading": "Registering...",
+  "register.continue": "Continue",
+  "register.success": "Registration successful!",
+  "register.error": "Registration failed",
+  "register.hasAccount": "Already have an account?",
+  "register.signin": "Sign in"
 } 

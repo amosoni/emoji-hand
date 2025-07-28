@@ -3,14 +3,15 @@
 import { useTranslation } from "react-i18next";
 
 interface ModeSelectorProps {
-  mode: "normal" | "savage" | "genz";
-  setMode: (mode: "normal" | "savage" | "genz") => void;
+  mode: "normal" | "savage" | "genz" | "tiktok";
+  setMode: (mode: "normal" | "savage" | "genz" | "tiktok") => void;
 }
 
 const MODES = [
   { key: "normal", label: "Normal", icon: "✨" },
   { key: "savage", label: "Savage", icon: "🔥" },
   { key: "genz", label: "GenZ Slang", icon: "😎" },
+  { key: "tiktok", label: "TikTok", icon: "🎵" },
 ] as const;
 
 export default function ModeSelector({ mode, setMode }: ModeSelectorProps) {
@@ -20,7 +21,7 @@ export default function ModeSelector({ mode, setMode }: ModeSelectorProps) {
       <div className="mb-2 text-sm text-white/80 text-center animate-fade-in">
         Try different styles for more fun results!
       </div>
-      <div className="flex gap-2 justify-center">
+      <div className="flex gap-2 justify-center flex-wrap">
         {MODES.map(({ key, label, icon }) => (
           <button
             key={key}

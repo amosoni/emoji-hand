@@ -39,7 +39,7 @@ export default function NavBar() {
   }
   return (
     <nav className="relative z-10 flex items-center justify-between px-8 py-6">
-      <Link href="/" className="flex items-center gap-2 text-3xl font-extrabold text-white drop-shadow">
+      <Link href={`/${locale}`} className="flex items-center gap-2 text-3xl font-extrabold text-white drop-shadow">
         <span>🖐️✨</span> emojihand
       </Link>
       <div className="flex items-center gap-6">
@@ -63,7 +63,7 @@ export default function NavBar() {
             {open && (
               <div className="absolute right-0 top-12 bg-white/90 rounded-lg shadow-lg py-2 min-w-[140px] z-50 flex flex-col text-gray-900">
                 <button className="px-4 py-2 hover:bg-pink-100 rounded transition text-left w-full text-inherit" onClick={() => {
-                  window.location.href = '/zh/profile';
+                  window.location.href = `/${locale}/profile`;
                 }}>{t('profileTitle')}</button>
                 <button onClick={() => signOut()} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
               </div>

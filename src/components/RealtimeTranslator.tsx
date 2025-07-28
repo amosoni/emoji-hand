@@ -15,7 +15,7 @@ export default function RealtimeTranslator() {
   const [isConnected, setIsConnected] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [inputText, setInputText] = useState("");
-  const [mode, setMode] = useState<"normal" | "savage" | "genz">("normal");
+  const [mode, setMode] = useState<"normal" | "savage" | "genz" | "tiktok">("normal");
   const [currentTranslation, setCurrentTranslation] = useState("");
   
   const wsRef = useRef<WebSocket | null>(null);
@@ -142,8 +142,8 @@ export default function RealtimeTranslator() {
 
         {/* Mode Selector */}
         <div className="mb-6">
-          <div className="flex gap-2">
-            {(["normal", "savage", "genz"] as const).map((m) => (
+          <div className="flex gap-2 flex-wrap">
+            {(["normal", "savage", "genz", "tiktok"] as const).map((m) => (
               <button
                 key={m}
                 onClick={() => setMode(m)}

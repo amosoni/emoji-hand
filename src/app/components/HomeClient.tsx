@@ -18,13 +18,6 @@ import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 import { RechargeButton } from './RechargeButton';
 
-// 1. 定义 User 类型
-interface User {
-  imageUrl?: string;
-  fullName?: string;
-  primaryEmailAddress?: { emailAddress: string };
-}
-
 function ClientOnly({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -35,30 +28,23 @@ function ClientOnly({ children }: { children: React.ReactNode }) {
 export default function HomeClient({ hello }: { hello: unknown }) {
   const { t, i18n } = useTranslation();
   const { data: session } = useSession();
-  const user = session?.user as User | undefined;
-  // const createCheckout = trpc.creem.createCheckoutSession.useMutation();
+  const user = session?.user;
+  console.log('session', session);
+  if (typeof window !== 'undefined') {
+    console.log('cookie', document.cookie);
+  }
   // 用户菜单逻辑
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  // 点击外部关闭菜单
   if (typeof window !== 'undefined') {
     window.onclick = (e) => {
       if (open && menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false);
     };
   }
-
   const { show } = useLoginModal();
-
-  // user/show/clerkLocale/productId 相关逻辑全部注释或用占位符替换
-  // 登录、头像、会员、付费等相关按钮全部用 alert('待实现') 占位
-  const showData = false; // Placeholder for show data
-  const clerkLocale = 'en'; // Placeholder for clerk locale
-  const productId = 'prod_123'; // Placeholder for product ID
-
   useEffect(() => {
     setOpen(false); // 语言切换时自动关闭菜单，下次打开就是新语言
   }, [i18n.language]);
-
   return (
     <ClientOnly>
         <div className="min-h-screen bg-gradient-to-r from-yellow-400 via-orange-300 to-pink-500">
@@ -67,7 +53,18 @@ export default function HomeClient({ hello }: { hello: unknown }) {
               <span>🖐️✨</span> emojihand
             </div>
             <div className="flex items-center gap-6">
-            {/* 登录按钮和头像逻辑后续用 NextAuth.js 替换 */}
+                          <Link
+              href={`/${i18n.language}/tiktok`}
+              className="bg-white/20 hover:bg-pink-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
+            >
+              🎵 {t('nav.tiktokMode', 'TikTok Mode')}
+            </Link>
+            <Link
+              href={`/${i18n.language}/tiktok-emojis`}
+              className="bg-white/20 hover:bg-purple-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
+            >
+              📖 {t('nav.tiktokEmojis', 'TikTok Emojis Guide')}
+            </Link>
               {!user ? (
                 <button
                   className="bg-white/20 hover:bg-pink-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
@@ -79,16 +76,16 @@ export default function HomeClient({ hello }: { hello: unknown }) {
                 <div className="relative flex items-center gap-2" ref={menuRef}>
                   <button onClick={() => setOpen(v => !v)} className="focus:outline-none">
                     <img
-                    src={user?.imageUrl ?? '/images/beanhead (1).svg'}
-                    alt={user?.fullName ?? 'User'}
+                      src={user?.image ?? '/images/beanhead (1).svg'}
+                      alt={user?.name ?? 'User'}
                       className="w-9 h-9 rounded-full border-2 border-white shadow"
-                    title={user?.fullName ?? user?.primaryEmailAddress?.emailAddress ?? 'User'}
+                      title={user?.name ?? user?.email ?? 'User'}
                     />
                   </button>
                   {open && (
                     <div className="absolute right-0 top-12 bg-white/90 rounded-lg shadow-lg py-2 min-w-[140px] z-50 flex flex-col text-gray-900">
-                    <Link href="/zh/profile" className="px-4 py-2 hover:bg-pink-100 rounded transition text-left">{t('profileTitle', '个人中心')}</Link>
-                    <button onClick={() => signOut({ callbackUrl: '/' })} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
+                      <Link href={`/${i18n.language}/profile`} className="px-4 py-2 hover:bg-pink-100 rounded transition text-left">{t('profileTitle', '个人中心')}</Link>
+                      <button onClick={() => signOut({ callbackUrl: '/' })} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
                     </div>
                   )}
                 </div>

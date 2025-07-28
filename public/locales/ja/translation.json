@@ -21,6 +21,7 @@
   "modes.normal": "ノーマル",
   "modes.savage": "サベージ",
   "modes.genz": "GenZスラング",
+  "modes.tiktok": "TikTok",
   "paywall.title": "会員専用スタイル",
   "paywall.desc": "会員登録で全てのスタイルとGPT-4.0が解放されます！",
   "paywall.iknow": "わかりました",
@@ -71,6 +72,186 @@
   "style.normal": "ノーマル",
   "style.savage": "サベージ",
   "style.genz": "GenZスラング",
+  "style.tiktok": "TikTok",
+  "nav": {
+    "tiktok": "TikTokモード",
+    "tiktokEmojis": "TikTok絵文字ガイド"
+  },
+  "pages": {
+    "tiktok": {
+      "title": "TikTok絵文字",
+      "subtitle": "誇張的で楽しく魅力的な絵文字で、メッセージをTikTokスタイルの表現に変身させましょう！",
+      "officialEmojis": "公式TikTok絵文字",
+      "officialEmojisDesc": "公式TikTok絵文字を選んで、本物のTikTok絵文字文化を体験しましょう！",
+      "tryTitle": "TikTokモードを試す",
+      "tryDesc": "下の翻訳機で「TikTok」モードを選択して、魔法を体験しましょう！"
+    },
+    "tiktokEmojis": {
+      "title": "TikTok絵文字 - 隠れた絵文字と意味の完全ガイド",
+      "subtitle": "[smile]、[happy]、[loveface]などの隠れたショートコードを含むすべてのTikTok絵文字を発見しましょう。TikTok絵文字の使い方、意味を学び、公式TikTok絵文字コードの完全なリストを入手してください。",
+      "faq": {
+        "title": "TikTok絵文字に関するよくある質問",
+        "q1": {
+          "title": "TikTok絵文字とは何ですか？",
+          "answer": "TikTok絵文字は、ユーザーがTikTokプラットフォームのコメント、キャプション、メッセージで使用できるカスタム絵文字文字と隠れたショートコードのコレクションです。これらには、標準のUnicode絵文字と[smile]、[happy]、[loveface]などのショートコードでアクセスできるTikTok固有の隠れた絵文字が含まれます。"
+        },
+        "q2": {
+          "title": "TikTok絵文字の使い方は？",
+          "answer": "TikTok絵文字を使用するには、コメントやキャプションで角括弧内にショートコードを入力するだけです（例：[smile]）。TikTokは自動的にこれらのショートコードを対応する絵文字に変換します。標準の絵文字キーボードを使用したり、他のソースから絵文字をコピー＆ペーストすることもできます。"
+        },
+        "q3": {
+          "title": "最も人気のあるTikTok絵文字は何ですか？",
+          "answer": "最も人気のあるTikTok絵文字には[smile]、[happy]、[loveface]、[wronged]、[cry]、[laugh]、[cool]、[angry]、[surprised]などがあります。これらの絵文字は、感情や反応を表現するためにコメントやキャプションで頻繁に使用されます。"
+        },
+        "q4": {
+          "title": "TikTok絵文字は通常の絵文字と同じですか？",
+          "answer": "TikTokは標準のUnicode絵文字（😂、❤️、🔥など）とショートコードでアクセスされる独自のカスタム隠れ絵文字の両方をサポートしています。隠れ絵文字は、すべてのデバイスとプラットフォームで一貫したユニークな視覚スタイルを持っています。"
+        },
+        "q5": {
+          "title": "TikTok絵文字を他のプラットフォームで使用できますか？",
+          "answer": "TikTokの隠れ絵文字（ショートコードでアクセス）はTikTokプラットフォーム固有であり、他のソーシャルメディアプラットフォームでは意図した通りに表示されません。ただし、標準のUnicode絵文字はすべてのプラットフォームで動作します。"
+        }
+      },
+      "try": {
+        "title": "TikTok絵文字翻訳機を試す",
+        "desc": "AI搭載の絵文字翻訳機でテキストをTikTokスタイルの表現に変身させましょう！",
+        "button": "今すぐTikTokモードを試す"
+      }
+    }
+  },
+  "tiktok": {
+    "page": {
+      "official": {
+        "title": "🎵 公式TikTok絵文字",
+        "desc": "公式TikTok絵文字を選んで、本物のTikTok絵文字文化を体験しましょう！"
+      }
+    },
+    "demo": {
+      "selected": {
+        "title": "選択されたコンテンツ：",
+        "emoji": "絵文字：",
+        "shortcode": "ショートコード："
+      }
+    },
+    "emoji": {
+      "default": "TikTok絵文字",
+      "example": "例："
+    },
+    "picker": {
+      "shortcodes": "ショートコード",
+      "combinations": "組み合わせ",
+      "popular": "人気",
+      "categories": "カテゴリ",
+      "instructions": {
+        "title": "使用説明",
+        "tip1": "ショートコードをクリックして入力ボックスに直接挿入",
+        "tip2": "組み合わせ絵文字は複雑な感情を表現するのに適しています",
+        "tip3": "人気の絵文字はTikTokユーザーが最もよく使用します",
+        "tip4": "カテゴリ別絵文字は機能別に整理されており、見つけやすくなっています"
+      }
+    },
+    "description": "誇張的で楽しく魅力的な絵文字で、テキストをTikTokスタイルの表現に変身させましょう！",
+    "feature1": {
+      "title": "ドラマチックな表現",
+      "desc": "TikTokクリエイターのような誇張された感情と反応"
+    },
+    "feature2": {
+      "title": "トレンディな雰囲気",
+      "desc": "最新の絵文字トレンドとバイラル表現"
+    },
+    "feature3": {
+      "title": "クリエイティブスタイル",
+      "desc": "ソーシャルメディアで目立つユニークな組み合わせ"
+    },
+    "examples": {
+      "title": "TikTokスタイルの例",
+      "scream": "TikTokの古典的なショック表現の組み合わせ",
+      "scream.text": "OMG これは素晴らしい！",
+      "stun": "混乱やショックを表現",
+      "stun.text": "私にはできません...",
+      "lovely": "完璧さと愛を表現",
+      "lovely.text": "これがすべてです！",
+      "speechless": "言葉を失うか、言葉を超えてショックを受ける",
+      "speechless.text": "言葉は不要",
+      "excited": "極度の興奮と愛を表現",
+      "excited.text": "これのために生きています！",
+      "proud": "これがまさに私が望んでいたコンテンツであることを表現",
+      "proud.text": "これが私が登録したコンテンツです"
+    },
+    "howToUse": {
+      "title": "TikTokモードの使い方",
+      "tip1": {
+        "title": "ドラマチックに表現する",
+        "desc": "誇張された表現と反応を使用する"
+      },
+      "tip2": {
+        "title": "トレンディに保つ",
+        "desc": "現在の絵文字トレンドとバイラル表現に従う"
+      },
+      "tip3": {
+        "title": "クリエイティブに表現する",
+        "desc": "ユニークな組み合わせのために絵文字を組み合わせる"
+      },
+      "tip4": {
+        "title": "個性を見せる",
+        "desc": "絵文字の選択を通じてあなたの個性を輝かせる"
+      }
+    },
+    "popular": {
+      "title": "人気のTikTok絵文字"
+    },
+    "guide": {
+      "tabs": {
+        "shortcodes": "隠れたショートコード",
+        "meanings": "絵文字の意味",
+        "combinations": "人気の組み合わせ",
+        "popular": "最も人気"
+      },
+      "intro": {
+        "title": "TikTok絵文字とは何ですか？",
+        "p1": "TikTok絵文字は、ユーザーがTikTokプラットフォームのコメント、キャプション、メッセージで使用できるカスタム絵文字文字と隠れたショートコードのユニークなコレクションです。標準の絵文字とは異なり、TikTokには独自の「隠れ絵文字」システムがあり、ユーザーがショートコードを通じて特別な絵文字文字にアクセスできます。",
+        "p2": "これらの隠れ絵文字は、角括弧内に特定のショートコードを入力することでアクセスされます。例えば",
+        "p2_2": "または",
+        "p2_3": "TikTokのコメントやキャプションでこれらのショートコードを入力すると、自動的に対応するカスタム絵文字グラフィックに変換されます。",
+        "p3": "TikTokはすべてのプラットフォームネイティブ絵文字をサポートしていますが、これらの隠れ絵文字は、すべてのデバイスとプラットフォームで一貫したユニークな視覚スタイルを提供し、TikTokユーザーの間で特定の感情や反応を表現するために人気があります。"
+      },
+      "howto": {
+        "title": "TikTok絵文字の使い方",
+        "method1": {
+          "title": "方法1：ショートコード",
+          "step1": "角括弧内にショートコードを入力（例：",
+          "step2": "TikTokは自動的に絵文字に変換します",
+          "step3": "コメント、キャプション、メッセージで動作"
+        },
+        "method2": {
+          "title": "方法2：直接絵文字",
+          "step1": "デバイスの絵文字キーボードを使用",
+          "step2": "他のソースから絵文字をコピー＆ペースト",
+          "step3": "すべての標準Unicode絵文字で動作"
+        }
+      },
+      "shortcodes": {
+        "title": "隠れたTikTok絵文字ショートコード"
+      },
+      "meanings": {
+        "title": "TikTok絵文字の意味"
+      },
+      "combinations": {
+        "title": "人気のTikTok絵文字組み合わせ"
+      },
+      "popular": {
+        "title": "最も人気のあるTikTok絵文字"
+      },
+      "categories": {
+        "title": "TikTok絵文字カテゴリ",
+        "reactions": "反応",
+        "emotions": "感情",
+        "actions": "アクション",
+        "emphasis": "強調",
+        "special": "特別"
+      }
+    }
+  },
   "tryPrefix": "例：",
   "tryExample": "今夜はパーティーしよう",
   "tryResult": "🎉🕺✨",
@@ -126,5 +307,12 @@
   },
   "profileTitle": "プロフィール",
   "signOut": "ログアウト",
-  "autoRenewNote": "プレミアムは自動更新です。お支払いプラットフォームでいつでも解約できます。解約後も現在の請求期間が終了するまで会員特典は有効です。"
+  "autoRenewNote": "プレミアムは自動更新です。お支払いプラットフォームでいつでも解約できます。解約後も現在の請求期間が終了するまで会員特典は有効です。",
+  "footer": {
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "accessibility": "アクセシビリティ",
+    "copyright": "著作権",
+    "contact": "お問い合わせ"
+  }
 } 

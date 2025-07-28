@@ -29,14 +29,17 @@ export default function LoginModal() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password })
       });
-      const data = await res.json();
+      const data = await res.json() as { error?: string };
       if (res.ok) {
         setSuccess(true);
         await signIn('credentials', { email, password, redirect: false });
         await getSession(); // 强制刷新 session
+        setTimeout(() => {
+          window.location.href = window.location.href;
+        }, 300);
         close();
       } else {
-        setError(data.error || t('register.error', 'Registration failed'));
+        setError((data as { error?: string })?.error ?? t('register.error', 'Registration failed'));
       }
     } catch (err) {
       setError(t('register.error', 'Registration failed'));
@@ -55,6 +58,9 @@ export default function LoginModal() {
       if (res?.ok) {
         setSuccess(true);
         await getSession(); // 强制刷新 session
+        setTimeout(() => {
+          window.location.href = window.location.href;
+        }, 300);
         close();
       } else {
         setError(t('login.error', 'Login failed'));

@@ -11,6 +11,8 @@ import { useSession } from "next-auth/react";
 import i18n from 'i18next';
 import { api as trpc } from "@/trpc/react";
 import { useLoginModal } from "@/components/LoginModalContext";
+import DouyinEmojiPicker from "@/components/DouyinEmojiPicker";
+import { parseDouyinShortcodes } from "@/utils/tiktokEmojis";
 // i18n.changeLanguage('en'); // 移除全局强制切换，保留自动检测
 
 interface ChatMessage {
@@ -22,13 +24,14 @@ interface ChatMessage {
 export default function Translator() {
   const { t } = useTranslation();
   const [inputText, setInputText] = useState("");
-  const [mode, setMode] = useState<"normal" | "savage" | "genz">("normal");
+  const [mode, setMode] = useState<"normal" | "savage" | "genz" | "tiktok">("normal");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [freeUses, setFreeUses] = useState(5);
   const [showPaywall, setShowPaywall] = useState(false);
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [showDouyinPicker, setShowDouyinPicker] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
   const user = session?.user;
@@ -47,7 +50,7 @@ export default function Translator() {
   // 判断是否会员
   const premiumExpireAt = typeof user === 'object' && user && 'premiumExpireAt' in user ? (user as { premiumExpireAt?: string | null }).premiumExpireAt : null;
   const isPremium = !!premiumExpireAt && new Date(premiumExpireAt) > new Date();
-  const availableModes = isPremium ? ["normal", "savage", "genz"] : ["normal"];
+  const availableModes = isPremium ? ["normal", "savage", "genz", "tiktok"] : ["normal"];
 
   useEffect(() => {
     const saved = localStorage.getItem("freeUses");
@@ -63,6 +66,9 @@ export default function Translator() {
       return;
     }
     if (!inputText.trim() || isPending) return;
+    
+    // 处理抖音短代码
+    const processedText = parseDouyinShortcodes(inputText);
     setMessages((prev) => [
       ...prev,
       {
@@ -74,7 +80,7 @@ export default function Translator() {
     setIsLoading(true);
     setError(null);
     try {
-      const res = await mutateAsync({ text: inputText, mode });
+      const res = await mutateAsync({ text: processedText, mode });
       setMessages((prev) => [
         ...prev,
         {
@@ -112,8 +118,8 @@ export default function Translator() {
           </div>
         )} */}
         {/* 模式选择器 */}
-        <div className="flex gap-2 mb-4">
-          {(["normal", "savage", "genz"] as const).map((modeOption) => (
+        <div className="flex gap-2 mb-4 flex-wrap">
+          {(["normal", "savage", "genz", "tiktok"] as const).map((modeOption) => (
             <button
               key={modeOption}
               className={`px-4 py-2 rounded-lg font-bold text-lg transition ${mode === modeOption ? "bg-pink-200 text-pink-700" : "bg-pink-100 text-pink-500"} ${!availableModes.includes(modeOption) ? "opacity-50 cursor-not-allowed" : ""}`}
@@ -129,6 +135,7 @@ export default function Translator() {
               {modeOption === "normal" && `${t('style.normal', 'Normal')} ✨`}
               {modeOption === "savage" && `${t('style.savage', 'Savage')} 🔥`}
               {modeOption === "genz" && `${t('style.genz', 'GenZ Slang')} 😎`}
+              {modeOption === "tiktok" && `${t('style.tiktok', 'TikTok')} 🎵`}
             </button>
           ))}
         </div>
@@ -205,6 +212,20 @@ export default function Translator() {
             </div>
           )}
         </div>
+        {/* 抖音表情选择器 */}
+        {showDouyinPicker && (
+          <div className="mb-4">
+            <DouyinEmojiPicker
+              onSelect={(emoji) => {
+                setInputText(prev => prev + emoji);
+              }}
+              onSelectShortcode={(shortcode) => {
+                setInputText(prev => prev + shortcode);
+              }}
+            />
+          </div>
+        )}
+        
         {/* 输入区 */}
         <div className="flex gap-3 items-end">
           <textarea
@@ -218,6 +239,13 @@ export default function Translator() {
             className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-500 disabled:opacity-50 resize-none min-h-[48px] max-h-40 overflow-y-auto"
             style={{height: 'auto'}}
           />
+          <button
+            onClick={() => setShowDouyinPicker(!showDouyinPicker)}
+            className="px-4 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg transition-colors"
+            aria-label="Toggle Douyin emoji picker"
+          >
+            🎵
+          </button>
           <button
             onClick={handleSend}
             disabled={!inputText.trim() || isPending}

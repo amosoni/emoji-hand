@@ -30,6 +30,7 @@ wss.on('connection', (ws) => {
                   - Normal: Add relevant emojis naturally to enhance the text
                   - Savage: Translate into sarcastic, witty emoji expressions with attitude
                   - GenZ: Convert to GenZ slang with trendy emojis and modern language
+                  - TikTok: Convert to TikTok-style expressions with exaggerated, fun, and engaging emojis
                   
                   Current mode: ${data.mode}
                   

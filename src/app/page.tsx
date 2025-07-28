@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
 export default function RootPage() {
-  redirect('/en');
+  // 让 middleware 处理重定向
   return null;
 } 

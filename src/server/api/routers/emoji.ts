@@ -34,11 +34,28 @@ export const emojiRouter = createTRPCRouter({
       await performSecurityCheck(userId, ip, userAgent);
       // 选择模型
       const model = isPremium ? 'gpt-4' : 'gpt-3.5-turbo';
+      
+      // 根据模式生成不同的系统提示
+      const getSystemPrompt = (mode: string) => {
+        switch (mode) {
+          case 'normal':
+            return '你是一个表情翻译器，根据用户输入生成带有丰富表情的回复。自然地添加相关表情符号来增强文本的表达力。';
+          case 'savage':
+            return '你是一个毒舌表情翻译器，将用户输入转换为带有讽刺、机智和态度的表情表达。使用尖锐、幽默的表情符号。';
+          case 'genz':
+            return '你是一个GenZ俚语表情翻译器，将用户输入转换为Z世代流行的网络用语和潮流表情符号。使用现代、时尚的表达方式。';
+          case 'tiktok':
+            return '你是一个TikTok风格表情翻译器，将用户输入转换为类似TikTok视频中常见的表情表达。使用夸张、有趣、富有感染力的表情符号，模仿TikTok创作者的表达风格。优先使用抖音官方隐藏表情如[smile]、[happy]、[loveface]等，以及抖音特有的表情组合如👁👄👁、🥺👉👈等。';
+          default:
+            return '你是一个表情翻译器，根据用户输入和风格生成带有丰富表情的回复。';
+        }
+      };
+      
       // 执行翻译
       const result = await openai.chat.completions.create({
         model,
         messages: [
-          { role: 'system', content: '你是一个表情翻译器，根据用户输入和风格生成带有丰富表情的回复。' },
+          { role: 'system', content: getSystemPrompt(input.mode) },
           { role: 'user', content: input.text }
         ]
       });
@@ -48,6 +65,6 @@ export const emojiRouter = createTRPCRouter({
       } else {
         await prisma.user.update({ where: { id: userId }, data: { freeUsesDaily: { decrement: 1 } } });
       }
-      return { result: result.choices[0]?.message?.content || '' };
+      return { result: result.choices[0]?.message?.content ?? '' };
     }),
 }); 
