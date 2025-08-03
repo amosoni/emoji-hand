@@ -180,6 +180,12 @@ export default function EmojiPackSubscription() {
       return;
     }
     
+    // 检查用户是否登录
+    if (!isLoggedIn) {
+      show(); // 显示登录弹窗
+      return;
+    }
+    
     // 使用Creem支付
     const productId = getProductId(planId, billingCycle);
     if (productId) {
