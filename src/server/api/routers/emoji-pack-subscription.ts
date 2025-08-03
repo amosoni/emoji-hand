@@ -32,7 +32,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
           billingCycle: 'monthly',
           features: {
             translation: { daily: 15, model: 'gpt-4' },
-            imageGeneration: { daily: 2 },
+            imageGeneration: { daily: 5 },
             guides: true,
             noAds: true,
             exportQuality: 'hd',
@@ -41,7 +41,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
             commercialUse: false,
             teamCollaboration: false
           },
-          description: '하루 15회 번역, 2회 이미지 생성',
+          description: '하루 15회 번역, 5회 이미지 생성',
           yearlyDiscount: 17
         },
         {
@@ -51,7 +51,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
           billingCycle: 'monthly',
           features: {
             translation: { daily: 35, model: 'gpt-4' },
-            imageGeneration: { daily: 5 },
+            imageGeneration: { daily: 12 },
             guides: true,
             noAds: true,
             exportQuality: 'ultra-hd',
@@ -60,7 +60,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
             commercialUse: false,
             teamCollaboration: false
           },
-          description: '하루 35회 번역, 5회 이미지 생성',
+          description: '하루 35회 번역, 12회 이미지 생성',
           yearlyDiscount: 17
         },
         {
@@ -70,7 +70,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
           billingCycle: 'monthly',
           features: {
             translation: { daily: 70, model: 'gpt-4' },
-            imageGeneration: { daily: 10 },
+            imageGeneration: { daily: 20 },
             guides: true,
             noAds: true,
             exportQuality: 'highest',
@@ -79,7 +79,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
             commercialUse: true,
             teamCollaboration: true
           },
-          description: '하루 70회 번역, 10회 이미지 생성',
+          description: '하루 70회 번역, 20회 이미지 생성',
           yearlyDiscount: 17
         }
       ]
