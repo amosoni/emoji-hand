@@ -103,38 +103,80 @@ export const emojiRouter = createTRPCRouter({
       
       // 在开发环境中，如果没有用户登录，使用默认设置
       let isPremium = false;
+      let user = null;
       if (userId) {
         // 获取用户信息
-        const user = await prisma.user.findUnique({ 
+        user = await prisma.user.findUnique({ 
           where: { id: userId },
           select: {
             id: true,
-            premiumExpireAt: true
+            subscriptionPlan: true,
+            subscriptionExpireAt: true,
+            translationUsesToday: true,
+            lastUsageReset: true
           }
         });
         console.log('user from db:', user);
         if (user) {
-          isPremium = !!(user.premiumExpireAt && new Date(user.premiumExpireAt) > new Date());
+          // 检查是否需要重置每日使用量
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          
+          if (!user.lastUsageReset || user.lastUsageReset < today) {
+            await prisma.user.update({
+              where: { id: userId },
+              data: {
+                translationUsesToday: 0,
+                lastUsageReset: today
+              }
+            });
+            user.translationUsesToday = 0;
+          }
+          
+          isPremium = !!(user.subscriptionExpireAt && new Date(user.subscriptionExpireAt) > new Date());
         }
       }
-      // 额度判断 - 暂时跳过
-      // if (isPremium) {
-      //   if ((user.translationUsesToday ?? 0) >= 15) throw new Error('Daily quota exceeded.');
-      // } else {
-      //   if ((user.translationUsesToday ?? 0) >= 8) throw new Error('每日免费额度已用完');
-      //   // 免费用户只能用normal风格和gpt-3.5
-      //   if (input.mode !== 'normal') throw new Error('免费用户仅可用默认风格');
-      //   if (input.model && input.model !== 'gpt-3.5-turbo') throw new Error('免费用户仅可用GPT-3.5');
-      // }
+      
+      // 额度判断 - 启用检查
+      if (user) {
+        const plans = {
+          free: { translation: 8 },
+          starter: { translation: 15 },
+          pro: { translation: 35 },
+          enterprise: { translation: 70 }
+        };
+        
+                 const plan = user.subscriptionPlan ?? 'free';
+         const limits = plans[plan as keyof typeof plans];
+         const currentUsage = user.translationUsesToday ?? 0;
+         const dailyLimit = limits.translation;
+        
+        if (currentUsage >= dailyLimit) {
+          throw new Error(`每日使用额度已用完 (${currentUsage}/${dailyLimit})`);
+        }
+        
+        // 免费用户限制
+        if (plan === 'free') {
+          if (input.mode !== 'normal') {
+            throw new Error('免费用户仅可使用默认风格');
+          }
+          if (input.model && input.model !== 'gpt-3.5-turbo') {
+            throw new Error('免费用户仅可使用GPT-3.5模型');
+          }
+        }
+      }
+      
       // 获取客户端信息
       const req = ctx.req as { headers?: { get?: (key: string) => string | null } } | undefined;
       const ip = String(req?.headers?.get?.('x-forwarded-for') ?? req?.headers?.get?.('x-real-ip') ?? 'unknown');
       const userAgent = String(req?.headers?.get?.('user-agent') ?? 'unknown');
+      
       // 执行综合安全检查
       if (userId) {
         await performSecurityCheck(userId, ip, userAgent);
       }
-      // 选择模型
+      
+      // 选择模型 - 免费用户强制使用GPT-3.5
       const model = isPremium ? 'gpt-4' : 'gpt-3.5-turbo';
       
       // 检测用户输入语言
