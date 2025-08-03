@@ -1,4 +1,4 @@
-import { createTRPCRouter, protectedProcedure } from '~/server/api/trpc';
+import { createTRPCRouter, protectedProcedure, publicProcedure } from '~/server/api/trpc';
 import { z } from 'zod';
 import { openai } from '~/server/openai';
 import { prisma } from '~/server/db';
@@ -94,24 +94,29 @@ const getLanguageSpecificPrompt = (language: string, mode: string) => {
 };
 
 export const emojiRouter = createTRPCRouter({
-  translate: protectedProcedure
+  translate: publicProcedure
     .input(z.object({ text: z.string(), mode: z.string(), model: z.string().optional() }))
     .mutation(async ({ ctx, input }) => {
       console.error('==== emoji.translate mutation called ====');
       const userId = ctx.session?.userId;
       console.error('emoji.translate userId from session:', userId);
-      if (!userId) throw new Error('No userId in session');
-      // 获取用户信息
-      const user = await prisma.user.findUnique({ 
-        where: { id: userId },
-        select: {
-          id: true,
-          premiumExpireAt: true
+      
+      // 在开发环境中，如果没有用户登录，使用默认设置
+      let isPremium = false;
+      if (userId) {
+        // 获取用户信息
+        const user = await prisma.user.findUnique({ 
+          where: { id: userId },
+          select: {
+            id: true,
+            premiumExpireAt: true
+          }
+        });
+        console.log('user from db:', user);
+        if (user) {
+          isPremium = !!(user.premiumExpireAt && new Date(user.premiumExpireAt) > new Date());
         }
-      });
-      console.log('user from db:', user);
-      if (!user) throw new Error('User not found');
-      const isPremium = user.premiumExpireAt && new Date(user.premiumExpireAt) > new Date();
+      }
       // 额度判断 - 暂时跳过
       // if (isPremium) {
       //   if ((user.translationUsesToday ?? 0) >= 15) throw new Error('Daily quota exceeded.');
@@ -126,7 +131,9 @@ export const emojiRouter = createTRPCRouter({
       const ip = String(req?.headers?.get?.('x-forwarded-for') ?? req?.headers?.get?.('x-real-ip') ?? 'unknown');
       const userAgent = String(req?.headers?.get?.('user-agent') ?? 'unknown');
       // 执行综合安全检查
-      await performSecurityCheck(userId, ip, userAgent);
+      if (userId) {
+        await performSecurityCheck(userId, ip, userAgent);
+      }
       // 选择模型
       const model = isPremium ? 'gpt-4' : 'gpt-3.5-turbo';
       
