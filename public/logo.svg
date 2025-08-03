@@ -2,9 +2,33 @@
   <defs>
     <linearGradient id="emojihand-gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
       <stop stop-color="#6366F1"/>
+      <stop offset="0.5" stop-color="#8B5CF6"/>
       <stop offset="1" stop-color="#EC4899"/>
     </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <circle cx="32" cy="32" r="32" fill="url(#emojihand-gradient)" />
-  <text x="13" y="42" font-size="32" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif">🖐️✨</text>
+  
+  <!-- 背景圆形 -->
+  <circle cx="32" cy="32" r="30" fill="url(#emojihand-gradient)" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- 主要表情元素 -->
+  <g filter="url(#glow)">
+    <!-- 手掌表情 -->
+    <text x="8" y="38" font-size="28" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" fill="#FFFFFF">🖐️</text>
+    
+    <!-- 装饰性星星 -->
+    <text x="42" y="22" font-size="16" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" fill="#FFFFFF">✨</text>
+    
+    <!-- 小表情装饰 -->
+    <text x="48" y="48" font-size="12" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" fill="#FFFFFF">💫</text>
+  </g>
+  
+  <!-- 品牌文字标识 -->
+  <text x="32" y="58" font-size="8" font-family="Arial, sans-serif" fill="#FFFFFF" text-anchor="middle" font-weight="bold">EMOJI HAND</text>
 </svg>

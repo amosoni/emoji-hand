@@ -1,0 +1,99 @@
+# AI友好的robots.txt配置
+# 为各种AI爬虫优化，提升AI友好度
+
+# 通用爬虫配置
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /prisma/
+Disallow: /scripts/
+
+# OpenAI GPT爬虫
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# ChatGPT用户代理
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Perplexity AI爬虫
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Amazon AI爬虫
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# ByteDance爬虫
+User-agent: Bytespider
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Apple AI爬虫
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# CCBot爬虫
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# 百度爬虫
+User-agent: Baiduspider
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# 谷歌爬虫
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Bing爬虫
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# 通用爬虫延迟设置
+Crawl-delay: 1
+
+# Sitemap配置
+Sitemap: https://emojihand.com/sitemap.xml
+Sitemap: https://emojihand.com/sitemap-full.xml 

@@ -1,8 +1,33 @@
-import { createTRPCRouter, protectedProcedure } from '~/server/api/trpc';
-import { z } from 'zod'
-import axios from 'axios'
-// 删除 import { clerkClient } from '@clerk/clerk-sdk-node';
-import { HttpsProxyAgent } from 'https-proxy-agent';
+import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
+import { z } from "zod";
+import axios from "axios";
+import { HttpsProxyAgent } from "https-proxy-agent";
+
+// Creem商品ID映射配置
+export const CREEM_PRODUCT_IDS = {
+  // 订阅套餐
+  subscription: {
+    starter: {
+      monthly: 'prod_starter_monthly', // 请替换为实际的Creem商品ID
+      yearly: 'prod_starter_yearly'    // 请替换为实际的Creem商品ID
+    },
+    pro: {
+      monthly: 'prod_pro_monthly',     // 请替换为实际的Creem商品ID
+      yearly: 'prod_pro_yearly'        // 请替换为实际的Creem商品ID
+    },
+    enterprise: {
+      monthly: 'prod_enterprise_monthly', // 请替换为实际的Creem商品ID
+      yearly: 'prod_enterprise_yearly'    // 请替换为实际的Creem商品ID
+    }
+  },
+  // 积分包
+  credits: {
+    starter: 'prod_credits_starter',     // 请替换为实际的Creem商品ID
+    popular: 'prod_credits_popular',     // 请替换为实际的Creem商品ID
+    pro: 'prod_credits_pro',             // 请替换为实际的Creem商品ID
+    enterprise: 'prod_credits_enterprise' // 请替换为实际的Creem商品ID
+  }
+} as const;
 
 // 每日配额检查函数
 const checkDailyQuota = async (userId: string) => {

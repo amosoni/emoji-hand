@@ -58,23 +58,28 @@ function isNextApiResponse(res: unknown): res is NextApiResponse {
  */
 export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) => {
   let session = null;
-  if (process.env.NODE_ENV === "development") {
-    // 本地开发环境，mock 一个假用户
+  
+  // 优先尝试获取真实的NextAuth session
+  if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
+    try {
+      session = await getServerSession(opts.req, opts.res, authOptions);
+    } catch (e) {
+      console.error('Failed to get server session:', e);
+      session = null;
+    }
+  }
+  
+  // 只有在没有真实session的情况下才使用mock
+  if (!session && process.env.NODE_ENV === "development") {
     session = {
       userId: "dev-user-id",
       sessionId: "dev-session-id",
       sessionClaims: {
         email: "dev@example.com",
       },
-      // 可根据需要添加其它字段
     };
-  } else if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
-    try {
-    session = await getServerSession(opts.req, opts.res, authOptions);
-    } catch (e) {
-      session = null;
-    }
   }
+  
   // 直接兜底提取 userId
   let userId: string | undefined;
   if (session && typeof session === 'object') {

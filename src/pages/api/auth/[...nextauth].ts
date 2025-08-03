@@ -27,18 +27,14 @@ export const authOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
-        // 支持用邮箱或用户名登录
+        // 支持用邮箱登录
         const user = await prisma.user.findFirst({
           where: {
-            OR: [
-              { email: credentials.email },
-              { username: credentials.email }
-            ]
+            email: credentials.email
           }
         }) as {
           id: string;
           name?: string;
-          username?: string;
           email?: string;
           image?: string;
           passwordHash?: string;
@@ -48,7 +44,7 @@ export const authOptions = {
         if (!valid) return null;
         return {
           id: user.id,
-          name: user.name ?? user.username ?? user.email,
+          name: user.name ?? user.email,
           email: user.email,
           image: user.image,
         };
@@ -57,26 +53,28 @@ export const authOptions = {
     // 可添加更多第三方登录
   ],
   session: {
-    strategy: 'database' as const,
+    strategy: 'jwt' as const,
   },
-  // 已彻底回退 cookies 字段，恢复 next-auth 默认 cookie 策略
   callbacks: {
-    async session({ session, token }: { session: Session; token: JWT }) {
-      const user = await prisma.user.findUnique({ where: { id: token.sub } });
-      if (!session.user || !token?.sub) return session;
-      // 查数据库补全 profile 字段
-      if (user) {
-        session.user.id = user.id;
-        session.user.points = user.points;
-        session.user.premiumExpireAt = user.premiumExpireAt ? user.premiumExpireAt.toISOString() : null;
-        session.user.createdAt = user.createdAt ? user.createdAt.toISOString() : null;
-        session.user.username = user.username;
-        session.user.quotaResetAt = user.quotaResetAt ? user.quotaResetAt.toISOString() : null;
-        session.user.premiumUsesWeekly = user.premiumUsesWeekly;
-        session.user.freeUsesWeekly = user.freeUsesWeekly;
-        session.user.freeUsesDaily = user.freeUsesDaily;
-        // 其它字段可按需补充
+    async jwt({ token, user }: { token: JWT; user?: any }) {
+      if (user?.id) {
+        token.sub = user.id;
       }
+      return token;
+    },
+    async session({ session, token }: { session: Session; token: JWT }) {
+      if (!token?.sub) return session;
+      
+      const user = await prisma.user.findUnique({ where: { id: token.sub } });
+      if (!user) return session;
+      
+      // 查数据库补全 profile 字段
+      session.user.id = user.id;
+      session.user.points = user.points;
+      session.user.premiumExpireAt = user.premiumExpireAt ? user.premiumExpireAt.toISOString() : null;
+      session.user.createdAt = user.createdAt ? user.createdAt.toISOString() : null;
+      // 其它字段可按需补充
+      
       return session;
     },
   },

@@ -4,19 +4,19 @@ import Head from "next/head";
 import HomeHero from './HomeHero';
 import Translator from "../../components/Translator";
 import EmojiStats from "../../components/EmojiStats";
-import LanguageSwitcher from "../../components/LanguageSwitcher";
+
 import { LatestPost } from "@/app/_components/post";
-import ShareFooter from "../../components/ShareFooter";
+
 // import { useTranslation } from 'react-i18next';
 // import { api as trpc } from "~/trpc/react";
 import { useState, useRef, useEffect } from 'react';
-import i18n from "@/i18n";
 import Footer from './Footer';
 import { useTranslation } from 'react-i18next';
 import { useLoginModal } from '../../components/LoginModalContext';
 import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 import { RechargeButton } from './RechargeButton';
+import UnifiedNavBar from './UnifiedNavBar';
 
 function ClientOnly({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
@@ -48,50 +48,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
   return (
     <ClientOnly>
         <div className="min-h-screen bg-gradient-to-r from-yellow-400 via-orange-300 to-pink-500">
-          <nav className="relative z-10 flex items-center justify-between px-8 py-6">
-            <div className="flex items-center gap-2 text-3xl font-extrabold text-white drop-shadow">
-              <span>🖐️✨</span> emojihand
-            </div>
-            <div className="flex items-center gap-6">
-                          <Link
-              href={`/${i18n.language}/tiktok`}
-              className="bg-white/20 hover:bg-pink-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
-            >
-              🎵 {t('nav.tiktokMode', 'TikTok Mode')}
-            </Link>
-            <Link
-              href={`/${i18n.language}/tiktok-emojis`}
-              className="bg-white/20 hover:bg-purple-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
-            >
-              📖 {t('nav.tiktokEmojis', 'TikTok Emojis Guide')}
-            </Link>
-              {!user ? (
-                <button
-                  className="bg-white/20 hover:bg-pink-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
-                  onClick={show}
-                >
-                  {t('login.button', 'Login')}
-                </button>
-              ) : (
-                <div className="relative flex items-center gap-2" ref={menuRef}>
-                  <button onClick={() => setOpen(v => !v)} className="focus:outline-none">
-                    <img
-                      src={user?.image ?? '/images/beanhead (1).svg'}
-                      alt={user?.name ?? 'User'}
-                      className="w-9 h-9 rounded-full border-2 border-white shadow"
-                      title={user?.name ?? user?.email ?? 'User'}
-                    />
-                  </button>
-                  {open && (
-                    <div className="absolute right-0 top-12 bg-white/90 rounded-lg shadow-lg py-2 min-w-[140px] z-50 flex flex-col text-gray-900">
-                      <Link href={`/${i18n.language}/profile`} className="px-4 py-2 hover:bg-pink-100 rounded transition text-left">{t('profileTitle', '个人中心')}</Link>
-                      <button onClick={() => signOut({ callbackUrl: '/' })} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          </nav>
+          <UnifiedNavBar />
           <HomeHero />
           <Translator />
           <div className="mt-4 text-white/80 text-center">
@@ -162,15 +119,23 @@ export default function HomeClient({ hello }: { hello: unknown }) {
             <h2 className="text-4xl font-bold text-white text-center mb-8">{t('hotEmojis', 'hotEmojis')}</h2>
             <EmojiStats />
           </section>
-          {/* 付费/解锁区 */}
-          <section className="flex flex-col items-center my-12">
-            <div className="bg-white/30 border-2 border-transparent bg-clip-padding rounded-2xl shadow-xl p-8 flex flex-col items-center max-w-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('unlockPremiumTitle', 'Unlock Premium')}</h3>
-              <p className="text-gray-800 mb-4 text-center">{t('unlockPremiumDesc', 'Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience for just')} <span className="font-bold text-[#EC4899]">$9.99/month</span>.</p>
-              <RechargeButton />
-              <p className="text-xs text-gray-700 mt-3 text-center">{t('terms.autoRenewNote')}</p>
-            </div>
-          </section>
+
+          
+          {/* 订阅引导区 */}
+          {!user && (
+            <section className="flex flex-col items-center my-12">
+              <div className="bg-white/30 border-2 border-transparent bg-clip-padding rounded-2xl shadow-xl p-8 flex flex-col items-center max-w-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('unlockPremiumTitle', 'Unlock Premium')}</h3>
+                <p className="text-gray-800 mb-4 text-center">{t('unlockPremiumDesc', 'Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience')}</p>
+                <button
+                  onClick={() => window.location.href = '/subscription'}
+                  className="bg-gradient-to-r from-yellow-500 to-pink-500 hover:from-yellow-600 hover:to-pink-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-xl"
+                >
+                  {t('viewSubscription', 'View Subscription Plans')}
+                </button>
+              </div>
+            </section>
+          )}
           {/* FAQ/帮助区 */}
           <section className="flex flex-col items-center my-12">
             <h3 className="text-3xl font-bold text-white mb-4">{t('faqTitle', 'Frequently Asked Questions about Emoji Hand')}</h3>
@@ -227,11 +192,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
             </div>
           </section>
           {/* 页脚 */}
-            <ShareFooter />
         <Footer />
-            <div className="mt-1 mb-1 flex justify-center w-full">
-              <LanguageSwitcher />
-            </div>
           {/* 自定义动画 keyframes */}
           <style>{`
             @keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

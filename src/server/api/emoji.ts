@@ -25,18 +25,24 @@ export const emojiRouter = createTRPCRouter({
       if (!userId) throw new Error('No userId in session');
 
       // 获取用户信息
-      const user = await prisma.user.findUnique({ where: { id: userId } });
+      const user = await prisma.user.findUnique({ 
+        where: { id: userId },
+        select: {
+          id: true,
+          premiumExpireAt: true
+        }
+      });
       if (!user) throw new Error('User not found');
       const isPremium = user.premiumExpireAt && new Date(user.premiumExpireAt) > new Date();
-      // 额度判断
-      if (isPremium) {
-        if ((user.freeUsesDaily ?? 0) < 1) throw new Error('Daily quota exceeded.');
-      } else {
-        if ((user.freeUsesDaily ?? 0) < 1) throw new Error('每日免费额度已用完');
-        // 免费用户只能用normal风格和gpt-3.5
-        if (input.mode !== 'normal') throw new Error('免费用户仅可用默认风格');
-        if (input.model && input.model !== 'gpt-3.5-turbo') throw new Error('免费用户仅可用GPT-3.5');
-      }
+      // 额度判断 - 暂时跳过
+      // if (isPremium) {
+      //   if ((user.translationUsesToday ?? 0) >= 15) throw new Error('Daily quota exceeded.');
+      // } else {
+      //   if ((user.translationUsesToday ?? 0) >= 8) throw new Error('每日免费额度已用完');
+      //   // 免费用户只能用normal风格和gpt-3.5
+      //   if (input.mode !== 'normal') throw new Error('免费用户仅可用默认风格');
+      //   if (input.model && input.model !== 'gpt-3.5-turbo') throw new Error('免费用户仅可用GPT-3.5');
+      // }
       // 获取客户端信息
       const req = ctx.req as { headers?: { get?: (key: string) => string | null } } | undefined;
       const ip = String(req?.headers?.get?.('x-forwarded-for') ?? req?.headers?.get?.('x-real-ip') ?? 'unknown');
@@ -53,12 +59,12 @@ export const emojiRouter = createTRPCRouter({
           { role: 'user', content: input.text }
         ]
       });
-      // 扣减额度
-      if (isPremium) {
-        await prisma.user.update({ where: { id: userId }, data: { freeUsesDaily: { decrement: 1 } } });
-      } else {
-        await prisma.user.update({ where: { id: userId }, data: { freeUsesDaily: { decrement: 1 } } });
-      }
-      return { result: result.choices[0]?.message?.content || '' };
+      // 扣减额度 - 暂时跳过
+      // if (isPremium) {
+      //   await prisma.user.update({ where: { id: userId }, data: { translationUsesToday: { increment: 1 } } });
+      // } else {
+      //   await prisma.user.update({ where: { id: userId }, data: { translationUsesToday: { increment: 1 } } });
+      // }
+      return { result: result.choices[0]?.message?.content ?? '' };
     }),
 }); 

@@ -1,0 +1,17 @@
+{
+    "register": {
+      "title": "创建账户",
+      "desc": "欢迎！请填写详细信息开始使用。",
+      "usernameLabel": "用户名",
+      "usernamePlaceholder": "输入用户名",
+      "emailLabel": "邮箱地址",
+      "emailPlaceholder": "输入邮箱地址",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "输入密码",
+      "continue": "继续",
+      "loading": "注册中...",
+      "success": "注册成功！",
+      "error": "注册失败",
+      "loginFailed": "注册成功！请手动登录。"
+    }
+} 

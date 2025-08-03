@@ -1,5 +1,5 @@
 "use client";
-import NavBar from '../../components/NavBar';
+import UnifiedNavBar from '../../components/UnifiedNavBar';
 import Footer from '../../components/Footer';
 import { useTranslation } from "react-i18next";
 import { useSession } from "next-auth/react";
@@ -27,7 +27,7 @@ export default function ProfilePage() {
   // const { data: profile } = api.profile.getProfile.useQuery(undefined, { enabled: !!user });
   return (
     <div className="min-h-screen bg-gradient-to-r from-yellow-400 via-orange-300 to-pink-500">
-      <NavBar />
+      <UnifiedNavBar />
       <div className="flex justify-center items-center min-h-[60vh]">
         <div className="bg-white/20 rounded-2xl shadow-xl p-8 flex flex-col items-center min-w-[320px] max-w-[400px] w-full relative">
           <h1 className="text-3xl font-bold mb-6 text-white drop-shadow flex items-center gap-2">

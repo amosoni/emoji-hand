@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
-  const selected = (languages.find(l => l.code === i18n.language) || languages[0])!;
+  const selected = (languages.find(l => l.code === i18n.language) ?? languages[0])!;
 
   const handleLanguageChange = async (lang: typeof languages[0]) => {
     // 检查 pathname 是否存在

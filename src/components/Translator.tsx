@@ -5,11 +5,8 @@ import ModeSelector from "@/components/ModeSelector";
 import { api } from "@/utils/api";
 import ShareButton from "@/components/ShareButton";
 import { applyBrandSponsorship } from "@/utils/helpers";
-import '../i18n';
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import i18n from 'i18next';
-import { api as trpc } from "@/trpc/react";
 import { useLoginModal } from "@/components/LoginModalContext";
 import DouyinEmojiPicker from "@/components/DouyinEmojiPicker";
 import { parseDouyinShortcodes } from "@/utils/tiktokEmojis";
@@ -58,37 +55,46 @@ export default function Translator() {
     else localStorage.setItem("freeUses", "5");
   }, []);
 
-  const { mutateAsync, isPending } = trpc.emoji.translate.useMutation();
+  const { mutateAsync, isPending } = api.emoji.translate.useMutation();
+  const { data: usageStats } = api.usageLimits.getUserUsageStats.useQuery(
+    undefined,
+    { enabled: !!user }
+  );
+  const recordUsageMutation = api.usageLimits.recordServiceUsage.useMutation();
 
   const handleSend = async () => {
-    if (!user) {
-      show(); // 未登录弹出登录弹窗
-      return;
-    }
-    if (!inputText.trim() || isPending) return;
-    
-    // 处理抖音短代码
-    const processedText = parseDouyinShortcodes(inputText);
-    setMessages((prev) => [
-      ...prev,
-      {
-        role: "user",
-        content: inputText,
-        timestamp: new Date(),
-      },
-    ]);
+    if (!inputText.trim() || isLoading) return;
+
+    const userMessage = inputText.trim();
+    setInputText("");
     setIsLoading(true);
-    setError(null);
+    setError("");
+
+    // 添加用户消息
+    setMessages(prev => [...prev, {
+      role: "user",
+      content: userMessage,
+      timestamp: new Date(),
+    }]);
+
     try {
-      const res = await mutateAsync({ text: processedText, mode });
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: res.result,
-          timestamp: new Date(),
-        },
-      ]);
+      // 调用翻译API
+      const result = await mutateAsync({
+        text: userMessage,
+        mode: mode
+      });
+
+      // 添加AI回复
+      setMessages(prev => [...prev, {
+        role: "assistant",
+        content: result.result,
+        timestamp: new Date(),
+      }]);
+      
+      // 记录使用量
+      recordUsageMutation.mutate({
+        service: 'translation'
+      });
     } catch (err: any) {
       setError(err?.message ?? '服务异常');
     }
@@ -105,6 +111,23 @@ export default function Translator() {
 
   return (
     <div className="w-full max-w-3xl mx-auto p-6">
+      {/* 使用量显示 */}
+      {user && usageStats && (
+        <div className="mb-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+          <div className="flex items-center justify-between text-white">
+            <span className="text-sm">번역 사용량: {usageStats.usage.translation.used} / {usageStats.usage.translation.limit}</span>
+            <div className="w-32 bg-white/20 rounded-full h-2">
+              <div 
+                className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                style={{ 
+                  width: `${Math.min(100, (usageStats.usage.translation.used / usageStats.usage.translation.limit) * 100)}%` 
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      
       {/* 移除 userProfile 相关 UI，保留风格选择器和弹窗 */}
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 flex flex-col min-h-[500px]" style={{ minHeight: 500 }}>
         {error && (

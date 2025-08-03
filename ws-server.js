@@ -30,7 +30,7 @@ wss.on('connection', (ws) => {
                   - Normal: Add relevant emojis naturally to enhance the text
                   - Savage: Translate into sarcastic, witty emoji expressions with attitude
                   - GenZ: Convert to GenZ slang with trendy emojis and modern language
-                  - TikTok: Convert to TikTok-style expressions with exaggerated, fun, and engaging emojis
+                  - TikTok: Convert to TikTok-style expressions using Douyin platform-specific custom emoji shortcodes like [smile], [happy], [loveface], [cry], [angry], [surprised], [cool], [excited], [proud], [lovely], [greedy], [wow], [joyful], [hehe], [slap], [tears], [stun], [cute], [blink], [disdain], [astonish], [rage], [smileface], [evil], [angel], [laugh], [pride], [nap], [awkward], [shock]. These are Douyin platform-specific custom emoji symbols, not traditional Unicode emojis. Use exaggerated, fun, and engaging emoji combinations that mimic TikTok creator expression styles.
                   
                   Current mode: ${data.mode}
                   

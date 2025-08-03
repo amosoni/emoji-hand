@@ -32,11 +32,18 @@ export default function LoginModal() {
       const data = await res.json() as { error?: string };
       if (res.ok) {
         setSuccess(true);
-        await signIn('credentials', { email, password, redirect: false });
-        await getSession(); // 强制刷新 session
-        setTimeout(() => {
-          window.location.href = window.location.href;
-        }, 300);
+        // 注册成功后，等待一下再登录
+        await new Promise(resolve => setTimeout(resolve, 500));
+        const signInResult = await signIn('credentials', { email, password, redirect: false });
+        if (signInResult?.ok) {
+          await getSession(); // 强制刷新 session
+          setTimeout(() => {
+            window.location.reload(); // 使用 reload 而不是 href
+          }, 1000);
+        } else {
+          // 如果自动登录失败，提示用户手动登录
+          setError(t('register.loginFailed', 'Registration successful! Please login manually.'));
+        }
         close();
       } else {
         setError((data as { error?: string })?.error ?? t('register.error', 'Registration failed'));

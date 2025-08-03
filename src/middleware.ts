@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const locales = ['en', 'zh', 'de', 'it', 'fr', 'es', 'pt', 'ru', 'ja', 'ko'];
+const locales = ['en', 'zh', 'zh-CN', 'de', 'it', 'fr', 'es', 'pt', 'ru', 'ja', 'ko'];
 const defaultLocale = 'en';
 
 export function middleware(request: NextRequest) {
@@ -10,7 +10,9 @@ export function middleware(request: NextRequest) {
   // 跳过静态文件路径
   if (pathname.startsWith('/images/') || 
       pathname.startsWith('/logo.svg') || 
-      pathname.startsWith('/favicon.ico')) {
+      pathname.startsWith('/favicon.ico') ||
+      pathname.startsWith('/_next/') ||
+      pathname.startsWith('/api/')) {
     return;
   }
   

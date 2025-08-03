@@ -1,0 +1,29 @@
+{
+  "name": "Emoji Hand - AI-Powered Emoji Translator & Generator",
+  "short_name": "Emoji Hand",
+  "description": "Emoji Hand is the ultimate AI-powered emoji translator and generator. Transform any text into expressive emoji messages instantly.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6366F1",
+  "theme_color": "#6366F1",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "utilities", "social"],
+  "lang": "en",
+  "dir": "ltr"
+} 

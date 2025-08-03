@@ -1,6 +1,46 @@
 {
-  "appTitle": "emoji hand",
-  "appSlogan": "El Traductor Definitivo de Emojis",
+  "appTitle": "Emoji Hand",
+  "appSlogan": "Traductor y Generador de Emojis con IA",
+  "loading": "Cargando soporte multiidioma...",
+  "genZ": {
+    "seo": {
+      "title": "Guía de Emojis Gen Z - Diccionario Completo de Jerga y Expresiones",
+      "description": "Descubre la guía completa de emojis Gen Z con significados de jerga, expresiones y cómo usarlos efectivamente. Domina la comunicación Gen Z con nuestro diccionario de emojis completo.",
+      "keywords": "gen z, emoji gen z, jerga gen z, expresiones gen z, comunicación gen z, diccionario gen z, guía gen z, significado gen z, pack emoji gen z, estilo gen z",
+      "ogTitle": "Guía de Emojis Gen Z - Diccionario Completo de Jerga y Expresiones",
+      "ogDescription": "Domina la comunicación Gen Z con nuestra guía de emojis completa. Aprende significados de jerga y expresiones.",
+      "twitterTitle": "Guía de Emojis Gen Z - Diccionario Completo de Jerga y Expresiones",
+      "twitterDescription": "Domina la comunicación Gen Z con nuestra guía de emojis completa."
+    },
+    "title": "Guía de Emojis Gen Z",
+    "subtitle": "Domina el arte de la comunicación Gen Z con nuestra guía de emojis completa. Aprende significados de jerga, expresiones y cómo usarlos efectivamente.",
+    "whatIs": {
+      "title": "¿Qué es Gen Z?",
+      "content1": "La Generación Z, comúnmente conocida como Gen Z, se refiere a individuos nacidos entre 1997 y 2012. Esta generación nativa digital ha desarrollado estilos de comunicación únicos que dependen en gran medida de emojis, jerga y cultura de internet.",
+      "content2": "La comunicación Gen Z se caracteriza por su autenticidad, creatividad y el uso del lenguaje visual. Los emojis juegan un papel crucial en la expresión de emociones, sarcasmo y referencias culturales específicas de esta generación."
+    },
+    "popular": {
+      "title": "Emojis Gen Z Populares",
+      "skull": {
+        "title": "Calavera",
+        "meaning": "Usado para expresar \"estoy muerto\" o reacciones extremas, a menudo en un contexto humorístico."
+      },
+      "crying": {
+        "title": "Llorando",
+        "meaning": "Expresa emociones intensas, a menudo usado irónicamente o para mostrar sentimientos abrumadores."
+      },
+      "sparkles": {
+        "title": "Destellos",
+        "meaning": "Añade énfasis o magia a los mensajes, a menudo usado para resaltar puntos importantes."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Dominar la Comunicación Gen Z?",
+      "content": "Prueba nuestro traductor y generador de emojis Gen Z para crear contenido auténtico y atractivo que resuene con la generación más joven.",
+      "generator": "Probar Generador de Emojis",
+      "tiktok": "Explorar Modo TikTok"
+    }
+  },
   "appDescBold": "Emoji Hand (emojihand) es tu herramienta integral para convertir cualquier texto en mensajes divertidos y expresivos con emojis al instante.",
   "appDesc": "Impulsado por IA, Emoji Hand te ayuda a comunicarte con más emoción, creatividad y estilo. ¡Pruébalo ahora y haz que tus palabras destaquen!",
   "Normal": "Normal",
@@ -58,6 +98,8 @@
   "faq3A": "Usamos GPT de OpenAI para entender tu texto y añadir los emojis más relevantes según el contexto y estilo.",
   "faq4Q": "¿Puedo usar Emoji Hand en mi móvil?",
   "faq4A": "¡Por supuesto! Emoji Hand es totalmente responsivo y funciona genial en móviles.",
+  "profileTitle": "Perfil",
+  "signOut": "Cerrar sesión",
   "aboutTitle": "Sobre Emoji Hand",
   "aboutDesc": "Emoji Hand nació de la idea de que todos merecen expresarse más vívidamente en línea. Nuestra misión es hacer la comunicación digital más divertida, emocional y creativa—un emoji a la vez. Ya sea chateando con amigos, publicando en redes sociales o alegrando el día de alguien, Emoji Hand está para ayudarte.",
   "howUseTitle": "Cómo la gente usa Emoji Hand",
@@ -74,8 +116,97 @@
   "style.genz": "Jerga GenZ",
   "style.tiktok": "TikTok",
   "nav": {
+    "home": "Inicio",
     "tiktok": "Modo TikTok",
-    "tiktokEmojis": "Guía de Emojis de TikTok"
+    "tiktokEmojis": "Guía de Emojis TikTok",
+    "emojiGenerator": "Generador de Emojis",
+    "genZ": "Guía Gen Z",
+    "subscription": "Suscripción",
+    "lovartStyle": "Diseño Estilo Lovart"
+  },
+  "emojiGenerator": {
+    "title": "Generador de paquetes de emojis - Estilo Lovart AI",
+    "subtitle": "Sube una imagen y la IA generará hermosos paquetes de emojis inspirados en los principios de diseño de Lovart AI",
+    "uploadTitle": "Subir imagen",
+    "uploadHint": "Haz clic para subir o arrastra una imagen aquí",
+    "uploadLimit": "Soporta JPG, PNG, máximo 5MB",
+    "imageUploaded": "Imagen subida, haz clic para volver a seleccionar",
+    "styleTitle": "Elegir estilo",
+    "promptTitle": "Prompt personalizado (opcional)",
+    "promptPlaceholder": "Describe el efecto del paquete de emojis que deseas...",
+    "generate": "Generar paquetes de emojis",
+    "generating": "Generando con IA...",
+    "resultTitle": "Resultado",
+    "details": "Detalles",
+    "analysis": "Análisis de IA",
+    "download": "Descargar paquete de emojis",
+    "reset": "Reiniciar",
+    "style": "Estilo",
+    "generatedTime": "Hora de generación",
+    "tags": "Etiquetas",
+    "defaultDescription": "Paquete de emojis de estilo",
+    "error": {
+      "invalidFile": "Por favor, sube un archivo de imagen",
+      "fileTooLarge": "El tamaño de la imagen no puede superar los 5MB",
+      "noImage": "Por favor, sube una imagen primero",
+      "generationFailed": "Error de generación",
+      "invalidResult": "Resultado de generación inválido",
+      "retryLater": "Error de generación, inténtalo de nuevo más tarde",
+      "consoleError": "Error al generar el paquete de emojis:",
+      "loginRequired": "Por favor, inicia sesión para generar paquetes de emojis"
+    },
+    "styles": {
+      "cute": "Estilo lindo",
+      "funny": "Estilo divertido",
+      "cool": "Estilo genial",
+      "savage": "Estilo salvaje",
+      "genz": "Estilo GenZ",
+      "tiktok": "Estilo TikTok",
+      "vintage": "Estilo vintage",
+      "minimalist": "Estilo minimalista"
+    },
+    "textOptions": "Opciones de texto",
+    "includeText": "Incluir texto en el paquete de emojis",
+    "customTextLabel": "Texto personalizado (opcional):",
+    "customTextPlaceholder": "Ingresa texto para agregar al paquete de emojis...",
+    "textHint": "Déjalo vacío para que la IA genere texto apropiado basado en la imagen y el estilo",
+    "styleDescriptions": {
+      "cute": "Paleta de colores rosados con líneas redondeadas, perfecta para expresiones adorables y kawaii",
+      "funny": "Expresiones exageradas con elementos humorísticos, ideal para memes y comedia",
+      "cool": "Esquema de colores oscuros con elementos de moda, perfecto para expresiones trendy y elegantes",
+      "savage": "Expresiones agudas con elementos sarcásticos, ideal para declaraciones ingeniosas y audaces",
+      "genz": "Elementos trendy con expresiones juveniles, perfecto para redes sociales modernas",
+      "tiktok": "Elementos populares con estética de videos cortos, ideal para contenido viral",
+      "vintage": "Colores retro con elementos clásicos, perfecto para sensibilidad vintage",
+      "minimalist": "Líneas limpias y colores únicos, perfecto para belleza minimalista"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "lovartComparison": "¿Cómo se compara esto con Lovart AI?",
+      "lovartComparisonAnswer": "Mientras que Lovart AI es una plataforma de diseño integral, nuestro generador de emojis se enfoca específicamente en crear paquetes de emojis. Nos inspiramos en el enfoque impulsado por IA de Lovart y aplicamos principios similares a la creación de emojis.",
+      "imageFormats": "¿Qué formatos de imagen son compatibles?",
+      "imageFormatsAnswer": "Soportamos formatos JPG, PNG y GIF. Para mejores resultados, use imágenes de alta calidad con sujetos claros.",
+      "generationCount": "¿Cuántos paquetes de emojis puedo generar?",
+      "generationCountAnswer": "Cada generación crea 3-5 variaciones diferentes de paquetes de emojis basadas en tu estilo seleccionado e imagen subida.",
+      "commercialUse": "¿Puedo usar estos paquetes de emojis comercialmente?",
+      "commercialUseAnswer": "Sí, todos los paquetes de emojis generados son gratuitos para uso personal y comercial. Están creados usando tecnología de IA inspirada en los principios de Lovart AI."
+    },
+    "lovartInspired": "Inspirado en Lovart AI",
+    "lovartWhatIs": "¿Qué es Lovart AI?",
+    "lovartDescription": "Lovart AI es un agente de diseño de IA revolucionario que automatiza todo el viaje de diseño, desde el concepto hasta imágenes, videos, 3D y más. Nuestro generador de paquetes de emojis está inspirado en el enfoque innovador de Lovart para herramientas creativas impulsadas por IA.",
+    "lovartDescription2": "Al igual que Lovart AI, nuestro generador de emojis te permite subir una imagen y dejar que la IA cree múltiples variaciones con diferentes estilos, haciendo el proceso creativo sin esfuerzo y agradable.",
+    "lovartFeatures": "Características Principales",
+    "aiGeneration": "Generación de emojis impulsada por IA",
+    "styleVariations": "Múltiples variaciones de estilo",
+    "batchProcessing": "Capacidades de procesamiento por lotes",
+    "lovartPrinciples": "Principios de diseño inspirados en Lovart AI",
+    "howToUse": "Cómo Usar Nuestro Generador de Emojis Estilo Lovart",
+    "uploadStep": "Sube cualquier imagen que quieras transformar en paquetes de emojis. Nuestra IA analizará el contenido y creará variaciones.",
+    "styleStep": "Selecciona entre 6 estilos diferentes: Cute, Funny, Cool, Savage, GenZ o TikTok. Cada estilo crea variaciones únicas.",
+    "generateStep": "La IA genera múltiples variaciones de paquetes de emojis. Descarga paquetes individuales o úsalos en tus proyectos.",
+    "step1": "1. Subir Imagen",
+    "step2": "2. Elegir Estilo",
+    "step3": "3. Generar y Descargar"
   },
   "pages": {
     "tiktok": {
@@ -390,5 +521,242 @@
   "register.success": "¡Registro exitoso!",
   "register.error": "Error en el registro",
   "register.hasAccount": "¿Ya tienes una cuenta?",
-  "register.signin": "Iniciar sesión"
+  "register.signin": "Iniciar sesión",
+  "emojiGenerator": {
+    "title": "Generador de Paquetes de Emojis - Estilo Lovart AI",
+    "subtitle": "Sube una imagen y la IA generará hermosos paquetes de emojis inspirados en los principios de diseño de Lovart AI",
+    "uploadText": "Haz clic para subir imagen",
+    "uploadDesc": "Formatos JPG, PNG, GIF soportados",
+    "reupload": "Seleccionar otra imagen",
+    "selectStyle": "Seleccionar estilo de paquete de emojis",
+    "generate": "Generar paquete de emojis",
+    "results": "Paquetes de emojis generados",
+    "download": "Descargar",
+    "lovartInspired": "Inspirado en Lovart AI",
+    "lovartDescription": "Lovart AI es un agente de diseño de IA revolucionario que automatiza todo el viaje de diseño, desde el concepto hasta imágenes, videos, 3D y más. Nuestro generador de paquetes de emojis está inspirado en el enfoque innovador de Lovart para herramientas creativas impulsadas por IA.",
+    "lovartFeatures": "Características principales",
+    "aiGeneration": "Generación de emojis impulsada por IA",
+    "styleVariations": "Variaciones de estilo múltiples",
+    "batchProcessing": "Capacidades de procesamiento por lotes",
+    "lovartPrinciples": "Principios de diseño inspirados en Lovart AI",
+    "howToUse": "Cómo usar el generador de emojis estilo Lovart",
+    "uploadStep": "Sube la imagen que quieres convertir en paquete de emojis. Nuestra IA analizará el contenido y generará variaciones.",
+    "styleStep": "Elige entre 6 estilos diferentes: cute, funny, cool, savage, GenZ, TikTok. Cada estilo genera variaciones únicas.",
+    "generateStep": "La IA genera múltiples variaciones de paquetes de emojis. Descarga paquetes individuales o úsalos en tus proyectos.",
+    "faqTitle": "Preguntas frecuentes",
+    "lovartComparison": "¿Cómo se compara esto con Lovart AI?",
+    "lovartComparisonAnswer": "Mientras que Lovart AI es una plataforma de diseño integral, nuestro generador de emojis se enfoca específicamente en crear paquetes de emojis. Estamos inspirados en el enfoque impulsado por IA de Lovart y aplicamos principios similares a la creación de emojis.",
+    "imageFormats": "¿Qué formatos de imagen son compatibles?",
+    "imageFormatsAnswer": "Soportamos formatos JPG, PNG y GIF. Para mejores resultados, usa imágenes de alta calidad con sujetos claros.",
+    "generationCount": "¿Cuántos paquetes de emojis puedo generar?",
+    "generationCountAnswer": "Cada generación crea 3-5 variaciones diferentes de paquetes de emojis basadas en tu estilo seleccionado e imagen subida.",
+    "commercialUse": "¿Puedo usar estos paquetes de emojis comercialmente?",
+    "commercialUseAnswer": "Sí, todos los paquetes de emojis generados son gratuitos para uso personal y comercial. Están creados usando tecnología de IA inspirada en los principios de Lovart AI.",
+    "styles": {
+      "cute": "Estilo Cute",
+      "funny": "Estilo Funny",
+      "cool": "Estilo Cool",
+      "savage": "Estilo Savage",
+      "genz": "Estilo GenZ",
+      "tiktok": "Estilo TikTok"
+    },
+    "seo": {
+      "title": "Generador de Paquetes de Emojis - Estilo Lovart AI",
+      "description": "Crea hermosos paquetes de emojis con IA, inspirados en los principios de diseño de Lovart AI. Sube imágenes y genera múltiples variaciones de paquetes de emojis con diferentes estilos incluyendo cute, savage, GenZ y TikTok.",
+      "keywords": "lovart, generador de emojis, emojis IA, paquete de emojis, diseño IA, lovart ai, creación de emojis, arte IA, creador de emojis, generador de paquetes de emojis",
+      "ogTitle": "Generador de Paquetes de Emojis - Estilo Lovart AI",
+      "ogDescription": "Crea hermosos paquetes de emojis con IA, inspirados en los principios de diseño de Lovart AI. Sube imágenes y genera múltiples variaciones de paquetes de emojis.",
+      "twitterTitle": "Generador de Paquetes de Emojis - Estilo Lovart AI",
+      "twitterDescription": "Crea hermosos paquetes de emojis con IA, inspirados en los principios de diseño de Lovart AI."
+    },
+    "stylesTitle": "Estilos de Paquetes de Emojis (Inspirado en Lovart AI)",
+    "styleDescriptions": {
+      "cute": "Paleta de colores rosados con líneas redondeadas, perfecta para expresiones adorables y kawaii.",
+      "funny": "Expresiones exageradas con elementos humorísticos, excelente para memes y comedia.",
+      "cool": "Esquema de colores oscuros con elementos de moda, perfecto para expresiones trendy y elegantes.",
+      "savage": "Expresiones agudas con elementos sarcásticos, ideal para declaraciones ingeniosas y audaces.",
+      "genz": "Elementos trendy con expresiones juveniles, perfecto para redes sociales modernas.",
+      "tiktok": "Elementos populares con estética de video corto, excelente para contenido viral."
+    }
+  },
+  "upgradeNow": "Actualizar Ahora",
+  "subscriptionInfo": "Información de Suscripción",
+  "subscriptionDesc": "Los usuarios gratuitos pueden generar 3 paquetes por día. ¡Actualiza para desbloquear más funciones!",
+  "subscription": {
+    "title": "Sistema de Suscripción de Paquetes de Emojis",
+    "subtitle": "Elige tu paquete de suscripción adecuado y disfruta del servicio profesional de generación de paquetes de emojis con IA",
+    "loginRequired": "Por favor, inicia sesión primero para ver la información de suscripción",
+    "loginToPurchase": "Iniciar Sesión para Comprar",
+    "loginToPurchaseDesc": "Por favor, inicia sesión para ver tu estado de suscripción y comprar planes",
+    "currentStatus": "Estado Actual de Suscripción",
+    "plan": "Plan",
+    "usesToday": "Usos Hoy",
+    "usesThisMonth": "Usos Este Mes",
+    "totalUses": "Total de Usos",
+    "images": " imágenes",
+    "expireAt": "Expira En",
+    "monthly": "Mensual",
+    "yearly": "Anual (Descuento)",
+    "month": "mes",
+    "year": "año",
+    "yearlyDiscount": "Descuento Anual",
+    "dailyLimit": "Límite Diario",
+    "monthlyLimit": "Límite Mensual",
+    "maxPerUse": "Máximo Por Uso",
+    "models": "Modelos",
+    "commercialUse": "Uso Comercial",
+    "supported": "Soportado",
+    "notSupported": "No Soportado",
+    "currentPlan": "Plan Actual",
+    "selectPlan": "Seleccionar Plan",
+    "processing": "Procesando...",
+    "upgrade": "Actualizar Suscripción",
+    "upgradeSuccess": "¡Suscripción actualizada exitosamente!",
+    "upgradeFailed": "Error al actualizar:",
+    "translationUsage": "Uso de Traducción",
+    "imageGenerationUsage": "Uso de Generación de Imágenes",
+    "status": "Estado",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "translations": "traducciones",
+    "imageGeneration": "Generación de Imágenes",
+    "images": "imágenes",
+    "noAds": "Sin Anuncios",
+    "loginToUpgrade": "Por favor, inicia sesión para actualizar tu suscripción",
+    "login": "Iniciar Sesión",
+    "currentPlanSelected": "Este es tu plan actual",
+    "usageInstructions": "Instrucciones de Uso",
+    "freePlan": "Plan Gratuito",
+    "freePlanDesc": "3 imágenes por día, adecuado para prueba",
+    "basicPlan": "Plan Básico",
+    "basicPlanDesc": "20 imágenes por día, adecuado para usuarios individuales",
+    "proPlan": "Plan Profesional",
+    "proPlanDesc": "50 imágenes por día, adecuado para usuarios profesionales",
+    "enterprisePlan": "Plan Empresarial",
+    "enterprisePlanDesc": "100 imágenes por día, adecuado para usuarios empresariales",
+    "yearlyDiscountNote": "Pago anual con precios con descuento",
+    "commercialAuth": "Soporte para autorización comercial (planes pagos)",
+    "seo": {
+      "title": "Suscripción de Paquetes de Emojis - EmojiHand",
+      "description": "Elige tu plan de suscripción de paquetes de emojis y disfruta de los servicios profesionales de generación de emojis con IA.",
+      "keywords": "suscripción de emojis, emojis IA, generación de emojis, planes de suscripción",
+      "ogTitle": "Suscripción de Paquetes de Emojis - EmojiHand",
+      "ogDescription": "Elige tu plan de suscripción de paquetes de emojis y disfruta de los servicios profesionales de generación de emojis con IA."
+    }
+  },
+  "lovartStyle": {
+    "title": "Lovart Style AI",
+    "description": "El primer agente de diseño AI del mundo. Crea estrategias de marca completas, visuales de marketing, contenido de redes sociales, diseños de productos, interfaces web e incluso modelos 3D - todo desde un solo prompt.",
+    "upload": {
+      "title": "Subir imagen (opcional)",
+      "instruction": "Haz clic para subir o arrastra la imagen aquí",
+      "supported": "Soporta JPG, PNG, máximo 10MB",
+      "reselect": "Imagen subida, haz clic para seleccionar otra"
+    },
+    "prompt": {
+      "title": "Prompt de texto (opcional)",
+      "placeholder": "Describe tu idea de diseño, concepto de marca o visión creativa..."
+    },
+    "designType": {
+      "title": "Tipo de diseño",
+      "brand": "Identidad de marca",
+      "brandDesc": "Crea estrategia de marca completa, logos, colores, tipografía",
+      "marketing": "Visuales de marketing",
+      "marketingDesc": "Crea materiales promocionales y campañas llamativas",
+      "social": "Redes sociales",
+      "socialDesc": "Crea contenido y posts de redes sociales atractivos",
+      "product": "Diseño de producto",
+      "productDesc": "Diseña maquetas de productos y empaques",
+      "web": "Web & UI",
+      "webDesc": "Crea diseños de sitios web e interfaces de usuario",
+      "video": "Video & 3D",
+      "videoDesc": "Genera videos, modelos 3D y animaciones"
+    },
+    "audience": {
+      "title": "Audiencia objetivo",
+      "select": "Seleccionar audiencia objetivo",
+      "general": "Público general",
+      "youngAdults": "Jóvenes adultos (18-25 años)",
+      "professionals": "Profesionales (25-40 años)",
+      "teenagers": "Adolescentes (13-17 años)",
+      "businessOwners": "Propietarios de negocios",
+      "creativeProfessionals": "Profesionales creativos",
+      "students": "Estudiantes",
+      "parents": "Padres"
+    },
+    "commercial": {
+      "title": "Uso comercial",
+      "description": "Optimizado para aplicaciones comerciales"
+    },
+    "generate": "Generar diseño",
+    "generating": "AI generando...",
+    "reset": "Reiniciar",
+    "results": {
+      "analysis": "Análisis AI",
+      "concepts": "Conceptos creativos",
+      "businessAdvice": "Recomendaciones de negocio",
+      "designs": "Diseños generados"
+    },
+    "error": {
+      "invalidFile": "Por favor sube un archivo de imagen",
+      "fileTooLarge": "El tamaño de la imagen no puede exceder 10MB",
+      "noInput": "Por favor proporciona una imagen o prompt de texto",
+      "generationFailed": "La generación falló, por favor intenta de nuevo más tarde"
+    },
+    "waiting": {
+      "title": "Esperando resultados de generación",
+      "description": "Llena el formulario a la izquierda y haz clic en el botón generar para comenzar a crear tu diseño"
+    },
+    "about": {
+      "title": "Acerca de Lovart AI",
+      "description1": "Lovart AI es el primer agente de diseño AI del mundo que revoluciona el proceso creativo. Inspirado en el enfoque innovador de Lovart para el diseño impulsado por AI, nuestra herramienta Lovart Style AI trae la misma tecnología de vanguardia a tus manos.",
+      "description2": "Ya sea que necesites diseño de identidad de marca, visuales de marketing, contenido de redes sociales, diseños de productos, interfaces web o incluso modelos 3D, Lovart Style AI puede manejar todo desde un solo prompt - igual que la plataforma Lovart AI original."
+    },
+    "features": {
+      "title": "Características de Lovart AI",
+      "solutions": {
+        "title": "Soluciones de diseño completas",
+        "brand": "Estrategia de marca y diseño de identidad",
+        "marketing": "Campañas de marketing y materiales promocionales",
+        "social": "Contenido y posts de redes sociales",
+        "product": "Maquetas de productos y diseño de empaques"
+      },
+      "technology": {
+        "title": "Tecnología AI avanzada",
+        "web": "Generación de diseños web y UI",
+        "video": "Creación de videos y modelos 3D",
+        "analysis": "Análisis de diseño inteligente",
+        "quality": "Calidad de salida de nivel profesional"
+      }
+    },
+    "why": {
+      "title": "¿Por qué elegir Lovart Style AI?",
+      "fast": {
+        "title": "Ultra rápido",
+        "description": "Genera diseños profesionales en minutos, no en días"
+      },
+      "ai": {
+        "title": "Impulsado por AI",
+        "description": "Tecnología Lovart AI avanzada para resultados superiores"
+      },
+      "creative": {
+        "title": "Libertad creativa",
+        "description": "Posibilidades de diseño ilimitadas con guía inteligente"
+      }
+    },
+    "solutions": {
+      "title": "Soluciones de diseño Lovart AI",
+      "description1": "Experimenta el poder de la tecnología Lovart AI con nuestra plataforma de diseño integral. Desde identidad de marca hasta campañas de marketing, Lovart Style AI entrega diseños de calidad profesional que coinciden con la innovación y creatividad de la plataforma Lovart AI original.",
+      "description2": "Nuestra herramienta de diseño AI inspirada en Lovart admite múltiples formatos incluyendo imágenes, videos, modelos 3D y contenido interactivo. Ya seas diseñador, marketer, emprendedor o profesional creativo, Lovart Style AI proporciona las herramientas que necesitas para dar vida a tu visión con la misma tecnología de vanguardia que hace revolucionario a Lovart AI."
+    },
+    "seo": {
+      "title": "Lovart Style AI - Asistente de diseño creativo",
+      "description": "Asistente de diseño AI profesional inspirado en Lovart AI. Genera logos, pósters, contenido de redes sociales y más con análisis creativo inteligente.",
+      "keywords": "lovart, diseño ai, asistente creativo, diseño de logos, diseño de pósters, diseño de redes sociales, arte ai, automatización de diseño",
+      "ogTitle": "Lovart Style AI - Asistente de diseño creativo",
+      "ogDescription": "Asistente de diseño AI profesional inspirado en Lovart AI. Genera logos, pósters, contenido de redes sociales y más.",
+      "twitterTitle": "Lovart Style AI - Asistente de diseño creativo",
+      "twitterDescription": "Asistente de diseño AI profesional inspirado en Lovart AI."
+    }
+  }
 } 

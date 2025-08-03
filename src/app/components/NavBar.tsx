@@ -48,7 +48,7 @@ export default function NavBar() {
             className="bg-white/20 hover:bg-pink-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
             onClick={show}
           >
-            {t('login.button', '登录 / Login')}
+            {t('login.button', 'Login')}
           </button>
         ) : (
           <div className="relative flex items-center gap-2" ref={menuRef}>
@@ -65,7 +65,7 @@ export default function NavBar() {
                 <button className="px-4 py-2 hover:bg-pink-100 rounded transition text-left w-full text-inherit" onClick={() => {
                   window.location.href = `/${locale}/profile`;
                 }}>{t('profileTitle')}</button>
-                <button onClick={() => signOut()} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', '退出登录')}</button>
+                <button onClick={() => signOut()} className="px-4 py-2 hover:bg-pink-100 rounded text-left">{t('signOut', 'Sign Out')}</button>
               </div>
             )}
           </div>

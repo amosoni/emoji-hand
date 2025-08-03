@@ -1,8 +1,153 @@
 {
-  "appTitle": "emoji hand",
-  "appSlogan": "究極の絵文字翻訳ツール",
+  "appTitle": "Emoji Hand",
+  "appSlogan": "AI搭載絵文字翻訳・生成ツール",
+  "loading": "多言語サポートを読み込み中...",
+  "genZ": {
+    "seo": {
+      "title": "Gen Z絵文字ガイド - 完全スラング・表現辞典",
+      "description": "Gen Z絵文字ガイドでスラングの意味、表現方法、効果的な使い方を学びましょう。包括的な絵文字辞典でGen Zコミュニケーションをマスター。",
+      "keywords": "gen z, gen z絵文字, gen zスラング, gen z表現, gen zコミュニケーション, gen z辞典, gen zガイド, gen z意味, gen z絵文字パック, gen zスタイル",
+      "ogTitle": "Gen Z絵文字ガイド - 完全スラング・表現辞典",
+      "ogDescription": "包括的な絵文字ガイドでGen Zコミュニケーションをマスター。スラングの意味と表現を学びましょう。",
+      "twitterTitle": "Gen Z絵文字ガイド - 完全スラング・表現辞典",
+      "twitterDescription": "包括的な絵文字ガイドでGen Zコミュニケーションをマスター。"
+    },
+    "title": "Gen Z絵文字ガイド",
+    "subtitle": "包括的な絵文字ガイドでGen Zコミュニケーションの技術をマスター。スラングの意味、表現方法、効果的な使い方を学びましょう。",
+    "whatIs": {
+      "title": "Gen Zとは？",
+      "content1": "Z世代、一般的にGen Zと呼ばれる人々は、1997年から2012年の間に生まれた人々を指します。このデジタルネイティブ世代は、絵文字、スラング、インターネット文化に大きく依存する独特なコミュニケーションスタイルを発展させました。",
+      "content2": "Gen Zコミュニケーションは、その真実性、創造性、視覚的言語の使用が特徴です。絵文字は、この世代特有の感情、皮肉、文化的参照を表現する上で重要な役割を果たしています。"
+    },
+    "popular": {
+      "title": "人気のGen Z絵文字",
+      "skull": {
+        "title": "スカル",
+        "meaning": "\"死んだ\"や極端な反応を表現するために使用され、通常はユーモラスな文脈で使われます。"
+      },
+      "crying": {
+        "title": "泣き顔",
+        "meaning": "強い感情を表現し、皮肉的に使用されたり、圧倒的な感情を示すために使われます。"
+      },
+      "sparkles": {
+        "title": "キラキラ",
+        "meaning": "メッセージに強調や魔法を加え、重要なポイントを強調するためによく使われます。"
+      }
+    },
+    "cta": {
+      "title": "Gen Zコミュニケーションをマスターする準備はできましたか？",
+      "content": "Gen Z絵文字翻訳・生成ツールを試して、若い世代に響く本物で魅力的なコンテンツを作成しましょう。",
+      "generator": "絵文字ジェネレーターを試す",
+      "tiktok": "TikTokモードを探索"
+    },
+    "moreEmojis": {
+      "title": "その他のGen Z絵文字",
+      "clown": {
+        "title": "ピエロ",
+        "meaning": "愚かな行為を指摘するために使用"
+      },
+      "nail": {
+        "title": "ネイルポリッシュ",
+        "meaning": "自信とサッシを表現"
+      },
+      "hundred": {
+        "title": "100点",
+        "meaning": "同意または\"事実\"を表す"
+      },
+      "fire": {
+        "title": "炎",
+        "meaning": "何かが素晴らしいまたはクール"
+      },
+      "skull2": {
+        "title": "スカル",
+        "meaning": "\"笑い死んだ\""
+      },
+      "crying2": {
+        "title": "泣き顔",
+        "meaning": "強い感情、しばしば皮肉的"
+      },
+      "sparkles2": {
+        "title": "キラキラ",
+        "meaning": "魔法と強調を追加"
+      },
+      "zany": {
+        "title": "クレイジー",
+        "meaning": "遊び心と愚かな行動"
+      }
+    },
+    "communication": {
+      "title": "Gen Zコミュニケーションのコツ",
+      "authentic": {
+        "title": "本物であること",
+        "content": "Gen Zは本物で、フィルターなしのコミュニケーションを重視します。自分ではない誰かになろうとしないでください。"
+      },
+      "visual": {
+        "title": "視覚的言語を使用",
+        "content": "絵文字、GIF、ミームは感情とコンテキストを表現するために不可欠です。"
+      },
+      "quick": {
+        "title": "簡潔に保つ",
+        "content": "明確な意図を持つ短くて力強いメッセージがこの世代に最適です。"
+      },
+      "humor": {
+        "title": "ユーモアを受け入れる",
+        "content": "皮肉、アイロニー、自虐的なユーモアが高く評価されます。"
+      }
+    },
+    "phrases": {
+      "title": "一般的なGen Zフレーズ",
+      "period": {
+        "title": "以上。",
+        "meaning": "声明を強調するために使用、\"話終わり\"に類似",
+        "example": "例：\"その服は炎上、以上。\""
+      },
+      "slay": {
+        "title": "スレイ",
+        "meaning": "何かを非常に上手くやる、または素晴らしく見える",
+        "example": "例：\"あなたはそのプレゼンを絶対にスレイした！\""
+      },
+      "facts": {
+        "title": "事実",
+        "meaning": "誰かが言ったことに同意",
+        "example": "例：\"それは事実、嘘なし。\""
+      },
+      "noCap": {
+        "title": "嘘なし",
+        "meaning": "嘘をつかない、完全に正直",
+        "example": "例：\"これは最高の映画、嘘なし。\""
+      }
+    },
+    "scenarios": {
+      "title": "使用シナリオ",
+      "social": {
+        "title": "ソーシャルメディア投稿",
+        "example1": "原文：\"ワークアウト終了\"",
+        "result1": "Gen Z：\"ワークアウト終了 💪✨ その有酸素運動をスレイした 🔥\"",
+        "example2": "原文：\"この食べ物は素晴らしい\"",
+        "result2": "Gen Z：\"この食べ物は絶対に炎上 🔥 嘘なし、最高の食事 💯\""
+      },
+      "chat": {
+        "title": "グループチャット",
+        "example1": "原文：\"それは面白い\"",
+        "result1": "Gen Z：\"💀💀💀 笑い死んだ、それは面白すぎる 😭\"",
+        "example2": "原文：\"同意する\"",
+        "result2": "Gen Z：\"事実 💯 嘘なし、あなたは絶対に正しい\""
+      }
+    },
+    "faq": {
+      "title": "よくある質問",
+      "q1": "なぜGen Zはこれほど多くの絵文字を使うのですか？",
+      "a1": "Gen Zは絵文字を使って感情的なコンテキストを追加し、皮肉を表現し、コミュニケーションをより魅力的で本物にします。",
+      "q2": "どうすればGen Zのように聞こえますか？",
+      "a2": "本物であること、関連する絵文字を使用、現在のスラングを受け入れ、遊び心と皮肉を恐れないでください。",
+      "q3": "Gen Zとミレニアル世代のコミュニケーションの違いは何ですか？",
+      "a3": "Gen Zはより直接的で、より多くの視覚的要素を使用し、皮肉とアイロニーをより公然と受け入れ、完璧さよりも本物を重視します。",
+      "q4": "Gen Zのトレンドにどうやってついていけますか？",
+      "a4": "ソーシャルメディアでGen Zクリエイターをフォローし、バイラルトレンドに注意し、時事問題とポップカルチャーの参照を最新に保ってください。"
+    }
+  },
   "appDescBold": "Emoji Hand（emojihand）は、あらゆるテキストを楽しく表現豊かな絵文字メッセージに即座に変換するワンストップツールです。",
-  "appDesc": "AI搭載のEmoji Handで、もっと感情豊かに、クリエイティブに、スタイリッシュに伝えよう。今すぐ体験して、あなたの言葉を際立たせよう！",
+  "appDesc": "Emoji Handは究極のAI搭載絵文字翻訳・生成ツールです。あらゆるテキストを表現豊かな絵文字メッセージに即座に変換。無料絵文字翻訳、TikTok絵文字、絵文字パックなど豊富な機能！",
   "Normal": "ノーマル",
   "Savage": "サベージ",
   "GenZ Slang": "GenZスラング",
@@ -58,6 +203,8 @@
   "faq3A": "OpenAI GPTで文脈を理解し、最適な絵文字を提案します。",
   "faq4Q": "スマホでも使えますか？",
   "faq4A": "もちろん！Emoji Handは完全レスポンシブでスマホでも快適です。",
+  "profileTitle": "プロフィール",
+  "signOut": "ログアウト",
   "aboutTitle": "Emoji Handについて",
   "aboutDesc": "Emoji Handは、誰もがオンラインでより生き生きと自己表現できるように誕生しました。私たちのミッションは、デジタルコミュニケーションをもっと楽しく、感情豊かでクリエイティブにすること—1つの絵文字から始まります。友達とのチャット、SNS投稿、誰かの一日を明るくしたい時もEmoji Handがサポートします！",
   "howUseTitle": "Emoji Handの活用例",
@@ -74,8 +221,163 @@
   "style.genz": "GenZスラング",
   "style.tiktok": "TikTok",
   "nav": {
+    "home": "ホーム",
     "tiktok": "TikTokモード",
-    "tiktokEmojis": "TikTok絵文字ガイド"
+    "tiktokEmojis": "TikTok絵文字ガイド",
+    "emojiGenerator": "絵文字ジェネレーター",
+    "genZ": "Gen Zガイド",
+    "subscription": "サブスクリプション",
+    "lovartStyle": "Lovart Style デザイン"
+  },
+  "emojiGenerator": {
+    "title": "絵文字パックジェネレーター - Lovart AIスタイル",
+    "subtitle": "画像をアップロードすると、AIがLovart AIのデザイン理念にインスパイアされた美しい絵文字パックを生成します",
+    "uploadTitle": "画像をアップロード",
+    "uploadHint": "クリックして画像をアップロード、またはここにドラッグ",
+    "uploadLimit": "JPG、PNG対応、最大5MB",
+    "imageUploaded": "画像がアップロードされました。再選択するにはクリックしてください",
+    "styleTitle": "スタイルを選択",
+    "promptTitle": "カスタムプロンプト（任意）",
+    "promptPlaceholder": "希望する絵文字パックの効果を説明してください...",
+    "generate": "絵文字パック生成",
+    "generating": "AI生成中...",
+    "resultTitle": "生成結果",
+    "details": "詳細情報",
+    "analysis": "AI分析",
+    "download": "絵文字パックをダウンロード",
+    "reset": "リセット",
+    "style": "スタイル",
+    "generatedTime": "生成時間",
+    "tags": "タグ",
+    "defaultDescription": "スタイル絵文字パック",
+    "error": {
+      "invalidFile": "画像ファイルをアップロードしてください",
+      "fileTooLarge": "画像サイズは5MBを超えることはできません",
+      "noImage": "まず画像をアップロードしてください",
+      "generationFailed": "生成に失敗しました",
+      "invalidResult": "無効な生成結果",
+      "retryLater": "生成に失敗しました。後で再試行してください",
+      "consoleError": "絵文字パック生成失敗:",
+      "loginRequired": "絵文字パックを生成するにはログインしてください"
+    },
+    "styles": {
+      "cute": "かわいいスタイル",
+      "funny": "面白いスタイル",
+      "cool": "クールスタイル",
+      "savage": "サベージスタイル",
+      "genz": "GenZスタイル",
+      "tiktok": "TikTokスタイル",
+      "vintage": "ビンテージスタイル",
+      "minimalist": "ミニマリストスタイル"
+    },
+    "stylesTitle": "絵文字パックスタイル（Lovart AIにインスパイア）",
+    "textOptions": "テキストオプション",
+    "includeText": "絵文字パックにテキストを含める",
+    "customTextLabel": "カスタムテキスト（任意）:",
+    "customTextPlaceholder": "絵文字パックに追加するテキストを入力してください...",
+    "textHint": "空にしておくと、AIが画像とスタイルに基づいて適切なテキストを自動生成します",
+    "styleDescriptions": {
+      "cute": "ピンクカラーパレットと丸い線、可愛くてカワイイ表現に最適",
+      "funny": "誇張された表現とユーモア要素、ミームとコメディに最適",
+      "cool": "ダークカラースキームとファッション要素、トレンディでスタイリッシュな表現に最適",
+      "savage": "鋭い表現と皮肉要素、機知に富んだ大胆な表現に理想的",
+      "genz": "トレンディ要素と若い表現、現代のソーシャルメディアに最適",
+      "tiktok": "人気要素とショート動画美学、バイラルコンテンツに最適",
+      "vintage": "レトロカラーとクラシック要素、ビンテージ感に最適",
+      "minimalist": "クリーンな線とシングルカラー、ミニマルな美しさに最適"
+    },
+    "faq": {
+      "title": "よくある質問",
+      "lovartComparison": "Lovart AIと比較するとどうですか？",
+      "lovartComparisonAnswer": "Lovart AIは包括的なデザインプラットフォームですが、私たちの絵文字ジェネレーターは特に絵文字パックの作成に特化しています。私たちはLovartのAI駆動アプローチにインスパイアされ、絵文字作成に同様の原則を適用しています。",
+      "imageFormats": "どの画像形式をサポートしていますか？",
+      "imageFormatsAnswer": "JPG、PNG、GIF形式をサポートしています。最良の結果を得るには、明確な被写体を持つ高品質の画像を使用してください。",
+      "generationCount": "いくつの絵文字パックを生成できますか？",
+      "generationCountAnswer": "各生成は選択したスタイルとアップロードした画像に基づいて3-5個の異なる絵文字パックバリエーションを作成します。",
+      "commercialUse": "これらの絵文字パックを商業的に使用できますか？",
+      "commercialUseAnswer": "はい、生成されたすべての絵文字パックは個人および商業目的で無料で使用できます。Lovart AIの原則にインスパイアされたAI技術で作成されています。"
+    },
+    "lovartInspired": "Lovart AIにインスパイア",
+    "lovartWhatIs": "Lovart AIとは？",
+    "lovartDescription": "Lovart AIは、コンセプトから画像、動画、3Dまで、デザインの全過程を自動化する革新的なAIデザインエージェントです。私たちの絵文字パックジェネレーターは、LovartのAI駆動クリエイティブツールへの革新的なアプローチにインスパイアされています。",
+    "lovartDescription2": "Lovart AIと同様に、私たちの絵文字ジェネレーターは、画像をアップロードしてAIが異なるスタイルで複数のバリエーションを作成できるようにし、クリエイティブプロセスを簡単で楽しいものにします。",
+    "lovartFeatures": "主要機能",
+    "aiGeneration": "AI駆動絵文字生成",
+    "styleVariations": "複数スタイルバリエーション",
+    "batchProcessing": "バッチ処理機能",
+    "lovartPrinciples": "Lovart AIにインスパイアされたデザイン原則",
+    "howToUse": "Lovartスタイル絵文字ジェネレーターの使用方法",
+    "uploadStep": "絵文字パックに変換したい画像をアップロードしてください。私たちのAIがコンテンツを分析し、バリエーションを作成します。",
+    "styleStep": "6つの異なるスタイルから選択：かわいい、面白い、クール、サベージ、GenZ、またはTikTok。各スタイルはユニークなバリエーションを作成します。",
+    "generateStep": "AIが複数の絵文字パックバリエーションを生成します。個別パックをダウンロードするか、プロジェクトで使用してください。",
+    "step1": "1. 画像アップロード",
+    "step2": "2. スタイル選択",
+    "step3": "3. 生成とダウンロード"
+  },
+  "upgradeNow": "今すぐアップグレード",
+  "subscriptionInfo": "サブスクリプション情報",
+  "subscriptionDesc": "無料ユーザーは1日3パックまで生成可能。アップグレードでより多くの機能をアンロック！",
+  "subscription": {
+    "title": "絵文字パックサブスクリプションシステム",
+    "subtitle": "適切なサブスクリプションパッケージを選択し、プロフェッショナルなAI絵文字パック生成サービスをお楽しみください",
+    "loginRequired": "サブスクリプション情報を表示するには、まずログインしてください",
+    "loginToPurchase": "購入するにはログイン",
+    "loginToPurchaseDesc": "サブスクリプション状況を確認し、プランを購入するにはログインしてください",
+    "currentStatus": "現在のサブスクリプション状況",
+    "plan": "プラン",
+    "usesToday": "今日の使用回数",
+    "usesThisMonth": "今月の使用回数",
+    "totalUses": "総使用回数",
+    "images": "枚の画像",
+    "expireAt": "有効期限",
+    "monthly": "月額",
+    "yearly": "年額（割引）",
+    "month": "月",
+    "year": "年",
+    "yearlyDiscount": "年額割引",
+    "dailyLimit": "1日あたりの制限",
+    "monthlyLimit": "月間制限",
+    "maxPerUse": "使用あたりの最大",
+    "models": "モデル",
+    "commercialUse": "商用利用",
+    "supported": "対応",
+    "notSupported": "非対応",
+    "currentPlan": "現在のプラン",
+    "selectPlan": "プランを選択",
+    "processing": "処理中...",
+    "upgrade": "サブスクリプションをアップグレード",
+    "upgradeSuccess": "サブスクリプションのアップグレードが成功しました！",
+    "upgradeFailed": "アップグレードに失敗しました：",
+    "translationUsage": "翻訳使用量",
+    "imageGenerationUsage": "画像生成使用量",
+    "status": "ステータス",
+    "active": "アクティブ",
+    "inactive": "非アクティブ",
+    "translations": "翻訳",
+    "imageGeneration": "画像生成",
+    "images": "画像",
+    "noAds": "広告なし",
+    "loginToUpgrade": "サブスクリプションをアップグレードするにはログインしてください",
+    "login": "ログイン",
+    "currentPlanSelected": "これはあなたの現在のプランです",
+    "usageInstructions": "利用説明",
+    "freePlan": "無料プラン",
+    "freePlanDesc": "1日3枚の画像、試用に適しています",
+    "basicPlan": "ベーシックプラン",
+    "basicPlanDesc": "1日20枚の画像、個人ユーザーに適しています",
+    "proPlan": "プロフェッショナルプラン",
+    "proPlanDesc": "1日50枚の画像、プロフェッショナルユーザーに適しています",
+    "enterprisePlan": "エンタープライズプラン",
+    "enterprisePlanDesc": "1日100枚の画像、エンタープライズユーザーに適しています",
+    "yearlyDiscountNote": "年額支払いで割引価格を享受",
+    "commercialAuth": "商用認証をサポート（有料プラン）",
+    "seo": {
+      "title": "絵文字パックサブスクリプション - EmojiHand",
+      "description": "適切な絵文字パックサブスクリプションプランを選択し、プロフェッショナルなAI絵文字生成サービスをお楽しみください",
+      "keywords": "絵文字サブスクリプション,AI絵文字,絵文字生成,サブスクリプションプラン",
+      "ogTitle": "絵文字パックサブスクリプション - EmojiHand",
+      "ogDescription": "適切な絵文字パックサブスクリプションプランを選択し、プロフェッショナルなAI絵文字生成サービスをお楽しみください"
+    }
   },
   "pages": {
     "tiktok": {
@@ -93,7 +395,7 @@
         "title": "TikTok絵文字に関するよくある質問",
         "q1": {
           "title": "TikTok絵文字とは何ですか？",
-          "answer": "TikTok絵文字は、ユーザーがTikTokプラットフォームのコメント、キャプション、メッセージで使用できるカスタム絵文字文字と隠れたショートコードのコレクションです。これらには、標準のUnicode絵文字と[smile]、[happy]、[loveface]などのショートコードでアクセスできるTikTok固有の隠れた絵文字が含まれます。"
+          "answer": "TikTok絵文字は、ユーザーがTikTokプラットフォームのコメント、キャプション、メッセージで使用できるカスタム絵文字文字と隠れたショートコードのコレクションです。これらには、標準のUnicode絵文字と[smile]、[happy]、[loveface]などのショートコードでアクセスできるTikTok固有の隠れ絵文字が含まれます。"
         },
         "q2": {
           "title": "TikTok絵文字の使い方は？",
@@ -314,5 +616,205 @@
     "accessibility": "アクセシビリティ",
     "copyright": "著作権",
     "contact": "お問い合わせ"
+  },
+  "emojiGenerator": {
+    "title": "絵文字パックジェネレーター - Lovart AI スタイル",
+    "subtitle": "画像をアップロードすると、AIがLovart AIデザイン原則に基づいて美しい絵文字パックを生成します",
+    "uploadTitle": "画像をアップロード",
+    "uploadHint": "クリックしてアップロード、またはここに画像をドラッグ",
+    "uploadLimit": "JPG、PNG対応、最大5MB",
+    "imageUploaded": "画像がアップロードされました、クリックして再選択",
+    "styleTitle": "スタイルを選択",
+    "promptTitle": "カスタムプロンプト（任意）",
+    "promptPlaceholder": "希望する絵文字パックの効果を説明してください...",
+    "generate": "絵文字パックを生成",
+    "generating": "AI生成中...",
+    "resultTitle": "結果",
+    "details": "詳細",
+    "analysis": "AI分析",
+    "download": "絵文字パックをダウンロード",
+    "reset": "再開",
+    "style": "スタイル",
+    "generatedTime": "生成時間",
+    "tags": "タグ",
+    "defaultDescription": "スタイル絵文字パック",
+    "error": {
+      "invalidFile": "画像ファイルをアップロードしてください",
+      "fileTooLarge": "画像サイズは5MBを超えることはできません",
+      "noImage": "まず画像をアップロードしてください",
+      "generationFailed": "生成に失敗しました",
+      "invalidResult": "無効な生成結果",
+      "retryLater": "生成に失敗しました、後でもう一度お試しください",
+      "consoleError": "絵文字パックの生成に失敗しました：",
+      "loginRequired": "絵文字パックを生成するにはログインしてください"
+    },
+    "styles": {
+      "cute": "かわいいスタイル",
+      "funny": "面白いスタイル",
+      "cool": "クールスタイル",
+      "savage": "サベージスタイル",
+      "genz": "GenZスタイル",
+      "tiktok": "TikTokスタイル",
+      "vintage": "ビンテージスタイル",
+      "minimalist": "ミニマリストスタイル"
+    },
+    "stylesTitle": "絵文字パックスタイル（Lovart AI インスパイア）",
+    "textOptions": "テキストオプション",
+    "includeText": "絵文字パックにテキストを含める",
+    "customTextLabel": "カスタムテキスト（任意）：",
+    "customTextPlaceholder": "絵文字パックに追加するテキストを入力...",
+    "textHint": "AIが画像とスタイルに基づいて適切なテキストを生成するには空のままにしてください",
+    "styleDescriptions": {
+      "cute": "ピンクのカラーパレットと丸みを帯びた線、愛らしくかわいい表情に最適",
+      "funny": "ユーモラスな要素を持つ誇張された表情、ミームとコメディに最適",
+      "cool": "ファッション要素を持つダークカラースキーム、トレンディでスタイリッシュな表情に最適",
+      "savage": "皮肉な要素を持つ鋭い表情、機知に富んだ大胆な表現に最適",
+      "genz": "若々しい表現を持つトレンディな要素、現代のソーシャルメディアに最適",
+      "tiktok": "ショートビデオ美学を持つ人気要素、バイラルコンテンツに最適",
+      "vintage": "クラシックな要素を持つレトロカラー、ビンテージ感覚に最適",
+      "minimalist": "クリーンな線とシングルカラー、ミニマリストの美しさに最適"
+    },
+    "faq": {
+      "title": "よくある質問",
+      "lovartComparison": "これはLovart AIとどう比較されますか？",
+      "lovartComparisonAnswer": "Lovart AIは包括的なデザインプラットフォームですが、私たちの絵文字ジェネレーターは絵文字パックの作成に特化しています。LovartのAI駆動アプローチにインスパイアされ、絵文字作成に同様の原則を適用しています。",
+      "imageFormats": "どの画像形式がサポートされていますか？",
+      "imageFormatsAnswer": "JPG、PNG、GIF形式をサポートしています。最良の結果を得るには、明確な被写体を持つ高品質な画像を使用してください。",
+      "generationCount": "いくつの絵文字パックを生成できますか？",
+      "generationCountAnswer": "各生成では、選択したスタイルとアップロードした画像に基づいて3-5の異なる絵文字パックバリエーションが作成されます。",
+      "commercialUse": "これらの絵文字パックを商用利用できますか？",
+      "commercialUseAnswer": "はい、生成されたすべての絵文字パックは個人および商用目的で無料で使用できます。Lovart AI原則にインスパイアされたAI技術で作成されています。"
+    },
+    "lovartInspired": "Lovart AIにインスパイア",
+    "lovartWhatIs": "Lovart AIとは？",
+    "lovartDescription": "Lovart AIは、コンセプトから画像、動画、3Dまで、デザインの旅全体を自動化する革新的なAIデザインエージェントです。私たちの絵文字パックジェネレーターは、LovartのAI駆動クリエイティブツールへの革新的なアプローチにインスパイアされています。",
+    "lovartDescription2": "Lovart AIと同様に、私たちの絵文字ジェネレーターでは画像をアップロードしてAIが異なるスタイルで複数のバリエーションを作成し、クリエイティブプロセスを簡単で楽しいものにします。",
+    "lovartFeatures": "主な機能",
+    "aiGeneration": "AI駆動の絵文字生成",
+    "styleVariations": "複数のスタイルバリエーション",
+    "batchProcessing": "バッチ処理機能",
+    "lovartPrinciples": "Lovart AIインスパイアのデザイン原則",
+    "howToUse": "Lovartスタイル絵文字ジェネレーターの使用方法",
+    "uploadStep": "絵文字パックに変換したい画像をアップロードしてください。AIがコンテンツを分析してバリエーションを作成します。",
+    "styleStep": "6つの異なるスタイルから選択：かわいい、面白い、クール、サベージ、GenZ、またはTikTok。各スタイルがユニークなバリエーションを作成します。",
+    "generateStep": "AIが複数の絵文字パックバリエーションを生成します。個別のパックをダウンロードするか、プロジェクトで使用してください。",
+    "step1": "1. 画像をアップロード",
+    "step2": "2. スタイルを選択",
+    "step3": "3. 生成＆ダウンロード"
+  },
+  "lovartStyle": {
+    "title": "Lovart Style AI",
+    "description": "世界初のAIデザインエージェント。完全なブランド戦略、マーケティングビジュアル、ソーシャルメディアコンテンツ、製品デザイン、Webインターフェース、さらには3Dモデルまで、単一のプロンプトからすべてを作成します。",
+    "upload": {
+      "title": "画像をアップロード（任意）",
+      "instruction": "クリックしてアップロード、またはここに画像をドラッグ",
+      "supported": "JPG、PNG対応、最大10MB",
+      "reselect": "画像がアップロードされました。再選択するにはクリックしてください"
+    },
+    "prompt": {
+      "title": "テキストプロンプト（任意）",
+      "placeholder": "デザインアイデア、ブランドコンセプト、クリエイティブビジョンを説明してください..."
+    },
+    "designType": {
+      "title": "デザインタイプ",
+      "brand": "ブランドアイデンティティ",
+      "brandDesc": "完全なブランド戦略、ロゴ、色、タイポグラフィを作成",
+      "marketing": "マーケティングビジュアル",
+      "marketingDesc": "目を引くプロモーション素材とキャンペーンを作成",
+      "social": "ソーシャルメディア",
+      "socialDesc": "魅力的なソーシャルメディアコンテンツと投稿を作成",
+      "product": "製品デザイン",
+      "productDesc": "製品モックアップとパッケージをデザイン",
+      "web": "Web & UI",
+      "webDesc": "Webサイトデザインとユーザーインターフェースを作成",
+      "video": "動画 & 3D",
+      "videoDesc": "動画、3Dモデル、アニメーションを生成"
+    },
+    "audience": {
+      "title": "ターゲットオーディエンス",
+      "select": "ターゲットオーディエンスを選択",
+      "general": "一般大衆",
+      "youngAdults": "若年成人（18-25歳）",
+      "professionals": "プロフェッショナル（25-40歳）",
+      "teenagers": "ティーンエイジャー（13-17歳）",
+      "businessOwners": "ビジネスオーナー",
+      "creativeProfessionals": "クリエイティブプロフェッショナル",
+      "students": "学生",
+      "parents": "親"
+    },
+    "commercial": {
+      "title": "商用利用",
+      "description": "商用アプリケーション用に最適化"
+    },
+    "generate": "デザイン生成",
+    "generating": "AI生成中...",
+    "reset": "リセット",
+    "results": {
+      "analysis": "AI分析",
+      "concepts": "クリエイティブコンセプト",
+      "businessAdvice": "ビジネス推奨事項",
+      "designs": "生成されたデザイン"
+    },
+    "error": {
+      "invalidFile": "画像ファイルをアップロードしてください",
+      "fileTooLarge": "画像サイズは10MBを超えることはできません",
+      "noInput": "画像またはテキストプロンプトを提供してください",
+      "generationFailed": "生成に失敗しました、後でもう一度お試しください"
+    },
+    "waiting": {
+      "title": "生成結果を待機中",
+      "description": "左側のフォームに記入し、生成ボタンをクリックしてデザインの作成を開始してください"
+    },
+    "about": {
+      "title": "Lovart AIについて",
+      "description1": "Lovart AIは、クリエイティブプロセスを革新する世界初のAIデザインエージェントです。LovartのAI駆動デザインへの革新的なアプローチにインスパイアされ、私たちのLovart Style AIツールは同じ最先端技術をあなたの指先にもたらします。",
+      "description2": "ブランドアイデンティティデザイン、マーケティングビジュアル、ソーシャルメディアコンテンツ、製品デザイン、Webインターフェース、さらには3Dモデルまで、Lovart Style AIは単一のプロンプトからすべてを処理できます - オリジナルのLovart AIプラットフォームと同様に。"
+    },
+    "features": {
+      "title": "Lovart AI機能",
+      "solutions": {
+        "title": "完全なデザインソリューション",
+        "brand": "ブランド戦略とアイデンティティデザイン",
+        "marketing": "マーケティングキャンペーンとプロモーション素材",
+        "social": "ソーシャルメディアコンテンツと投稿",
+        "product": "製品モックアップとパッケージデザイン"
+      },
+      "technology": {
+        "title": "高度なAI技術",
+        "web": "WebとUIデザイン生成",
+        "video": "動画と3Dモデル作成",
+        "analysis": "インテリジェントデザイン分析",
+        "quality": "プロフェッショナル級出力品質"
+      }
+    },
+    "why": {
+      "title": "なぜLovart Style AIを選ぶのか？",
+      "fast": {
+        "title": "超高速",
+        "description": "数日ではなく数分でプロフェッショナルデザインを生成"
+      },
+      "ai": {
+        "title": "AI駆動",
+        "description": "卓越した結果のための高度なLovart AI技術"
+      },
+      "creative": {
+        "title": "クリエイティブフリーダム",
+        "description": "インテリジェントガイダンスによる無限のデザイン可能性"
+      }
+    },
+    "solutions": {
+      "title": "Lovart AIデザインソリューション",
+      "description1": "包括的なデザインプラットフォームでLovart AI技術の力を体験してください。ブランドアイデンティティからマーケティングキャンペーンまで、Lovart Style AIはオリジナルのLovart AIプラットフォームの革新性と創造性に匹敵するプロフェッショナル品質のデザインを提供します。",
+      "description2": "私たちのLovartインスパイアAIデザインツールは、画像、動画、3Dモデル、インタラクティブコンテンツを含む複数のフォーマットをサポートしています。デザイナー、マーケター、起業家、またはクリエイティブプロフェッショナルであっても、Lovart Style AIは、Lovart AIを革命的にする同じ最先端技術でビジョンを実現するために必要なツールを提供します。"
+    },
+    "seo": {
+      "title": "Lovart Style AI - クリエイティブデザインアシスタント",
+      "description": "Lovart AIにインスパイアされたプロフェッショナルなAIデザインアシスタント。ロゴ、ポスター、ソーシャルメディアコンテンツなどをインテリジェントなクリエイティブ分析で生成します。",
+      "keywords": "lovart, aiデザイン, クリエイティブアシスタント, ロゴデザイン, ポスターデザイン, ソーシャルメディアデザイン, aiアート, デザイン自動化",
+      "ogTitle": "Lovart Style AI - クリエイティブデザインアシスタント",
+      "ogDescription": "Lovart AIにインスパイアされたプロフェッショナルなAIデザインアシスタント。ロゴ、ポスター、ソーシャルメディアコンテンツなどを生成します。",
+      "twitterTitle": "Lovart Style AI - クリエイティブデザインアシスタント",
+      "twitterDescription": "Lovart AIにインスパイアされたプロフェッショナルなAIデザインアシスタント。"
+    }
   }
 } 

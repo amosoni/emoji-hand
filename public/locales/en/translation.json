@@ -1,8 +1,153 @@
 {
-  "appTitle": "emoji hand",
-  "appSlogan": "The Ultimate Emoji Translator",
+  "appTitle": "Emoji Hand",
+  "appSlogan": "AI-Powered Emoji Translator & Generator",
+  "loading": "Loading multi-language support...",
+  "genZ": {
+    "seo": {
+      "title": "Gen Z Emoji Guide - Complete Slang & Expression Dictionary",
+      "description": "Discover the complete Gen Z emoji guide with slang meanings, expressions, and how to use them effectively. Master Gen Z communication with our comprehensive emoji dictionary.",
+      "keywords": "gen z, gen z emoji, gen z slang, gen z expressions, gen z communication, gen z dictionary, gen z guide, gen z meaning, gen z emoji pack, gen z style",
+      "ogTitle": "Gen Z Emoji Guide - Complete Slang & Expression Dictionary",
+      "ogDescription": "Master Gen Z communication with our comprehensive emoji guide. Learn slang meanings and expressions.",
+      "twitterTitle": "Gen Z Emoji Guide - Complete Slang & Expression Dictionary",
+      "twitterDescription": "Master Gen Z communication with our comprehensive emoji guide."
+    },
+    "title": "Gen Z Emoji Guide",
+    "subtitle": "Master the art of Gen Z communication with our comprehensive emoji guide. Learn slang meanings, expressions, and how to use them effectively.",
+    "whatIs": {
+      "title": "What is Gen Z?",
+      "content1": "Generation Z, commonly known as Gen Z, refers to individuals born between 1997 and 2012. This digital-native generation has developed unique communication styles that heavily rely on emojis, slang, and internet culture.",
+      "content2": "Gen Z communication is characterized by its authenticity, creativity, and the use of visual language. Emojis play a crucial role in expressing emotions, sarcasm, and cultural references that are specific to this generation."
+    },
+    "popular": {
+      "title": "Popular Gen Z Emojis",
+      "skull": {
+        "title": "Skull",
+        "meaning": "Used to express \"I'm dead\" or extreme reactions, often in a humorous context."
+      },
+      "crying": {
+        "title": "Crying",
+        "meaning": "Expresses intense emotions, often used ironically or to show overwhelming feelings."
+      },
+      "sparkles": {
+        "title": "Sparkles",
+        "meaning": "Adds emphasis or magic to messages, often used to highlight important points."
+      }
+    },
+    "cta": {
+      "title": "Ready to Master Gen Z Communication?",
+      "content": "Try our Gen Z emoji translator and generator to create authentic, engaging content that resonates with the younger generation.",
+      "generator": "Try Emoji Generator",
+      "tiktok": "Explore TikTok Mode"
+    },
+    "moreEmojis": {
+      "title": "More Gen Z Emojis",
+      "clown": {
+        "title": "Clown",
+        "meaning": "Used to call someone out for foolish behavior"
+      },
+      "nail": {
+        "title": "Nail Polish",
+        "meaning": "Expresses confidence and sass"
+      },
+      "hundred": {
+        "title": "100",
+        "meaning": "Agreement or \"facts\""
+      },
+      "fire": {
+        "title": "Fire",
+        "meaning": "Something is amazing or cool"
+      },
+      "skull2": {
+        "title": "Skull",
+        "meaning": "\"I'm dead\" from laughter"
+      },
+      "crying2": {
+        "title": "Crying",
+        "meaning": "Intense emotions, often ironic"
+      },
+      "sparkles2": {
+        "title": "Sparkles",
+        "meaning": "Adds magic and emphasis"
+      },
+      "zany": {
+        "title": "Zany",
+        "meaning": "Playful and silly behavior"
+      }
+    },
+    "communication": {
+      "title": "Gen Z Communication Tips",
+      "authentic": {
+        "title": "Be Authentic",
+        "content": "Gen Z values real, unfiltered communication. Don't try to be someone you're not."
+      },
+      "visual": {
+        "title": "Use Visual Language",
+        "content": "Emojis, GIFs, and memes are essential for expressing emotions and context."
+      },
+      "quick": {
+        "title": "Keep It Quick",
+        "content": "Short, punchy messages with clear intent work best for this generation."
+      },
+      "humor": {
+        "title": "Embrace Humor",
+        "content": "Sarcasm, irony, and self-deprecating humor are highly appreciated."
+      }
+    },
+    "phrases": {
+      "title": "Common Gen Z Phrases",
+      "period": {
+        "title": "Period.",
+        "meaning": "Used to emphasize a statement, similar to \"end of story\"",
+        "example": "Example: \"That outfit is fire, period.\""
+      },
+      "slay": {
+        "title": "Slay",
+        "meaning": "To do something exceptionally well or look amazing",
+        "example": "Example: \"You absolutely slayed that presentation!\""
+      },
+      "facts": {
+        "title": "Facts",
+        "meaning": "Agreement with what someone said",
+        "example": "Example: \"That's facts, no cap.\""
+      },
+      "noCap": {
+        "title": "No Cap",
+        "meaning": "No lie, being completely honest",
+        "example": "Example: \"This is the best movie ever, no cap.\""
+      }
+    },
+    "scenarios": {
+      "title": "Usage Scenarios",
+      "social": {
+        "title": "Social Media Posts",
+        "example1": "Original: \"Just finished my workout\"",
+        "result1": "Gen Z: \"Just finished my workout 💪✨ slayed that cardio period 🔥\"",
+        "example2": "Original: \"This food is amazing\"",
+        "result2": "Gen Z: \"This food is absolutely fire 🔥 no cap, best meal ever 💯\""
+      },
+      "chat": {
+        "title": "Group Chats",
+        "example1": "Original: \"That's funny\"",
+        "result1": "Gen Z: \"💀💀💀 I'm dead, that's hilarious 😭\"",
+        "example2": "Original: \"I agree\"",
+        "result2": "Gen Z: \"Facts 💯 no cap, you're absolutely right\""
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Why do Gen Z use so many emojis?",
+      "a1": "Gen Z uses emojis to add emotional context, express sarcasm, and make communication more engaging and authentic.",
+      "q2": "How can I sound more Gen Z?",
+      "a2": "Be authentic, use relevant emojis, embrace current slang, and don't be afraid to be playful and sarcastic.",
+      "q3": "What's the difference between Gen Z and Millennial communication?",
+      "a3": "Gen Z tends to be more direct, uses more visual elements, embraces irony and sarcasm more openly, and values authenticity over perfection.",
+      "q4": "How do I keep up with Gen Z trends?",
+      "a4": "Follow Gen Z creators on social media, pay attention to viral trends, and stay updated with current events and pop culture references."
+    }
+  },
   "appDescBold": "Emoji Hand (emojihand) is your one-stop tool to instantly turn any text into fun, expressive emoji messages.",
-  "appDesc": "Powered by AI, Emoji Hand helps you communicate with more emotion, creativity, and style. Try it now and make your words stand out!",
+  "appDesc": "Emoji Hand is the ultimate AI-powered emoji translator and generator. Transform any text into expressive emoji messages instantly. Free emoji translation, TikTok emojis, emoji packs, and more!",
   "Normal": "Normal",
   "Savage": "Savage",
   "GenZ Slang": "GenZ Slang",
@@ -47,8 +192,9 @@
   "highlight3Desc": "Normal, Savage, and GenZ Slang modes for every vibe.",
   "hotEmojis": "hotEmojis",
   "unlockPremiumTitle": "Unlock Premium",
-  "unlockPremiumDesc": "Up to 20 savage/GenZ translations per day, exclusive emoji packs, and ad-free experience for just",
-  "unlockPremiumBtn": "Unlock Premium",
+      "unlockPremiumDesc": "Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience",
+      "unlockPremiumBtn": "Unlock Premium",
+    "viewSubscription": "View Subscription Plans",
   "faqTitle": "Frequently Asked Questions about Emoji Hand",
   "faq1Q": "What is Emoji Hand?",
   "faq1A": "Emoji Hand is an AI-powered tool that instantly adds the most relevant emojis to your text, making your messages more expressive and fun.",
@@ -98,6 +244,75 @@
   "tiktok.picker.shortcodes": "Shortcodes",
   "tiktok.picker.combinations": "Combinations",
   "tiktok.picker.popular": "Popular",
+  "lovartStyle": {
+    "title": "Lovart Style AI",
+    "description": "The world's first AI design agent. Create complete brand strategies, marketing visuals, social media content, product designs, web interfaces, and even 3D models - all from a single prompt.",
+    "upload": {
+      "title": "Upload Image (Optional)",
+      "instruction": "Click to upload or drag image here",
+      "supported": "Supports JPG, PNG, max 10MB",
+      "reselect": "Image uploaded, click to reselect"
+    },
+    "prompt": {
+      "title": "Text Prompt (Optional)",
+      "placeholder": "Describe your design idea, brand concept, or creative vision..."
+    },
+    "designType": {
+      "title": "Design Type",
+      "brand": "Brand Identity",
+      "brandDesc": "Create complete brand strategy, logos, colors, typography",
+      "marketing": "Marketing Visuals",
+      "marketingDesc": "Create eye-catching promotional materials and campaigns",
+      "social": "Social Media",
+      "socialDesc": "Create engaging social media content and posts",
+      "product": "Product Design",
+      "productDesc": "Design product mockups and packaging",
+      "web": "Web & UI",
+      "webDesc": "Create website designs and user interfaces",
+      "video": "Video & 3D",
+      "videoDesc": "Generate videos, 3D models and animations"
+    },
+    "audience": {
+      "title": "Target Audience",
+      "select": "Select target audience",
+      "general": "General Public",
+      "youngAdults": "Young Adults (18-25)",
+      "professionals": "Professionals (25-40)",
+      "teenagers": "Teenagers (13-17)",
+      "businessOwners": "Business Owners",
+      "creativeProfessionals": "Creative Professionals",
+      "students": "Students",
+      "parents": "Parents"
+    },
+    "commercial": {
+      "title": "Commercial Use",
+      "description": "Optimize for commercial applications"
+    },
+    "generate": "Generate Design",
+    "generating": "AI Generating...",
+    "reset": "Reset",
+    "results": {
+      "analysis": "AI Analysis",
+      "concepts": "Creative Concepts",
+      "businessAdvice": "Business Recommendations",
+      "designs": "Generated Designs"
+    },
+    "error": {
+      "invalidFile": "Please upload an image file",
+      "fileTooLarge": "Image size cannot exceed 10MB",
+      "noInput": "Please provide either an image or text prompt",
+      "generationFailed": "Generation failed, please try again later"
+    },
+    "seo": {
+      "title": "Lovart Style AI - Creative Design Assistant",
+      "description": "Professional AI-powered design assistant inspired by Lovart AI. Generate logos, posters, social media content, and more with intelligent creative analysis.",
+      "keywords": "lovart, ai design, creative assistant, logo design, poster design, social media design, ai art, design automation",
+      "ogTitle": "Lovart Style AI - Creative Design Assistant",
+      "ogDescription": "Professional AI-powered design assistant inspired by Lovart AI. Generate logos, posters, social media content, and more.",
+      "twitterTitle": "Lovart Style AI - Creative Design Assistant",
+      "twitterDescription": "Professional AI-powered design assistant inspired by Lovart AI."
+    }
+  },
   "tiktok.picker.categories": "Categories",
   "tiktok.page.try.title": "Try TikTok Mode",
   "pages": {
@@ -286,8 +501,115 @@
     }
   },
   "nav": {
+    "home": "Home",
+    "emojiGenerator": "Emoji Generator",
+    "genZ": "Gen Z Guide",
+    "lovartStyle": "Lovart Style Design",
     "tiktok": "TikTok Mode",
-    "tiktokEmojis": "TikTok Emojis Guide"
+    "tiktokEmojis": "TikTok Emojis Guide",
+    "login": "Login",
+    "logout": "Logout",
+    "subscription": "Subscription"
+  },
+  "emojiGenerator": {
+    "title": "Emoji Pack Generator - Lovart AI Style",
+    "subtitle": "Upload an image and AI will generate beautiful emoji packs for you, inspired by Lovart AI design principles",
+    "uploadTitle": "Upload Image",
+    "uploadHint": "Click to upload or drag image here",
+    "uploadLimit": "Supports JPG, PNG, max 5MB",
+    "imageUploaded": "Image uploaded, click to reselect",
+    "styleTitle": "Choose Style",
+    "promptTitle": "Custom Prompt (Optional)",
+    "promptPlaceholder": "Describe the emoji pack effect you want...",
+    "generate": "Generate Emoji Packs",
+    "generating": "AI Generating...",
+    "resultTitle": "Result",
+    "details": "Details",
+    "analysis": "AI Analysis",
+    "download": "Download Emoji Pack",
+    "reset": "Restart",
+    "style": "Style",
+    "generatedTime": "Generated Time",
+    "tags": "Tags",
+    "defaultDescription": "Style Emoji Pack",
+    "error": {
+      "invalidFile": "Please upload an image file",
+      "fileTooLarge": "Image size cannot exceed 5MB",
+      "noImage": "Please upload an image first",
+      "generationFailed": "Generation failed",
+      "invalidResult": "Invalid generation result",
+      "retryLater": "Generation failed, please try again later",
+      "consoleError": "Failed to generate emoji pack:",
+      "loginRequired": "Please login to generate emoji packs"
+    },
+    "styles": {
+      "cute": "Cute Style",
+      "funny": "Funny Style",
+      "cool": "Cool Style",
+      "savage": "Savage Style",
+      "genz": "GenZ Style",
+      "tiktok": "TikTok Style",
+      "vintage": "Vintage Style",
+      "minimalist": "Minimalist Style"
+    },
+    "stylesTitle": "Emoji Pack Styles (Lovart AI Inspired)",
+    "textOptions": "Text Options",
+    "includeText": "Include text in emoji pack",
+    "customTextLabel": "Custom text (optional):",
+    "customTextPlaceholder": "Enter text to add to emoji pack...",
+    "textHint": "Leave empty for AI to generate appropriate text based on image and style",
+    "styleDescriptions": {
+      "cute": "Pink color palette with rounded lines, perfect for adorable and kawaii expressions",
+      "funny": "Exaggerated expressions with humorous elements, great for memes and comedy",
+      "cool": "Dark color scheme with fashion elements, perfect for trendy and stylish expressions",
+      "savage": "Sharp expressions with sarcastic elements, ideal for witty and bold statements",
+      "genz": "Trendy elements with youthful expressions, perfect for modern social media",
+      "tiktok": "Popular elements with short video aesthetics, great for viral content",
+      "vintage": "Retro colors with classic elements, perfect for vintage sensibility",
+      "minimalist": "Clean lines and single colors, perfect for minimalist beauty"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "lovartComparison": "How does this compare to Lovart AI?",
+      "lovartComparisonAnswer": "While Lovart AI is a comprehensive design platform, our emoji generator focuses specifically on creating emoji packs. We're inspired by Lovart's AI-powered approach and apply similar principles to emoji creation.",
+      "imageFormats": "What image formats are supported?",
+      "imageFormatsAnswer": "We support JPG, PNG, and GIF formats. For best results, use high-quality images with clear subjects.",
+      "generationCount": "How many emoji packs can I generate?",
+      "generationCountAnswer": "Each generation creates 3-5 different emoji pack variations based on your selected style and uploaded image.",
+      "commercialUse": "Can I use these emoji packs commercially?",
+      "commercialUseAnswer": "Yes, all generated emoji packs are free to use for personal and commercial purposes. They're created using AI technology inspired by Lovart AI principles."
+    },
+    "lovartInspired": "Inspired by Lovart AI",
+    "lovartWhatIs": "What is Lovart AI?",
+    "lovartDescription": "Lovart AI is a revolutionary AI design agent that automates the entire design journey, from concept to images, videos, 3D, and more. Our emoji pack generator is inspired by Lovart's innovative approach to AI-powered creative tools.",
+    "lovartDescription2": "Just like Lovart AI, our emoji generator allows you to upload an image and let AI create multiple variations with different styles, making the creative process effortless and enjoyable.",
+    "lovartFeatures": "Key Features",
+    "aiGeneration": "AI-powered emoji generation",
+    "styleVariations": "Multiple style variations",
+    "batchProcessing": "Batch processing capabilities",
+    "lovartPrinciples": "Lovart AI-inspired design principles",
+    "howToUse": "How to Use Our Lovart-Style Emoji Generator",
+    "uploadStep": "Upload any image you want to transform into emoji packs. Our AI will analyze the content and create variations.",
+    "styleStep": "Select from 6 different styles: Cute, Funny, Cool, Savage, GenZ, or TikTok. Each style creates unique variations.",
+    "generateStep": "AI generates multiple emoji pack variations. Download individual packs or use them in your projects.",
+    "step1": "1. Upload Image",
+    "step2": "2. Choose Style",
+    "step3": "3. Generate & Download",
+    "upgradeNow": "Upgrade Now",
+    "subscriptionInfo": "Subscription Info",
+    "subscriptionDesc": "Free users can generate 3 packs per day. Upgrade to unlock more features!"
+  },
+  "subscription": {
+    "title": "Emoji Pack Subscription System",
+    "subtitle": "Choose your suitable subscription package and enjoy professional AI emoji pack generation service",
+    "loginRequired": "Please log in first to view subscription information",
+    "seo": {
+      "title": "Emoji Pack Subscription - EmojiHand",
+      "description": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services.",
+      "keywords": "emoji subscription, AI emoji, emoji generation, subscription plans",
+      "ogTitle": "Emoji Pack Subscription - EmojiHand",
+      "ogDescription": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services."
+    }
   },
   "pages": {
     "tiktok": {
@@ -383,6 +705,15 @@
   "profile.quota": "Daily Quota Left",
   "profile.points": "Points",
   "profile.tips": "Premium: 20/day, Free: 5/day. Points can be used for extra quota or membership.",
+  "dashboard": {
+    "title": "Your Dashboard"
+  },
+  "profile": {
+    "accountInfo": "Account Information",
+    "email": "Email",
+    "username": "Username",
+    "days": "days"
+  },
   "profile.upgrade": "Upgrade to Premium",
   "privacy.title": "Privacy Policy",
   "privacy.intro": "This Privacy Policy applies to all users of Emoji Hand (hereinafter referred to as 'the Website' or 'we'). We are committed to protecting your personal information and privacy.",
@@ -496,5 +827,67 @@
   "register.success": "Registration successful!",
   "register.error": "Registration failed",
   "register.hasAccount": "Already have an account?",
-  "register.signin": "Sign in"
+  "register.signin": "Sign in",
+  "subscription": {
+    "title": "Emoji Pack Subscription System",
+    "subtitle": "Choose your suitable subscription package and enjoy professional AI emoji pack generation service",
+    "loginRequired": "Please log in first to view subscription information",
+    "loginToPurchase": "Login to Purchase",
+    "loginToPurchaseDesc": "Please log in to view your subscription status and purchase plans",
+    "currentStatus": "Current Subscription Status",
+    "plan": "Plan",
+    "usesToday": "Uses Today",
+    "usesThisMonth": "Uses This Month",
+    "totalUses": "Total Uses",
+    "images": " images",
+    "expireAt": "Expire At",
+    "monthly": "Monthly",
+    "yearly": "Yearly (Discount)",
+    "month": "month",
+    "year": "year",
+    "yearlyDiscount": "Yearly Discount",
+    "dailyLimit": "Daily Limit",
+    "monthlyLimit": "Monthly Limit",
+    "maxPerUse": "Max Per Use",
+    "models": "Models",
+    "commercialUse": "Commercial Use",
+    "supported": "Supported",
+    "notSupported": "Not Supported",
+    "currentPlan": "Current Plan",
+    "selectPlan": "Select Plan",
+    "processing": "Processing...",
+    "upgrade": "Upgrade Subscription",
+    "upgradeSuccess": "Subscription upgraded successfully!",
+    "upgradeFailed": "Upgrade failed:",
+    "translationUsage": "Translation Usage",
+    "imageGenerationUsage": "Image Generation Usage",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "translations": "translations",
+    "imageGeneration": "Image Generation",
+    "images": "images",
+    "noAds": "No Ads",
+    "loginToUpgrade": "Please log in to upgrade your subscription",
+    "login": "Login",
+    "currentPlanSelected": "This is your current plan",
+    "usageInstructions": "Usage Instructions",
+    "freePlan": "Free Plan",
+    "freePlanDesc": "3 translations per day, suitable for trial",
+    "basicPlan": "Basic Plan",
+    "basicPlanDesc": "15 translations + 3 images per day, suitable for individual users",
+    "proPlan": "Professional Plan",
+    "proPlanDesc": "40 translations + 8 images per day, suitable for professional users",
+    "enterprisePlan": "Enterprise Plan",
+    "enterprisePlanDesc": "80 translations + 15 images per day, suitable for enterprise users",
+    "yearlyDiscountNote": "Yearly payment enjoys discounted prices",
+    "commercialAuth": "Supports commercial authorization (paid plans)",
+    "seo": {
+      "title": "Emoji Pack Subscription - EmojiHand",
+      "description": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services.",
+      "keywords": "emoji subscription, AI emoji, emoji generation, subscription plans",
+      "ogTitle": "Emoji Pack Subscription - EmojiHand",
+      "ogDescription": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services."
+    }
+  }
 } 

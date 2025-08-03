@@ -60,23 +60,51 @@ model User {
     email         String?   @unique
     emailVerified DateTime?
     image         String?
+    passwordHash  String?   // 添加密码哈希字段
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
-    // Creem 支付和积分相关字段
-    points            Int      @default(0)
-    premiumExpireAt   DateTime?
-    creemCustomerId   String?
-    createdAt         DateTime @default(now())
-    updatedAt         DateTime @updatedAt
-    // 新增积分/配额系统字段
-    freeUsesWeekly     Int      @default(3)
-    premiumUsesWeekly  Int      @default(0)
-    quotaResetAt       DateTime?
-    freeUsesDaily      Int      @default(5)
-    // 新增注册/登录字段
-    username           String?  @unique
-    passwordHash       String?
+    emojiPackPurchases EmojiPackPurchase[]
+    emojiPackUsages    EmojiPackUsage[]
+    usageRecords       UsageRecord[]
+    creditTransactions CreditTransaction[]
+    checkIns           CheckIn[]
+    
+    // 订阅系统
+    subscriptionPlan    String   @default("free") // free, starter, pro, enterprise
+    subscriptionExpireAt DateTime?
+    subscriptionStatus   String   @default("active") // active, cancelled, expired
+    
+    // 新的使用统计字段
+    translationUsesToday      Int @default(0)
+    imageGenerationUsesToday Int @default(0)
+    lastUsageReset           DateTime @default(now())
+    
+    // 积分系统
+    credits            Int      @default(0)
+    totalCreditsEarned Int      @default(0)
+    totalCreditsSpent  Int      @default(0)
+    
+    // 每日使用限制 (保留兼容性)
+    dailyUsage         Json     @default("{}") // {emojiGenerator: 0, lovartStyle: 0, realtimeTranslation: 0}
+    
+    // 签到系统
+    lastCheckIn        DateTime?
+    consecutiveCheckIns Int      @default(0)
+    
+    // 邀请系统
+    referralCode       String?  @unique
+    referredBy         String?
+    referralCount      Int      @default(0)
+    
+    // 支付信息
+    creemCustomerId    String?
+    points             Int      @default(0)
+    premiumExpireAt    DateTime?
+    
+    // 时间戳
+    createdAt          DateTime @default(now())
+    updatedAt          DateTime @updatedAt
 }
 
 model VerificationToken {
@@ -85,4 +113,64 @@ model VerificationToken {
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+// 表情包积分购买记录
+model EmojiPackPurchase {
+    id        String   @id @default(cuid())
+    userId    String
+    package   String   // starter, popular, pro, enterprise
+    credits   Int
+    price     Float
+    quantity  Int
+    createdAt DateTime @default(now())
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// 表情包使用记录
+model EmojiPackUsage {
+    id          String   @id @default(cuid())
+    userId      String
+    packCount   Int
+    style       String?
+    cost        Float
+    costPerPack Float?
+    createdAt   DateTime @default(now())
+    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// 使用记录
+model UsageRecord {
+    id          String   @id @default(cuid())
+    userId      String
+    serviceType String   // emojiGenerator, lovartStyle, realtimeTranslation
+    creditsUsed Int
+    cost        Float
+    inputData   Json?    // 存储输入数据
+    outputData  Json?    // 存储输出数据
+    createdAt   DateTime @default(now())
+    
+    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// 积分交易记录
+model CreditTransaction {
+    id          String   @id @default(cuid())
+    userId      String
+    type        String   // purchase, reward, bonus, refund
+    amount      Int
+    description String
+    createdAt   DateTime @default(now())
+    
+    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// 签到记录
+model CheckIn {
+    id        String   @id @default(cuid())
+    userId    String
+    date      DateTime @default(now())
+    creditsEarned Int  @default(1)
+    
+    user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

@@ -3,35 +3,16 @@ import { useTranslation } from 'react-i18next';
 import TikTokEmojis from '../../../components/TikTokEmojis';
 import Translator from '../../../components/Translator';
 import DouyinEmojiPickerDemo from '../../../components/DouyinEmojiPickerDemo';
-import Link from 'next/link';
 import Footer from '../../components/Footer';
-import LanguageSwitcher from '../../../components/LanguageSwitcher';
+
+import UnifiedNavBar from '../../components/UnifiedNavBar';
 
 export default function TikTokPage() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-pink-400 via-purple-500 to-blue-600">
-      {/* 导航栏 */}
-      <nav className="relative z-10 flex items-center justify-between px-8 py-6">
-        <Link href={`/${i18n.language}`} className="flex items-center gap-2 text-3xl font-extrabold text-white drop-shadow">
-          <span>🖐️✨</span> emojihand
-        </Link>
-        <div className="flex items-center gap-6">
-          <Link
-            href={`/${i18n.language}/tiktok`}
-            className="bg-white/20 hover:bg-pink-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
-          >
-            🎵 {t('nav.tiktok', 'TikTok Mode')}
-          </Link>
-          <Link
-            href={`/${i18n.language}/tiktok-emojis`}
-            className="bg-white/20 hover:bg-purple-400 text-white px-4 py-2 rounded-lg font-bold transition-colors"
-          >
-            📖 {t('nav.tiktokEmojis', 'TikTok Emojis Guide')}
-          </Link>
-        </div>
-      </nav>
+      <UnifiedNavBar />
 
       {/* 页面内容 */}
       <div className="container mx-auto py-8 px-4">
@@ -74,9 +55,6 @@ export default function TikTokPage() {
 
       {/* 页脚 */}
       <Footer />
-      <div className="mt-1 mb-1 flex justify-center w-full">
-        <LanguageSwitcher />
-      </div>
     </div>
   );
 } 
