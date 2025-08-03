@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { openai } from '~/server/openai';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '~/pages/api/auth/[...nextauth]';
+import { prisma } from '~/server/db';
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,12 +21,76 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 检查用户会话
+    // 检查用户会话和使用限制
     const session = await getServerSession(authOptions);
-    if (!session?.user) {
+    if (!session?.user?.id) {
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
+      );
+    }
+
+    // 获取用户信息并检查使用限制
+    const user = await prisma.user.findUnique({
+      where: { id: session.user.id },
+      select: {
+        id: true,
+        subscriptionPlan: true,
+        subscriptionExpireAt: true,
+        imageGenerationUsesToday: true,
+        lastUsageReset: true
+      }
+    });
+
+    if (!user) {
+      return NextResponse.json(
+        { error: 'User not found' },
+        { status: 404 }
+      );
+    }
+
+    // 检查是否需要重置每日使用量
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (!user.lastUsageReset || user.lastUsageReset < today) {
+      await prisma.user.update({
+        where: { id: session.user.id },
+        data: {
+          imageGenerationUsesToday: 0,
+          lastUsageReset: today
+        }
+      });
+      user.imageGenerationUsesToday = 0;
+    }
+
+    // 检查订阅状态和使用限制
+    const isSubscriptionActive = user.subscriptionExpireAt && user.subscriptionExpireAt > new Date();
+    
+    if (!isSubscriptionActive) {
+      return NextResponse.json(
+        { error: 'Active subscription required for Lovart style generation' },
+        { status: 403 }
+      );
+    }
+
+    // 定义各计划的图片生成限制
+    const plans = {
+      free: { imageGeneration: 0 },
+      starter: { imageGeneration: 5 },
+      pro: { imageGeneration: 12 },
+      enterprise: { imageGeneration: 20 }
+    };
+
+    const plan = user.subscriptionPlan || 'free';
+    const limits = plans[plan as keyof typeof plans];
+    const currentUsage = user.imageGenerationUsesToday || 0;
+    const dailyLimit = limits.imageGeneration;
+
+    if (currentUsage >= dailyLimit) {
+      return NextResponse.json(
+        { error: `Daily image generation limit exceeded (${currentUsage}/${dailyLimit})` },
+        { status: 403 }
       );
     }
 
@@ -177,6 +242,16 @@ export async function POST(req: NextRequest) {
         }
       })
     );
+
+    // 记录使用量（每次生成5张图片）
+    await prisma.user.update({
+      where: { id: session.user.id },
+      data: {
+        imageGenerationUsesToday: {
+          increment: 5
+        }
+      }
+    });
 
     return NextResponse.json({
       success: true,

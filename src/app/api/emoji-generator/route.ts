@@ -22,6 +22,90 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // 检查用户会话和使用限制
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.id) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
+    // 获取用户信息并检查使用限制
+    const user = await prisma.user.findUnique({
+      where: { id: session.user.id },
+      select: {
+        id: true,
+        subscriptionPlan: true,
+        subscriptionExpireAt: true,
+        imageGenerationUsesToday: true,
+        lastUsageReset: true
+      }
+    });
+
+    if (!user) {
+      return NextResponse.json(
+        { error: 'User not found' },
+        { status: 404 }
+      );
+    }
+
+    // 检查是否需要重置每日使用量
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (!user.lastUsageReset || user.lastUsageReset < today) {
+      await prisma.user.update({
+        where: { id: session.user.id },
+        data: {
+          imageGenerationUsesToday: 0,
+          lastUsageReset: today
+        }
+      });
+      user.imageGenerationUsesToday = 0;
+    }
+
+    // 检查订阅状态和使用限制
+    const isSubscriptionActive = user.subscriptionExpireAt && user.subscriptionExpireAt > new Date();
+    
+    if (!isSubscriptionActive) {
+      return NextResponse.json(
+        { error: 'Active subscription required for image generation' },
+        { status: 403 }
+      );
+    }
+
+    // 定义各计划的图片生成限制
+    const plans = {
+      free: { imageGeneration: 0 },
+      starter: { imageGeneration: 5 },
+      pro: { imageGeneration: 12 },
+      enterprise: { imageGeneration: 20 }
+    };
+
+    const plan = user.subscriptionPlan || 'free';
+    const limits = plans[plan as keyof typeof plans];
+    const currentUsage = user.imageGenerationUsesToday || 0;
+    const dailyLimit = limits.imageGeneration;
+
+    if (currentUsage >= dailyLimit) {
+      return NextResponse.json(
+        { error: `Daily image generation limit exceeded (${currentUsage}/${dailyLimit})` },
+        { status: 403 }
+      );
+    }
+
+    // 计算本次使用的积分（根据batchSize）
+    const creditsToUse = batchSize * 2; // 每个图片消耗2积分
+    const remainingAfterUse = dailyLimit - currentUsage - batchSize;
+
+    if (remainingAfterUse < 0) {
+      return NextResponse.json(
+        { error: `Insufficient credits for batch generation. Available: ${dailyLimit - currentUsage}, Required: ${batchSize}` },
+        { status: 403 }
+      );
+    }
+
     // 将图片转换为base64
     const bytes = await image.arrayBuffer();
     const buffer = Buffer.from(bytes);
@@ -492,6 +576,16 @@ export async function POST(req: NextRequest) {
       'it': 'Generazione del pacchetto emoji fallita, riprova più tardi',
       'ru': 'Создание пакета эмодзи не удалось, попробуйте позже'
     };
+
+    // 记录使用量
+    await prisma.user.update({
+      where: { id: session.user.id },
+      data: {
+        imageGenerationUsesToday: {
+          increment: batchSize
+        }
+      }
+    });
 
     return NextResponse.json({
       success: true,

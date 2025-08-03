@@ -140,17 +140,17 @@ export const emojiRouter = createTRPCRouter({
       // 额度判断 - 启用检查
       if (user) {
         const plans = {
-          free: { translation: 8 },
-          starter: { translation: 15 },
-          pro: { translation: 35 },
-          enterprise: { translation: 70 }
+          free: { translation: 8, imageGeneration: 0 },
+          starter: { translation: 15, imageGeneration: 5 },
+          pro: { translation: 35, imageGeneration: 12 },
+          enterprise: { translation: 70, imageGeneration: 20 }
         };
         
-                 const plan = user.subscriptionPlan ?? 'free';
-         const limits = plans[plan as keyof typeof plans];
-         const currentUsage = user.translationUsesToday ?? 0;
-         const dailyLimit = limits.translation;
-        
+        const plan = user.subscriptionPlan ?? 'free';
+        const limits = plans[plan as keyof typeof plans];
+        const currentUsage = user.translationUsesToday ?? 0;
+        const dailyLimit = limits.translation;
+       
         if (currentUsage >= dailyLimit) {
           throw new Error(`每日使用额度已用完 (${currentUsage}/${dailyLimit})`);
         }

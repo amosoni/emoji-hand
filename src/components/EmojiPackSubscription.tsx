@@ -51,7 +51,7 @@ const defaultPlans: SubscriptionPlan[] = [
     price: 0,
     billingCycle: 'monthly',
     features: {
-      translation: { daily: 3, model: 'GPT-3.5' },
+      translation: { daily: 8, model: 'GPT-3.5' },
       imageGeneration: { daily: 0 },
       noAds: false,
       commercialUse: false
@@ -66,7 +66,7 @@ const defaultPlans: SubscriptionPlan[] = [
     billingCycle: 'monthly',
     features: {
       translation: { daily: 15, model: 'GPT-4' },
-      imageGeneration: { daily: 3 },
+      imageGeneration: { daily: 5 },
       noAds: true,
       commercialUse: false
     },
@@ -79,8 +79,8 @@ const defaultPlans: SubscriptionPlan[] = [
     price: 39.99,
     billingCycle: 'monthly',
     features: {
-      translation: { daily: 40, model: 'GPT-4' },
-      imageGeneration: { daily: 8 },
+      translation: { daily: 35, model: 'GPT-4' },
+      imageGeneration: { daily: 12 },
       noAds: true,
       commercialUse: true,
       apiAccess: true
@@ -94,8 +94,8 @@ const defaultPlans: SubscriptionPlan[] = [
     price: 79.99,
     billingCycle: 'monthly',
     features: {
-      translation: { daily: 80, model: 'GPT-4' },
-      imageGeneration: { daily: 15 },
+      translation: { daily: 70, model: 'GPT-4' },
+      imageGeneration: { daily: 20 },
       noAds: true,
       commercialUse: true,
       apiAccess: true,
@@ -363,10 +363,10 @@ export default function EmojiPackSubscription() {
       <div className="mt-6 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/30 shadow-lg">
         <h4 className="font-semibold mb-2 text-white drop-shadow-md">{t('subscription.usageInstructions', 'Usage Instructions')}</h4>
         <ul className="text-sm space-y-1 text-white/95">
-          <li className="drop-shadow-sm">• {t('subscription.freePlan', 'Free Plan')}：{t('subscription.freePlanDesc', '3 translations per day, suitable for trial')}</li>
-          <li className="drop-shadow-sm">• {t('subscription.basicPlan', 'Basic Plan')}：{t('subscription.basicPlanDesc', '15 translations + 3 images per day, suitable for individual users')}</li>
-          <li className="drop-shadow-sm">• {t('subscription.proPlan', 'Professional Plan')}：{t('subscription.proPlanDesc', '40 translations + 8 images per day, suitable for professional users')}</li>
-          <li className="drop-shadow-sm">• {t('subscription.enterprisePlan', 'Enterprise Plan')}：{t('subscription.enterprisePlanDesc', '80 translations + 15 images per day, suitable for enterprise users')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.freePlan', 'Free Plan')}：{t('subscription.freePlanDesc', '8 translations per day, suitable for trial')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.basicPlan', 'Basic Plan')}：{t('subscription.basicPlanDesc', '15 translations + 5 images per day, suitable for individual users')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.proPlan', 'Professional Plan')}：{t('subscription.proPlanDesc', '35 translations + 12 images per day, suitable for professional users')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.enterprisePlan', 'Enterprise Plan')}：{t('subscription.enterprisePlanDesc', '70 translations + 20 images per day, suitable for enterprise users')}</li>
           <li className="drop-shadow-sm">• {t('subscription.yearlyDiscountNote', 'Yearly payment enjoys discounted prices')}</li>
           <li className="drop-shadow-sm">• {t('subscription.commercialAuth', 'Supports commercial authorization (paid plans)')}</li>
         </ul>
