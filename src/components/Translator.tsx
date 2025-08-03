@@ -92,9 +92,11 @@ export default function Translator() {
       }]);
       
       // 记录使用量
-      recordUsageMutation.mutate({
-        service: 'translation'
-      });
+      if (user) {
+        recordUsageMutation.mutate({
+          service: 'translation'
+        });
+      }
     } catch (err: any) {
       setError(err?.message ?? '服务异常');
     }

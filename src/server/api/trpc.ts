@@ -70,15 +70,15 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
   }
   
   // 只有在没有真实session的情况下才使用mock
-  if (!session && process.env.NODE_ENV === "development") {
-    session = {
-      userId: "dev-user-id",
-      sessionId: "dev-session-id",
-      sessionClaims: {
-        email: "dev@example.com",
-      },
-    };
-  }
+  // if (!session && process.env.NODE_ENV === "development") {
+  //   session = {
+  //     userId: "dev-user-id",
+  //     sessionId: "dev-session-id",
+  //     sessionClaims: {
+  //       email: "dev@example.com",
+  //     },
+  //   };
+  // }
   
   // 直接兜底提取 userId
   let userId: string | undefined;

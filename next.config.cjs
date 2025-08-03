@@ -35,11 +35,11 @@ const nextConfig = {
         ],
       },
       {
-        source: '/favicon.ico',
+        source: '/favicon.png',
         headers: [
           {
             key: 'Content-Type',
-            value: 'image/x-icon',
+            value: 'image/png',
           },
         ],
       },
