@@ -3,14 +3,17 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 export const UsageLimitDisplay = () => {
+  const { data: session } = useSession();
+  const user = session?.user;
+  
   const { data: usageStats, refetch } = api.usageLimits.getUserUsageStats.useQuery(
     undefined,
-    { enabled: true }
+    { enabled: !!user }
   );
 
   const { data: subscription } = api.emojiPackSubscription.getSubscription.useQuery(
     undefined,
-    { enabled: true }
+    { enabled: !!user }
   );
 
   if (!usageStats) {
