@@ -1,0 +1,60 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="og-bg-gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="0.3" stop-color="#8B5CF6"/>
+      <stop offset="0.7" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="glow-effect" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="url(#og-bg-gradient)"/>
+  
+  <!-- 装饰性背景元素 -->
+  <circle cx="100" cy="100" r="50" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="1100" cy="530" r="80" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="200" cy="500" r="30" fill="rgba(255,255,255,0.1)"/>
+  
+  <!-- 主要内容区域 -->
+  <g transform="translate(100, 150)">
+    <!-- Logo区域 -->
+    <g filter="url(#glow-effect)">
+      <!-- 手掌表情 -->
+      <text x="50" y="80" font-size="120" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" fill="#FFFFFF">🖐️</text>
+      
+      <!-- 装饰性星星 -->
+      <text x="180" y="40" font-size="60" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" fill="#FFFFFF">✨</text>
+      <text x="220" y="120" font-size="40" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif" fill="#FFFFFF">💫</text>
+    </g>
+    
+    <!-- 标题文字 -->
+    <text x="300" y="80" font-size="72" font-family="Arial, sans-serif" fill="#FFFFFF" font-weight="bold">Emoji Hand</text>
+    
+    <!-- 副标题 -->
+    <text x="300" y="130" font-size="36" font-family="Arial, sans-serif" fill="#FFFFFF" opacity="0.9">AI-Powered Emoji Translator & Generator</text>
+    
+    <!-- 描述文字 -->
+    <text x="300" y="200" font-size="24" font-family="Arial, sans-serif" fill="#FFFFFF" opacity="0.8">Transform any text into expressive emoji messages instantly</text>
+    
+    <!-- 功能亮点 -->
+    <g transform="translate(300, 250)">
+      <text x="0" y="0" font-size="20" font-family="Arial, sans-serif" fill="#FFFFFF" opacity="0.7">✨ Free emoji translation</text>
+      <text x="0" y="30" font-size="20" font-family="Arial, sans-serif" fill="#FFFFFF" opacity="0.7">🎵 TikTok emojis</text>
+      <text x="0" y="60" font-size="20" font-family="Arial, sans-serif" fill="#FFFFFF" opacity="0.7">📦 Emoji packs</text>
+      <text x="0" y="90" font-size="20" font-family="Arial, sans-serif" fill="#FFFFFF" opacity="0.7">🌍 Multi-language support</text>
+    </g>
+  </g>
+  
+  <!-- 底部装饰 -->
+  <g transform="translate(100, 550)">
+    <text x="0" y="0" font-size="18" font-family="Arial, sans-serif" fill="#FFFFFF" opacity="0.6">emojihand.com</text>
+  </g>
+</svg> 
