@@ -63,22 +63,12 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
   if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
     try {
       session = await getServerSession(opts.req, opts.res, authOptions);
+      console.log('NextAuth session:', session);
     } catch (e) {
       console.error('Failed to get server session:', e);
       session = null;
     }
   }
-  
-  // 只有在没有真实session的情况下才使用mock
-  // if (!session && process.env.NODE_ENV === "development") {
-  //   session = {
-  //     userId: "dev-user-id",
-  //     sessionId: "dev-session-id",
-  //     sessionClaims: {
-  //       email: "dev@example.com",
-  //     },
-  //   };
-  // }
   
   // 直接兜底提取 userId
   let userId: string | undefined;
@@ -86,18 +76,23 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     // 兼容 next-auth session
     if ('user' in session && session.user && typeof session.user === 'object' && 'id' in session.user) {
       userId = (session.user as { id?: string }).id;
+      console.log('Found userId from session.user.id:', userId);
     }
     // 兼容 mock/session.userId
     if (!userId && 'userId' in session) {
       userId = (session as { userId?: string }).userId;
+      console.log('Found userId from session.userId:', userId);
     }
     // 兜底：session.id
     if (!userId && 'id' in session) {
       userId = (session as { id?: string }).id;
+      console.log('Found userId from session.id:', userId);
     }
   }
-  console.error('context session:', session);
-  console.error('context userId:', userId);
+  
+  console.error('Final context session:', session);
+  console.error('Final context userId:', userId);
+  
   const sessionWithUserId = { ...session, userId };
   return {
     db,
