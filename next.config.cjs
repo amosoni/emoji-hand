@@ -13,5 +13,46 @@ const nextConfig = {
     config.resolve.alias['~'] = path.resolve(__dirname, 'src');
     return config;
   },
+  // 确保静态文件被正确处理
+  async headers() {
+    return [
+      {
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain',
+          },
+        ],
+      },
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+        ],
+      },
+      {
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'image/x-icon',
+          },
+        ],
+      },
+      {
+        source: '/favicon.svg',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'image/svg+xml',
+          },
+        ],
+      },
+    ];
+  },
 };
 module.exports = nextConfig;
