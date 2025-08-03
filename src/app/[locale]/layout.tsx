@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   
   // 根据语言设置不同的标题和描述
   const titles = {
-    en: 'Emoji Hand - AI-Powered Emoji Translator & Generator',
-    zh: 'Emoji Hand - AI驱动的表情符号翻译器和生成器',
-    ko: 'Emoji Hand - AI 기반 이모지 번역기 및 생성기',
-    ja: 'Emoji Hand - AI駆動の絵文字翻訳・生成ツール',
+    en: 'Emoji Hand - AI Emoji Translator & Generator',
+    zh: 'Emoji Hand - AI表情符号翻译器',
+    ko: 'Emoji Hand - AI 이모지 번역기',
+    ja: 'Emoji Hand - AI絵文字翻訳ツール',
   };
   
   const descriptions = {
@@ -89,6 +89,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       icon: [
         { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
         { url: '/favicon.svg', sizes: '32x32', type: 'image/svg+xml' },
+        { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
         { url: '/logo.svg', sizes: '64x64', type: 'image/svg+xml' },
       ],
       apple: [

@@ -18,7 +18,9 @@ export function middleware(request: NextRequest) {
   
   // 如果路径是根路径，重定向到默认语言
   if (pathname === '/') {
-    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url));
+    const response = NextResponse.redirect(new URL(`/${defaultLocale}`, request.url));
+    response.headers.set('X-Robots-Tag', 'index, follow');
+    return response;
   }
   
   // 检查路径是否以语言代码开头
@@ -26,12 +28,19 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameHasLocale) return;
+  if (pathnameHasLocale) {
+    // 为所有页面添加X-Robots-Tag头
+    const response = NextResponse.next();
+    response.headers.set('X-Robots-Tag', 'index, follow');
+    return response;
+  }
 
   // 重定向到默认语言
-  return NextResponse.redirect(
+  const response = NextResponse.redirect(
     new URL(`/${defaultLocale}${pathname}`, request.url)
   );
+  response.headers.set('X-Robots-Tag', 'index, follow');
+  return response;
 }
 
 export const config = {
