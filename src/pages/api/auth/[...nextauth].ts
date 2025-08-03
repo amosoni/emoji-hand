@@ -69,10 +69,10 @@ export const authOptions = {
       if (!user) return session;
       
       // 查数据库补全 profile 字段
-      session.user.id = user.id;
-      session.user.points = user.points;
-      session.user.premiumExpireAt = user.premiumExpireAt ? user.premiumExpireAt.toISOString() : null;
-      session.user.createdAt = user.createdAt ? user.createdAt.toISOString() : null;
+      (session.user as any).id = user.id;
+      (session.user as any).points = user.points;
+      (session.user as any).premiumExpireAt = user.premiumExpireAt ? user.premiumExpireAt.toISOString() : null;
+      (session.user as any).createdAt = user.createdAt ? user.createdAt.toISOString() : null;
       // 其它字段可按需补充
       
       return session;
