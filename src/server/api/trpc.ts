@@ -66,7 +66,7 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
   console.log('isNextApiResponse(opts.res):', opts.res ? isNextApiResponse(opts.res) : 'N/A');
   
   // 优先尝试获取真实的NextAuth session
-  if (opts.req && opts.res) {
+  if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
     try {
       session = await getServerSession(opts.req, opts.res, authOptions);
       console.log('NextAuth session from getServerSession:', session);
