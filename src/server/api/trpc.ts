@@ -135,13 +135,44 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
           // 但为了安全起见，我们先记录这个信息
           console.log('Session token exists, attempting to decode...');
           
-          // 临时解决方案：创建一个基本的 session 对象
-          // 这只是一个占位符，实际应该解码 token
-          session = {
-            user: { id: 'temp-user-id' },
-            userId: 'temp-user-id'
-          };
-          console.log('Created temporary session for debugging');
+          // 尝试解码 session token 来获取真实的用户 ID
+          try {
+            // 使用 NextAuth 的内部方法来解码 session token
+            const { decode } = await import('next-auth/jwt');
+            const decoded = await decode({
+              token: sessionToken,
+              secret: process.env.NEXTAUTH_SECRET || 'your-secret-key'
+            });
+            
+            console.log('Decoded session token:', decoded);
+            
+            if (decoded && typeof decoded === 'object' && 'sub' in decoded) {
+              const realUserId = decoded.sub as string;
+              console.log('Found real userId from token:', realUserId);
+              
+              session = {
+                user: { id: realUserId },
+                userId: realUserId
+              };
+              console.log('Created real session with userId:', realUserId);
+            } else {
+              console.log('No valid user ID found in decoded token');
+              // 回退到临时 session
+              session = {
+                user: { id: 'temp-user-id' },
+                userId: 'temp-user-id'
+              };
+              console.log('Created temporary session for debugging');
+            }
+          } catch (decodeError) {
+            console.error('Error decoding session token:', decodeError);
+            // 回退到临时 session
+            session = {
+              user: { id: 'temp-user-id' },
+              userId: 'temp-user-id'
+            };
+            console.log('Created temporary session after decode error');
+          }
         } catch (error) {
           console.error('Error processing session token:', error);
         }
