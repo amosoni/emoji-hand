@@ -105,8 +105,20 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     console.log('Request headers:', req.headers);
     
     // 尝试从cookie中获取session token
-    if (req.headers?.cookie) {
-      const cookies = req.headers.cookie;
+    console.log('req.headers type:', typeof req.headers);
+    console.log('req.headers keys:', req.headers ? Object.keys(req.headers) : 'undefined');
+    
+    // 处理 Headers 对象
+    let cookies: string | undefined;
+    if (req.headers instanceof Headers) {
+      cookies = req.headers.get('cookie') || undefined;
+      console.log('Headers object - cookies:', cookies);
+    } else if (req.headers && typeof req.headers === 'object') {
+      cookies = (req.headers as Record<string, string>).cookie;
+      console.log('Plain object - cookies:', cookies);
+    }
+    
+    if (cookies) {
       console.log('Request cookies:', cookies);
       
       // 解析session token
