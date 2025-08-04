@@ -64,6 +64,8 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     try {
       session = await getServerSession(opts.req, opts.res, authOptions);
       console.log('NextAuth session from getServerSession:', session);
+      console.log('Session is null?', session === null);
+      console.log('Session is empty?', session && Object.keys(session).length === 0);
     } catch (e) {
       console.error('Failed to get server session:', e);
       session = null;
@@ -73,8 +75,10 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
   // 从session中提取userId
   let userId: string | undefined;
   if (session && typeof session === 'object') {
+    console.log('=== tRPC Context Debug ===');
     console.log('Processing session object:', session);
     console.log('Session keys:', Object.keys(session));
+    console.log('Session type:', typeof session);
     
     // 优先从 session.user.id 获取（NextAuth标准格式）
     if ('user' in session && session.user && typeof session.user === 'object' && 'id' in session.user) {
@@ -107,6 +111,10 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
         console.log('Found userId from session.user object:', userId);
       }
     }
+    
+    // 最后的调试：直接检查session的所有属性
+    console.log('Session JSON:', JSON.stringify(session, null, 2));
+    console.log('=== End tRPC Context Debug ===');
   }
   
   console.log('Final context session:', session);
