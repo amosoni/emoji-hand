@@ -62,10 +62,12 @@ export default function ProfilePage() {
               <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-400 text-white">{t('profile.free', 'Free')}</span>
             )}
           </h1>
-          {/* 编辑资料/充值按钮 */}
-          <div className="flex gap-3 mb-4">
-            <RechargeButton />
-          </div>
+          {/* 升级按钮 - 只在免费套餐时显示 */}
+          {(!user?.subscriptionPlan || user.subscriptionPlan === 'free') && (
+            <div className="flex gap-3 mb-4">
+              <RechargeButton />
+            </div>
+          )}
           {user ? (
             <>
               {user.image && <img src={user.image} alt="avatar" className="w-24 h-24 rounded-full border-4 border-white shadow mb-4" />}
