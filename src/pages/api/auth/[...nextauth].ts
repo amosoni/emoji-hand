@@ -94,6 +94,13 @@ export const authOptions = {
       (session.user as any).points = user.points;
       (session.user as any).premiumExpireAt = user.premiumExpireAt ? user.premiumExpireAt.toISOString() : null;
       (session.user as any).createdAt = user.createdAt ? user.createdAt.toISOString() : null;
+      // 添加订阅相关字段
+      (session.user as any).subscriptionPlan = user.subscriptionPlan;
+      (session.user as any).subscriptionStatus = user.subscriptionStatus;
+      (session.user as any).subscriptionExpireAt = user.subscriptionExpireAt ? user.subscriptionExpireAt.toISOString() : null;
+      (session.user as any).translationUsesToday = user.translationUsesToday;
+      (session.user as any).imageGenerationUsesToday = user.imageGenerationUsesToday;
+      (session.user as any).lastUsageReset = user.lastUsageReset ? user.lastUsageReset.toISOString() : null;
       // 其它字段可按需补充
       
       console.log('NextAuth session callback - session after:', session);

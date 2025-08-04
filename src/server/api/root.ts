@@ -9,6 +9,7 @@ import { emojiPackLovartStyleRouter } from "~/server/api/routers/emoji-pack-lova
 import { emojiPackSubscriptionRouter } from "~/server/api/routers/emoji-pack-subscription";
 import { emojiPackTiersRouter } from "~/server/api/routers/emoji-pack-tiers";
 import { usageLimitsRouter } from "~/server/api/routers/usage-limits";
+import { adminRouter } from "~/server/api/routers/admin";
 
 /**
  * This is the primary router for your server.
@@ -26,6 +27,7 @@ export const appRouter = createTRPCRouter({
   emojiPackSubscription: emojiPackSubscriptionRouter,
   emojiPackTiers: emojiPackTiersRouter,
   usageLimits: usageLimitsRouter,
+  admin: adminRouter,
 });
 
 // export type definition of API
