@@ -170,6 +170,10 @@
   "paywall.title": "회원 전용 스타일",
   "paywall.desc": "멤버십을 업그레이드하면 모든 스타일과 GPT-4.0을 잠금 해제할 수 있습니다!",
   "paywall.iknow": "알겠어요",
+  "credits.insufficient": "포인트 부족",
+  "credits.required": "{required}포인트 필요",
+  "credits.current": "현재 {current}포인트 보유",
+  "credits.purchase": "포인트를 구매해주세요",
   "whyUseTitle": "왜 Emoji Hand를 사용하나요?",
   "feature1Title": "채팅을 더 재미있게",
   "feature1Desc": "WhatsApp, Telegram, Discord 등에서 메시지를 더 생동감 있게 만드세요.",
@@ -231,8 +235,8 @@
     "lovartStyle": "Lovart 스타일 디자인"
   },
   "emojiGenerator": {
-    "title": "이모지 팩 생성기 - Lovart AI 스타일",
-    "subtitle": "이미지를 업로드하면 AI가 Lovart AI 디자인 철학에 영감을 받아 아름다운 이모지 팩을 생성합니다",
+    "title": "이모지 팩 생성기",
+    "subtitle": "이미지를 업로드하면 AI가 아름다운 이모지 팩을 생성합니다",
     "uploadTitle": "이미지 업로드",
     "uploadHint": "이미지를 클릭하거나 이곳에 드래그하세요",
     "uploadLimit": "JPG, PNG 지원, 최대 5MB",

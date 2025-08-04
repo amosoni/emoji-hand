@@ -19,7 +19,6 @@ interface SubscriptionPlan {
     batchGeneration?: boolean;
     apiAccess?: boolean;
     commercialUse?: boolean;
-    teamCollaboration?: boolean;
   };
   description: string;
   yearlyDiscount: number;
@@ -51,7 +50,7 @@ const defaultPlans: SubscriptionPlan[] = [
     price: 0,
     billingCycle: 'monthly',
     features: {
-      translation: { daily: 8, model: 'GPT-3.5' },
+      translation: { daily: 3, model: 'GPT-3.5' },
       imageGeneration: { daily: 0 },
       noAds: false,
       commercialUse: false
@@ -62,10 +61,10 @@ const defaultPlans: SubscriptionPlan[] = [
   {
     id: 'starter',
     name: 'Basic Plan',
-    price: 19.99,
+    price: 9.99,
     billingCycle: 'monthly',
     features: {
-      translation: { daily: 15, model: 'GPT-4' },
+      translation: { daily: 10, model: 'GPT-4' },
       imageGeneration: { daily: 5 },
       noAds: true,
       commercialUse: false
@@ -76,11 +75,11 @@ const defaultPlans: SubscriptionPlan[] = [
   {
     id: 'pro',
     name: 'Professional Plan',
-    price: 39.99,
+    price: 19.99,
     billingCycle: 'monthly',
     features: {
-      translation: { daily: 35, model: 'GPT-4' },
-      imageGeneration: { daily: 12 },
+      translation: { daily: 20, model: 'GPT-4' },
+      imageGeneration: { daily: 10 },
       noAds: true,
       commercialUse: true,
       apiAccess: true
@@ -91,15 +90,14 @@ const defaultPlans: SubscriptionPlan[] = [
   {
     id: 'enterprise',
     name: 'Enterprise Plan',
-    price: 79.99,
+    price: 39.99,
     billingCycle: 'monthly',
     features: {
-      translation: { daily: 70, model: 'GPT-4' },
-      imageGeneration: { daily: 20 },
+      translation: { daily: 50, model: 'GPT-4' },
+      imageGeneration: { daily: 25 },
       noAds: true,
       commercialUse: true,
-      apiAccess: true,
-      teamCollaboration: true
+      apiAccess: true
     },
     description: '适合企业用户',
     yearlyDiscount: 30
@@ -128,6 +126,11 @@ export default function EmojiPackSubscription() {
   
   // 使用API数据或默认数据，确保价格始终显示
   const plans = subscriptionPlans?.plans ?? defaultPlans;
+  
+  // 调试信息
+  console.log('API plans:', subscriptionPlans?.plans);
+  console.log('Default plans:', defaultPlans);
+  console.log('Final plans:', plans);
   
   // 升级订阅
   const upgradeMutation = api.emojiPackSubscription.upgradeSubscription.useMutation({
@@ -321,14 +324,22 @@ export default function EmojiPackSubscription() {
 
               <div className="mt-4">
                 <button
-                  onClick={() => setSelectedPlan(plan.id)}
+                  onClick={() => {
+                    if (plan.id === 'free') {
+                      // 免费计划直接跳转到首页
+                      window.location.href = '/';
+                    } else {
+                      setSelectedPlan(plan.id);
+                    }
+                  }}
                   className={`w-full py-2 rounded-lg transition-colors font-medium shadow-md ${
                     selectedPlan === plan.id
                       ? 'bg-yellow-400 text-purple-600 shadow-yellow-400/30'
                       : 'bg-white/20 hover:bg-white/30 text-white'
                   }`}
                 >
-                  {subscriptionStatus?.plan === plan.id ? t('subscription.currentPlan', 'Current Plan') : t('subscription.selectPlan', 'Select Plan')}
+                  {plan.id === 'free' ? t('subscription.startFree', 'Start Free') : 
+                   subscriptionStatus?.plan === plan.id ? t('subscription.currentPlan', 'Current Plan') : t('subscription.selectPlan', 'Select Plan')}
                 </button>
               </div>
             </div>
@@ -369,10 +380,10 @@ export default function EmojiPackSubscription() {
       <div className="mt-6 bg-black/30 backdrop-blur-md rounded-lg p-4 border border-white/30 shadow-lg">
         <h4 className="font-semibold mb-2 text-white drop-shadow-md">{t('subscription.usageInstructions', 'Usage Instructions')}</h4>
         <ul className="text-sm space-y-1 text-white/95">
-          <li className="drop-shadow-sm">• {t('subscription.freePlan', 'Free Plan')}：{t('subscription.freePlanDesc', '8 translations per day, suitable for trial')}</li>
-          <li className="drop-shadow-sm">• {t('subscription.basicPlan', 'Basic Plan')}：{t('subscription.basicPlanDesc', '15 translations + 5 images per day, suitable for individual users')}</li>
-          <li className="drop-shadow-sm">• {t('subscription.proPlan', 'Professional Plan')}：{t('subscription.proPlanDesc', '35 translations + 12 images per day, suitable for professional users')}</li>
-          <li className="drop-shadow-sm">• {t('subscription.enterprisePlan', 'Enterprise Plan')}：{t('subscription.enterprisePlanDesc', '70 translations + 20 images per day, suitable for enterprise users')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.freePlan', 'Free Plan')}：{t('subscription.freePlanDesc', '3 translations per day, suitable for trial')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.basicPlan', 'Basic Plan')}：{t('subscription.basicPlanDesc', '10 translations + 5 images per day, suitable for individual users')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.proPlan', 'Professional Plan')}：{t('subscription.proPlanDesc', '20 translations + 10 images per day, suitable for professional users')}</li>
+          <li className="drop-shadow-sm">• {t('subscription.enterprisePlan', 'Enterprise Plan')}：{t('subscription.enterprisePlanDesc', '50 translations + 25 images per day, suitable for enterprise users')}</li>
           <li className="drop-shadow-sm">• {t('subscription.yearlyDiscountNote', 'Yearly payment enjoys discounted prices')}</li>
           <li className="drop-shadow-sm">• {t('subscription.commercialAuth', 'Supports commercial authorization (paid plans)')}</li>
         </ul>

@@ -18,23 +18,48 @@ export const emojiPackRouter = createTRPCRouter({
       const userId = ctx.session?.userId;
       if (!userId) throw new Error('No userId in session');
 
-      // 检查表情包积分
+      // 检查订阅状态和每日使用限制
       const user = await prisma.user.findUnique({ 
         where: { id: userId },
         select: {
           id: true,
-          points: true
+          subscriptionPlan: true,
+          imageGenerationUsesToday: true,
+          lastUsageReset: true
         }
       });
       
       if (!user) throw new Error('User not found');
       
-      // 计算所需积分（1个表情包=1积分）
-      const requiredCredits = input.packCount;
-      const currentCredits = user.points ?? 0;
-
-      if (currentCredits < requiredCredits) {
-        throw new Error(`积分不足，需要${requiredCredits}积分，当前有${currentCredits}积分，请购买积分`);
+      // 检查是否需要重置每日使用量
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      
+      if (!user.lastUsageReset || user.lastUsageReset < today) {
+        await prisma.user.update({
+          where: { id: userId },
+          data: {
+            imageGenerationUsesToday: 0,
+            lastUsageReset: today
+          }
+        });
+        user.imageGenerationUsesToday = 0;
+      }
+      
+      // 根据订阅计划获取每日限制
+      const planLimits = {
+        free: 0,
+        starter: 5,
+        pro: 10,
+        enterprise: 25
+      };
+      
+      const plan = user.subscriptionPlan || 'free';
+      const dailyLimit = planLimits[plan as keyof typeof planLimits];
+      const currentUsage = user.imageGenerationUsesToday;
+      
+      if (currentUsage + input.packCount > dailyLimit) {
+        throw new Error(`Daily limit exceeded. You can generate ${dailyLimit - currentUsage} more packs today. Please upgrade your subscription for more daily usage.`);
       }
 
       // 使用Vision API分析图片内容
@@ -129,13 +154,11 @@ export const emojiPackRouter = createTRPCRouter({
         max_tokens: 800
       });
 
-      // 消耗积分
+      // 更新每日使用量
       await prisma.user.update({
         where: { id: userId },
         data: {
-          points: { decrement: input.packCount }
-          // totalCreditsEarned: { increment: input.packCount },
-          // lastCheckIn: new Date()
+          imageGenerationUsesToday: { increment: input.packCount }
         }
       });
 
@@ -155,7 +178,7 @@ export const emojiPackRouter = createTRPCRouter({
         designAdvice: descriptionResponse.choices[0]?.message?.content ?? '',
         targetAudience: input.targetAudience,
         commercialUse: input.commercialUse,
-        remainingCredits: currentCredits - input.packCount
+        remainingCredits: dailyLimit - (currentUsage + input.packCount)
       };
     }),
 

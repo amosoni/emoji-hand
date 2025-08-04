@@ -74,12 +74,7 @@ export default function UnifiedNavBar() {
         >
           👥 {t('nav.genZ', 'Gen Z Guide')}
         </Link>
-        <Link
-          href={`/${locale}/lovart-style`}
-          className="bg-white/20 hover:bg-blue-400 text-white px-1 md:px-3 py-1 md:py-2 rounded-lg font-bold transition-colors text-xs md:text-sm whitespace-nowrap"
-        >
-          🎭 {t('nav.lovartStyle', 'Lovart Style Design')}
-        </Link>
+
         <Link
           href={`/${locale}/emoji-pack-subscription`}
           className="bg-white/20 hover:bg-yellow-400 text-white px-1 md:px-3 py-1 md:py-2 rounded-lg font-bold transition-colors text-xs md:text-sm whitespace-nowrap"

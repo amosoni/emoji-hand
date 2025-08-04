@@ -47,7 +47,21 @@ export default function EmojiPackGenerator() {
       setError(null);
     },
     onError: (error) => {
-      setError(error.message);
+      // 处理每日限制超出的错误信息
+      if (error.message.includes('Daily limit exceeded')) {
+        const match = error.message.match(/You can generate (\d+) more packs today/);
+        if (match) {
+          const remaining = match[1];
+          setError(t('emojiGenerator.error.dailyLimitExceeded', 'Daily limit exceeded') + '. ' + 
+                   t('emojiGenerator.error.remainingPacks', { remaining }) + '. ' + 
+                   t('emojiGenerator.error.upgradeForMore', 'Please upgrade your subscription for more daily usage.'));
+        } else {
+          setError(t('emojiGenerator.error.dailyLimitExceeded', 'Daily limit exceeded') + '. ' + 
+                   t('emojiGenerator.error.upgradeForMore', 'Please upgrade your subscription for more daily usage.'));
+        }
+      } else {
+        setError(error.message);
+      }
       setIsGenerating(false);
     }
   });

@@ -170,6 +170,10 @@
   "paywall.title": "Member-Only Styles",
   "paywall.desc": "Upgrade to unlock all styles and GPT-4.0!",
   "paywall.iknow": "Got it",
+  "credits.insufficient": "积分不足",
+  "credits.required": "需要{required}积分",
+  "credits.current": "当前有{current}积分",
+  "credits.purchase": "请购买积分",
   "whyUseTitle": "Why Use Emoji Hand?",
   "feature1Title": "Spice Up Your Chats",
   "feature1Desc": "Make your messages more lively and engaging on WhatsApp, Telegram, Discord, and more.",
@@ -260,8 +264,8 @@
       "subscription": "订阅套餐"
     },
     "emojiGenerator": {
-      "title": "表情包生成器 - Lovart AI 风格",
-      "subtitle": "上传图片，AI将为您生成精美的表情包，灵感来自Lovart AI设计理念",
+          "title": "表情包生成器",
+    "subtitle": "上传图片，AI将为您生成精美的表情包",
       "uploadTitle": "上传图片",
       "uploadHint": "点击上传图片或拖拽到此处",
       "uploadLimit": "支持 JPG、PNG 格式，最大 5MB",
@@ -280,10 +284,13 @@
       "generatedTime": "生成时间",
       "tags": "标签",
       "defaultDescription": "风格表情包",
-      "error": {
-        "invalidFile": "请上传图片文件",
-        "fileTooLarge": "图片大小不能超过5MB",
-        "noImage": "请先上传图片",
+          "error": {
+      "invalidFile": "请上传图片文件",
+      "fileTooLarge": "图片大小不能超过5MB",
+      "noImage": "请先上传图片",
+      "dailyLimitExceeded": "每日限制已超出",
+      "remainingPacks": "今天还可以生成 {{remaining}} 个表情包",
+      "upgradeForMore": "请升级订阅以获得更多每日使用量",
         "generationFailed": "生成失败",
         "invalidResult": "生成结果无效",
         "retryLater": "生成失败，请稍后重试",
@@ -300,7 +307,7 @@
       "vintage": "复古风格",
       "minimalist": "极简风格"
     },
-    "stylesTitle": "表情包风格（受Lovart AI启发）",
+    "stylesTitle": "表情包风格",
     "textOptions": "文字选项",
     "includeText": "在表情包中包含文字",
     "customTextLabel": "自定义文字（可选）：",
@@ -318,25 +325,25 @@
     },
     "faq": {
       "title": "常见问题",
-      "lovartComparison": "与Lovart AI相比如何？",
-      "lovartComparisonAnswer": "虽然Lovart AI是一个综合设计平台，但我们的表情包生成器专门专注于创建表情包。我们受到Lovart AI驱动方法的启发，并将类似的原则应用到表情包创建中。",
+      "lovartComparison": "与其他AI工具相比如何？",
+      "lovartComparisonAnswer": "我们的表情包生成器专门专注于使用AI驱动的设计原则创建表情包。",
       "imageFormats": "支持哪些图片格式？",
       "imageFormatsAnswer": "我们支持JPG、PNG和GIF格式。为了获得最佳效果，请使用具有清晰主题的高质量图片。",
       "generationCount": "我可以生成多少个表情包？",
       "generationCountAnswer": "每次生成会根据您选择的风格和上传的图片创建3-5个不同的表情包变体。",
       "commercialUse": "我可以商业使用这些表情包吗？",
-      "commercialUseAnswer": "是的，所有生成的表情包都可以免费用于个人和商业目的。它们是使用受Lovart AI原则启发的AI技术创建的。"
+      "commercialUseAnswer": "是的，所有生成的表情包都可以免费用于个人和商业目的。它们是使用先进的AI技术创建的。"
     },
-    "lovartInspired": "受Lovart AI启发",
-    "lovartWhatIs": "什么是Lovart AI？",
-    "lovartDescription": "Lovart AI是一个革命性的AI设计代理，可以自动化整个设计过程，从概念到图像、视频、3D等。我们的表情包生成器受到Lovart AI驱动创意工具的创新方法的启发。",
-    "lovartDescription2": "就像Lovart AI一样，我们的表情包生成器允许您上传图像并让AI创建具有不同风格的多种变体，使创作过程变得轻松愉快。",
-    "lovartFeatures": "主要功能",
-    "aiGeneration": "AI驱动的表情包生成",
-    "styleVariations": "多种风格变体",
-    "batchProcessing": "批量处理功能",
-    "lovartPrinciples": "受Lovart AI启发的设计原则",
-    "howToUse": "如何使用我们的Lovart风格表情包生成器",
+          "lovartInspired": "AI驱动设计",
+      "lovartWhatIs": "什么是AI设计？",
+      "lovartDescription": "我们的表情包生成器使用先进的AI技术从您上传的图片创建精美的表情包设计。",
+      "lovartDescription2": "我们的表情包生成器允许您上传图像并让AI创建具有不同风格的多种变体，使创作过程变得轻松愉快。",
+      "lovartFeatures": "主要功能",
+      "aiGeneration": "AI驱动的表情包生成",
+      "styleVariations": "多种风格变体",
+      "batchProcessing": "批量处理功能",
+      "lovartPrinciples": "AI驱动的设计原则",
+      "howToUse": "如何使用我们的AI表情包生成器",
     "uploadStep": "上传您想要转换为表情包的任何图像。我们的AI将分析内容并创建变体。",
     "styleStep": "从6种不同风格中选择：可爱、搞笑、酷炫、毒舌、GenZ或TikTok。每种风格都创建独特的变体。",
     "generateStep": "AI生成多个表情包变体。下载单个包或在您的项目中使用它们。",
@@ -757,6 +764,7 @@
     "notSupported": "不支持",
     "currentPlan": "当前套餐",
     "selectPlan": "选择套餐",
+    "startFree": "开始免费使用",
     "processing": "处理中...",
     "upgrade": "升级订阅",
     "upgradeSuccess": "订阅升级成功！",
@@ -786,13 +794,13 @@
     "currentPlanSelected": "这是您当前的套餐",
     "usageInstructions": "使用说明",
     "freePlan": "免费套餐",
-    "freePlanDesc": "每日8次翻译，适合体验",
+    "freePlanDesc": "每日3次翻译，适合体验",
     "basicPlan": "基础套餐",
-    "basicPlanDesc": "每日15次翻译+5张图，适合个人用户",
+    "basicPlanDesc": "每日10次翻译+5张图，适合个人用户",
     "proPlan": "专业套餐",
-    "proPlanDesc": "每日35次翻译+12张图，适合专业用户",
+    "proPlanDesc": "每日20次翻译+10张图，适合专业用户",
     "enterprisePlan": "企业套餐",
-    "enterprisePlanDesc": "每日70次翻译+20张图，适合企业用户",
+    "enterprisePlanDesc": "每日50次翻译+25张图，适合企业用户",
     "yearlyDiscountNote": "年付享受优惠价格",
     "commercialAuth": "支持商用授权（付费套餐）",
     "seo": {
@@ -802,74 +810,5 @@
       "ogTitle": "表情包订阅系统 - EmojiHand",
       "ogDescription": "选择适合您的表情包生成订阅套餐，享受专业AI表情包生成服务"
     }
-  },
-  "lovartStyle": {
-    "title": "Lovart Style AI",
-    "description": "世界首个AI设计代理。从单一提示创建完整的品牌策略、营销视觉、社交媒体内容、产品设计、网页界面，甚至3D模型。",
-    "upload": {
-      "title": "上传图片（可选）",
-      "instruction": "点击上传或拖拽图片到这里",
-      "supported": "支持 JPG、PNG，最大 10MB",
-      "reselect": "图片已上传，点击重新选择"
-    },
-    "prompt": {
-      "title": "文本提示（可选）",
-      "placeholder": "描述您的设计想法、品牌概念或创意愿景..."
-    },
-    "designType": {
-      "title": "设计类型",
-      "brand": "品牌识别",
-      "brandDesc": "创建完整的品牌策略、标志、色彩、字体",
-      "marketing": "营销视觉",
-      "marketingDesc": "创建引人注目的宣传材料和活动",
-      "social": "社交媒体",
-      "socialDesc": "创建引人入胜的社交媒体内容和帖子",
-      "product": "产品设计",
-      "productDesc": "设计产品模型和包装",
-      "web": "网页与界面",
-      "webDesc": "创建网站设计和用户界面",
-      "video": "视频与3D",
-      "videoDesc": "生成视频、3D模型和动画"
-    },
-    "audience": {
-      "title": "目标受众",
-      "select": "选择目标受众",
-      "general": "普通大众",
-      "youngAdults": "年轻成年人 (18-25岁)",
-      "professionals": "专业人士 (25-40岁)",
-      "teenagers": "青少年 (13-17岁)",
-      "businessOwners": "企业主",
-      "creativeProfessionals": "创意专业人士",
-      "students": "学生",
-      "parents": "家长"
-    },
-    "commercial": {
-      "title": "商业用途",
-      "description": "针对商业应用进行优化"
-    },
-    "generate": "生成设计",
-    "generating": "AI 生成中...",
-    "reset": "重置",
-    "results": {
-      "analysis": "AI 分析",
-      "concepts": "创意概念",
-      "businessAdvice": "商业建议",
-      "designs": "生成的设计"
-    },
-    "error": {
-      "invalidFile": "请上传图片文件",
-      "fileTooLarge": "图片大小不能超过 10MB",
-      "noInput": "请提供图片或文本提示",
-      "generationFailed": "生成失败，请稍后重试"
-    },
-    "seo": {
-      "title": "Lovart Style AI - 创意设计助手",
-      "description": "受 Lovart AI 启发的专业 AI 设计助手。生成标志、海报、社交媒体内容等，具有智能创意分析。",
-      "keywords": "lovart, ai设计, 创意助手, logo设计, 海报设计, 社交媒体设计, ai艺术, 设计自动化",
-      "ogTitle": "Lovart Style AI - 创意设计助手",
-      "ogDescription": "受 Lovart AI 启发的专业 AI 设计助手。生成标志、海报、社交媒体内容等。",
-      "twitterTitle": "Lovart Style AI - 创意设计助手",
-      "twitterDescription": "受 Lovart AI 启发的专业 AI 设计助手。"
-    }
   }
-} 
+}

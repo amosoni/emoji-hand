@@ -12,7 +12,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
           price: 0,
           billingCycle: 'monthly',
           features: {
-            translation: { daily: 8, model: 'gpt-3.5-turbo' },
+            translation: { daily: 3, model: 'gpt-3.5-turbo' },
             imageGeneration: { daily: 0 },
             guides: true,
             noAds: false,
@@ -22,7 +22,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
             commercialUse: false,
             teamCollaboration: false
           },
-          description: '기본 번역 기능, 하루 8회 사용',
+          description: '기본 번역 기능, 하루 3회 사용',
           yearlyDiscount: 0
         },
         {
@@ -31,7 +31,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
           price: 9.99,
           billingCycle: 'monthly',
           features: {
-            translation: { daily: 15, model: 'gpt-4' },
+            translation: { daily: 10, model: 'gpt-4' },
             imageGeneration: { daily: 5 },
             guides: true,
             noAds: true,
@@ -41,7 +41,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
             commercialUse: false,
             teamCollaboration: false
           },
-          description: '하루 15회 번역, 5회 이미지 생성',
+          description: '하루 10회 번역, 5회 이미지 생성',
           yearlyDiscount: 17
         },
         {
@@ -50,8 +50,8 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
           price: 19.99,
           billingCycle: 'monthly',
           features: {
-            translation: { daily: 35, model: 'gpt-4' },
-            imageGeneration: { daily: 12 },
+            translation: { daily: 20, model: 'gpt-4' },
+            imageGeneration: { daily: 10 },
             guides: true,
             noAds: true,
             exportQuality: 'ultra-hd',
@@ -60,7 +60,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
             commercialUse: false,
             teamCollaboration: false
           },
-          description: '하루 35회 번역, 12회 이미지 생성',
+          description: '하루 20회 번역, 10회 이미지 생성',
           yearlyDiscount: 17
         },
         {
@@ -69,17 +69,16 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
           price: 39.99,
           billingCycle: 'monthly',
           features: {
-            translation: { daily: 70, model: 'gpt-4' },
-            imageGeneration: { daily: 20 },
+            translation: { daily: 50, model: 'gpt-4' },
+            imageGeneration: { daily: 25 },
             guides: true,
             noAds: true,
             exportQuality: 'highest',
             batchGeneration: true,
             apiAccess: true,
-            commercialUse: true,
-            teamCollaboration: true
+            commercialUse: true
           },
-          description: '하루 70회 번역, 20회 이미지 생성',
+          description: '하루 50회 번역, 25회 이미지 생성',
           yearlyDiscount: 17
         }
       ]
@@ -125,10 +124,10 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
     }
 
     const plans = {
-      free: { translation: 8, imageGeneration: 0 },
-      starter: { translation: 15, imageGeneration: 5 },
-      pro: { translation: 35, imageGeneration: 12 },
-      enterprise: { translation: 70, imageGeneration: 20 }
+      free: { translation: 3, imageGeneration: 0 },
+      starter: { translation: 10, imageGeneration: 5 },
+      pro: { translation: 20, imageGeneration: 10 },
+      enterprise: { translation: 50, imageGeneration: 25 }
     };
 
     const plan = user.subscriptionPlan || 'free';
@@ -177,10 +176,10 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
       }
 
       const plans = {
-        free: { translation: 8, imageGeneration: 0 },
-        starter: { translation: 15, imageGeneration: 2 },
-        pro: { translation: 35, imageGeneration: 5 },
-        enterprise: { translation: 70, imageGeneration: 10 }
+        free: { translation: 3, imageGeneration: 0 },
+        starter: { translation: 10, imageGeneration: 5 },
+        pro: { translation: 20, imageGeneration: 10 },
+        enterprise: { translation: 50, imageGeneration: 25 }
       };
 
       const plan = user.subscriptionPlan || 'free';

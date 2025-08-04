@@ -133,7 +133,7 @@ export const emojiPackLovartStyleRouter = createTRPCRouter({
       const currentCredits = user.credits ?? 0;
 
       if (currentCredits < requiredCredits) {
-        throw new Error(`积分不足，需要${requiredCredits}积分，当前有${currentCredits}积分，请购买积分`);
+        throw new Error(`Insufficient credits. Required ${requiredCredits} credits, currently have ${currentCredits} credits. Please purchase credits.`);
       }
 
       // 这里应该调用AI生成表情包的逻辑
