@@ -63,7 +63,7 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
   if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
     try {
       session = await getServerSession(opts.req, opts.res, authOptions);
-      console.log('NextAuth session:', session);
+      console.log('NextAuth session from getServerSession:', session);
     } catch (e) {
       console.error('Failed to get server session:', e);
       session = null;
@@ -73,6 +73,9 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
   // 从session中提取userId
   let userId: string | undefined;
   if (session && typeof session === 'object') {
+    console.log('Processing session object:', session);
+    console.log('Session keys:', Object.keys(session));
+    
     // 优先从 session.user.id 获取（NextAuth标准格式）
     if ('user' in session && session.user && typeof session.user === 'object' && 'id' in session.user) {
       userId = (session.user as { id?: string }).id;

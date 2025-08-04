@@ -63,10 +63,21 @@ export const authOptions = {
       return token;
     },
     async session({ session, token }: { session: Session; token: JWT }) {
-      if (!token?.sub) return session;
+      console.log('NextAuth session callback - token:', token);
+      console.log('NextAuth session callback - session before:', session);
+      
+      if (!token?.sub) {
+        console.log('No token.sub found, returning session as is');
+        return session;
+      }
       
       const user = await prisma.user.findUnique({ where: { id: token.sub } });
-      if (!user) return session;
+      console.log('NextAuth session callback - user from db:', user);
+      
+      if (!user) {
+        console.log('No user found in db, returning session as is');
+        return session;
+      }
       
       // 查数据库补全 profile 字段
       (session.user as any).id = user.id;
@@ -75,6 +86,7 @@ export const authOptions = {
       (session.user as any).createdAt = user.createdAt ? user.createdAt.toISOString() : null;
       // 其它字段可按需补充
       
+      console.log('NextAuth session callback - session after:', session);
       return session;
     },
   },
