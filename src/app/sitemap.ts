@@ -1,38 +1,33 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://yourdomain.com' // 替换为您的实际域名
+  const baseUrl = 'https://www.emojihand.com'
+  const locales = ['en', 'zh', 'zh-CN', 'de', 'it', 'fr', 'es', 'pt', 'ru', 'ja', 'ko'];
   
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/tiktok`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tiktok-emojis`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/realtime`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/profile`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-  ]
+  const pages = [
+    '',
+    '/tiktok',
+    '/tiktok-emojis',
+    '/realtime',
+    '/profile',
+    '/genz',
+    '/emoji-generator',
+    '/lovart-style',
+  ];
+
+  const sitemapEntries: MetadataRoute.Sitemap = [];
+
+  // 为每个语言和页面生成sitemap条目
+  locales.forEach(locale => {
+    pages.forEach(page => {
+      sitemapEntries.push({
+        url: `${baseUrl}/${locale}${page}`,
+        lastModified: new Date(),
+        changeFrequency: page === '' ? 'daily' : 'weekly',
+        priority: page === '' ? 1 : 0.8,
+      });
+    });
+  });
+
+  return sitemapEntries;
 } 
