@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useLoginModal } from "@/components/LoginModalContext";
 import DouyinEmojiPicker from "@/components/DouyinEmojiPicker";
+import { useRouter } from "next/navigation";
 import { parseDouyinShortcodes } from "@/utils/tiktokEmojis";
 // i18n.changeLanguage('en'); // 移除全局强制切换，保留自动检测
 
@@ -20,6 +21,7 @@ interface ChatMessage {
 
 export default function Translator() {
   const { t } = useTranslation();
+  const router = useRouter();
   const [inputText, setInputText] = useState("");
   const [mode, setMode] = useState<"normal" | "savage" | "genz" | "tiktok">("normal");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -188,7 +190,10 @@ export default function Translator() {
             <div className="bg-white rounded-lg p-8 shadow-lg text-center">
               <h2 className="text-xl font-bold mb-2">{t('paywall.title', '会员专属风格')}</h2>
               <p className="mb-4">{t('paywall.desc', '升级会员即可解锁全部风格和GPT-4.0！')}</p>
-              <button className="bg-pink-500 text-white px-6 py-2 rounded-lg font-bold" onClick={() => setShowPaywall(false)}>{t('paywall.iknow', '我知道了')}</button>
+              <button className="bg-pink-500 text-white px-6 py-2 rounded-lg font-bold" onClick={() => {
+                setShowPaywall(false);
+                router.push('/subscribe');
+              }}>{t('paywall.iknow', '我知道了')}</button>
             </div>
           </div>
         )}
