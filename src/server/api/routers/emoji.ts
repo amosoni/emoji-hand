@@ -97,9 +97,9 @@ export const emojiRouter = createTRPCRouter({
   translate: publicProcedure
     .input(z.object({ text: z.string(), mode: z.string(), model: z.string().optional() }))
     .mutation(async ({ ctx, input }) => {
-      console.error('==== emoji.translate mutation called ====');
+      console.log('==== emoji.translate mutation called ====');
       const userId = ctx.session?.userId;
-      console.error('emoji.translate userId from session:', userId);
+      console.log('emoji.translate userId from session:', userId);
       
       // 在开发环境中，如果没有用户登录，使用默认设置
       let isPremium = false;

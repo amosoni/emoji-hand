@@ -59,8 +59,14 @@ function isNextApiResponse(res: unknown): res is NextApiResponse {
 export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) => {
   let session = null;
   
+  console.log('=== tRPC Context Creation Start ===');
+  console.log('opts.req exists:', !!opts.req);
+  console.log('opts.res exists:', !!opts.res);
+  console.log('isNextApiRequest(opts.req):', opts.req ? isNextApiRequest(opts.req) : 'N/A');
+  console.log('isNextApiResponse(opts.res):', opts.res ? isNextApiResponse(opts.res) : 'N/A');
+  
   // 优先尝试获取真实的NextAuth session
-  if (opts.req && opts.res && isNextApiRequest(opts.req) && isNextApiResponse(opts.res)) {
+  if (opts.req && opts.res) {
     try {
       session = await getServerSession(opts.req, opts.res, authOptions);
       console.log('NextAuth session from getServerSession:', session);
@@ -82,6 +88,20 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     } catch (e) {
       console.error('Failed to get server session:', e);
       session = null;
+    }
+  }
+  
+  // 如果getServerSession失败，尝试从请求头中获取session
+  if (!session && opts.req) {
+    console.log('=== Fallback Session Detection ===');
+    const req = opts.req as any;
+    console.log('Request headers:', req.headers);
+    console.log('Request cookies:', req.cookies);
+    
+    // 尝试从cookie中获取session
+    if (req.cookies) {
+      const sessionCookie = req.cookies['next-auth.session-token'] || req.cookies['__Secure-next-auth.session-token'];
+      console.log('Session cookie found:', !!sessionCookie);
     }
   }
   
