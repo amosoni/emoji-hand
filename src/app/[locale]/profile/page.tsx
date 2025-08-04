@@ -132,9 +132,7 @@ export default function ProfilePage() {
                     )}
                   </>
                 )}
-                {user.points !== undefined && (
-                  <div className="flex justify-between"><span>{t('profile.points', 'Points')}</span><span>{user.points}</span></div>
-                )}
+
                 {user.createdAt && (
                   <div className="flex justify-between"><span>{t('profile.createdAt', 'Registered at')}</span><span>{new Date(user.createdAt).toLocaleDateString()}</span></div>
                 )}
