@@ -57,9 +57,17 @@ export const authOptions = {
   },
   callbacks: {
     async jwt({ token, user }: { token: JWT; user?: any }) {
+      console.log('=== NextAuth JWT callback start ===');
+      console.log('JWT callback - user:', user);
+      console.log('JWT callback - token before:', token);
+      
       if (user?.id) {
         token.sub = user.id;
+        console.log('Setting token.sub to user.id:', user.id);
       }
+      
+      console.log('JWT callback - token after:', token);
+      console.log('=== NextAuth JWT callback end ===');
       return token;
     },
     async session({ session, token }: { session: Session; token: JWT }) {
