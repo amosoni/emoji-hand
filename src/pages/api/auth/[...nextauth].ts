@@ -63,8 +63,10 @@ export const authOptions = {
       return token;
     },
     async session({ session, token }: { session: Session; token: JWT }) {
+      console.log('=== NextAuth session callback start ===');
       console.log('NextAuth session callback - token:', token);
       console.log('NextAuth session callback - session before:', session);
+      console.log('Token sub:', token?.sub);
       
       if (!token?.sub) {
         console.log('No token.sub found, returning session as is');
@@ -87,6 +89,8 @@ export const authOptions = {
       // 其它字段可按需补充
       
       console.log('NextAuth session callback - session after:', session);
+      console.log('Session user id after setting:', (session.user as any).id);
+      console.log('=== NextAuth session callback end ===');
       return session;
     },
   },
