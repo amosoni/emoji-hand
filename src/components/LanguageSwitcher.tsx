@@ -2,6 +2,7 @@
 import { Listbox } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { useRouter, usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const languages = [
   { code: 'en', name: 'English', country: 'us' },
@@ -24,7 +25,31 @@ export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
-  const selected = (languages.find(l => l.code === i18n.language) ?? languages[0])!;
+  const [currentLanguage, setCurrentLanguage] = useState(languages[0]!);
+
+  // 从URL路径获取当前语言
+  useEffect(() => {
+    if (pathname) {
+      const pathSegments = pathname.split('/');
+      const localeFromPath = pathSegments[1];
+      
+      // 查找匹配的语言
+      const matchedLanguage = languages.find(l => l.code === localeFromPath);
+      if (matchedLanguage) {
+        setCurrentLanguage(matchedLanguage);
+        // 确保i18n语言与URL路径一致
+        if (i18n.language !== localeFromPath) {
+          void i18n.changeLanguage(localeFromPath);
+        }
+      } else {
+        // 如果没有找到匹配的语言，使用默认语言
+        setCurrentLanguage(languages[0]!);
+        if (i18n.language !== 'en') {
+          void i18n.changeLanguage('en');
+        }
+      }
+    }
+  }, [pathname, i18n]);
 
   const handleLanguageChange = async (lang: typeof languages[0]) => {
     // 检查 pathname 是否存在
@@ -47,9 +72,9 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="flex items-center justify-center relative">
-      <Listbox value={selected} onChange={handleLanguageChange}>
+      <Listbox value={currentLanguage} onChange={handleLanguageChange}>
         <Listbox.Button className="flex items-center justify-center px-2 py-2 rounded-lg bg-white/20 font-bold w-full">
-          <img src={getFlagUrl(selected.country)} alt={selected.name} width={24} height={18} className="rounded-sm" />
+          <img src={getFlagUrl(currentLanguage.country)} alt={currentLanguage.name} width={24} height={18} className="rounded-sm" />
         </Listbox.Button>
         <Listbox.Options className="bg-white/30 backdrop-blur-md rounded-lg shadow-lg mb-1 absolute bottom-full left-0 w-full z-10">
           {languages.map(lang => (
