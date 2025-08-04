@@ -66,6 +66,19 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
       console.log('NextAuth session from getServerSession:', session);
       console.log('Session is null?', session === null);
       console.log('Session is empty?', session && Object.keys(session).length === 0);
+      
+      // 直接检查session.user.id
+      if (session?.user) {
+        console.log('Session user object:', session.user);
+        console.log('Session user id:', (session.user as any).id);
+        console.log('Session user keys:', Object.keys(session.user));
+      }
+      
+      // 检查session的完整结构
+      if (session) {
+        console.log('Full session object keys:', Object.keys(session));
+        console.log('Session JSON:', JSON.stringify(session, null, 2));
+      }
     } catch (e) {
       console.error('Failed to get server session:', e);
       session = null;
@@ -115,6 +128,19 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     // 最后的调试：直接检查session的所有属性
     console.log('Session JSON:', JSON.stringify(session, null, 2));
     console.log('=== End tRPC Context Debug ===');
+  }
+  
+  // 如果userId仍然为空，尝试从JWT token中获取
+  if (!userId && session) {
+    console.log('=== JWT Token Debug ===');
+    // 尝试从session中获取JWT token信息
+    const sessionAny = session as any;
+    if (sessionAny.accessToken) {
+      console.log('Found accessToken in session');
+      // 这里可以解码JWT token来获取用户ID
+      // 但为了简单起见，我们先记录这个信息
+    }
+    console.log('=== End JWT Token Debug ===');
   }
   
   console.log('Final context session:', session);
