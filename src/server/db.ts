@@ -13,14 +13,28 @@ const createPrismaClient = () => {
     },
   });
 
-  // 添加连接错误处理
-  client.$connect()
-    .then(() => {
-      console.log("✅ Database connected successfully");
-    })
-    .catch((error) => {
-      console.error("❌ Database connection failed:", error);
-    });
+  // 添加连接错误处理和重试机制
+  const connectWithRetry = async (retries = 3, delay = 1000) => {
+    for (let i = 0; i < retries; i++) {
+      try {
+        await client.$connect();
+        console.log("✅ Database connected successfully");
+        return;
+      } catch (error) {
+        console.error(`❌ Database connection attempt ${i + 1} failed:`, error);
+        if (i < retries - 1) {
+          console.log(`🔄 Retrying in ${delay}ms...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          delay *= 2; // 指数退避
+        } else {
+          console.error("❌ All database connection attempts failed");
+          // 不抛出错误，让应用继续运行
+        }
+      }
+    }
+  };
+  
+  void connectWithRetry();
 
   return client;
 };
