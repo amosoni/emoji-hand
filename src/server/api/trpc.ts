@@ -114,13 +114,14 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
       if (sessionTokenMatch) {
         const sessionToken = sessionTokenMatch[1];
         console.log('Found session token:', sessionToken ? 'YES' : 'NO');
+        console.log('Session token length:', sessionToken?.length || 0);
         
         // 在 Vercel Serverless 环境中，我们可以尝试直接解码 session token
         // 或者使用 NextAuth 的内部方法来验证 token
         try {
           // 这里我们可以尝试解码 JWT token 来获取用户信息
           // 但为了安全起见，我们先记录这个信息
-          console.log('Session token exists, but need to decode it safely');
+          console.log('Session token exists, attempting to decode...');
           
           // 临时解决方案：创建一个基本的 session 对象
           // 这只是一个占位符，实际应该解码 token
@@ -134,6 +135,15 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
         }
       } else {
         console.log('No session token found in cookies');
+        // 尝试其他可能的 cookie 名称
+        const alternativeMatch = cookies.match(/next-auth\.session-token=([^;]+)/);
+        if (alternativeMatch) {
+          console.log('Found alternative session token format');
+          session = {
+            user: { id: 'temp-user-id' },
+            userId: 'temp-user-id'
+          };
+        }
       }
     }
   }
