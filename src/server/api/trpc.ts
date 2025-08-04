@@ -91,6 +91,22 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
       userId = (session as { id?: string }).id;
       console.log('Found userId from session.id:', userId);
     }
+    
+    // 额外的调试：检查session.user的详细信息
+    if ('user' in session && session.user) {
+      console.log('Session user object:', session.user);
+      console.log('Session user keys:', Object.keys(session.user));
+      console.log('Session user id:', (session.user as any).id);
+    }
+    
+    // 如果还是没有找到userId，尝试从session.user的其他属性获取
+    if (!userId && 'user' in session && session.user && typeof session.user === 'object') {
+      const userObj = session.user as any;
+      if (userObj.id) {
+        userId = userObj.id;
+        console.log('Found userId from session.user object:', userId);
+      }
+    }
   }
   
   console.log('Final context session:', session);
@@ -102,6 +118,8 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     userId,
     user: session?.user ? { ...session.user, id: userId } : undefined
   };
+  
+  console.log('Final sessionWithUserId:', sessionWithUserId);
   
   return {
     db,
