@@ -810,6 +810,10 @@
   "accessibilityContent": "This website is committed to providing an accessible experience for all users, including people with disabilities. If you have accessibility suggestions, please contact us via the support email.",
   "copyrightTitle": "Copyright & Trademark Statement",
   "copyrightContent": "Emoji Hand and its logo are owned by emojihand.com. Some content, fonts, or icons may be from third parties and are copyrighted by their respective owners. Unauthorized use, reproduction, or distribution of this website's content is prohibited.",
+  "login": {
+    "required": "Please log in first to use translation function",
+    "designRequired": "Please log in first to use design generation function"
+  },
   "login.passwordLabel": "Password",
   "login.passwordPlaceholder": "Enter your password",
   "login.success": "Login successful!",

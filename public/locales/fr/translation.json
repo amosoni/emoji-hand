@@ -621,6 +621,9 @@
     "upgradeFailed": "Échec de la mise à niveau :",
     "translationUsage": "Utilisation de Traduction",
     "imageGenerationUsage": "Utilisation de Génération d'Images",
+    "login": {
+      "required": "Veuillez vous connecter d'abord pour utiliser la fonction de traduction"
+    },
     "status": "Statut",
     "active": "Actif",
     "inactive": "Inactif",

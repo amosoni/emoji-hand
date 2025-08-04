@@ -350,6 +350,10 @@
     "upgradeFailed": "アップグレードに失敗しました：",
     "translationUsage": "翻訳使用量",
     "imageGenerationUsage": "画像生成使用量",
+    "login": {
+      "required": "翻訳機能を使用するには、まずログインしてください",
+      "designRequired": "デザイン生成機能を使用するには、まずログインしてください"
+    },
     "status": "ステータス",
     "active": "アクティブ",
     "inactive": "非アクティブ",

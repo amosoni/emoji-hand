@@ -615,6 +615,9 @@
     "upgradeFailed": "Error al actualizar:",
     "translationUsage": "Uso de Traducción",
     "imageGenerationUsage": "Uso de Generación de Imágenes",
+    "login": {
+      "required": "Por favor, inicie sesión primero para usar la función de traducción"
+    },
     "status": "Estado",
     "active": "Activo",
     "inactive": "Inactivo",

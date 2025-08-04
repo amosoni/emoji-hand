@@ -328,6 +328,10 @@
     "expireAt": "만료일",
     "translationUsage": "번역 사용량",
     "imageGenerationUsage": "이미지 생성 사용량",
+    "login": {
+      "required": "번역 기능을 사용하려면 먼저 로그인하세요",
+      "designRequired": "디자인 생성 기능을 사용하려면 먼저 로그인하세요"
+    },
     "status": "상태",
     "active": "활성",
     "inactive": "비활성",

@@ -770,6 +770,10 @@
     "expired": "已过期",
     "expiryDate": "到期日期",
     "upgradePlan": "升级套餐",
+    "login": {
+      "required": "请先登录后再使用翻译功能",
+      "designRequired": "请先登录后再使用设计生成功能"
+    },
     "status": "状态",
     "active": "激活",
     "inactive": "未激活",

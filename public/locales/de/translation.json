@@ -402,6 +402,9 @@
     "upgradeFailed": "Upgrade fehlgeschlagen:",
     "translationUsage": "Übersetzungsnutzung",
     "imageGenerationUsage": "Bildgenerierungsnutzung",
+    "login": {
+      "required": "Bitte melden Sie sich zuerst an, um die Übersetzungsfunktion zu verwenden"
+    },
     "status": "Status",
     "active": "Aktiv",
     "inactive": "Inaktiv",

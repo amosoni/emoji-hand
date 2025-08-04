@@ -233,6 +233,9 @@
     "loginToPurchaseDesc": "Por favor, faça login para ver seu status de assinatura e comprar planos",
     "translationUsage": "Uso de Tradução",
     "imageGenerationUsage": "Uso de Geração de Imagens",
+    "login": {
+      "required": "Por favor, faça login primeiro para usar a função de tradução"
+    },
     "status": "Status",
     "active": "Ativo",
     "inactive": "Inativo",

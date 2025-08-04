@@ -70,15 +70,15 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     }
   }
   
-  // 直接兜底提取 userId
+  // 从session中提取userId
   let userId: string | undefined;
   if (session && typeof session === 'object') {
-    // 兼容 next-auth session
+    // 优先从 session.user.id 获取（NextAuth标准格式）
     if ('user' in session && session.user && typeof session.user === 'object' && 'id' in session.user) {
       userId = (session.user as { id?: string }).id;
       console.log('Found userId from session.user.id:', userId);
     }
-    // 兼容 mock/session.userId
+    // 兼容 session.userId
     if (!userId && 'userId' in session) {
       userId = (session as { userId?: string }).userId;
       console.log('Found userId from session.userId:', userId);
@@ -90,10 +90,16 @@ export const createTRPCContext = async (opts: { req?: unknown, res?: unknown }) 
     }
   }
   
-  console.error('Final context session:', session);
-  console.error('Final context userId:', userId);
+  console.log('Final context session:', session);
+  console.log('Final context userId:', userId);
   
-  const sessionWithUserId = { ...session, userId };
+  // 确保session对象包含userId
+  const sessionWithUserId = { 
+    ...session, 
+    userId,
+    user: session?.user ? { ...session.user, id: userId } : undefined
+  };
+  
   return {
     db,
     session: sessionWithUserId,

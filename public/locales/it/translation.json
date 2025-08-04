@@ -411,7 +411,8 @@
     "loading": "Accesso in corso...",
     "continue": "Continua",
     "noAccount": "Non hai un account?",
-    "signup": "Registrati"
+    "signup": "Registrati",
+    "required": "Per favore accedi prima di utilizzare la funzione di traduzione"
   },
   "quota.exhausted": "Quota giornaliera esaurita. Passa a Premium per $9,99/mese e sblocca 20 utilizzi al giorno, tutti gli stili e GPT-4.0!",
   "profile": {

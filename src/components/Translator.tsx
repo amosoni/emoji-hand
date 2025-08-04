@@ -77,6 +77,13 @@ export default function Translator() {
   const handleSend = async () => {
     if (!inputText.trim() || isLoading) return;
 
+    // 检查用户是否登录
+    if (!user) {
+      setError(t('login.required', '请先登录后再使用翻译功能'));
+      show(); // 弹出登录模态框
+      return;
+    }
+
     const userMessage = inputText.trim();
     setInputText("");
     setIsLoading(true);
@@ -104,13 +111,11 @@ export default function Translator() {
       }]);
       
       // 记录使用量并立即刷新统计数据
-      if (user) {
-        await recordUsageMutation.mutateAsync({
-          service: 'translation'
-        });
-        // 立即刷新使用量统计
-        await refetchUsage();
-      }
+      await recordUsageMutation.mutateAsync({
+        service: 'translation'
+      });
+      // 立即刷新使用量统计
+      await refetchUsage();
     } catch (err: any) {
       setError(err?.message ?? '服务异常');
     }
@@ -271,8 +276,8 @@ export default function Translator() {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={t("realtime.inputPlaceholder", "Type your message...")}
-            disabled={isPending}
+            placeholder={user ? t("realtime.inputPlaceholder", "Type your message...") : t("login.required", "请先登录后再使用翻译功能")}
+            disabled={isPending || !user}
             rows={1}
             aria-label="Type your message"
             className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-500 disabled:opacity-50 resize-none min-h-[48px] max-h-40 overflow-y-auto"
@@ -287,11 +292,11 @@ export default function Translator() {
           </button>
           <button
             onClick={handleSend}
-            disabled={!inputText.trim() || isPending}
+            disabled={!inputText.trim() || isPending || !user}
             className="px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-500 text-white rounded-lg transition-colors"
             aria-label="Send message"
           >
-            {t("realtime.send", "Send")}
+            {user ? t("realtime.send", "Send") : t("login.button", "Login")}
           </button>
         </div>
         {/* 分享按钮和付费提示可根据需要保留/隐藏 */}

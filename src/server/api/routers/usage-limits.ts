@@ -6,9 +6,16 @@ export const usageLimitsRouter = createTRPCRouter({
   // 获取用户使用统计（支持未登录用户）
   getUserUsageStats: publicProcedure.query(async ({ ctx }) => {
     const userId = ctx.session?.userId;
+    console.log('=== getUserUsageStats Debug ===');
+    console.log('ctx.session:', ctx.session);
+    console.log('ctx.session?.user:', ctx.session?.user);
+    console.log('ctx.session?.userId:', userId);
+    console.log('ctx.session?.user?.id:', ctx.session?.user?.id);
+    console.log('=============================');
     
     if (!userId) {
       // 未登录用户返回默认限制
+      console.log('No userId found, returning default stats for anonymous user');
       return {
         usage: {
           translation: { used: 0, limit: 8, remaining: 8 },
@@ -19,6 +26,7 @@ export const usageLimitsRouter = createTRPCRouter({
     
     // 登录用户从数据库获取真实统计
     try {
+      console.log('Getting usage stats for userId:', userId);
       // 获取用户信息
       const user = await db.user.findUnique({
         where: { id: userId },
@@ -32,7 +40,10 @@ export const usageLimitsRouter = createTRPCRouter({
         }
       });
       
+      console.log('User from database:', user);
+      
       if (!user) {
+        console.log('User not found in database');
         return {
           usage: {
             translation: { used: 0, limit: 8, remaining: 8 },
