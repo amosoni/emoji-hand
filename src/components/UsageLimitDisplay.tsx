@@ -1,8 +1,10 @@
 import { api } from "~/utils/api";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 export const UsageLimitDisplay = () => {
+  const { t } = useTranslation();
   const { data: session } = useSession();
   const user = session?.user;
   
@@ -33,16 +35,16 @@ export const UsageLimitDisplay = () => {
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4 mb-4 shadow-sm">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-gray-900">사용량 현황</h3>
+        <h3 className="text-lg font-semibold text-gray-900">{t('usageStatus', 'Usage Status')}</h3>
         <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-          무료 플랜
+          {t('freePlan', 'Free Plan')}
         </span>
       </div>
 
       <div className="space-y-3">
         {/* 번역 사용량 */}
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-600">번역 기능</span>
+          <span className="text-sm text-gray-600">{t('translationUsage', 'Translation Usage')}</span>
           <div className="flex items-center space-x-2">
             <span className="text-sm text-gray-900">
               {usageStats.usage.translation.used} / {usageStats.usage.translation.limit}
@@ -60,7 +62,7 @@ export const UsageLimitDisplay = () => {
 
         {/* 이미지 생성 사용량 */}
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-600">이미지 생성</span>
+          <span className="text-sm text-gray-600">{t('imageGenerationUsage', 'Image Generation Usage')}</span>
           <div className="flex items-center space-x-2">
             <span className="text-sm text-gray-900">
               {usageStats.usage.imageGeneration.used} / {usageStats.usage.imageGeneration.limit}
@@ -81,15 +83,15 @@ export const UsageLimitDisplay = () => {
       {subscription && (
         <div className="mt-4 pt-4 border-t border-gray-200">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-600">구독 상태</span>
+            <span className="text-sm text-gray-600">{t('subscriptionStatus', 'Subscription Status')}</span>
             <span className={`text-sm font-medium ${subscription.isActive ? 'text-green-600' : 'text-red-600'}`}>
-              {subscription.isActive ? '활성' : '만료'}
+              {subscription.isActive ? t('active', 'Active') : t('expired', 'Expired')}
             </span>
           </div>
           {subscription.expireAt && (
             <div className="mt-1">
               <span className="text-xs text-gray-500">
-                만료일: {new Date(subscription.expireAt).toLocaleDateString('ko-KR')}
+                {t('expiryDate', 'Expiry Date')}: {new Date(subscription.expireAt).toLocaleDateString()}
               </span>
             </div>
           )}
@@ -102,7 +104,7 @@ export const UsageLimitDisplay = () => {
           onClick={() => window.location.href = '/subscription'}
           className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
         >
-          플랜 업그레이드
+          {t('upgradePlan', 'Upgrade Plan')}
         </button>
       </div>
     </div>

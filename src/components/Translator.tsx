@@ -56,11 +56,23 @@ export default function Translator() {
   }, []);
 
   const { mutateAsync, isPending } = api.emoji.translate.useMutation();
-  const { data: usageStats } = api.usageLimits.getUserUsageStats.useQuery(
+  const { data: usageStats, isLoading: usageLoading, refetch: refetchUsage } = api.usageLimits.getUserUsageStats.useQuery(
     undefined,
-    { enabled: !!user }
+    { 
+      enabled: true, // 总是启用查询，无论用户是否登录
+      refetchInterval: 5000 // 每5秒刷新一次
+    }
   );
   const recordUsageMutation = api.usageLimits.recordServiceUsage.useMutation();
+
+  // 调试信息
+  useEffect(() => {
+    console.log('Translator Debug:', {
+      user: !!user,
+      usageStats,
+      usageLoading
+    });
+  }, [user, usageStats, usageLoading]);
 
   const handleSend = async () => {
     if (!inputText.trim() || isLoading) return;
@@ -91,11 +103,13 @@ export default function Translator() {
         timestamp: new Date(),
       }]);
       
-      // 记录使用量
+      // 记录使用量并立即刷新统计数据
       if (user) {
-        recordUsageMutation.mutate({
+        await recordUsageMutation.mutateAsync({
           service: 'translation'
         });
+        // 立即刷新使用量统计
+        await refetchUsage();
       }
     } catch (err: any) {
       setError(err?.message ?? '服务异常');
@@ -117,7 +131,7 @@ export default function Translator() {
       {user && usageStats && (
         <div className="mb-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
           <div className="flex items-center justify-between text-white">
-            <span className="text-sm">번역 사용량: {usageStats.usage.translation.used} / {usageStats.usage.translation.limit}</span>
+            <span className="text-sm">{t('translationUsage', 'Translation Usage')}: {usageStats.usage.translation.used} / {usageStats.usage.translation.limit}</span>
             <div className="w-32 bg-white/20 rounded-full h-2">
               <div 
                 className="bg-blue-500 h-2 rounded-full transition-all duration-300"
