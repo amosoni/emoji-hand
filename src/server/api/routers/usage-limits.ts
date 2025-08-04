@@ -114,9 +114,17 @@ export const usageLimitsRouter = createTRPCRouter({
       service: z.enum(['translation', 'imageGeneration'])
     }))
     .mutation(async ({ ctx, input }) => {
+      console.log('=== recordServiceUsage called ===');
+      console.log('ctx.session:', ctx.session);
+      console.log('ctx.session?.userId:', ctx.session?.userId);
+      console.log('ctx.session?.user:', ctx.session?.user);
+      console.log('ctx.session?.user?.id:', ctx.session?.user?.id);
+      
       const userId = ctx.session?.userId;
+      console.log('Final userId for recording:', userId);
       
       if (!userId) {
+        console.log('No userId found, skipping usage recording');
         // 未登录用户不记录使用量，但返回成功
         return { success: true };
       }
