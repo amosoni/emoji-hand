@@ -204,5 +204,4 @@ Crawl-delay: 1
 
 # Sitemap配置
 Sitemap: https://emojihand.com/sitemap.xml
-Sitemap: https://emojihand.com/sitemap-full.xml
 Sitemap: https://emojihand.com/rss.xml 

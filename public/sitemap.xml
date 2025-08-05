@@ -132,34 +132,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 订阅页面 -->
-  <url>
-    <loc>https://emojihand.com/zh/emoji-pack-subscription</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://emojihand.com/en/emoji-pack-subscription</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 积分页面 -->
-  <url>
-    <loc>https://emojihand.com/zh/emoji-pack-credits</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://emojihand.com/en/emoji-pack-credits</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- 实时翻译页面 -->
   <url>
     <loc>https://emojihand.com/zh/realtime</loc>
@@ -174,7 +146,33 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 用户资料页面 -->
+  <!-- 订阅和积分页面 -->
+  <url>
+    <loc>https://emojihand.com/zh/emoji-pack-subscription</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emojihand.com/en/emoji-pack-subscription</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emojihand.com/zh/emoji-pack-credits</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emojihand.com/en/emoji-pack-credits</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 用户相关页面 -->
   <url>
     <loc>https://emojihand.com/zh/profile</loc>
     <lastmod>2024-01-01</lastmod>
@@ -186,20 +184,6 @@
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- Gen Z 指南页面 -->
-  <url>
-    <loc>https://emojihand.com/zh/gen-z</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://emojihand.com/en/gen-z</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- 法律页面 -->

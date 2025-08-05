@@ -35,6 +35,15 @@ const nextConfig = {
         ],
       },
       {
+        source: '/sitemap-full.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+        ],
+      },
+      {
         source: '/favicon.png',
         headers: [
           {
