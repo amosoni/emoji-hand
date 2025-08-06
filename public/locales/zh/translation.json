@@ -2,6 +2,11 @@
   "appTitle": "Emoji Hand",
   "appSlogan": "AI驱动的表情翻译器与生成器",
   "loading": "正在加载多语言支持...",
+  "usage": {
+    "translation": "翻译使用次数",
+    "imageGeneration": "图片生成使用次数",
+    "remaining": "剩余次数"
+  },
   "genZ": {
     "seo": {
       "title": "Gen Z表情指南 - 完整俚语与表达词典",

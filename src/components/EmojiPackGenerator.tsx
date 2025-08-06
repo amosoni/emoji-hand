@@ -36,6 +36,13 @@ export default function EmojiPackGenerator() {
     undefined,
     { enabled: !!session }
   );
+  
+  // 获取使用次数统计
+  const { data: usageStats } = api.usageLimits.getUserUsageStats.useQuery(
+    undefined,
+    { enabled: !!session }
+  );
+  
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -146,6 +153,26 @@ export default function EmojiPackGenerator() {
         <p className="text-white/80 text-center mb-8">
           上传一张图片，AI将分析图片内容并生成5个不同风格的表情包设计
         </p>
+
+        {/* 使用次数显示 */}
+        {session && usageStats && (
+          <div className="mb-6 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+            <div className="flex items-center justify-between text-white">
+              <span className="text-sm">{t('usage.imageGeneration', 'Image Generation Usage')}: {usageStats.usage.imageGeneration.used} / {usageStats.usage.imageGeneration.limit}</span>
+              <div className="w-32 bg-white/20 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full transition-all"
+                  style={{ 
+                    width: `${Math.max(0, Math.min(100, (usageStats.usage.imageGeneration.used / usageStats.usage.imageGeneration.limit) * 100))}%` 
+                  }}
+                ></div>
+              </div>
+            </div>
+            <div className="mt-2 text-xs text-white/70">
+              {t('usage.remaining', 'Remaining')}: {usageStats.usage.imageGeneration.remaining}
+            </div>
+          </div>
+        )}
 
         {error && (
           <div className="mb-4 p-4 bg-red-500/80 text-white rounded-lg text-center">

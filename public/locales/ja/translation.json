@@ -2,6 +2,11 @@
   "appTitle": "Emoji Hand",
   "appSlogan": "AI搭載絵文字翻訳・生成ツール",
   "loading": "多言語サポートを読み込み中...",
+  "usage": {
+    "translation": "翻訳使用回数",
+    "imageGeneration": "画像生成使用回数",
+    "remaining": "残り回数"
+  },
   "genZ": {
     "seo": {
       "title": "Gen Z絵文字ガイド - 完全スラング・表現辞典",

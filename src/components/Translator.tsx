@@ -167,7 +167,7 @@ export default function Translator() {
       {user && usageStats && (
         <div className="mb-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
           <div className="flex items-center justify-between text-white">
-            <span className="text-sm">{t('translationUsage', 'Translation Usage')}: {usageStats.usage.translation.used} / {usageStats.usage.translation.limit}</span>
+            <span className="text-sm">{t('usage.translation', 'Translation Usage')}: {usageStats.usage.translation.used} / {usageStats.usage.translation.limit}</span>
             <div className="w-32 bg-white/20 rounded-full h-2">
               <div 
                 className="bg-blue-500 h-2 rounded-full transition-all duration-300"

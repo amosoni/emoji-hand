@@ -2,6 +2,11 @@
   "appTitle": "Emoji Hand",
   "appSlogan": "AI-Powered Emoji Translator & Generator",
   "loading": "Loading multi-language support...",
+  "usage": {
+    "translation": "Translation Usage",
+    "imageGeneration": "Image Generation Usage",
+    "remaining": "Remaining"
+  },
   "genZ": {
     "seo": {
       "title": "Gen Z Emoji Guide - Complete Slang & Expression Dictionary",
