@@ -2,6 +2,11 @@
   "appTitle": "Emoji Hand",
   "appSlogan": "ИИ-переводчик и генератор эмодзи",
   "loading": "Загрузка многоязычной поддержки...",
+  "usage": {
+    "translation": "Использование перевода",
+    "imageGeneration": "Использование генерации изображений",
+    "remaining": "Осталось"
+  },
   "genZ": {
     "seo": {
       "title": "Руководство по эмодзи Gen Z - Полный словарь сленга и выражений",
@@ -156,7 +161,7 @@
     "usesToday": "Использований сегодня",
     "usesThisMonth": "Использований в этом месяце",
     "totalUses": "Общее количество использований",
-    "images": " изображений",
+    "images": "изображений",
     "expireAt": "Истекает",
     "monthly": "Ежемесячно",
     "yearly": "Ежегодно (Скидка)",
@@ -178,18 +183,14 @@
     "upgradeFailed": "Ошибка обновления:",
     "translationUsage": "Использование переводов",
     "imageGenerationUsage": "Использование генерации изображений",
-    "login": {
-      "required": "Пожалуйста, сначала войдите в систему, чтобы использовать функцию перевода"
-    },
+    "login": "Войти",
     "status": "Статус",
     "active": "Активен",
     "inactive": "Неактивен",
     "translations": "переводов",
     "imageGeneration": "Генерация изображений",
-    "images": "изображений",
     "noAds": "Без рекламы",
     "loginToUpgrade": "Пожалуйста, войдите в систему, чтобы обновить подписку",
-    "login": "Войти",
     "currentPlanSelected": "Это ваш текущий план",
     "usageInstructions": "Инструкции по использованию",
     "freePlan": "Бесплатный план",
@@ -209,5 +210,12 @@
       "ogTitle": "Подписка на пакеты эмодзи - EmojiHand",
       "ogDescription": "Выберите план подписки на пакеты эмодзи и наслаждайтесь профессиональными сервисами генерации эмодзи с ИИ."
     }
-  }
-} 
+  },
+  "profile.subscriptionPlan": "План подписки",
+  "profile.subscriptionExpireAt": "Подписка до",
+  "profile.translationUsesToday": "Переводов использовано сегодня",
+  "profile.remainingTranslation": "Оставшихся переводов",
+  "profile.imageGenerationUsesToday": "Генераций изображений использовано сегодня",
+  "profile.remainingImageGeneration": "Оставшихся генераций изображений",
+  "profile.notLoggedIn": "Вы не вошли в систему."
+}

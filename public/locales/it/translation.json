@@ -2,6 +2,11 @@
   "appTitle": "Emoji Hand",
   "appSlogan": "Traduttore e Generatore di Emoji con IA",
   "loading": "Caricamento supporto multilingue...",
+  "usage": {
+    "translation": "Utilizzo Traduzione",
+    "imageGeneration": "Utilizzo Generazione Immagini",
+    "remaining": "Rimanente"
+  },
   "genZ": {
     "seo": {
       "title": "Guida Emoji Gen Z - Dizionario Completo di Slang ed Espressioni",
@@ -137,7 +142,7 @@
     "results": "Pacchetti Emoji Generati",
     "download": "Scarica",
     "lovartInspired": "Ispirato da Lovart AI",
-    "lovartDescription": "Lovart AI è un agente di design IA rivoluzionario che automatizza l'intero viaggio di design, dal concetto a immagini, video, 3D e altro. Il nostro generatore di emoji è ispirato dall'approccio innovativo di Lovart per strumenti creativi alimentati dall'IA.",
+    "lovartDescription": "Lovart AI è un agente di design IA rivoluzionario che automatizza l'intero viaggio di design, dal concetto a immagini, video, 3D e altro. Il nostro generatore di pacchetti emoji è ispirato dall'approccio innovativo di Lovart per strumenti creativi alimentati dall'IA.",
     "lovartFeatures": "Caratteristiche Principali",
     "aiGeneration": "Generazione emoji alimentata dall'IA",
     "styleVariations": "Multiple variazioni di stile",
@@ -182,19 +187,8 @@
       "commercialUse": "Posso usare questi pacchetti emoji commercialmente?",
       "commercialUseAnswer": "Sì, tutti i pacchetti emoji generati sono gratuiti per uso personale e commerciale. Sono creati usando tecnologia IA ispirata ai principi di Lovart AI."
     },
-    "lovartInspired": "Ispirato da Lovart AI",
     "lovartWhatIs": "Cos'è Lovart AI?",
-    "lovartDescription": "Lovart AI è un agente di design IA rivoluzionario che automatizza l'intero viaggio di design, dal concetto a immagini, video, 3D e altro. Il nostro generatore di pacchetti emoji è ispirato dall'approccio innovativo di Lovart per strumenti creativi alimentati dall'IA.",
     "lovartDescription2": "Proprio come Lovart AI, il nostro generatore di emoji ti permette di caricare un'immagine e lasciare che l'IA crei multiple variazioni con diversi stili, rendendo il processo creativo senza sforzo e piacevole.",
-    "lovartFeatures": "Caratteristiche Principali",
-    "aiGeneration": "Generazione emoji alimentata dall'IA",
-    "styleVariations": "Multiple variazioni di stile",
-    "batchProcessing": "Capacità di elaborazione batch",
-    "lovartPrinciples": "Principi di design ispirati da Lovart AI",
-    "howToUse": "Come Usare il Nostro Generatore Emoji Stile Lovart",
-    "uploadStep": "Carica qualsiasi immagine che vuoi trasformare in pacchetti emoji. La nostra IA analizzerà il contenuto e creerà variazioni.",
-    "styleStep": "Seleziona tra 6 stili diversi: Cute, Funny, Cool, Savage, GenZ o TikTok. Ogni stile crea variazioni uniche.",
-    "generateStep": "L'IA genera multiple variazioni di pacchetti emoji. Scarica pacchetti individuali o usali nei tuoi progetti.",
     "step1": "1. Carica immagine",
     "step2": "2. Scegli stile",
     "step3": "3. Genera e scarica",
@@ -216,11 +210,6 @@
       "genz": "Elementi trendy con espressioni giovanili, perfetto per i social media moderni.",
       "tiktok": "Elementi popolari con estetica video corto, ottimo per contenuti virali."
     },
-    "lovartWhatIs": "Cos'è Lovart AI?",
-    "lovartDescription2": "Proprio come Lovart AI, il nostro generatore di emoji ti permette di caricare un'immagine e lasciare che l'IA crei multiple variazioni con diversi stili, rendendo il processo creativo senza sforzo e piacevole.",
-    "step1": "1. Carica immagine",
-    "step2": "2. Scegli stile",
-    "step3": "3. Genera e scarica",
     "error": {
       "invalidFile": "Carica un file immagine",
       "fileTooLarge": "La dimensione dell'immagine non può superare 5MB",
@@ -543,7 +532,7 @@
   "register.error": "Registrazione fallita",
   "register.hasAccount": "Hai già un account?",
   "register.signin": "Accedi",
-    "upgradeNow": "Aggiorna Ora",
+  "upgradeNow": "Aggiorna Ora",
   "subscriptionInfo": "Informazioni sull'Abbonamento",
   "subscriptionDesc": "Gli utenti gratuiti possono generare 3 pacchetti al giorno. Aggiorna per sbloccare più funzionalità!",
   "subscription": {
@@ -625,5 +614,12 @@
       "twitterTitle": "Lovart Style AI - Assistente di design creativo",
       "twitterDescription": "Assistente di design IA professionale ispirato a Lovart AI."
     }
-  }
-} 
+  },
+  "profile.subscriptionPlan": "Piano di Abbonamento",
+  "profile.subscriptionExpireAt": "Abbonamento fino al",
+  "profile.translationUsesToday": "Traduzioni utilizzate oggi",
+  "profile.remainingTranslation": "Traduzioni rimanenti",
+  "profile.imageGenerationUsesToday": "Generazioni di immagini utilizzate oggi",
+  "profile.remainingImageGeneration": "Generazioni di immagini rimanenti",
+  "profile.notLoggedIn": "Non sei loggato."
+}

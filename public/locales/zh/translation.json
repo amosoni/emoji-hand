@@ -201,9 +201,9 @@
   "highlight3Desc": "Normal, Savage, and GenZ Slang modes for every vibe.",
   "hotEmojis": "hotEmojis",
   "unlockPremiumTitle": "Unlock Premium",
-      "unlockPremiumDesc": "Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience",
-      "unlockPremiumBtn": "Unlock Premium",
-    "viewSubscription": "查看订阅套餐",
+  "unlockPremiumDesc": "Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience",
+  "unlockPremiumBtn": "Unlock Premium",
+  "viewSubscription": "查看订阅套餐",
   "faqTitle": "Frequently Asked Questions about Emoji Hand",
   "faq1Q": "What is Emoji Hand?",
   "faq1A": "Emoji Hand is an AI-powered tool that instantly adds the most relevant emojis to your text, making your messages more expressive and fun.",
@@ -257,52 +257,52 @@
   "tiktok.page.try.title": "尝试抖音模式",
   "tiktok.page.try.desc": "在下面的翻译器中选择\"抖音风格\"模式来体验魔法！",
   "tiktok.emojis.page.title": "抖音表情 - 隐藏表情符号完整指南与含义",
-      "nav": {
-      "home": "首页",
-      "emojiGenerator": "表情包生成器",
-      "genZ": "Gen Z指南",
-      "lovartStyle": "Lovart风格设计",
-      "tiktok": "抖音模式",
-      "tiktokEmojis": "抖音表情指南",
-      "login": "登录",
-      "logout": "退出登录",
-      "subscription": "订阅套餐"
-    },
-    "emojiGenerator": {
-          "title": "表情包生成器",
+  "nav": {
+    "home": "首页",
+    "emojiGenerator": "表情包生成器",
+    "genZ": "Gen Z指南",
+    "lovartStyle": "Lovart风格设计",
+    "tiktok": "抖音模式",
+    "tiktokEmojis": "抖音表情指南",
+    "login": "登录",
+    "logout": "退出登录",
+    "subscription": "订阅套餐"
+  },
+  "emojiGenerator": {
+    "title": "表情包生成器",
     "subtitle": "上传图片，AI将为您生成精美的表情包",
-      "uploadTitle": "上传图片",
-      "uploadHint": "点击上传图片或拖拽到此处",
-      "uploadLimit": "支持 JPG、PNG 格式，最大 5MB",
-      "imageUploaded": "图片已上传，点击重新选择",
-      "styleTitle": "选择风格",
-      "promptTitle": "自定义提示词（可选）",
-      "promptPlaceholder": "描述您想要的表情包效果...",
-      "generate": "生成表情包",
-      "generating": "AI生成中...",
-      "resultTitle": "生成结果",
-      "details": "详细信息",
-      "analysis": "AI分析",
-      "download": "下载表情包",
-      "reset": "重新开始",
-      "style": "风格",
-      "generatedTime": "生成时间",
-      "tags": "标签",
-      "defaultDescription": "风格表情包",
-          "error": {
+    "uploadTitle": "上传图片",
+    "uploadHint": "点击上传图片或拖拽到此处",
+    "uploadLimit": "支持 JPG、PNG 格式，最大 5MB",
+    "imageUploaded": "图片已上传，点击重新选择",
+    "styleTitle": "选择风格",
+    "promptTitle": "自定义提示词（可选）",
+    "promptPlaceholder": "描述您想要的表情包效果...",
+    "generate": "生成表情包",
+    "generating": "AI生成中...",
+    "resultTitle": "生成结果",
+    "details": "详细信息",
+    "analysis": "AI分析",
+    "download": "下载表情包",
+    "reset": "重新开始",
+    "style": "风格",
+    "generatedTime": "生成时间",
+    "tags": "标签",
+    "defaultDescription": "风格表情包",
+    "error": {
       "invalidFile": "请上传图片文件",
       "fileTooLarge": "图片大小不能超过5MB",
       "noImage": "请先上传图片",
       "dailyLimitExceeded": "每日限制已超出",
       "remainingPacks": "今天还可以生成 {{remaining}} 个表情包",
       "upgradeForMore": "请升级订阅以获得更多每日使用量",
-        "generationFailed": "生成失败",
-        "invalidResult": "生成结果无效",
-        "retryLater": "生成失败，请稍后重试",
-        "consoleError": "生成表情包失败:",
-        "loginRequired": "请登录后生成表情包"
-      },
-          "styles": {
+      "generationFailed": "生成失败",
+      "invalidResult": "生成结果无效",
+      "retryLater": "生成失败，请稍后重试",
+      "consoleError": "生成表情包失败:",
+      "loginRequired": "请登录后生成表情包"
+    },
+    "styles": {
       "cute": "可爱风格",
       "funny": "搞笑风格",
       "cool": "酷炫风格",
@@ -339,23 +339,23 @@
       "commercialUse": "我可以商业使用这些表情包吗？",
       "commercialUseAnswer": "是的，所有生成的表情包都可以免费用于个人和商业目的。它们是使用先进的AI技术创建的。"
     },
-          "lovartInspired": "AI驱动设计",
-      "lovartWhatIs": "什么是AI设计？",
-      "lovartDescription": "我们的表情包生成器使用先进的AI技术从您上传的图片创建精美的表情包设计。",
-      "lovartDescription2": "我们的表情包生成器允许您上传图像并让AI创建具有不同风格的多种变体，使创作过程变得轻松愉快。",
-      "lovartFeatures": "主要功能",
-      "aiGeneration": "AI驱动的表情包生成",
-      "styleVariations": "多种风格变体",
-      "batchProcessing": "批量处理功能",
-      "lovartPrinciples": "AI驱动的设计原则",
-      "howToUse": "如何使用我们的AI表情包生成器",
+    "lovartInspired": "AI驱动设计",
+    "lovartWhatIs": "什么是AI设计？",
+    "lovartDescription": "我们的表情包生成器使用先进的AI技术从您上传的图片创建精美的表情包设计。",
+    "lovartDescription2": "我们的表情包生成器允许您上传图像并让AI创建具有不同风格的多种变体，使创作过程变得轻松愉快。",
+    "lovartFeatures": "主要功能",
+    "aiGeneration": "AI驱动的表情包生成",
+    "styleVariations": "多种风格变体",
+    "batchProcessing": "批量处理功能",
+    "lovartPrinciples": "AI驱动的设计原则",
+    "howToUse": "如何使用我们的AI表情包生成器",
     "uploadStep": "上传您想要转换为表情包的任何图像。我们的AI将分析内容并创建变体。",
     "styleStep": "从6种不同风格中选择：可爱、搞笑、酷炫、毒舌、GenZ或TikTok。每种风格都创建独特的变体。",
     "generateStep": "AI生成多个表情包变体。下载单个包或在您的项目中使用它们。",
     "step1": "1. 上传图片",
     "step2": "2. 选择风格",
     "step3": "3. 生成和下载"
-    },
+  },
   "pages": {
     "tiktok": {
       "title": "抖音表情",
@@ -419,59 +419,6 @@
   "tiktok.emojis.try.title": "Try Our TikTok Emoji Translator",
   "tiktok.emojis.try.desc": "Transform your text into TikTok-style expressions with our AI-powered emoji translator!",
   "tiktok.emojis.try.button": "🎵 立即尝试抖音模式",
-  "tiktok": {
-    "guide": {
-      "tabs": {
-        "shortcodes": "隐藏短代码",
-        "meanings": "表情含义",
-        "combinations": "热门组合",
-        "popular": "最受欢迎"
-      },
-      "intro": {
-        "title": "什么是抖音表情？",
-        "p1": "抖音表情是用户可以在抖音平台的评论、标题和消息中使用的自定义表情符号字符和隐藏短代码的独特集合。与标准表情符号不同，抖音有自己的\"隐藏表情\"系统，允许用户通过短代码访问特殊表情符号字符。",
-        "p2": "这些隐藏表情符号通过在方括号中键入特定短代码来访问，例如",
-        "p2_2": "或",
-        "p2_3": "当您在抖音评论或标题中键入这些短代码时，它们会自动转换为相应的自定义表情图形。",
-        "p3": "抖音支持所有平台原生表情符号，但这些隐藏表情符号提供了独特的视觉风格，在所有设备和平台上保持一致，使其在抖音用户中很受欢迎，用于表达特定的情感和反应。"
-      },
-      "howto": {
-        "title": "如何使用抖音表情",
-        "method1": {
-          "title": "方法1：短代码",
-          "step1": "在方括号中键入短代码（例如，",
-          "step2": "抖音会自动将其转换为表情符号",
-          "step3": "在评论、标题和消息中有效"
-        },
-        "method2": {
-          "title": "方法2：直接表情",
-          "step1": "使用设备的表情键盘",
-          "step2": "从其他来源复制粘贴表情符号",
-          "step3": "适用于所有标准Unicode表情符号"
-        }
-      },
-      "shortcodes": {
-        "title": "隐藏抖音表情短代码"
-      },
-      "meanings": {
-        "title": "抖音表情含义"
-      },
-      "combinations": {
-        "title": "热门抖音表情组合"
-      },
-      "popular": {
-        "title": "最受欢迎的抖音表情"
-      },
-      "categories": {
-        "title": "抖音表情分类",
-        "reactions": "反应表情",
-        "emotions": "情感表情",
-        "actions": "动作表情",
-        "emphasis": "强调表情",
-        "special": "特殊表情"
-      }
-    }
-  },
   "tiktok": {
     "demo": {
       "selected": {
@@ -588,42 +535,23 @@
   },
   "quota.exhausted": "Daily quota used up. Upgrade to Premium for $9.99/month to unlock 20 uses per day and all styles including GPT-4.0!",
   "profile": {
-    "points": "Points",
-    "createdAt": "Registered at",
-    "freeUsesDaily": "Free daily quota",
-    "freeUsesWeekly": "Free weekly quota",
-    "premiumUsesWeekly": "Premium weekly quota",
-    "premiumExpireAt": "Premium Expiry",
-    "premium": "Premium User",
-    "free": "Free User",
-    "upgrade": "Upgrade to Premium",
-    "upgrading": "Redirecting...",
-    "paymentFailed": "Failed to get payment link",
-    "profileTitle": "Profile",
-    "noName": "No nickname set",
-    "status": "Membership Status",
-    "expire": "Premium Expiry",
-    "quota": "Daily Quota Left",
-    "tips": "Premium: 20/day, Free: 5/day. Points can be used for extra quota or membership."
-  },
-  "signOut": "Sign Out",
-  "profileTitle": "Profile",
-  "profile.noName": "No nickname set",
-  "profile.status": "Membership Status",
-  "profile.premium": "Premium User",
-  "profile.free": "Free User",
-  "profile.expire": "Premium Expiry",
-  "profile.quota": "Daily Quota Left",
-  "profile.points": "Points",
-  "profile.tips": "Premium: 20/day, Free: 5/day. Points can be used for extra quota or membership.",
-  "dashboard": {
-    "title": "用户仪表板"
-  },
-  "profile": {
     "accountInfo": "账户信息",
     "email": "邮箱",
     "username": "用户名",
     "days": "天"
+  },
+  "signOut": "退出登录",
+  "profileTitle": "个人资料",
+  "profile.noName": "未设置昵称",
+  "profile.status": "会员状态",
+  "profile.premium": "高级用户",
+  "profile.free": "免费用户",
+  "profile.expire": "高级会员到期",
+  "profile.quota": "今日剩余配额",
+  "profile.points": "积分",
+  "profile.tips": "高级版：20次/天，免费版：5次/天。积分可用于额外配额或会员资格。",
+  "dashboard": {
+    "title": "用户仪表板"
   },
   "profile.upgrade": "Upgrade to Premium",
   "privacy.title": "Privacy Policy",
@@ -783,22 +711,15 @@
     "expired": "已过期",
     "expiryDate": "到期日期",
     "upgradePlan": "升级套餐",
-    "login": {
-      "required": "请先登录后再使用翻译功能",
-      "designRequired": "请先登录后再使用设计生成功能"
-    },
+    "login": "登录",
     "status": "状态",
-    "active": "激活",
     "inactive": "未激活",
     "translations": "翻译",
     "imageGeneration": "图片生成",
-    "images": "张图",
     "noAds": "无广告",
     "loginToUpgrade": "请登录以升级您的订阅",
-    "login": "登录",
     "currentPlanSelected": "这是您当前的套餐",
     "usageInstructions": "使用说明",
-    "freePlan": "免费套餐",
     "freePlanDesc": "每日3次翻译，适合体验",
     "basicPlan": "基础套餐",
     "basicPlanDesc": "每日10次翻译+5张图，适合个人用户",
@@ -815,5 +736,12 @@
       "ogTitle": "表情包订阅系统 - EmojiHand",
       "ogDescription": "选择适合您的表情包生成订阅套餐，享受专业AI表情包生成服务"
     }
-  }
+  },
+  "profile.subscriptionPlan": "订阅计划",
+  "profile.subscriptionExpireAt": "订阅到期时间",
+  "profile.translationUsesToday": "今日翻译使用次数",
+  "profile.remainingTranslation": "剩余翻译次数",
+  "profile.imageGenerationUsesToday": "今日图片生成使用次数",
+  "profile.remainingImageGeneration": "剩余图片生成次数",
+  "profile.notLoggedIn": "您尚未登录。"
 }

@@ -28,9 +28,16 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  // 对于没有语言代码的路径，重定向到默认语言
+  // 获取用户偏好的语言
+  const acceptLanguage = request.headers.get('accept-language') ?? '';
+  const preferredLanguage = acceptLanguage.split(',')[0]?.split('-')[0] ?? 'en';
+  
+  // 检查首选语言是否支持
+  const supportedLanguage = locales.includes(preferredLanguage) ? preferredLanguage : 'en';
+  
+  // 对于没有语言代码的路径，重定向到用户偏好的语言
   const response = NextResponse.redirect(
-    new URL(`/en${pathname}`, request.url)
+    new URL(`/${supportedLanguage}${pathname}`, request.url)
   );
   response.headers.set('X-Robots-Tag', 'index, follow');
   return response;

@@ -38,10 +38,17 @@ export default function EmojiPackGenerator() {
   );
   
   // 获取使用次数统计
-  const { data: usageStats } = api.usageLimits.getUserUsageStats.useQuery(
+  const { data: usageStats, isLoading: usageLoading } = api.usageLimits.getUserUsageStats.useQuery(
     undefined,
     { enabled: !!session }
   );
+
+  // 调试信息
+  console.log('=== EmojiPackGenerator Debug ===');
+  console.log('Session exists:', !!session);
+  console.log('Usage stats:', usageStats);
+  console.log('Usage loading:', usageLoading);
+  console.log('=== End Debug ===');
   
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -155,22 +162,30 @@ export default function EmojiPackGenerator() {
         </p>
 
         {/* 使用次数显示 */}
-        {session && usageStats && (
+        {session && (
           <div className="mb-6 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-            <div className="flex items-center justify-between text-white">
-              <span className="text-sm">{t('usage.imageGeneration', 'Image Generation Usage')}: {usageStats.usage.imageGeneration.used} / {usageStats.usage.imageGeneration.limit}</span>
-              <div className="w-32 bg-white/20 rounded-full h-2">
-                <div 
-                  className="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full transition-all"
-                  style={{ 
-                    width: `${Math.max(0, Math.min(100, (usageStats.usage.imageGeneration.used / usageStats.usage.imageGeneration.limit) * 100))}%` 
-                  }}
-                ></div>
-              </div>
-            </div>
-            <div className="mt-2 text-xs text-white/70">
-              {t('usage.remaining', 'Remaining')}: {usageStats.usage.imageGeneration.remaining}
-            </div>
+            {usageLoading ? (
+              <div className="text-white text-sm">加载使用次数...</div>
+            ) : usageStats ? (
+              <>
+                <div className="flex items-center justify-between text-white">
+                  <span className="text-sm">{t('usage.imageGeneration', 'Image Generation Usage')}: {usageStats.usage.imageGeneration.used} / {usageStats.usage.imageGeneration.limit}</span>
+                  <div className="w-32 bg-white/20 rounded-full h-2">
+                    <div 
+                      className="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full transition-all"
+                      style={{ 
+                        width: `${Math.max(0, Math.min(100, (usageStats.usage.imageGeneration.used / usageStats.usage.imageGeneration.limit) * 100))}%` 
+                      }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="mt-2 text-xs text-white/70">
+                  {t('usage.remaining', 'Remaining')}: {usageStats.usage.imageGeneration.remaining}
+                </div>
+              </>
+            ) : (
+              <div className="text-white text-sm">无法加载使用次数</div>
+            )}
           </div>
         )}
 

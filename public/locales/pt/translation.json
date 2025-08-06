@@ -2,6 +2,11 @@
   "appTitle": "Emoji Hand",
   "appSlogan": "Tradutor e Gerador de Emojis com IA",
   "loading": "Carregando suporte multilíngue...",
+  "usage": {
+    "translation": "Uso de Tradução",
+    "imageGeneration": "Uso de Geração de Imagens",
+    "remaining": "Restante"
+  },
   "genZ": {
     "seo": {
       "title": "Guia de Emojis Gen Z - Dicionário Completo de Gíria e Expressões",
@@ -237,9 +242,7 @@
     "loginToPurchaseDesc": "Por favor, faça login para ver seu status de assinatura e comprar planos",
     "translationUsage": "Uso de Tradução",
     "imageGenerationUsage": "Uso de Geração de Imagens",
-    "login": {
-      "required": "Por favor, faça login primeiro para usar a função de tradução"
-    },
+    "login": "Entrar",
     "status": "Status",
     "active": "Ativo",
     "inactive": "Inativo",
@@ -247,7 +250,6 @@
     "imageGeneration": "Geração de Imagens",
     "noAds": "Sem Anúncios",
     "loginToUpgrade": "Por favor, faça login para atualizar sua assinatura",
-    "login": "Entrar",
     "currentPlanSelected": "Este é seu plano atual"
   },
   "pages": {
@@ -609,5 +611,12 @@
       "twitterTitle": "Lovart Style AI - Assistente de design criativo",
       "twitterDescription": "Assistente de design IA profissional inspirado na Lovart AI."
     }
-  }
+  },
+  "profile.subscriptionPlan": "Plano de Assinatura",
+  "profile.subscriptionExpireAt": "Assinatura até",
+  "profile.translationUsesToday": "Traduções usadas hoje",
+  "profile.remainingTranslation": "Traduções restantes",
+  "profile.imageGenerationUsesToday": "Gerações de imagens usadas hoje",
+  "profile.remainingImageGeneration": "Gerações de imagens restantes",
+  "profile.notLoggedIn": "Você não está logado."
 }

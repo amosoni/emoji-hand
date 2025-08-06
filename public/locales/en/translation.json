@@ -201,9 +201,9 @@
   "highlight3Desc": "Normal, Savage, and GenZ Slang modes for every vibe.",
   "hotEmojis": "hotEmojis",
   "unlockPremiumTitle": "Unlock Premium",
-      "unlockPremiumDesc": "Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience",
-      "unlockPremiumBtn": "Unlock Premium",
-    "viewSubscription": "View Subscription Plans",
+  "unlockPremiumDesc": "Get unlimited savage/GenZ translations, exclusive emoji packs, and ad-free experience",
+  "unlockPremiumBtn": "Unlock Premium",
+  "viewSubscription": "View Subscription Plans",
   "faqTitle": "Frequently Asked Questions about Emoji Hand",
   "faq1Q": "What is Emoji Hand?",
   "faq1A": "Emoji Hand is an AI-powered tool that instantly adds the most relevant emojis to your text, making your messages more expressive and fun.",
@@ -256,26 +256,40 @@
   "tiktok.picker.categories": "Categories",
   "tiktok.page.try.title": "Try TikTok Mode",
   "pages": {
+    "tiktok": {
+      "title": "TikTok Emojis",
+      "subtitle": "Transform your messages into TikTok-style expressions with exaggerated, fun, and engaging emojis!",
+      "officialEmojis": "Official TikTok Emojis",
+      "officialEmojisDesc": "Choose official TikTok emojis and experience authentic TikTok emoji culture!",
+      "tryTitle": "Try TikTok Mode",
+      "tryDesc": "Select \"TikTok\" mode in the translator below to experience the magic!"
+    },
     "tiktokEmojis": {
       "title": "TikTok Emojis - Complete Guide to Hidden Emojis & Meanings",
-      "subtitle": "Discover all TikTok emojis including hidden shortcodes like [smile], [happy], [loveface]. Learn how to use TikTok emojis, their meanings, and get the complete list of official TikTok emoji codes.",
+      "subtitle": "Discover all TikTok emojis including hidden shortcodes like ",
+      "subtitle2": "Learn how to use TikTok emojis, their meanings, and get the complete list of official TikTok emoji codes.",
       "faq": {
         "title": "Frequently Asked Questions About TikTok Emojis",
         "q1": {
           "title": "What are TikTok emojis?",
-          "answer": "TikTok emojis are a collection of custom emoji characters and hidden shortcodes that users can use in comments, captions, and messages on the TikTok platform. These include both standard Unicode emojis and TikTok-specific hidden emojis that can be accessed through shortcodes like [smile], [happy], and [loveface]."
+          "answer": "TikTok emojis are a collection of custom emoji characters and hidden shortcodes that users can use in comments, captions, and messages on the TikTok platform. These include both standard Unicode emojis and TikTok-specific hidden emojis that can be accessed through shortcodes like ",
+          "answer2": "and "
         },
         "q2": {
           "title": "How do I use TikTok emojis?",
-          "answer": "To use TikTok emojis, simply type the shortcode in square brackets (e.g., [smile]) in your comment or caption. TikTok will automatically convert these shortcodes into the corresponding emoji. You can also use standard emoji keyboards or copy-paste emojis directly."
+          "answer": "To use TikTok emojis, simply type the shortcode in square brackets (e.g., ",
+          "answer2": ") in your comment or caption. TikTok will automatically convert these shortcodes into the corresponding emoji. You can also use standard emoji keyboards or copy-paste emojis directly."
         },
         "q3": {
           "title": "What are the most popular TikTok emojis?",
-          "answer": "Some of the most popular TikTok emojis include [smile], [happy], [loveface], [wronged], [cry], [laugh], [cool], [angry], and [surprised]. These emojis are frequently used in comments and captions to express emotions and reactions."
+          "answer": "Some of the most popular TikTok emojis include ",
+          "answer2": "and ",
+          "answer3": "These emojis are frequently used in comments and captions to express emotions and reactions."
         },
         "q4": {
           "title": "Are TikTok emojis the same as regular emojis?",
-          "answer": "TikTok supports both standard Unicode emojis (like 😂, ❤️, 🔥) and its own custom hidden emojis accessed through shortcodes. The hidden emojis have a unique visual style that's consistent across all devices and platforms."
+          "answer": "TikTok supports both standard Unicode emojis (like ",
+          "answer2": ") and its own custom hidden emojis accessed through shortcodes. The hidden emojis have a unique visual style that's consistent across all devices and platforms."
         },
         "q5": {
           "title": "Can I use TikTok emojis on other platforms?",
@@ -286,59 +300,6 @@
         "title": "Try Our TikTok Emoji Translator",
         "desc": "Transform your text into TikTok-style expressions with our AI-powered emoji translator!",
         "button": "Try TikTok Mode Now"
-      }
-    }
-  },
-  "tiktok": {
-    "guide": {
-      "tabs": {
-        "shortcodes": "Hidden Shortcodes",
-        "meanings": "Emoji Meanings",
-        "combinations": "Popular Combinations",
-        "popular": "Most Popular"
-      },
-      "intro": {
-        "title": "What are TikTok Emojis?",
-        "p1": "TikTok emojis are a unique collection of custom emoji characters and hidden shortcodes that users can use in comments, captions, and messages on the TikTok platform. Unlike standard emojis, TikTok has its own \"hidden emoji\" system that allows users to access special emoji characters through shortcodes.",
-        "p2": "These hidden emojis are accessed by typing specific shortcodes in square brackets, such as",
-        "p2_2": "or",
-        "p2_3": "When you type these shortcodes in TikTok comments or captions, they automatically convert to the corresponding custom emoji graphics.",
-        "p3": "TikTok supports all platform-native emojis, but these hidden emojis provide a unique visual style that's consistent across all devices and platforms, making them popular among TikTok users for expressing specific emotions and reactions."
-      },
-      "howto": {
-        "title": "How to Use TikTok Emojis",
-        "method1": {
-          "title": "Method 1: Shortcodes",
-          "step1": "Type the shortcode in square brackets (e.g.,",
-          "step2": "TikTok will automatically convert it to the emoji",
-          "step3": "Works in comments, captions, and messages"
-        },
-        "method2": {
-          "title": "Method 2: Direct Emoji",
-          "step1": "Use your device's emoji keyboard",
-          "step2": "Copy and paste emojis from other sources",
-          "step3": "Works with all standard Unicode emojis"
-        }
-      },
-      "shortcodes": {
-        "title": "Hidden TikTok Emoji Shortcodes"
-      },
-      "meanings": {
-        "title": "TikTok Emoji Meanings"
-      },
-      "combinations": {
-        "title": "Popular TikTok Emoji Combinations"
-      },
-      "popular": {
-        "title": "Most Popular TikTok Emojis"
-      },
-      "categories": {
-        "title": "TikTok Emoji Categories",
-        "reactions": "Reactions",
-        "emotions": "Emotions",
-        "actions": "Actions",
-        "emphasis": "Emphasis",
-        "special": "Special"
       }
     }
   },
@@ -521,16 +482,16 @@
       "commercialUse": "Can I use these emoji packs commercially?",
       "commercialUseAnswer": "Yes, all generated emoji packs are free to use for personal and commercial purposes. They're created using advanced AI technology."
     },
-          "lovartInspired": "AI-Powered Design",
-      "lovartWhatIs": "What is AI Design?",
-      "lovartDescription": "Our emoji pack generator uses advanced AI technology to create beautiful emoji designs from your uploaded images.",
-      "lovartDescription2": "Our emoji generator allows you to upload an image and let AI create multiple variations with different styles, making the creative process effortless and enjoyable.",
-      "lovartFeatures": "Key Features",
-      "aiGeneration": "AI-powered emoji generation",
-      "styleVariations": "Multiple style variations",
-      "batchProcessing": "Batch processing capabilities",
-      "lovartPrinciples": "AI-powered design principles",
-      "howToUse": "How to Use Our AI Emoji Generator",
+    "lovartInspired": "AI-Powered Design",
+    "lovartWhatIs": "What is AI Design?",
+    "lovartDescription": "Our emoji pack generator uses advanced AI technology to create beautiful emoji designs from your uploaded images.",
+    "lovartDescription2": "Our emoji generator allows you to upload an image and let AI create multiple variations with different styles, making the creative process effortless and enjoyable.",
+    "lovartFeatures": "Key Features",
+    "aiGeneration": "AI-powered emoji generation",
+    "styleVariations": "Multiple style variations",
+    "batchProcessing": "Batch processing capabilities",
+    "lovartPrinciples": "AI-powered design principles",
+    "howToUse": "How to Use Our AI Emoji Generator",
     "uploadStep": "Upload any image you want to transform into emoji packs. Our AI will analyze the content and create variations.",
     "styleStep": "Select from 6 different styles: Cute, Funny, Cool, Savage, GenZ, or TikTok. Each style creates unique variations.",
     "generateStep": "AI generates multiple emoji pack variations. Download individual packs or use them in your projects.",
@@ -545,6 +506,56 @@
     "title": "Emoji Pack Subscription System",
     "subtitle": "Choose your suitable subscription package and enjoy professional AI emoji pack generation service",
     "loginRequired": "Please log in first to view subscription information",
+    "loginToPurchase": "Login to Purchase",
+    "loginToPurchaseDesc": "Please log in to view your subscription status and purchase plans",
+    "currentStatus": "Current Subscription Status",
+    "plan": "Plan",
+    "usesToday": "Uses Today",
+    "usesThisMonth": "Uses This Month",
+    "totalUses": "Total Uses",
+    "images": "images",
+    "expireAt": "Expire At",
+    "monthly": "Monthly",
+    "yearly": "Yearly (Discount)",
+    "month": "month",
+    "year": "year",
+    "yearlyDiscount": "Yearly Discount",
+    "dailyLimit": "Daily Limit",
+    "monthlyLimit": "Monthly Limit",
+    "maxPerUse": "Max Per Use",
+    "models": "Models",
+    "commercialUse": "Commercial Use",
+    "supported": "Supported",
+    "notSupported": "Not Supported",
+    "currentPlan": "Current Plan",
+    "selectPlan": "Select Plan",
+    "startFree": "Start Free",
+    "processing": "Processing...",
+    "upgrade": "Upgrade Subscription",
+    "upgradeSuccess": "Subscription upgraded successfully!",
+    "upgradeFailed": "Upgrade failed:",
+    "translationUsage": "Translation Usage",
+    "imageGenerationUsage": "Image Generation Usage",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "translations": "translations",
+    "imageGeneration": "Image Generation",
+    "noAds": "No Ads",
+    "loginToUpgrade": "Please log in to upgrade your subscription",
+    "login": "Login",
+    "currentPlanSelected": "This is your current plan",
+    "usageInstructions": "Usage Instructions",
+    "freePlan": "Free Plan",
+    "freePlanDesc": "3 translations per day, suitable for trial",
+    "basicPlan": "Basic Plan",
+    "basicPlanDesc": "10 translations + 5 images per day, suitable for individual users",
+    "proPlan": "Professional Plan",
+    "proPlanDesc": "20 translations + 10 images per day, suitable for professional users",
+    "enterprisePlan": "Enterprise Plan",
+    "enterprisePlanDesc": "50 translations + 25 images per day, suitable for enterprise users",
+    "yearlyDiscountNote": "Yearly payment enjoys discounted prices",
+    "commercialAuth": "Supports commercial authorization (paid plans)",
     "seo": {
       "title": "Emoji Pack Subscription - EmojiHand",
       "description": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services.",
@@ -553,89 +564,19 @@
       "ogDescription": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services."
     }
   },
-  "pages": {
-    "tiktok": {
-      "title": "TikTok Emojis",
-      "subtitle": "Transform your messages into TikTok-style expressions with exaggerated, fun, and engaging emojis!",
-      "officialEmojis": "Official TikTok Emojis",
-      "officialEmojisDesc": "Choose official TikTok emojis and experience authentic TikTok emoji culture!",
-      "tryTitle": "Try TikTok Mode",
-      "tryDesc": "Select \"TikTok\" mode in the translator below to experience the magic!"
-    },
-    "tiktokEmojis": {
-      "title": "TikTok Emojis - Complete Guide to Hidden Emojis & Meanings",
-      "subtitle": "Discover all TikTok emojis including hidden shortcodes like ",
-      "subtitle2": "Learn how to use TikTok emojis, their meanings, and get the complete list of official TikTok emoji codes.",
-      "faq": {
-        "title": "Frequently Asked Questions About TikTok Emojis",
-        "q1": {
-          "title": "What are TikTok emojis?",
-          "answer": "TikTok emojis are a collection of custom emoji characters and hidden shortcodes that users can use in comments, captions, and messages on the TikTok platform. These include both standard Unicode emojis and TikTok-specific hidden emojis that can be accessed through shortcodes like ",
-          "answer2": "and "
-        },
-        "q2": {
-          "title": "How do I use TikTok emojis?",
-          "answer": "To use TikTok emojis, simply type the shortcode in square brackets (e.g., ",
-          "answer2": ") in your comment or caption. TikTok will automatically convert these shortcodes into the corresponding emoji. You can also use standard emoji keyboards or copy-paste emojis directly."
-        },
-        "q3": {
-          "title": "What are the most popular TikTok emojis?",
-          "answer": "Some of the most popular TikTok emojis include ",
-          "answer2": "and ",
-          "answer3": "These emojis are frequently used in comments and captions to express emotions and reactions."
-        },
-        "q4": {
-          "title": "Are TikTok emojis the same as regular emojis?",
-          "answer": "TikTok supports both standard Unicode emojis (like ",
-          "answer2": ") and its own custom hidden emojis accessed through shortcodes. The hidden emojis have a unique visual style that's consistent across all devices and platforms."
-        },
-        "q5": {
-          "title": "Can I use TikTok emojis on other platforms?",
-          "answer": "TikTok's hidden emojis (accessed via shortcodes) are specific to the TikTok platform and won't display as intended on other social media platforms. However, standard Unicode emojis work across all platforms."
-        }
-      },
-      "try": {
-        "title": "Try Our TikTok Emoji Translator",
-        "desc": "Transform your text into TikTok-style expressions with our AI-powered emoji translator!",
-        "button": "Try TikTok Mode Now"
-      }
-    }
-  },
   "tryPrefix": "Try:",
   "tryExample": "Let's party tonight",
   "tryResult": "🎉🕺✨",
   "login": {
-    "button": "Login",
-    "title": "Sign in to emojihand",
-    "desc": "Welcome! Please sign in to continue",
-    "google": "Continue with Google",
-    "or": "or",
-    "emailLabel": "Email address or username",
-    "emailPlaceholder": "Enter email or username",
-    "loading": "Logging in...",
-    "continue": "Continue",
-    "noAccount": "Don't have an account?",
-    "signup": "Sign up"
+    "required": "Please log in first to use translation function",
+    "designRequired": "Please log in first to use design generation function"
   },
   "quota.exhausted": "Daily quota used up. Upgrade to Premium for $9.99/month to unlock 20 uses per day and all styles including GPT-4.0!",
   "profile": {
-    "points": "Points",
-    "createdAt": "Registered at",
-    "freeUsesDaily": "Free daily quota",
-    "freeUsesWeekly": "Free weekly quota",
-    "premiumUsesWeekly": "Premium weekly quota",
-    "premiumExpireAt": "Premium Expiry",
-    "premium": "Premium User",
-    "free": "Free User",
-    "upgrade": "Upgrade to Premium",
-    "upgrading": "Redirecting...",
-    "paymentFailed": "Failed to get payment link",
-    "profileTitle": "Profile",
-    "noName": "No nickname set",
-    "status": "Membership Status",
-    "expire": "Premium Expiry",
-    "quota": "Daily Quota Left",
-    "tips": "Premium: 20/day, Free: 5/day. Points can be used for extra quota or membership."
+    "accountInfo": "Account Information",
+    "email": "Email",
+    "username": "Username",
+    "days": "days"
   },
   "signOut": "Sign Out",
   "profileTitle": "Profile",
@@ -649,12 +590,6 @@
   "profile.tips": "Premium: 20/day, Free: 5/day. Points can be used for extra quota or membership.",
   "dashboard": {
     "title": "Your Dashboard"
-  },
-  "profile": {
-    "accountInfo": "Account Information",
-    "email": "Email",
-    "username": "Username",
-    "days": "days"
   },
   "profile.upgrade": "Upgrade to Premium",
   "privacy.title": "Privacy Policy",
@@ -752,10 +687,6 @@
   "accessibilityContent": "This website is committed to providing an accessible experience for all users, including people with disabilities. If you have accessibility suggestions, please contact us via the support email.",
   "copyrightTitle": "Copyright & Trademark Statement",
   "copyrightContent": "Emoji Hand and its logo are owned by emojihand.com. Some content, fonts, or icons may be from third parties and are copyrighted by their respective owners. Unauthorized use, reproduction, or distribution of this website's content is prohibited.",
-  "login": {
-    "required": "Please log in first to use translation function",
-    "designRequired": "Please log in first to use design generation function"
-  },
   "login.passwordLabel": "Password",
   "login.passwordPlaceholder": "Enter your password",
   "login.success": "Login successful!",
@@ -774,67 +705,11 @@
   "register.error": "Registration failed",
   "register.hasAccount": "Already have an account?",
   "register.signin": "Sign in",
-  "subscription": {
-    "title": "Emoji Pack Subscription System",
-    "subtitle": "Choose your suitable subscription package and enjoy professional AI emoji pack generation service",
-    "loginRequired": "Please log in first to view subscription information",
-    "loginToPurchase": "Login to Purchase",
-    "loginToPurchaseDesc": "Please log in to view your subscription status and purchase plans",
-    "currentStatus": "Current Subscription Status",
-    "plan": "Plan",
-    "usesToday": "Uses Today",
-    "usesThisMonth": "Uses This Month",
-    "totalUses": "Total Uses",
-    "images": " images",
-    "expireAt": "Expire At",
-    "monthly": "Monthly",
-    "yearly": "Yearly (Discount)",
-    "month": "month",
-    "year": "year",
-    "yearlyDiscount": "Yearly Discount",
-    "dailyLimit": "Daily Limit",
-    "monthlyLimit": "Monthly Limit",
-    "maxPerUse": "Max Per Use",
-    "models": "Models",
-    "commercialUse": "Commercial Use",
-    "supported": "Supported",
-    "notSupported": "Not Supported",
-    "currentPlan": "Current Plan",
-    "selectPlan": "Select Plan",
-    "startFree": "Start Free",
-    "processing": "Processing...",
-    "upgrade": "Upgrade Subscription",
-    "upgradeSuccess": "Subscription upgraded successfully!",
-    "upgradeFailed": "Upgrade failed:",
-    "translationUsage": "Translation Usage",
-    "imageGenerationUsage": "Image Generation Usage",
-    "status": "Status",
-    "active": "Active",
-    "inactive": "Inactive",
-    "translations": "translations",
-    "imageGeneration": "Image Generation",
-    "images": "images",
-    "noAds": "No Ads",
-    "loginToUpgrade": "Please log in to upgrade your subscription",
-    "login": "Login",
-    "currentPlanSelected": "This is your current plan",
-    "usageInstructions": "Usage Instructions",
-    "freePlan": "Free Plan",
-    "freePlanDesc": "3 translations per day, suitable for trial",
-    "basicPlan": "Basic Plan",
-    "basicPlanDesc": "10 translations + 5 images per day, suitable for individual users",
-    "proPlan": "Professional Plan",
-    "proPlanDesc": "20 translations + 10 images per day, suitable for professional users",
-    "enterprisePlan": "Enterprise Plan",
-    "enterprisePlanDesc": "50 translations + 25 images per day, suitable for enterprise users",
-    "yearlyDiscountNote": "Yearly payment enjoys discounted prices",
-    "commercialAuth": "Supports commercial authorization (paid plans)",
-    "seo": {
-      "title": "Emoji Pack Subscription - EmojiHand",
-      "description": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services.",
-      "keywords": "emoji subscription, AI emoji, emoji generation, subscription plans",
-      "ogTitle": "Emoji Pack Subscription - EmojiHand",
-      "ogDescription": "Choose your emoji pack subscription plan and enjoy professional AI emoji generation services."
-    }
-  }
-} 
+  "profile.subscriptionPlan": "Subscription Plan",
+  "profile.subscriptionExpireAt": "Subscription until",
+  "profile.translationUsesToday": "Translation uses today",
+  "profile.remainingTranslation": "Remaining translations",
+  "profile.imageGenerationUsesToday": "Image generation uses today",
+  "profile.remainingImageGeneration": "Remaining image generations",
+  "profile.notLoggedIn": "You are not logged in."
+}

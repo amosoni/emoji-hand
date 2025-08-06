@@ -20,7 +20,7 @@ export default function FooterLanguageSwitcher() {
   const { i18n } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
-  const [currentLanguage, setCurrentLanguage] = useState(languages[0]!);
+  const [currentLanguage, setCurrentLanguage] = useState(languages[0]!); // 默认设置为英语
   
   // 从URL路径获取当前语言
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function FooterLanguageSwitcher() {
         }
       } else {
         // 如果没有找到匹配的语言，使用默认语言
-        setCurrentLanguage(languages[0]!);
+        setCurrentLanguage(languages[0]!); // 英语
         if (i18n.language !== 'en') {
           void i18n.changeLanguage('en');
         }

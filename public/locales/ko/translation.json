@@ -714,7 +714,14 @@
     "status": "회원 상태",
     "expire": "프리미엄 만료일",
     "quota": "오늘 남은 할당량",
-    "tips": "프리미엄: 하루 20회, 무료: 하루 5회. 포인트는 추가 할당량 또는 회원권에 사용 가능."
+    "tips": "프리미엄: 하루 20회, 무료: 하루 5회. 포인트는 추가 할당량 또는 회원권에 사용 가능.",
+    "subscriptionPlan": "구독 플랜",
+    "subscriptionExpireAt": "구독 만료일",
+    "translationUsesToday": "오늘 번역 사용 횟수",
+    "remainingTranslation": "남은 번역 횟수",
+    "imageGenerationUsesToday": "오늘 이미지 생성 사용 횟수",
+    "remainingImageGeneration": "남은 이미지 생성 횟수",
+    "notLoggedIn": "로그인되지 않았습니다."
   },
   "signOut": "로그아웃",
   "profile.noName": "닉네임 미설정",
@@ -942,5 +949,12 @@
       "twitterTitle": "Lovart Style AI - 창의적 디자인 어시스턴트",
       "twitterDescription": "Lovart AI에서 영감을 받은 전문 AI 디자인 어시스턴트."
     }
-  }
+  },
+  "profile.subscriptionPlan": "구독 플랜",
+  "profile.subscriptionExpireAt": "구독 만료일",
+  "profile.translationUsesToday": "오늘 번역 사용 횟수",
+  "profile.remainingTranslation": "남은 번역 횟수",
+  "profile.imageGenerationUsesToday": "오늘 이미지 생성 사용 횟수",
+  "profile.remainingImageGeneration": "남은 이미지 생성 횟수",
+  "profile.notLoggedIn": "로그인되지 않았습니다."
 }

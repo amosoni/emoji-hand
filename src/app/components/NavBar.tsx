@@ -23,10 +23,10 @@ export default function NavBar() {
     if (match && typeof match[1] === 'string' && supported.includes(match[1])) {
       locale = match[1];
     } else {
-      locale = 'zh';
+      locale = 'en';
     }
   }
-  locale = typeof locale === 'string' && locale ? locale : 'zh';
+  locale = typeof locale === 'string' && locale ? locale : 'en';
 
   useEffect(() => {
     setOpen(false); // 语言切换时自动关闭菜单，下次打开就是新语言

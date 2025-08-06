@@ -2,6 +2,11 @@
   "appTitle": "Emoji Hand",
   "appSlogan": "KI-gestützter Emoji-Übersetzer & Generator",
   "loading": "Mehrsprachige Unterstützung wird geladen...",
+  "usage": {
+    "translation": "Übersetzungsnutzung",
+    "imageGeneration": "Bildgenerierungsnutzung",
+    "remaining": "Verbleibend"
+  },
   "genZ": {
     "seo": {
       "title": "Gen Z Emoji Guide - Vollständiges Slang & Ausdruckswörterbuch",
@@ -120,17 +125,10 @@
   "tryExample": "Lass uns heute Abend feiern",
   "tryResult": "🎉🕺✨",
   "login": {
-    "title": "Bei emojihand anmelden",
-    "desc": "Willkommen! Bitte melden Sie sich an, um fortzufahren",
-    "google": "Mit Google fortfahren",
-    "or": "oder",
-    "emailLabel": "E-Mail-Adresse oder Benutzername",
-    "emailPlaceholder": "E-Mail oder Benutzername eingeben",
-    "loading": "Anmeldung...",
-    "continue": "Weiter",
-    "noAccount": "Noch kein Konto?",
-    "signup": "Registrieren",
-    "button": "Anmelden"
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "success": "Anmeldung erfolgreich!",
+    "error": "Anmeldung fehlgeschlagen"
   },
   "profile": {
     "points": "Punkte",
@@ -179,8 +177,8 @@
     "section5": "5. Ihre Rechte",
     "list5": [
       "Sie können jederzeit über die Kontoeinstellungen auf Ihre personenbezogenen Daten zugreifen, sie ändern oder löschen.",
-    "Sie können uns kontaktieren, um Ihre Datenschutzrechte auszuüben."
-  ],
+      "Sie können uns kontaktieren, um Ihre Datenschutzrechte auszuüben."
+    ],
     "section6": "6. Änderungen der Richtlinie",
     "contact": "Bei Fragen zum Datenschutz wenden Sie sich bitte an die am Seitenende angegebene Support-E-Mail-Adresse.",
     "section7": "7. Kontakt",
@@ -252,12 +250,6 @@
   "cookieConsent": {
     "text": "Wir verwenden Cookies und ähnliche Technologien, um Ihre Erfahrung zu verbessern, den Datenverkehr zu analysieren und zu Marketingzwecken. Durch die Nutzung dieser Website stimmen Sie unserer Datenschutzrichtlinie zu.",
     "accept": "Akzeptieren"
-  },
-  "login": {
-    "passwordLabel": "Passwort",
-    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
-    "success": "Anmeldung erfolgreich!",
-    "error": "Anmeldung fehlgeschlagen"
   },
   "register": {
     "title": "Konto erstellen",
@@ -384,7 +376,7 @@
     "usesToday": "Verwendungen Heute",
     "usesThisMonth": "Verwendungen Diesen Monat",
     "totalUses": "Gesamtverwendungen",
-    "images": " Bilder",
+    "images": "Bilder",
     "expireAt": "Läuft Ab Am",
     "monthly": "Monatlich",
     "yearly": "Jährlich (Rabatt)",
@@ -406,18 +398,14 @@
     "upgradeFailed": "Upgrade fehlgeschlagen:",
     "translationUsage": "Übersetzungsnutzung",
     "imageGenerationUsage": "Bildgenerierungsnutzung",
-    "login": {
-      "required": "Bitte melden Sie sich zuerst an, um die Übersetzungsfunktion zu verwenden"
-    },
+    "login": "Anmelden",
     "status": "Status",
     "active": "Aktiv",
     "inactive": "Inaktiv",
     "translations": "Übersetzungen",
     "imageGeneration": "Bildgenerierung",
-    "images": "Bilder",
     "noAds": "Keine Werbung",
     "loginToUpgrade": "Bitte melden Sie sich an, um Ihr Abonnement zu upgraden",
-    "login": "Anmelden",
     "currentPlanSelected": "Dies ist Ihr aktueller Plan",
     "usageInstructions": "Nutzungsanweisungen",
     "freePlan": "Kostenloser Plan",
@@ -636,5 +624,12 @@
       "twitterTitle": "Lovart Style AI - Kreativer Design-Assistent",
       "twitterDescription": "Professioneller KI-Design-Assistent inspiriert von Lovart AI."
     }
-  }
-} 
+  },
+  "profile.subscriptionPlan": "Abonnement-Plan",
+  "profile.subscriptionExpireAt": "Abonnement bis",
+  "profile.translationUsesToday": "Übersetzungen heute verwendet",
+  "profile.remainingTranslation": "Verbleibende Übersetzungen",
+  "profile.imageGenerationUsesToday": "Bildgenerierungen heute verwendet",
+  "profile.remainingImageGeneration": "Verbleibende Bildgenerierungen",
+  "profile.notLoggedIn": "Sie sind nicht angemeldet."
+}
