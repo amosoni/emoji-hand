@@ -145,23 +145,7 @@ export default function Translator() {
 
   return (
     <div className="w-full max-w-3xl mx-auto p-6">
-      {/* 临时调试按钮 */}
-      {user && (
-        <div className="mb-4 p-4 bg-yellow-500/20 rounded-lg border border-yellow-500/30">
-          <div className="text-white text-sm mb-2">
-            调试信息: 会员状态 = {isPremium ? '✅ 已激活' : '❌ 未激活'}
-          </div>
-          <div className="text-white text-xs mb-2">
-            订阅计划: {subscriptionPlan} | 过期时间: {subscriptionExpireAt}
-          </div>
-          <button 
-            onClick={() => window.location.reload()} 
-            className="bg-yellow-500 text-white px-3 py-1 rounded text-xs"
-          >
-            强制刷新页面
-          </button>
-        </div>
-      )}
+
       
       {/* 使用量显示 */}
       {user && usageStats && (

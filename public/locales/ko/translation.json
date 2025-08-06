@@ -956,5 +956,63 @@
   "profile.remainingTranslation": "남은 번역 횟수",
   "profile.imageGenerationUsesToday": "오늘 이미지 생성 사용 횟수",
   "profile.remainingImageGeneration": "남은 이미지 생성 횟수",
-  "profile.notLoggedIn": "로그인되지 않았습니다."
+  "profile.notLoggedIn": "로그인되지 않았습니다.",
+  "subscriptionPlans": {
+    "free": "무료",
+    "starter": "스타터",
+    "pro": "프로",
+    "enterprise": "기업"
+  },
+  "emojiGenerator": {
+    "title": "이모지 팩 생성기 - Lovart AI 스타일",
+    "subtitle": "이미지를 업로드하면 AI가 Lovart AI 디자인 원칙에서 영감을 받은 아름다운 이모지 팩을 생성합니다",
+    "uploadTitle": "이미지 업로드",
+    "imageUploaded": "이미지가 업로드되었습니다. 다시 선택하려면 클릭하세요",
+    "uploadHint": "클릭하여 업로드하거나 이미지를 여기로 드래그하세요",
+    "uploadLimit": "JPG, PNG 지원, 최대 5MB",
+    "styleTitle": "스타일 선택",
+    "styles": {
+      "cute": "귀여운 스타일",
+      "funny": "재미있는 스타일",
+      "cool": "쿨한 스타일",
+      "savage": "사베지 스타일",
+      "genz": "GenZ 스타일",
+      "tiktok": "TikTok 스타일",
+      "vintage": "빈티지 스타일",
+      "minimalist": "미니멀 스타일"
+    },
+    "styleDescriptions": {
+      "cute": "둥근 선과 핑크 색상 팔레트, 귀엽고 카와이한 표현에 완벽합니다",
+      "funny": "유머러스한 요소가 있는 과장된 표현, 밈과 코미디에 좋습니다",
+      "cool": "패션 요소가 있는 다크 색상 스킴, 트렌디하고 스타일리시한 표현에 완벽합니다",
+      "savage": "풍자적 요소가 있는 날카로운 표현, 재치 있고 대담한 문장에 이상적입니다",
+      "genz": "젊은 표현의 트렌디한 요소, 현대 소셜 미디어에 완벽합니다",
+      "tiktok": "짧은 비디오 미학의 인기 요소, 바이럴 콘텐츠에 좋습니다",
+      "vintage": "클래식 요소가 있는 레트로 색상 팔레트, 향수를 불러일으키는 디자인에 완벽합니다",
+      "minimalist": "단일 색상의 깔끔한 선, 미니멀 디자인에 완벽합니다"
+    },
+    "batchSize": "배치 크기",
+    "pack": "팩",
+    "packs": "팩들",
+    "promptTitle": "커스텀 프롬프트 (선택 사항)",
+    "promptPlaceholder": "원하는 이모지 팩 효과를 설명하세요...",
+    "textOptions": "텍스트 옵션",
+    "includeText": "이모지 팩에 텍스트 포함",
+    "customTextLabel": "커스텀 텍스트 (선택 사항):",
+    "customTextPlaceholder": "이모지 팩에 추가할 텍스트를 입력하세요...",
+    "textHint": "비워두면 AI가 이미지와 스타일에 따라 적절한 텍스트를 생성합니다",
+    "generating": "AI 생성 중...",
+    "generate": "이모지 팩 생성",
+    "analysis": "AI 분석",
+    "resultTitle": "생성된 결과",
+    "reset": "재설정",
+    "download": "다운로드",
+    "error": {
+      "invalidFile": "이미지 파일을 업로드해 주세요",
+      "fileTooLarge": "이미지 크기는 5MB를 초과할 수 없습니다",
+      "noImage": "먼저 이미지를 업로드해 주세요",
+      "consoleError": "이모지 팩 생성 실패:",
+      "retryLater": "생성에 실패했습니다. 나중에 다시 시도해 주세요"
+    }
+  }
 }

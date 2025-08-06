@@ -743,5 +743,63 @@
   "profile.remainingTranslation": "剩余翻译次数",
   "profile.imageGenerationUsesToday": "今日图片生成使用次数",
   "profile.remainingImageGeneration": "剩余图片生成次数",
-  "profile.notLoggedIn": "您尚未登录。"
+  "profile.notLoggedIn": "您尚未登录。",
+  "subscriptionPlans": {
+    "free": "免费",
+    "starter": "入门版",
+    "pro": "专业版",
+    "enterprise": "企业版"
+  },
+  "emojiGenerator": {
+    "title": "表情包生成器 - Lovart AI 风格",
+    "subtitle": "上传图片，AI将根据Lovart AI设计原则生成精美的表情包",
+    "uploadTitle": "上传图片",
+    "imageUploaded": "图片已上传，点击重新选择",
+    "uploadHint": "点击上传或拖拽图片到此处",
+    "uploadLimit": "支持 JPG、PNG，最大 5MB",
+    "styleTitle": "选择风格",
+    "styles": {
+      "cute": "可爱风格",
+      "funny": "搞笑风格",
+      "cool": "酷炫风格",
+      "savage": "野性风格",
+      "genz": "Z世代风格",
+      "tiktok": "TikTok风格",
+      "vintage": "复古风格",
+      "minimalist": "极简风格"
+    },
+    "styleDescriptions": {
+      "cute": "粉色调色板和圆润线条，完美适合可爱和卡哇伊表情",
+      "funny": "带有幽默元素的夸张表情，适合表情包和喜剧",
+      "cool": "带有时尚元素的深色配色方案，完美适合潮流和时尚表情",
+      "savage": "带有讽刺元素的锐利表情，适合机智和大胆的语句",
+      "genz": "带有年轻表情的潮流元素，完美适合现代社交媒体",
+      "tiktok": "带有短视频美学的流行元素，适合病毒式内容",
+      "vintage": "带有经典元素的复古调色板，完美适合怀旧设计",
+      "minimalist": "单一颜色的简洁线条，完美适合极简设计"
+    },
+    "batchSize": "批次大小",
+    "pack": "包",
+    "packs": "包",
+    "promptTitle": "自定义提示（可选）",
+    "promptPlaceholder": "描述您想要的表情包效果...",
+    "textOptions": "文本选项",
+    "includeText": "在表情包中包含文本",
+    "customTextLabel": "自定义文本（可选）：",
+    "customTextPlaceholder": "输入要添加到表情包的文本...",
+    "textHint": "留空让AI根据图片和风格生成合适的文本",
+    "generating": "AI生成中...",
+    "generate": "生成表情包",
+    "analysis": "AI分析",
+    "resultTitle": "生成结果",
+    "reset": "重置",
+    "download": "下载",
+    "error": {
+      "invalidFile": "请上传图片文件",
+      "fileTooLarge": "图片大小不能超过5MB",
+      "noImage": "请先上传图片",
+      "consoleError": "生成表情包失败：",
+      "retryLater": "生成失败，请稍后重试"
+    }
+  }
 }

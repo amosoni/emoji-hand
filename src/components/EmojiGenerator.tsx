@@ -182,6 +182,31 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
             </p>
           </div>
 
+          {/* 使用量显示 */}
+          {session?.user && (
+            <div className="mb-8 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+              <div className="flex items-center justify-between text-white">
+                <div className="flex items-center gap-4">
+                  <span className="text-sm">
+                    {t('profile.imageGenerationUsesToday', 'Image generation uses today')}: 
+                    <span className="ml-1 font-semibold text-blue-400">0</span> / 
+                    <span className="ml-1 font-semibold text-green-400">10</span>
+                  </span>
+                  <span className="text-sm">
+                    {t('profile.remainingImageGeneration', 'Remaining image generations')}: 
+                    <span className="ml-1 font-semibold text-yellow-400">10</span>
+                  </span>
+                </div>
+                <div className="w-32 bg-white/20 rounded-full h-2">
+                  <div 
+                    className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
+                    style={{ width: '0%' }}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Upload Section */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
@@ -254,7 +279,7 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
           <div className="mt-8 space-y-6">
             {/* Batch Size Selection */}
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-              <h3 className="text-lg font-semibold mb-4">Batch Size</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('emojiGenerator.batchSize', 'Batch Size')}</h3>
               <div className="flex gap-3">
                 {[1, 3, 5].map((size) => (
                   <button
@@ -266,7 +291,7 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
                         : 'border-white/20 hover:border-white/40 bg-white/5'
                     }`}
                   >
-                    {size} Pack{size > 1 ? 's' : ''}
+                    {size} {size > 1 ? t('emojiGenerator.packs', 'Packs') : t('emojiGenerator.pack', 'Pack')}
                   </button>
                 ))}
               </div>

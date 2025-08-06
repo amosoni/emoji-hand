@@ -57,7 +57,7 @@ export default function ProfilePage() {
             {t('profileTitle', 'Profile')}
             {/* 会员徽章 */}
             {user?.subscriptionPlan && user.subscriptionPlan !== 'free' ? (
-              <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-gradient-to-r from-yellow-400 to-pink-500 text-white shadow">🌟 {user.subscriptionPlan.toUpperCase()}</span>
+              <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-gradient-to-r from-yellow-400 to-pink-500 text-white shadow">🌟 {t(`subscriptionPlans.${user.subscriptionPlan}`, user.subscriptionPlan.toUpperCase())}</span>
             ) : (
               <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-gray-400 text-white">{t('profile.free', 'Free')}</span>
             )}
@@ -81,7 +81,7 @@ export default function ProfilePage() {
               <div className="text-white/80 mb-4">{user.email}</div>
               <div className="w-full flex flex-col gap-2 text-white/90 text-base">
                 {user.subscriptionPlan && (
-                  <div className="flex justify-between"><span>{t('profile.subscriptionPlan', 'Subscription Plan')}</span><span className="capitalize">{user.subscriptionPlan}</span></div>
+                  <div className="flex justify-between"><span>{t('profile.subscriptionPlan', 'Subscription Plan')}</span><span className="capitalize">{t(`subscriptionPlans.${user.subscriptionPlan}`, user.subscriptionPlan)}</span></div>
                 )}
                 {user.subscriptionExpireAt && (
                   <div className="flex justify-between"><span>{t('profile.subscriptionExpireAt', 'Subscription until')}</span><span>{new Date(user.subscriptionExpireAt).toLocaleDateString()}</span></div>

@@ -621,5 +621,16 @@
   "profile.remainingTranslation": "Traduzioni rimanenti",
   "profile.imageGenerationUsesToday": "Generazioni di immagini utilizzate oggi",
   "profile.remainingImageGeneration": "Generazioni di immagini rimanenti",
-  "profile.notLoggedIn": "Non sei loggato."
+  "profile.notLoggedIn": "Non sei loggato.",
+  "subscriptionPlans": {
+    "free": "Gratuito",
+    "starter": "Iniziale",
+    "pro": "Pro",
+    "enterprise": "Azienda"
+  },
+  "emojiGenerator": {
+    "batchSize": "Dimensione Batch",
+    "pack": "Pacchetto",
+    "packs": "Pacchetti"
+  }
 }

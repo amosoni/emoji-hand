@@ -217,5 +217,16 @@
   "profile.remainingTranslation": "Оставшихся переводов",
   "profile.imageGenerationUsesToday": "Генераций изображений использовано сегодня",
   "profile.remainingImageGeneration": "Оставшихся генераций изображений",
-  "profile.notLoggedIn": "Вы не вошли в систему."
+  "profile.notLoggedIn": "Вы не вошли в систему.",
+  "subscriptionPlans": {
+    "free": "Бесплатный",
+    "starter": "Стартовый",
+    "pro": "Про",
+    "enterprise": "Корпоративный"
+  },
+  "emojiGenerator": {
+    "batchSize": "Размер Партии",
+    "pack": "Пакет",
+    "packs": "Пакеты"
+  }
 }

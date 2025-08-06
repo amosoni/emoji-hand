@@ -744,5 +744,16 @@
   "profile.remainingTranslation": "残り翻訳回数",
   "profile.imageGenerationUsesToday": "今日の画像生成使用回数",
   "profile.remainingImageGeneration": "残り画像生成回数",
-  "profile.notLoggedIn": "ログインしていません。"
+  "profile.notLoggedIn": "ログインしていません。",
+  "subscriptionPlans": {
+    "free": "無料",
+    "starter": "スターター",
+    "pro": "プロ",
+    "enterprise": "エンタープライズ"
+  },
+  "emojiGenerator": {
+    "batchSize": "バッチサイズ",
+    "pack": "パック",
+    "packs": "パック"
+  }
 }

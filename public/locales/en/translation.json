@@ -711,5 +711,63 @@
   "profile.remainingTranslation": "Remaining translations",
   "profile.imageGenerationUsesToday": "Image generation uses today",
   "profile.remainingImageGeneration": "Remaining image generations",
-  "profile.notLoggedIn": "You are not logged in."
+  "profile.notLoggedIn": "You are not logged in.",
+  "subscriptionPlans": {
+    "free": "Free",
+    "starter": "Starter",
+    "pro": "Pro",
+    "enterprise": "Enterprise"
+  },
+  "emojiGenerator": {
+    "title": "Emoji Pack Generator - Lovart AI Style",
+    "subtitle": "Upload an image and AI will generate beautiful emoji packs inspired by Lovart AI design principles",
+    "uploadTitle": "Upload Image",
+    "imageUploaded": "Image uploaded, click to reselect",
+    "uploadHint": "Click to upload or drag image here",
+    "uploadLimit": "Supports JPG, PNG, max 5MB",
+    "styleTitle": "Choose Style",
+    "styles": {
+      "cute": "Cute Style",
+      "funny": "Funny Style",
+      "cool": "Cool Style",
+      "savage": "Savage Style",
+      "genz": "GenZ Style",
+      "tiktok": "TikTok Style",
+      "vintage": "Vintage Style",
+      "minimalist": "Minimalist Style"
+    },
+    "styleDescriptions": {
+      "cute": "Pink color palette with rounded lines, perfect for adorable and kawaii expressions",
+      "funny": "Exaggerated expressions with humorous elements, great for memes and comedy",
+      "cool": "Dark color scheme with fashionable elements, perfect for trendy and stylish expressions",
+      "savage": "Sharp expressions with sarcastic elements, ideal for witty and bold statements",
+      "genz": "Trendy elements with youthful expressions, perfect for modern social media",
+      "tiktok": "Popular elements with short video aesthetics, great for viral content",
+      "vintage": "Retro color palette with classic elements, perfect for nostalgic designs",
+      "minimalist": "Clean lines with single color, perfect for minimalist designs"
+    },
+    "batchSize": "Batch Size",
+    "pack": "Pack",
+    "packs": "Packs",
+    "promptTitle": "Custom Prompt (Optional)",
+    "promptPlaceholder": "Describe the emoji pack effect you want...",
+    "textOptions": "Text Options",
+    "includeText": "Include text in emoji pack",
+    "customTextLabel": "Custom text (optional):",
+    "customTextPlaceholder": "Enter text to add to emoji pack...",
+    "textHint": "Leave empty to let AI generate appropriate text based on the image and style",
+    "generating": "AI Generating...",
+    "generate": "Generate Emoji Packs",
+    "analysis": "AI Analysis",
+    "resultTitle": "Generated Results",
+    "reset": "Reset",
+    "download": "Download",
+    "error": {
+      "invalidFile": "Please upload an image file",
+      "fileTooLarge": "Image size cannot exceed 5MB",
+      "noImage": "Please upload an image first",
+      "consoleError": "Failed to generate emoji pack:",
+      "retryLater": "Generation failed, please try again later"
+    }
+  }
 }
