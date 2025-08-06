@@ -44,7 +44,13 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
       setError(null);
     },
     onError: (error) => {
-      setError(error.message);
+      // 检查是否是翻译键
+      const errorKey = error.message;
+      if (errorKey && ['apiModelDeprecated', 'apiRateLimit', 'apiQuotaExceeded', 'imageAnalysisFailed'].includes(errorKey)) {
+        setError(t(`emojiGenerator.error.${errorKey}`, error.message));
+      } else {
+        setError(error.message);
+      }
       setIsGenerating(false);
     }
   });

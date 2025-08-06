@@ -740,7 +740,11 @@
       "fileTooLarge": "El tamaño de la imagen no puede exceder 5MB",
       "noImage": "Por favor sube una imagen primero",
       "consoleError": "Error al generar paquete de emojis:",
-      "retryLater": "La generación falló, por favor intenta de nuevo más tarde"
+      "retryLater": "La generación falló, por favor intenta de nuevo más tarde",
+      "apiModelDeprecated": "El modelo API ha sido descontinuado. Por favor intenta de nuevo más tarde.",
+      "apiRateLimit": "Se excedió el límite de velocidad de la API. Por favor intenta de nuevo en unos minutos.",
+      "apiQuotaExceeded": "Se excedió la cuota de la API. Por favor intenta de nuevo más tarde.",
+      "imageAnalysisFailed": "El análisis de imagen falló. Por favor intenta de nuevo."
     },
     "batchSize": "Tamaño de Lote",
     "pack": "Paquete",

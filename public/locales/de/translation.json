@@ -684,7 +684,11 @@
       "fileTooLarge": "Die Bildgröße darf 5MB nicht überschreiten",
       "noImage": "Bitte laden Sie zuerst ein Bild hoch",
       "consoleError": "Fehler beim Generieren des Emoji-Packs:",
-      "retryLater": "Generierung fehlgeschlagen, bitte versuchen Sie es später erneut"
+      "retryLater": "Generierung fehlgeschlagen, bitte versuchen Sie es später erneut",
+      "apiModelDeprecated": "Das API-Modell wurde veraltet. Bitte versuchen Sie es später erneut.",
+      "apiRateLimit": "API-Ratenlimit überschritten. Bitte versuchen Sie es in einigen Minuten erneut.",
+      "apiQuotaExceeded": "API-Kontingent überschritten. Bitte versuchen Sie es später erneut.",
+      "imageAnalysisFailed": "Bildanalyse fehlgeschlagen. Bitte versuchen Sie es erneut."
     },
     "batchSize": "Batch-Größe",
     "pack": "Pack",

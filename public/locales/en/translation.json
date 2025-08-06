@@ -443,7 +443,11 @@
       "invalidResult": "Invalid generation result",
       "retryLater": "Generation failed, please try again later",
       "consoleError": "Failed to generate emoji pack:",
-      "loginRequired": "Please login to generate emoji packs"
+      "loginRequired": "Please login to generate emoji packs",
+      "apiModelDeprecated": "API model has been deprecated. Please try again later.",
+      "apiRateLimit": "API rate limit exceeded. Please try again in a few minutes.",
+      "apiQuotaExceeded": "API quota exceeded. Please try again later.",
+      "imageAnalysisFailed": "Image analysis failed. Please try again."
     },
     "styles": {
       "cute": "Cute Style",
@@ -767,7 +771,11 @@
       "fileTooLarge": "Image size cannot exceed 5MB",
       "noImage": "Please upload an image first",
       "consoleError": "Failed to generate emoji pack:",
-      "retryLater": "Generation failed, please try again later"
+      "retryLater": "Generation failed, please try again later",
+      "apiModelDeprecated": "API model has been deprecated. Please try again later.",
+      "apiRateLimit": "API rate limit exceeded. Please try again in a few minutes.",
+      "apiQuotaExceeded": "API quota exceeded. Please try again later.",
+      "imageAnalysisFailed": "Image analysis failed. Please try again."
     },
     "faq": {
       "title": "Frequently Asked Questions",

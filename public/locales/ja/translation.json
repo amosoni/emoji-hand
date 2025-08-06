@@ -262,12 +262,13 @@
     "error": {
       "invalidFile": "画像ファイルをアップロードしてください",
       "fileTooLarge": "画像サイズは5MBを超えることはできません",
-      "noImage": "まず画像をアップロードしてください",
-      "generationFailed": "生成に失敗しました",
-      "invalidResult": "無効な生成結果",
-      "retryLater": "生成に失敗しました、後でもう一度お試しください",
-      "consoleError": "絵文字パックの生成に失敗しました：",
-      "loginRequired": "絵文字パックを生成するにはログインしてください"
+      "noImage": "最初に画像をアップロードしてください",
+      "consoleError": "絵文字パック生成に失敗しました:",
+      "retryLater": "生成に失敗しました。後でもう一度お試しください",
+      "apiModelDeprecated": "APIモデルが非推奨になりました。後でもう一度お試しください。",
+      "apiRateLimit": "APIレート制限を超えました。数分後に再試行してください。",
+      "apiQuotaExceeded": "APIクォータが不足しています。後でもう一度お試しください。",
+      "imageAnalysisFailed": "画像分析に失敗しました。再試行してください。"
     },
     "styles": {
       "cute": "かわいいスタイル",
@@ -797,7 +798,11 @@
       "fileTooLarge": "画像サイズは5MBを超えることはできません",
       "noImage": "最初に画像をアップロードしてください",
       "consoleError": "絵文字パック生成に失敗しました:",
-      "retryLater": "生成に失敗しました。後でもう一度お試しください"
+      "retryLater": "生成に失敗しました。後でもう一度お試しください",
+      "apiModelDeprecated": "APIモデルが非推奨になりました。後でもう一度お試しください。",
+      "apiRateLimit": "APIレート制限を超えました。数分後に再試行してください。",
+      "apiQuotaExceeded": "APIクォータが不足しています。後でもう一度お試しください。",
+      "imageAnalysisFailed": "画像分析に失敗しました。再試行してください。"
     },
     "batchSize": "バッチサイズ",
     "pack": "パック",
@@ -811,7 +816,7 @@
       "generationCount": "いくつの絵文字パックを生成できますか？",
       "generationCountAnswer": "各生成は、選択したスタイルとアップロードされた画像に基づいて3-5の異なる絵文字パックバリエーションを作成します。",
       "commercialUse": "これらの絵文字パックを商業的に使用できますか？",
-      "commercialUseAnswer": "はい、生成されたすべての絵文字パックは個人および商業目的で無料で使用できます。Lovart AIの原則にインスパイアされたAI技術を使用して作成されています。"
+      "commercialUseAnswer": "はい、生成されたすべての絵文字パックは個人および商用目的で無料で使用できます。Lovart AIの原則にインスパイアされたAI技術を使用して作成されています。"
     },
     "lovartInspired": "Lovart AIにインスパイア",
     "lovartWhatIs": "Lovart AIとは？",

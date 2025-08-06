@@ -64,7 +64,7 @@ export const emojiPackRouter = createTRPCRouter({
 
       // 使用Vision API分析图片内容
       const visionResponse = await openai.chat.completions.create({
-        model: 'gpt-4-vision-preview',
+        model: 'gpt-4o',
         messages: [
           {
             role: 'user',
@@ -90,6 +90,18 @@ export const emojiPackRouter = createTRPCRouter({
           }
         ],
         max_tokens: 500
+      }).catch((error: any) => {
+        // 处理API错误并返回用户友好的错误信息
+        console.error('Vision API error:', error);
+        if (error?.message?.includes('deprecated')) {
+          throw new Error('apiModelDeprecated');
+        } else if (error?.message?.includes('rate limit')) {
+          throw new Error('apiRateLimit');
+        } else if (error?.message?.includes('quota')) {
+          throw new Error('apiQuotaExceeded');
+        } else {
+          throw new Error('imageAnalysisFailed');
+        }
       });
 
       const imageAnalysis = visionResponse.choices[0]?.message?.content ?? '';

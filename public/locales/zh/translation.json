@@ -300,7 +300,11 @@
       "invalidResult": "生成结果无效",
       "retryLater": "生成失败，请稍后重试",
       "consoleError": "生成表情包失败:",
-      "loginRequired": "请登录后生成表情包"
+      "loginRequired": "请登录后生成表情包",
+      "apiModelDeprecated": "API模型已被弃用，请稍后重试。",
+      "apiRateLimit": "API请求频率超限，请几分钟后重试。",
+      "apiQuotaExceeded": "API配额已用完，请稍后重试。",
+      "imageAnalysisFailed": "图片分析失败，请重试。"
     },
     "styles": {
       "cute": "可爱风格",
@@ -799,7 +803,11 @@
       "fileTooLarge": "图片大小不能超过5MB",
       "noImage": "请先上传图片",
       "consoleError": "生成表情包失败：",
-      "retryLater": "生成失败，请稍后重试"
+      "retryLater": "生成失败，请稍后重试",
+      "apiModelDeprecated": "API模型已被弃用，请稍后重试。",
+      "apiRateLimit": "API请求频率超限，请几分钟后重试。",
+      "apiQuotaExceeded": "API配额已用完，请稍后重试。",
+      "imageAnalysisFailed": "图片分析失败，请重试。"
     },
     "faq": {
       "title": "常见问题",

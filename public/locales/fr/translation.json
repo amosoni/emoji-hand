@@ -744,9 +744,13 @@
     "error": {
       "invalidFile": "Veuillez télécharger un fichier image",
       "fileTooLarge": "La taille de l'image ne peut pas dépasser 5MB",
-      "noImage": "Veuillez télécharger une image d'abord",
-      "consoleError": "Échec de la génération du pack d'emojis :",
-      "retryLater": "La génération a échoué, veuillez réessayer plus tard"
+      "noImage": "Veuillez d'abord télécharger une image",
+      "consoleError": "Échec de la génération du pack d'emojis:",
+      "retryLater": "La génération a échoué, veuillez réessayer plus tard",
+      "apiModelDeprecated": "Le modèle API a été déprécié. Veuillez réessayer plus tard.",
+      "apiRateLimit": "Limite de taux API dépassée. Veuillez réessayer dans quelques minutes.",
+      "apiQuotaExceeded": "Quota API dépassé. Veuillez réessayer plus tard.",
+      "imageAnalysisFailed": "L'analyse d'image a échoué. Veuillez réessayer."
     },
     "batchSize": "Taille du Lot",
     "pack": "Pack",

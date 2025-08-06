@@ -320,7 +320,11 @@
       "invalidResult": "유효하지 않은 생성 결과",
       "retryLater": "생성 실패, 나중에 다시 시도하세요",
       "consoleError": "이모지 팩 생성 실패:",
-      "loginRequired": "이모지 팩을 생성하려면 로그인하세요"
+      "loginRequired": "이모지 팩을 생성하려면 로그인하세요",
+      "apiModelDeprecated": "API 모델이 더 이상 사용되지 않습니다. 나중에 다시 시도해 주세요.",
+      "apiRateLimit": "API 요청 한도를 초과했습니다. 몇 분 후에 다시 시도해 주세요.",
+      "apiQuotaExceeded": "API 할당량이 소진되었습니다. 나중에 다시 시도해 주세요.",
+      "imageAnalysisFailed": "이미지 분석에 실패했습니다. 다시 시도해 주세요."
     },
     "stylesTitle": "이모지 팩 스타일 (Lovart AI에서 영감을 받음)"
   },
@@ -1012,7 +1016,11 @@
       "fileTooLarge": "이미지 크기는 5MB를 초과할 수 없습니다",
       "noImage": "먼저 이미지를 업로드해 주세요",
       "consoleError": "이모지 팩 생성 실패:",
-      "retryLater": "생성에 실패했습니다. 나중에 다시 시도해 주세요"
+      "retryLater": "생성에 실패했습니다. 나중에 다시 시도해 주세요",
+      "apiModelDeprecated": "API 모델이 더 이상 사용되지 않습니다. 나중에 다시 시도해 주세요.",
+      "apiRateLimit": "API 요청 한도를 초과했습니다. 몇 분 후에 다시 시도해 주세요.",
+      "apiQuotaExceeded": "API 할당량이 소진되었습니다. 나중에 다시 시도해 주세요.",
+      "imageAnalysisFailed": "이미지 분석에 실패했습니다. 다시 시도해 주세요."
     },
     "faq": {
       "title": "자주 묻는 질문",
