@@ -754,6 +754,17 @@
   "emojiGenerator": {
     "batchSize": "バッチサイズ",
     "pack": "パック",
-    "packs": "パック"
+    "packs": "パック",
+    "faq": {
+      "title": "よくある質問",
+      "lovartComparison": "Lovart AIと比較するとどうですか？",
+      "lovartComparisonAnswer": "Lovart AIは包括的なデザインプラットフォームですが、私たちの絵文字ジェネレーターは絵文字パックの作成に特化しています。LovartのAI駆動アプローチにインスパイアされ、絵文字作成に同様の原則を適用しています。",
+      "imageFormats": "どの画像形式がサポートされていますか？",
+      "imageFormatsAnswer": "JPG、PNG、GIF形式をサポートしています。最良の結果を得るには、明確な被写体を持つ高品質の画像を使用してください。",
+      "generationCount": "いくつの絵文字パックを生成できますか？",
+      "generationCountAnswer": "各生成は、選択したスタイルとアップロードされた画像に基づいて3-5の異なる絵文字パックバリエーションを作成します。",
+      "commercialUse": "これらの絵文字パックを商業的に使用できますか？",
+      "commercialUseAnswer": "はい、生成されたすべての絵文字パックは個人および商業目的で無料で使用できます。Lovart AIの原則にインスパイアされたAI技術を使用して作成されています。"
+    }
   }
 }

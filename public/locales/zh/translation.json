@@ -800,6 +800,17 @@
       "noImage": "请先上传图片",
       "consoleError": "生成表情包失败：",
       "retryLater": "生成失败，请稍后重试"
+    },
+    "faq": {
+      "title": "常见问题",
+      "lovartComparison": "与Lovart AI相比如何？",
+      "lovartComparisonAnswer": "虽然Lovart AI是一个综合设计平台，但我们的表情包生成器专门专注于创建表情包。我们受到Lovart AI驱动方法的启发，并将类似的原则应用到表情包创建中。",
+      "imageFormats": "支持哪些图片格式？",
+      "imageFormatsAnswer": "我们支持JPG、PNG和GIF格式。为了获得最佳效果，请使用具有清晰主题的高质量图片。",
+      "generationCount": "我可以生成多少个表情包？",
+      "generationCountAnswer": "每次生成都会根据您选择的风格和上传的图片创建3-5个不同的表情包变体。",
+      "commercialUse": "我可以商业使用这些表情包吗？",
+      "commercialUseAnswer": "是的，所有生成的表情包都可以免费用于个人和商业目的。它们使用受Lovart AI原则启发的AI技术创建。"
     }
   }
 }

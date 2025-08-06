@@ -703,6 +703,17 @@
   "emojiGenerator": {
     "batchSize": "Taille du Lot",
     "pack": "Pack",
-    "packs": "Packs"
+    "packs": "Packs",
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "lovartComparison": "Comment cela se compare-t-il à Lovart AI ?",
+      "lovartComparisonAnswer": "Alors que Lovart AI est une plateforme de conception complète, notre générateur d'emojis se concentre spécifiquement sur la création de packs d'emojis. Nous nous inspirons de l'approche alimentée par l'IA de Lovart et appliquons des principes similaires à la création d'emojis.",
+      "imageFormats": "Quels formats d'image sont pris en charge ?",
+      "imageFormatsAnswer": "Nous prenons en charge les formats JPG, PNG et GIF. Pour de meilleurs résultats, utilisez des images de haute qualité avec des sujets clairs.",
+      "generationCount": "Combien de packs d'emojis puis-je générer ?",
+      "generationCountAnswer": "Chaque génération crée 3-5 variations différentes de packs d'emojis basées sur votre style sélectionné et l'image téléchargée.",
+      "commercialUse": "Puis-je utiliser ces packs d'emojis commercialement ?",
+      "commercialUseAnswer": "Oui, tous les packs d'emojis générés sont gratuits pour un usage personnel et commercial. Ils sont créés en utilisant la technologie d'IA inspirée des principes de Lovart AI."
+    }
   }
 }

@@ -697,6 +697,17 @@
   "emojiGenerator": {
     "batchSize": "Tamaño de Lote",
     "pack": "Paquete",
-    "packs": "Paquetes"
+    "packs": "Paquetes",
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "lovartComparison": "¿Cómo se compara con Lovart AI?",
+      "lovartComparisonAnswer": "Mientras que Lovart AI es una plataforma de diseño integral, nuestro generador de emojis se enfoca específicamente en crear paquetes de emojis. Nos inspiramos en el enfoque impulsado por IA de Lovart y aplicamos principios similares a la creación de emojis.",
+      "imageFormats": "¿Qué formatos de imagen son compatibles?",
+      "imageFormatsAnswer": "Soportamos formatos JPG, PNG y GIF. Para mejores resultados, use imágenes de alta calidad con sujetos claros.",
+      "generationCount": "¿Cuántos paquetes de emojis puedo generar?",
+      "generationCountAnswer": "Cada generación crea 3-5 variaciones diferentes de paquetes de emojis basadas en su estilo seleccionado e imagen subida.",
+      "commercialUse": "¿Puedo usar estos paquetes de emojis comercialmente?",
+      "commercialUseAnswer": "Sí, todos los paquetes de emojis generados son gratuitos para uso personal y comercial. Están creados usando tecnología de IA inspirada en los principios de Lovart AI."
+    }
   }
 }

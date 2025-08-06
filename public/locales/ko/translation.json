@@ -1013,6 +1013,17 @@
       "noImage": "먼저 이미지를 업로드해 주세요",
       "consoleError": "이모지 팩 생성 실패:",
       "retryLater": "생성에 실패했습니다. 나중에 다시 시도해 주세요"
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "lovartComparison": "Lovart AI와 비교하면 어떤가요?",
+      "lovartComparisonAnswer": "Lovart AI는 종합적인 디자인 플랫폼이지만, 우리의 이모지 생성기는 이모지 팩 생성에 특화되어 있습니다. Lovart의 AI 기반 접근 방식에서 영감을 받아 이모지 생성에 유사한 원칙을 적용합니다.",
+      "imageFormats": "지원되는 이미지 형식은 무엇인가요?",
+      "imageFormatsAnswer": "JPG, PNG, GIF 형식을 지원합니다. 최상의 결과를 위해 선명한 주제가 있는 고품질 이미지를 사용하세요.",
+      "generationCount": "몇 개의 이모지 팩을 생성할 수 있나요?",
+      "generationCountAnswer": "각 생성은 선택한 스타일과 업로드한 이미지를 기반으로 3-5개의 서로 다른 이모지 팩 변형을 만듭니다.",
+      "commercialUse": "이 이모지 팩을 상업적으로 사용할 수 있나요?",
+      "commercialUseAnswer": "네, 생성된 모든 이모지 팩은 개인 및 상업적 목적으로 자유롭게 사용할 수 있습니다. Lovart AI 원칙에서 영감을 받은 AI 기술로 만들어집니다."
     }
   }
 }

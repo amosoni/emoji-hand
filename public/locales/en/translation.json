@@ -768,6 +768,17 @@
       "noImage": "Please upload an image first",
       "consoleError": "Failed to generate emoji pack:",
       "retryLater": "Generation failed, please try again later"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "lovartComparison": "How does this compare to Lovart AI?",
+      "lovartComparisonAnswer": "While Lovart AI is a comprehensive design platform, our emoji generator focuses specifically on creating emoji packs. We're inspired by Lovart's AI-powered approach and apply similar principles to emoji creation.",
+      "imageFormats": "What image formats are supported?",
+      "imageFormatsAnswer": "We support JPG, PNG, and GIF formats. For best results, use high-quality images with clear subjects.",
+      "generationCount": "How many emoji packs can I generate?",
+      "generationCountAnswer": "Each generation creates 3-5 different emoji pack variations based on your selected style and uploaded image.",
+      "commercialUse": "Can I use these emoji packs commercially?",
+      "commercialUseAnswer": "Yes, all generated emoji packs are free to use for personal and commercial purposes. They're created using AI technology inspired by Lovart AI principles."
     }
   }
 }
