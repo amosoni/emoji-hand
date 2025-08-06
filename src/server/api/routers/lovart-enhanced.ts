@@ -165,7 +165,7 @@ export const lovartEnhancedRouter = createTRPCRouter({
       const user = await prisma.user.findUnique({ where: { id: userId } });
       if (!user) throw new Error('User not found');
       
-      const isPremium = user.premiumExpireAt && new Date(user.premiumExpireAt) > new Date();
+      const isPremium = user.subscriptionExpireAt && new Date(user.subscriptionExpireAt) > new Date() && user.subscriptionPlan !== 'free';
       // 额度判断 - 暂时跳过
       // if (!isPremium && (user.freeUsesDaily ?? 0) < 1) {
       //   throw new Error('每日免费额度已用完');

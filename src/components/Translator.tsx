@@ -51,6 +51,11 @@ export default function Translator() {
   const subscriptionPlan = typeof user === 'object' && user && 'subscriptionPlan' in user ? (user as { subscriptionPlan?: string | null }).subscriptionPlan : 'free';
   const isPremium = !!subscriptionExpireAt && new Date(subscriptionExpireAt) > new Date() && subscriptionPlan !== 'free';
   const availableModes = isPremium ? ["normal", "savage", "genz", "tiktok"] : ["normal"];
+  
+  // 临时强制刷新函数
+  const forceRefresh = () => {
+    window.location.reload();
+  };
 
   useEffect(() => {
     const saved = localStorage.getItem("freeUses");
@@ -70,12 +75,17 @@ export default function Translator() {
 
   // 调试信息
   useEffect(() => {
-    console.log('Translator Debug:', {
-      user: !!user,
-      usageStats,
-      usageLoading
-    });
-  }, [user, usageStats, usageLoading]);
+    console.log('=== Translator Debug Info ===');
+    console.log('User exists:', !!user);
+    console.log('User data:', user);
+    console.log('Subscription expire at:', subscriptionExpireAt);
+    console.log('Subscription plan:', subscriptionPlan);
+    console.log('Is premium:', isPremium);
+    console.log('Available modes:', availableModes);
+    console.log('Usage stats:', usageStats);
+    console.log('Usage loading:', usageLoading);
+    console.log('=== End Debug Info ===');
+  }, [user, subscriptionExpireAt, subscriptionPlan, isPremium, availableModes, usageStats, usageLoading]);
 
   const handleSend = async () => {
     if (!inputText.trim() || isLoading) return;
