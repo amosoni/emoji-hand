@@ -811,6 +811,23 @@
       "generationCountAnswer": "每次生成都会根据您选择的风格和上传的图片创建3-5个不同的表情包变体。",
       "commercialUse": "我可以商业使用这些表情包吗？",
       "commercialUseAnswer": "是的，所有生成的表情包都可以免费用于个人和商业目的。它们使用受Lovart AI原则启发的AI技术创建。"
-    }
+    },
+    "lovartInspired": "受Lovart AI启发",
+    "lovartWhatIs": "什么是Lovart AI？",
+    "lovartDescription": "Lovart AI是一个革命性的AI设计代理，它自动化整个设计旅程，从概念到图像、视频、3D等。我们的表情包生成器受到Lovart在AI驱动创意工具方面的创新方法的启发。",
+    "lovartDescription2": "就像Lovart AI一样，我们的表情包生成器允许您上传图像并让AI创建具有不同风格的多种变体，使创意过程变得轻松愉快。",
+    "lovartFeatures": "主要功能",
+    "aiGeneration": "AI驱动的表情包生成",
+    "styleVariations": "多种风格变体",
+    "batchProcessing": "批量处理功能",
+    "lovartPrinciples": "受Lovart AI启发的设计原则",
+    "howToUse": "如何使用我们的Lovart风格表情包生成器",
+    "step1": "1. 上传图片",
+    "uploadStep": "上传您想要转换为表情包的任何图片。我们的AI将分析内容并创建变体。",
+    "step2": "2. 选择风格",
+    "styleStep": "从6种不同风格中选择：可爱、搞笑、酷炫、野性、GenZ或TikTok。每种风格都创建独特的变体。",
+    "step3": "3. 生成和下载",
+    "generateStep": "AI生成多个表情包变体。下载单个包或在您的项目中使用它们。",
+    "stylesTitle": "表情包风格（受Lovart AI启发）"
   }
 }

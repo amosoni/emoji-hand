@@ -652,6 +652,23 @@
       "generationCountAnswer": "Jede Generierung erstellt 3-5 verschiedene Emoji-Pack-Variationen basierend auf Ihrem ausgewählten Stil und hochgeladenen Bild.",
       "commercialUse": "Kann ich diese Emoji-Packs kommerziell verwenden?",
       "commercialUseAnswer": "Ja, alle generierten Emoji-Packs sind kostenlos für persönliche und kommerzielle Zwecke. Sie werden mit KI-Technologie erstellt, die von Lovart AI-Prinzipien inspiriert ist."
-    }
+    },
+    "lovartInspired": "Inspiriert von Lovart AI",
+    "lovartWhatIs": "Was ist Lovart AI?",
+    "lovartDescription": "Lovart AI ist ein revolutionärer KI-Design-Agent, der die gesamte Design-Reise automatisiert, vom Konzept bis zu Bildern, Videos, 3D und mehr. Unser Emoji-Pack-Generator ist inspiriert von Lovarts innovativem Ansatz für KI-gestützte kreative Tools.",
+    "lovartDescription2": "Genau wie Lovart AI ermöglicht unser Emoji-Generator das Hochladen eines Bildes und lässt die KI mehrere Variationen mit verschiedenen Stilen erstellen, wodurch der kreative Prozess mühelos und angenehm wird.",
+    "lovartFeatures": "Hauptmerkmale",
+    "aiGeneration": "KI-gestützte Emoji-Generierung",
+    "styleVariations": "Mehrere Stilvariationen",
+    "batchProcessing": "Batch-Verarbeitungsfunktionen",
+    "lovartPrinciples": "Von Lovart AI inspirierte Designprinzipien",
+    "howToUse": "Wie man unseren Lovart-Style Emoji-Generator verwendet",
+    "step1": "1. Bild hochladen",
+    "uploadStep": "Laden Sie ein beliebiges Bild hoch, das Sie in Emoji-Packs verwandeln möchten. Unsere KI wird den Inhalt analysieren und Variationen erstellen.",
+    "step2": "2. Stil wählen",
+    "styleStep": "Wählen Sie aus 6 verschiedenen Stilen: Cute, Funny, Cool, Savage, GenZ oder TikTok. Jeder Stil erstellt einzigartige Variationen.",
+    "step3": "3. Generieren und Herunterladen",
+    "generateStep": "Die KI generiert mehrere Emoji-Pack-Variationen. Laden Sie einzelne Packs herunter oder verwenden Sie sie in Ihren Projekten.",
+    "stylesTitle": "Emoji-Pack-Stile (Inspiriert von Lovart AI)"
   }
 }

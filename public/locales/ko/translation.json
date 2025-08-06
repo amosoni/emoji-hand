@@ -1024,6 +1024,23 @@
       "generationCountAnswer": "각 생성은 선택한 스타일과 업로드한 이미지를 기반으로 3-5개의 서로 다른 이모지 팩 변형을 만듭니다.",
       "commercialUse": "이 이모지 팩을 상업적으로 사용할 수 있나요?",
       "commercialUseAnswer": "네, 생성된 모든 이모지 팩은 개인 및 상업적 목적으로 자유롭게 사용할 수 있습니다. Lovart AI 원칙에서 영감을 받은 AI 기술로 만들어집니다."
-    }
+    },
+    "lovartInspired": "Lovart AI에서 영감을 받음",
+    "lovartWhatIs": "Lovart AI란 무엇인가요?",
+    "lovartDescription": "Lovart AI는 개념부터 이미지, 비디오, 3D 등까지 전체 디자인 여정을 자동화하는 혁신적인 AI 디자인 에이전트입니다. 우리의 이모지 팩 생성기는 Lovart의 AI 기반 창의적 도구에 대한 혁신적인 접근 방식에서 영감을 받았습니다.",
+    "lovartDescription2": "Lovart AI와 마찬가지로, 우리의 이모지 생성기를 사용하면 이미지를 업로드하고 AI가 다양한 스타일로 여러 변형을 생성할 수 있어 창의적 과정을 쉽고 즐겁게 만들 수 있습니다.",
+    "lovartFeatures": "주요 기능",
+    "aiGeneration": "AI 기반 이모지 생성",
+    "styleVariations": "다양한 스타일 변형",
+    "batchProcessing": "배치 처리 기능",
+    "lovartPrinciples": "Lovart AI에서 영감을 받은 디자인 원칙",
+    "howToUse": "Lovart 스타일 이모지 생성기 사용법",
+    "step1": "1. 이미지 업로드",
+    "uploadStep": "이모지 팩으로 변환하고 싶은 이미지를 업로드하세요. 우리의 AI가 내용을 분석하고 변형을 생성합니다.",
+    "step2": "2. 스타일 선택",
+    "styleStep": "6가지 다른 스타일 중에서 선택하세요: 귀여운, 재미있는, 쿨한, 사베지, GenZ, 또는 TikTok. 각 스타일은 고유한 변형을 생성합니다.",
+    "step3": "3. 생성 및 다운로드",
+    "generateStep": "AI가 여러 이모지 팩 변형을 생성합니다. 개별 팩을 다운로드하거나 프로젝트에서 사용하세요.",
+    "stylesTitle": "이모지 팩 스타일 (Lovart AI에서 영감을 받음)"
   }
 }

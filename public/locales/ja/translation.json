@@ -765,6 +765,23 @@
       "generationCountAnswer": "各生成は、選択したスタイルとアップロードされた画像に基づいて3-5の異なる絵文字パックバリエーションを作成します。",
       "commercialUse": "これらの絵文字パックを商業的に使用できますか？",
       "commercialUseAnswer": "はい、生成されたすべての絵文字パックは個人および商業目的で無料で使用できます。Lovart AIの原則にインスパイアされたAI技術を使用して作成されています。"
-    }
+    },
+    "lovartInspired": "Lovart AIにインスパイア",
+    "lovartWhatIs": "Lovart AIとは？",
+    "lovartDescription": "Lovart AIは、コンセプトから画像、動画、3Dなど、デザインの全過程を自動化する革新的なAIデザインエージェントです。私たちの絵文字パックジェネレーターは、LovartのAI駆動クリエイティブツールへの革新的なアプローチにインスパイアされています。",
+    "lovartDescription2": "Lovart AIと同様に、私たちの絵文字ジェネレーターは、画像をアップロードしてAIが異なるスタイルで複数のバリエーションを作成できるようにし、クリエイティブプロセスを簡単で楽しいものにします。",
+    "lovartFeatures": "主要機能",
+    "aiGeneration": "AI駆動絵文字生成",
+    "styleVariations": "複数のスタイルバリエーション",
+    "batchProcessing": "バッチ処理機能",
+    "lovartPrinciples": "Lovart AIにインスパイアされたデザイン原則",
+    "howToUse": "Lovartスタイル絵文字ジェネレーターの使用方法",
+    "step1": "1. 画像アップロード",
+    "uploadStep": "絵文字パックに変換したい画像をアップロードしてください。私たちのAIがコンテンツを分析し、バリエーションを作成します。",
+    "step2": "2. スタイル選択",
+    "styleStep": "6つの異なるスタイルから選択してください：Cute、Funny、Cool、Savage、GenZ、またはTikTok。各スタイルはユニークなバリエーションを作成します。",
+    "step3": "3. 生成とダウンロード",
+    "generateStep": "AIが複数の絵文字パックバリエーションを生成します。個別のパックをダウンロードするか、プロジェクトで使用してください。",
+    "stylesTitle": "絵文字パックスタイル（Lovart AIにインスパイア）"
   }
 }

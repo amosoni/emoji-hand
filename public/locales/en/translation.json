@@ -779,6 +779,23 @@
       "generationCountAnswer": "Each generation creates 3-5 different emoji pack variations based on your selected style and uploaded image.",
       "commercialUse": "Can I use these emoji packs commercially?",
       "commercialUseAnswer": "Yes, all generated emoji packs are free to use for personal and commercial purposes. They're created using AI technology inspired by Lovart AI principles."
-    }
+    },
+    "lovartInspired": "Inspired by Lovart AI",
+    "lovartWhatIs": "What is Lovart AI?",
+    "lovartDescription": "Lovart AI is a revolutionary AI design agent that automates the entire design journey, from concept to images, videos, 3D, and more. Our emoji pack generator is inspired by Lovart's innovative approach to AI-powered creative tools.",
+    "lovartDescription2": "Just like Lovart AI, our emoji generator allows you to upload an image and let AI create multiple variations with different styles, making the creative process effortless and enjoyable.",
+    "lovartFeatures": "Key Features",
+    "aiGeneration": "AI-powered emoji generation",
+    "styleVariations": "Multiple style variations",
+    "batchProcessing": "Batch processing capabilities",
+    "lovartPrinciples": "Lovart AI-inspired design principles",
+    "howToUse": "How to Use Our Lovart-Style Emoji Generator",
+    "step1": "1. Upload Image",
+    "uploadStep": "Upload any image you want to transform into emoji packs. Our AI will analyze the content and create variations.",
+    "step2": "2. Choose Style",
+    "styleStep": "Select from 6 different styles: Cute, Funny, Cool, Savage, GenZ, or TikTok. Each style creates unique variations.",
+    "step3": "3. Generate & Download",
+    "generateStep": "AI generates multiple emoji pack variations. Download individual packs or use them in your projects.",
+    "stylesTitle": "Emoji Pack Styles (Lovart AI Inspired)"
   }
 }

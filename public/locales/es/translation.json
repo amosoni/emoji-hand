@@ -708,6 +708,23 @@
       "generationCountAnswer": "Cada generación crea 3-5 variaciones diferentes de paquetes de emojis basadas en su estilo seleccionado e imagen subida.",
       "commercialUse": "¿Puedo usar estos paquetes de emojis comercialmente?",
       "commercialUseAnswer": "Sí, todos los paquetes de emojis generados son gratuitos para uso personal y comercial. Están creados usando tecnología de IA inspirada en los principios de Lovart AI."
-    }
+    },
+    "lovartInspired": "Inspirado en Lovart AI",
+    "lovartWhatIs": "¿Qué es Lovart AI?",
+    "lovartDescription": "Lovart AI es un agente de diseño de IA revolucionario que automatiza todo el viaje de diseño, desde el concepto hasta imágenes, videos, 3D y más. Nuestro generador de paquetes de emojis está inspirado en el enfoque innovador de Lovart para herramientas creativas impulsadas por IA.",
+    "lovartDescription2": "Al igual que Lovart AI, nuestro generador de emojis te permite subir una imagen y dejar que la IA cree múltiples variaciones con diferentes estilos, haciendo el proceso creativo sin esfuerzo y agradable.",
+    "lovartFeatures": "Características Clave",
+    "aiGeneration": "Generación de emojis impulsada por IA",
+    "styleVariations": "Múltiples variaciones de estilo",
+    "batchProcessing": "Capacidades de procesamiento por lotes",
+    "lovartPrinciples": "Principios de diseño inspirados en Lovart AI",
+    "howToUse": "Cómo Usar Nuestro Generador de Emojis Estilo Lovart",
+    "step1": "1. Subir Imagen",
+    "uploadStep": "Sube cualquier imagen que quieras transformar en paquetes de emojis. Nuestra IA analizará el contenido y creará variaciones.",
+    "step2": "2. Elegir Estilo",
+    "styleStep": "Selecciona entre 6 estilos diferentes: Cute, Funny, Cool, Savage, GenZ o TikTok. Cada estilo crea variaciones únicas.",
+    "step3": "3. Generar y Descargar",
+    "generateStep": "La IA genera múltiples variaciones de paquetes de emojis. Descarga paquetes individuales o úsalos en tus proyectos.",
+    "stylesTitle": "Estilos de Paquetes de Emojis (Inspirado en Lovart AI)"
   }
 }

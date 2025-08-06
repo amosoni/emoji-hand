@@ -642,6 +642,23 @@
       "generationCountAnswer": "Ogni generazione crea 3-5 diverse variazioni di pacchetti di emoji basate sul tuo stile selezionato e immagine caricata.",
       "commercialUse": "Posso usare questi pacchetti di emoji commercialmente?",
       "commercialUseAnswer": "Sì, tutti i pacchetti di emoji generati sono gratuiti per uso personale e commerciale. Sono creati usando la tecnologia AI ispirata ai principi di Lovart AI."
-    }
+    },
+    "lovartInspired": "Ispirato da Lovart AI",
+    "lovartWhatIs": "Cos'è Lovart AI?",
+    "lovartDescription": "Lovart AI è un agente di design AI rivoluzionario che automatizza l'intero viaggio di design, dal concetto alle immagini, video, 3D e altro ancora. Il nostro generatore di pacchetti di emoji è ispirato dall'approccio innovativo di Lovart per strumenti creativi alimentati dall'IA.",
+    "lovartDescription2": "Proprio come Lovart AI, il nostro generatore di emoji ti permette di caricare un'immagine e far creare all'IA multiple variazioni con diversi stili, rendendo il processo creativo senza sforzo e piacevole.",
+    "lovartFeatures": "Caratteristiche Principali",
+    "aiGeneration": "Generazione di emoji alimentata dall'IA",
+    "styleVariations": "Multiple variazioni di stile",
+    "batchProcessing": "Capacità di elaborazione batch",
+    "lovartPrinciples": "Principi di design ispirati a Lovart AI",
+    "howToUse": "Come Usare il Nostro Generatore di Emoji Stile Lovart",
+    "step1": "1. Carica Immagine",
+    "uploadStep": "Carica qualsiasi immagine che vuoi trasformare in pacchetti di emoji. La nostra IA analizzerà il contenuto e creerà variazioni.",
+    "step2": "2. Scegli Stile",
+    "styleStep": "Seleziona tra 6 stili diversi: Cute, Funny, Cool, Savage, GenZ o TikTok. Ogni stile crea variazioni uniche.",
+    "step3": "3. Genera e Scarica",
+    "generateStep": "L'IA genera multiple variazioni di pacchetti di emoji. Scarica pacchetti individuali o usali nei tuoi progetti.",
+    "stylesTitle": "Stili di Pacchetti di Emoji (Ispirato da Lovart AI)"
   }
 }

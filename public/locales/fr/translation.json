@@ -714,6 +714,23 @@
       "generationCountAnswer": "Chaque génération crée 3-5 variations différentes de packs d'emojis basées sur votre style sélectionné et l'image téléchargée.",
       "commercialUse": "Puis-je utiliser ces packs d'emojis commercialement ?",
       "commercialUseAnswer": "Oui, tous les packs d'emojis générés sont gratuits pour un usage personnel et commercial. Ils sont créés en utilisant la technologie d'IA inspirée des principes de Lovart AI."
-    }
+    },
+    "lovartInspired": "Inspiré par Lovart AI",
+    "lovartWhatIs": "Qu'est-ce que Lovart AI ?",
+    "lovartDescription": "Lovart AI est un agent de conception IA révolutionnaire qui automatise tout le parcours de conception, du concept aux images, vidéos, 3D et plus encore. Notre générateur de packs d'emojis s'inspire de l'approche innovante de Lovart pour les outils créatifs alimentés par l'IA.",
+    "lovartDescription2": "Tout comme Lovart AI, notre générateur d'emojis vous permet de télécharger une image et de laisser l'IA créer plusieurs variations avec différents styles, rendant le processus créatif sans effort et agréable.",
+    "lovartFeatures": "Caractéristiques Clés",
+    "aiGeneration": "Génération d'emojis alimentée par l'IA",
+    "styleVariations": "Variations de style multiples",
+    "batchProcessing": "Capacités de traitement par lots",
+    "lovartPrinciples": "Principes de conception inspirés de Lovart AI",
+    "howToUse": "Comment Utiliser Notre Générateur d'Emojis Style Lovart",
+    "step1": "1. Télécharger l'Image",
+    "uploadStep": "Téléchargez n'importe quelle image que vous voulez transformer en packs d'emojis. Notre IA analysera le contenu et créera des variations.",
+    "step2": "2. Choisir le Style",
+    "styleStep": "Sélectionnez parmi 6 styles différents : Cute, Funny, Cool, Savage, GenZ ou TikTok. Chaque style crée des variations uniques.",
+    "step3": "3. Générer et Télécharger",
+    "generateStep": "L'IA génère plusieurs variations de packs d'emojis. Téléchargez des packs individuels ou utilisez-les dans vos projets.",
+    "stylesTitle": "Styles de Packs d'Emojis (Inspiré par Lovart AI)"
   }
 }
