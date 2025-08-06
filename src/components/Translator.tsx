@@ -47,8 +47,9 @@ export default function Translator() {
   const [userAvatar] = useState(() => avatarList[Math.floor(Math.random() * avatarList.length)]);
 
   // 判断是否会员
-  const premiumExpireAt = typeof user === 'object' && user && 'premiumExpireAt' in user ? (user as { premiumExpireAt?: string | null }).premiumExpireAt : null;
-  const isPremium = !!premiumExpireAt && new Date(premiumExpireAt) > new Date();
+  const subscriptionExpireAt = typeof user === 'object' && user && 'subscriptionExpireAt' in user ? (user as { subscriptionExpireAt?: string | null }).subscriptionExpireAt : null;
+  const subscriptionPlan = typeof user === 'object' && user && 'subscriptionPlan' in user ? (user as { subscriptionPlan?: string | null }).subscriptionPlan : 'free';
+  const isPremium = !!subscriptionExpireAt && new Date(subscriptionExpireAt) > new Date() && subscriptionPlan !== 'free';
   const availableModes = isPremium ? ["normal", "savage", "genz", "tiktok"] : ["normal"];
 
   useEffect(() => {

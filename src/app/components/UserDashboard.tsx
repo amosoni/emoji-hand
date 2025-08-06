@@ -9,6 +9,8 @@ interface User {
   email?: string | null;
   image?: string | null;
   premiumExpireAt?: string | null;
+  subscriptionExpireAt?: string | null;
+  subscriptionPlan?: string | null;
   username?: string | null;
   points?: number | null;
   createdAt?: string | null;
@@ -24,8 +26,10 @@ export default function UserDashboard() {
 
   if (!user) return null;
 
-  const isPremium = !!user.premiumExpireAt && new Date(user.premiumExpireAt) > new Date();
-  const premiumExpireDate = user.premiumExpireAt ? new Date(user.premiumExpireAt) : null;
+  const subscriptionExpireAt = user.subscriptionExpireAt;
+  const subscriptionPlan = user.subscriptionPlan ?? 'free';
+  const isPremium = !!subscriptionExpireAt && new Date(subscriptionExpireAt) > new Date() && subscriptionPlan !== 'free';
+  const premiumExpireDate = subscriptionExpireAt ? new Date(subscriptionExpireAt) : null;
   const daysUntilExpiry = premiumExpireDate ? Math.ceil((premiumExpireDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : 0;
 
   return (

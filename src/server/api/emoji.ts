@@ -29,11 +29,12 @@ export const emojiRouter = createTRPCRouter({
         where: { id: userId },
         select: {
           id: true,
-          premiumExpireAt: true
+          subscriptionExpireAt: true,
+          subscriptionPlan: true
         }
       });
       if (!user) throw new Error('User not found');
-      const isPremium = user.premiumExpireAt && new Date(user.premiumExpireAt) > new Date();
+      const isPremium = user.subscriptionExpireAt && new Date(user.subscriptionExpireAt) > new Date() && user.subscriptionPlan !== 'free';
       // 额度判断 - 暂时跳过
       // if (isPremium) {
       //   if ((user.translationUsesToday ?? 0) >= 15) throw new Error('Daily quota exceeded.');
