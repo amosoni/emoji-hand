@@ -39,21 +39,7 @@ export default function ProfilePage() {
     refetchInterval: 30000 // 每30秒刷新一次
   });
 
-  // 订阅套餐限制配置
-  const subscriptionLimits = {
-    free: { translation: 3, imageGeneration: 0 },
-    starter: { translation: 10, imageGeneration: 5 },
-    pro: { translation: 20, imageGeneration: 10 },
-    enterprise: { translation: 50, imageGeneration: 25 }
-  };
-
-  // 获取当前套餐的限制
-  const getCurrentPlanLimits = () => {
-    const plan = user?.subscriptionPlan ?? 'free';
-    return subscriptionLimits[plan as keyof typeof subscriptionLimits] ?? subscriptionLimits.free;
-  };
-
-  const currentLimits = getCurrentPlanLimits();
+  // 移除本地写死的限制配置，完全使用API返回的数据
   return (
     <div className="min-h-screen bg-gradient-to-r from-yellow-400 via-orange-300 to-pink-500">
       <UnifiedNavBar />
@@ -155,7 +141,6 @@ export default function ProfilePage() {
                     )}
                   </>
                 )}
-
                 {user.createdAt && (
                   <div className="flex justify-between"><span>{t('profile.createdAt', 'Registered at')}</span><span>{new Date(user.createdAt).toLocaleDateString()}</span></div>
                 )}
@@ -164,9 +149,7 @@ export default function ProfilePage() {
                 )}
               </div>
             </>
-          ) : (
-            <p className="mb-4 text-white/90">{t('profile.notLoggedIn', 'You are not logged in.')}</p>
-          )}
+          ) : null}
         </div>
       </div>
       <Footer />

@@ -14,11 +14,11 @@ export const usageLimitsRouter = createTRPCRouter({
     console.log('=============================');
     
     if (!userId) {
-      // 未登录用户返回默认限制
+      // 未登录用户返回默认限制（与免费用户一致）
       console.log('No userId found, returning default stats for anonymous user');
       return {
         usage: {
-          translation: { used: 0, limit: 8, remaining: 8 },
+          translation: { used: 0, limit: 3, remaining: 3 },
           imageGeneration: { used: 0, limit: 0, remaining: 0 }
         }
       };
@@ -46,7 +46,7 @@ export const usageLimitsRouter = createTRPCRouter({
         console.log('User not found in database');
         return {
           usage: {
-            translation: { used: 0, limit: 8, remaining: 8 },
+            translation: { used: 0, limit: 3, remaining: 3 },
             imageGeneration: { used: 0, limit: 0, remaining: 0 }
           }
         };
@@ -101,7 +101,7 @@ export const usageLimitsRouter = createTRPCRouter({
       console.error('Error getting usage stats:', error);
       return {
         usage: {
-          translation: { used: 0, limit: 8, remaining: 8 },
+          translation: { used: 0, limit: 3, remaining: 3 },
           imageGeneration: { used: 0, limit: 0, remaining: 0 }
         }
       };
