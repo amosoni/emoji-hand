@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useLoginModal } from "@/components/LoginModalContext";
 import DouyinEmojiPicker from "@/components/DouyinEmojiPicker";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { parseDouyinShortcodes } from "@/utils/tiktokEmojis";
 // i18n.changeLanguage('en'); // 移除全局强制切换，保留自动检测
 
@@ -22,6 +22,8 @@ interface ChatMessage {
 export default function Translator() {
   const { t } = useTranslation();
   const router = useRouter();
+  const params = useParams();
+  const locale = params?.locale as string || 'en';
   const [inputText, setInputText] = useState("");
   const [mode, setMode] = useState<"normal" | "savage" | "genz" | "tiktok">("normal");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
