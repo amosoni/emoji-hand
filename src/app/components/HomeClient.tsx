@@ -52,7 +52,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
           <HomeHero />
           <Translator />
           <div className="mt-4 text-white/80 text-center">
-            {t('tryPrefix', 'Try:')} <span className="bg-white/20 rounded px-2 py-1">{t('tryExample', "Let's party tonight")}</span> → <span className="font-bold">{t('tryResult', '🎉🕺✨')}</span>
+            {t('tryPrefix', 'Try:')} <span className="bg-white/20 rounded px-2 py-1">{t('tryExample', "Let's party tonight")}</span> → <span className="font-bold">{t('tryResult', '🎉🍻🥳')}</span>
           </div>
           {/* 应用场景区块 */}
           <section className="flex flex-col items-center my-12">
@@ -101,7 +101,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
             <div className="bg-white/20 border-2 border-transparent bg-clip-padding rounded-2xl shadow-xl p-8 flex flex-col items-center transition hover:scale-105 hover:shadow-2xl hover:border-pink-300/60">
               <span className="text-4xl mb-3 animate-bounce">🤖</span>
               <h3 className="font-bold text-2xl mb-2 text-white drop-shadow">{t('highlight1Title', 'AI Smart Emoji')}</h3>
-              <p className="text-white/80 text-center">{t('highlight1Desc', 'Context-aware emoji translation powered by GPT.')}</p>
+              <p className="text-white/80 text-center">{t('highlight1Desc', 'Context aware emoji translation powered by GPT.')}</p>
             </div>
             <div className="bg-white/20 border-2 border-transparent bg-clip-padding rounded-2xl shadow-xl p-8 flex flex-col items-center transition hover:scale-105 hover:shadow-2xl hover:border-blue-300/60">
               <span className="text-4xl mb-3 animate-spin-slow">🌍</span>
@@ -116,7 +116,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
           </section>
           {/* 热门表情区 */}
           <section className="flex flex-col items-center my-12">
-            <h2 className="text-4xl font-bold text-white text-center mb-8">{t('hotEmojis', 'hotEmojis')}</h2>
+            <h2 className="text-4xl font-bold text-white text-center mb-8">{t('hotEmojis', 'Hot Emojis')}</h2>
             <EmojiStats />
           </section>
 
@@ -150,7 +150,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
               </div>
               <div className="bg-white/10 rounded-xl p-4">
                 <h4 className="font-semibold text-white">{t('faq3Q', 'How does the AI work?')}</h4>
-              <p className="text-white/80">{t('faq3A', "We use OpenAI's GPT to understand your text and add the most relevant emojis based on context and style.")}</p>
+                <p className="text-white/80">{t('faq3A', "We use OpenAI's GPT to understand your text and add the most relevant emojis based on context and style.")}</p>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
                 <h4 className="font-semibold text-white">{t('faq4Q', 'Can I use Emoji Hand on my phone?')}</h4>
@@ -162,7 +162,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
           <section className="flex flex-col items-center my-12">
             <h2 className="text-3xl font-bold text-white mb-6">{t('aboutTitle', 'About Emoji Hand')}</h2>
             <div className="max-w-2xl text-white/90 text-center text-lg mb-4">
-              {t('aboutDesc', 'Emoji Hand was born from the idea that everyone deserves to express themselves more vividly online. Our mission is to make digital communication more fun, emotional, and creative—one emoji at a time. Whether you’re chatting with friends, posting on social media, or just want to brighten someone’s day, Emoji Hand is here to help!')}
+              {t('aboutDesc', 'Emoji Hand was born from the idea that everyone deserves to express themselves more vividly online. Our mission is to make digital communication more fun, emotional, and creative — one emoji at a time. Whether you\'re chatting with friends, posting on social media, or just want to brighten someone\'s day, Emoji Hand is here to help!')}
             </div>
           </section>
           {/* 使用案例区块 */}

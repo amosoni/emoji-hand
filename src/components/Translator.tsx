@@ -129,8 +129,9 @@ export default function Translator() {
       });
       // 立即刷新使用量统计
       await refetchUsage();
-    } catch (err: any) {
-      setError(err?.message ?? '服务异常');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : '服务异常';
+      setError(errorMessage);
     }
     setIsLoading(false);
     setInputText("");
@@ -139,7 +140,7 @@ export default function Translator() {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      handleSend();
+      void handleSend();
     }
   };
 
@@ -161,6 +162,11 @@ export default function Translator() {
               />
             </div>
           </div>
+          {usageStats.usage.translation.used >= usageStats.usage.translation.limit && (
+            <div className="mt-2 text-yellow-300 text-sm text-center">
+              {t('usage.limitReached', 'Daily limit reached. Upgrade to premium for unlimited translations!')}
+            </div>
+          )}
         </div>
       )}
       
@@ -205,7 +211,7 @@ export default function Translator() {
               <p className="mb-4">{t('paywall.desc', '升级会员即可解锁全部风格和GPT-4.0！')}</p>
               <button className="bg-pink-500 text-white px-6 py-2 rounded-lg font-bold" onClick={() => {
                 setShowPaywall(false);
-                router.push('/subscribe');
+                router.push(`/${locale}/emoji-pack-subscription`);
               }}>{t('paywall.iknow', '我知道了')}</button>
             </div>
           </div>
@@ -239,7 +245,7 @@ export default function Translator() {
                             setCopiedIdx(idx);
                             setTimeout(() => setCopiedIdx(null), 1200);
                           }}
-                          title="Copy"
+                          title={t('copy.message', 'Copy message')}
                           aria-label="Copy AI reply"
                         >
                           {copiedIdx === idx ? (
@@ -305,6 +311,7 @@ export default function Translator() {
             onClick={() => setShowDouyinPicker(!showDouyinPicker)}
             className="px-4 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg transition-colors"
             aria-label="Toggle Douyin emoji picker"
+            title={t('douyin.emojiPicker', '抖音表情选择器')}
           >
             🎵
           </button>
