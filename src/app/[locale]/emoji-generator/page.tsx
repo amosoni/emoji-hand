@@ -14,17 +14,9 @@ export default function EmojiGeneratorPage({ params }: { params: { locale: strin
   const { data: session } = useSession();
   const { show } = useLoginModal();
   
-  // 页面语言切换
+  // 页面语言切换 - 移除强制切换，让AppProviders处理
   useEffect(() => {
-    console.log('Page locale:', params.locale, 'Current i18n language:', i18n.language);
-    if (params.locale && i18n.language !== params.locale) {
-      console.log('Changing language to:', params.locale);
-      i18n.changeLanguage(params.locale);
-    } else if (!params.locale && i18n.language !== 'en') {
-      // 如果没有 locale 参数，默认使用英文
-      console.log('No locale, defaulting to en');
-      i18n.changeLanguage('en');
-    }
+    console.log('EmojiGeneratorPage: locale =', params.locale, 'Current i18n language =', i18n.language);
   }, [params.locale, i18n]);
 
   // SEO结构化数据

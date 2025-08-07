@@ -56,20 +56,9 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
   });
 
   useEffect(() => {
-    console.log('EmojiGenerator locale:', locale, 'Current i18n language:', i18n.language);
-    if (locale && i18n.language !== locale) {
-      console.log('EmojiGenerator changing language to:', locale);
-      i18n.changeLanguage(locale).then(() => {
-        console.log('EmojiGenerator language changed, setting ready');
-        setReady(true);
-      }).catch((error) => {
-        console.error('Failed to change language:', error);
-        setReady(true);
-      });
-    } else {
-      console.log('EmojiGenerator no language change needed, setting ready');
-      setReady(true);
-    }
+    console.log('EmojiGenerator: locale =', locale, 'Current i18n language =', i18n.language);
+    // 移除强制语言切换，让AppProviders处理
+    setReady(true);
   }, [locale, i18n]);
 
   if (!ready) return null;
@@ -153,7 +142,7 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
 
   const downloadPack = (pack: EmojiPack) => {
     const link = document.createElement('a');
-    link.href = pack.url || ''; // Assuming pack.url is the image URL
+    link.href = pack.url ?? ''; // Assuming pack.url is the image URL
     link.download = `emoji-pack-${pack.style ?? 'unknown'}-${(pack.description ?? '').split(' ').join('-')}.png`;
     document.body.appendChild(link);
     link.click();
@@ -429,7 +418,7 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
                     <div key={pack.style} className="bg-white/5 rounded-xl p-4 border border-white/10">
                       <div className="flex gap-4">
                         <img 
-                          src={pack.url || ''} 
+                          src={pack.url ?? ''} 
                           alt={`Emoji Pack ${pack.style}`}
                           className="w-24 h-24 object-cover rounded-lg"
                         />
