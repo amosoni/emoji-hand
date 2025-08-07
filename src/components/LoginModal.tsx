@@ -121,7 +121,7 @@ export default function LoginModal() {
               {loading ? t('register.loading', 'Registering...') : t('register.continue', 'Continue')}
             </button>
             {error && <div className="modal-error">{error}</div>}
-            {success && <div className="modal-success">{t('register.emailSent', 'Registration successful! Please check your email to activate your account.')}</div>}
+            {success && <div className="modal-success">{t('register.emailSent')}</div>}
           </form>
         ) : (
           <form onSubmit={handleLogin} className="login-form">

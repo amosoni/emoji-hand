@@ -1,8 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { prisma } from '~/server/db';
 import bcrypt from 'bcryptjs';
-import nodemailer from 'nodemailer';
+import { prisma } from '../../../server/db';
 import { randomBytes } from 'crypto';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const getI18nText = (lang: string, key: string): string => {
   // 简化：实际项目应从多语言包读取
@@ -105,15 +107,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // 发送多语言激活邮件（即使失败也不影响注册成功）
     try {
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT) || 465,
-        secure: true,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS
-        }
-      });
       const verifyUrl = `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/verify-email?token=${token}`;
       const html = `
         <div style="font-family:sans-serif;max-width:480px;margin:auto;">
@@ -124,12 +117,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <p style="color:#888;font-size:12px;">${getI18nText(lang, 'ignore')}</p>
         </div>
       `;
-      await transporter.sendMail({
-        from: process.env.SMTP_FROM || 'no-reply@emojihand.com',
-        to: email,
-        subject: getI18nText(lang, 'subject'),
-        html
-      });
+              await resend.emails.send({
+          from: 'onboarding@resend.dev',
+          to: email,
+          subject: getI18nText(lang, 'subject'),
+          html
+        });
       console.log('Email sent successfully to:', email);
     } catch (emailError) {
       console.error('Email sending failed:', emailError);
