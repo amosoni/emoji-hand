@@ -16,6 +16,7 @@ interface User {
   points?: number | null;
   createdAt?: string | null;
   freeUsesDaily?: number | null;
+  emailVerified?: Date | null;
   // 订阅相关字段
   subscriptionPlan?: string | null;
   subscriptionStatus?: string | null;

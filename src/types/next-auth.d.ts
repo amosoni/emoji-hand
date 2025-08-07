@@ -13,6 +13,7 @@ declare module "next-auth" {
       premiumUsesWeekly?: number | null;
       freeUsesDaily?: number | null;
       freeUsesWeekly?: number | null;
+      emailVerified?: Date | null;
       // 其它你需要的字段
     } & DefaultSession["user"];
   }
