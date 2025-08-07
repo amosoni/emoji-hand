@@ -126,7 +126,7 @@ export const emojiPackRouter = createTRPCRouter({
             ];
             
             // 基于原图进行风格转换，保持原图主体不变
-            const customText = input.emotion ? `, subtly incorporate the text "${input.emotion}" into the design if requested, but prioritize maintaining the original image composition and characters` : '';
+            const customText = input.emotion ? `, add the text \"${input.emotion}\" in large, bold, clear font on the image, make sure the text is highly visible and readable, overlay the text on the image, do not hide or blend the text, the text must be present in the final image` : '';
             // 合并自定义提示词
             const userPrompt = input.customPrompt ? `, ${input.customPrompt}` : '';
             const variationPrompt = `${basePrompt}, ${variations[index] ?? `version ${index + 1}`}, based on the original image, maintain the original characters and composition, apply ${input.style ?? 'cute'} style transformation, high quality, clean background${customText}${userPrompt}`;

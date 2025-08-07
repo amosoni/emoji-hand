@@ -28,6 +28,7 @@ export default function EmojiPackGenerator() {
   const [targetAudience, setTargetAudience] = useState('');
   const [commercialUse, setCommercialUse] = useState(false);
   const [packCount, setPackCount] = useState(3);
+  const [batchSize, setBatchSize] = useState(1);
   const [isGenerating, setIsGenerating] = useState(false);
   const [result, setResult] = useState<EmojiPackResult | null>(null);
 

@@ -27,7 +27,7 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
   const [generatedPacks, setGeneratedPacks] = useState<EmojiPack[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState('cute');
-  const [batchSize, setBatchSize] = useState(3);
+  const [batchSize, setBatchSize] = useState(1);
   const [customPrompt, setCustomPrompt] = useState('');
   const [includeText, setIncludeText] = useState(false);
   const [customText, setCustomText] = useState('');
