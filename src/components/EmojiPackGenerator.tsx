@@ -323,25 +323,17 @@ export default function EmojiPackGenerator() {
           <div className="mt-8 bg-white/5 rounded-lg p-6">
             <h3 className="text-xl font-bold text-white mb-4">🎭 {t('emojiGenerator.resultTitle', 'Result')}</h3>
             
-            {/* 图片分析 */}
-            <div className="mb-6">
-              <h4 className="text-lg font-semibold text-white mb-2">{t('emojiGenerator.analysis', 'AI Analysis')}</h4>
-              <div className="bg-white/10 rounded-lg p-4 text-white/90 whitespace-pre-wrap">
-                {result.imageAnalysis}
-              </div>
-            </div>
-
             {/* 表情包设计 */}
             <div className="mb-6">
-              <h4 className="text-lg font-semibold text-white mb-4">5个表情包设计</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">生成的表情包</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                 {result.emojiPacks.filter(pack => pack.url).map((pack, index) => (
-                   <div key={index} className="bg-white/10 rounded-lg p-4">
-                     <img 
-                       src={pack.url!} 
-                       alt={`表情包 ${index + 1}`} 
-                       className="w-full rounded-lg mb-2"
-                     />
+                {result.emojiPacks.filter(pack => pack.url).map((pack, index) => (
+                  <div key={index} className="bg-white/10 rounded-lg p-4">
+                    <img 
+                      src={pack.url!} 
+                      alt={`表情包 ${index + 1}`} 
+                      className="w-full rounded-lg mb-2"
+                    />
                     <div className="text-center">
                       <div className="text-white font-semibold mb-1">{pack.style}风格</div>
                       <div className="text-white/70 text-sm">{pack.description}</div>
@@ -350,16 +342,6 @@ export default function EmojiPackGenerator() {
                 ))}
               </div>
             </div>
-
-            {/* 设计建议 */}
-            {result.designAdvice && (
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-white mb-2">设计建议</h4>
-                <div className="bg-white/10 rounded-lg p-4 text-white/90 whitespace-pre-wrap">
-                  {result.designAdvice}
-                </div>
-              </div>
-            )}
 
             {/* 剩余配额 */}
             <div className="text-sm text-gray-300">

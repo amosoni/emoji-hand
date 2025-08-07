@@ -24,16 +24,16 @@ const detectLanguage = (text: string): string => {
 // 获取语言特定的提示词
 const getLanguageSpecificPrompt = (language: string, mode: string) => {
   const languageInstructions = {
-    'zh': '请使用中文回复，保持自然流畅的表达',
+    'zh': 'Please respond in Chinese, maintain natural and fluent expression',
     'en': 'Please respond in English, maintain natural and fluent expression',
-    'ja': '日本語で返信してください。自然で流暢な表現を保ってください',
-    'ko': '한국어로 답변해 주세요. 자연스럽고 유창한 표현을 유지하세요',
-    'es': 'Por favor responde en español, mantén una expresión natural y fluida',
-    'fr': 'Veuillez répondre en français, maintenez une expression naturelle et fluide',
-    'pt': 'Por favor responda em português, mantenha uma expressão natural e fluida',
-    'de': 'Bitte antworten Sie auf Deutsch, behalten Sie einen natürlichen und flüssigen Ausdruck bei',
-    'it': 'Per favore rispondi in italiano, mantieni un\'espressione naturale e fluida',
-    'ru': 'Пожалуйста, отвечайте на русском языке, сохраняйте естественное и плавное выражение'
+    'ja': 'Please respond in Japanese, maintain natural and fluent expression',
+    'ko': 'Please respond in Korean, maintain natural and fluent expression',
+    'es': 'Please respond in Spanish, maintain natural and fluent expression',
+    'fr': 'Please respond in French, maintain natural and fluent expression',
+    'pt': 'Please respond in Portuguese, maintain natural and fluent expression',
+    'de': 'Please respond in German, maintain natural and fluent expression',
+    'it': 'Please respond in Italian, maintain natural and fluent expression',
+    'ru': 'Please respond in Russian, maintain natural and fluent expression'
   };
   
   const modePrompts = {
@@ -186,31 +186,31 @@ export const emojiRouter = createTRPCRouter({
       // 根据模式生成不同的系统提示
       const getSystemPrompt = (mode: string, language: string) => {
         const languageInstruction = {
-          'zh': '请使用中文回复',
+          'zh': 'Please respond in Chinese',
           'en': 'Please respond in English',
-          'ja': '日本語で返信してください',
-          'ko': '한국어로 답변해 주세요',
-          'es': 'Por favor responde en español',
-          'fr': 'Veuillez répondre en français',
-          'pt': 'Por favor responda em português',
-          'de': 'Bitte antworten Sie auf Deutsch',
-          'it': 'Per favore rispondi in italiano',
-          'ru': 'Пожалуйста, отвечайте на русском языке'
+          'ja': 'Please respond in Japanese',
+          'ko': 'Please respond in Korean',
+          'es': 'Please respond in Spanish',
+          'fr': 'Please respond in French',
+          'pt': 'Please respond in Portuguese',
+          'de': 'Please respond in German',
+          'it': 'Please respond in Italian',
+          'ru': 'Please respond in Russian'
         };
         
         const langInstruction = languageInstruction[language as keyof typeof languageInstruction] || languageInstruction.en;
         
         switch (mode) {
           case 'normal':
-            return `你是一个表情翻译器，根据用户输入生成带有丰富表情的回复。${langInstruction}。自然地添加相关表情符号来增强文本的表达力。`;
+            return `You are an emoji translator that generates responses with rich emojis based on user input. ${langInstruction}. Naturally add relevant emoji symbols to enhance the expressiveness of the text.`;
           case 'savage':
-            return `你是一个毒舌表情翻译器，将用户输入转换为带有讽刺、机智和态度的表情表达。${langInstruction}。使用尖锐、幽默的表情符号。`;
+            return `You are a savage emoji translator that converts user input into emoji expressions with sarcasm, wit, and attitude. ${langInstruction}. Use sharp, humorous emoji symbols.`;
           case 'genz':
-            return `你是一个GenZ俚语表情翻译器，将用户输入转换为Z世代流行的网络用语和潮流表情符号。${langInstruction}。使用现代、时尚的表达方式。`;
+            return `You are a GenZ slang emoji translator that converts user input into Z-generation popular internet slang and trendy emoji symbols. ${langInstruction}. Use modern, fashionable expressions.`;
           case 'tiktok':
-            return `你是一个TikTok风格表情翻译器，将用户输入转换为类似TikTok视频中常见的表情表达。${langInstruction}。使用TikTok平台特有的自定义表情符号，如[smile]、[happy]、[loveface]、[cry]、[angry]、[surprised]、[cool]、[excited]、[proud]、[lovely]、[greedy]、[wow]、[joyful]、[hehe]、[slap]、[tears]、[stun]、[cute]、[blink]、[disdain]、[astonish]、[rage]、[smileface]、[evil]、[angel]、[laugh]、[pride]、[nap]、[awkward]、[shock]等。这些是TikTok平台特有的自定义表情符号，模仿TikTok创作者的表达风格，使用夸张、有趣、富有感染力的表情组合。`;
+            return `You are a TikTok-style emoji translator that converts user input into emoji expressions similar to those commonly found in TikTok videos. ${langInstruction}. Use TikTok platform-specific custom emoji symbols such as [smile], [happy], [loveface], [cry], [angry], [surprised], [cool], [excited], [proud], [lovely], [greedy], [wow], [joyful], [hehe], [slap], [tears], [stun], [cute], [blink], [disdain], [astonish], [rage], [smileface], [evil], [angel], [laugh], [pride], [nap], [awkward], [shock], etc. These are TikTok platform-specific custom emoji symbols that mimic TikTok creator expression styles, using exaggerated, fun, and infectious emoji combinations.`;
           default:
-            return `你是一个表情翻译器，根据用户输入和风格生成带有丰富表情的回复。${langInstruction}。`;
+            return `You are an emoji translator that generates responses with rich emojis based on user input and style. ${langInstruction}.`;
         }
       };
       

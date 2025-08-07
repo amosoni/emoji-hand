@@ -378,38 +378,31 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
               </div>
             )}
 
-            {/* Subscription Info */}
-            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-yellow-400">💎</span>
-                <h4 className="font-semibold text-yellow-300">
-                  {t('subscriptionInfo', 'Subscription Info')}
-                </h4>
+            {/* Subscription Info - 只在免费用户时显示 */}
+            {(!session?.user?.subscriptionPlan || session.user.subscriptionPlan === 'free') && (
+              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-yellow-400">💎</span>
+                  <h4 className="font-semibold text-yellow-300">
+                    {t('subscriptionInfo', 'Subscription Info')}
+                  </h4>
+                </div>
+                <p className="text-sm text-yellow-200/90 mb-3">
+                  {t('subscriptionDesc', 'Free users can generate 3 packs per day. Upgrade to unlock more features!')}
+                </p>
+                <Link
+                  href={`/${locale}/emoji-pack-subscription`}
+                  className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  {t('upgradeNow', 'Upgrade Now')}
+                  <span>→</span>
+                </Link>
               </div>
-              <p className="text-sm text-yellow-200/90 mb-3">
-                {t('subscriptionDesc', 'Free users can generate 3 packs per day. Upgrade to unlock more features!')}
-              </p>
-              <Link
-                href={`/${locale}/emoji-pack-subscription`}
-                className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-              >
-                {t('upgradeNow', 'Upgrade Now')}
-                <span>→</span>
-              </Link>
-            </div>
+            )}
           </div>
 
           {/* Results Section */}
           <div className="mt-8 space-y-6">
-            {analysis && (
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <h3 className="text-lg font-semibold mb-3">
-                  {t('emojiGenerator.analysis', 'AI Analysis')}
-                </h3>
-                <p className="text-sm text-white leading-relaxed">{analysis}</p>
-              </div>
-            )}
-
             {generatedPacks.length > 0 && (
               <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
                 <div className="flex justify-between items-center mb-4">
@@ -450,8 +443,6 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
                               {t('emojiGenerator.download', 'Download')}
                             </button>
                           </div>
-                          
-                          {/* Removed description and tags as they are not in the new EmojiPack interface */}
                         </div>
                       </div>
                     </div>

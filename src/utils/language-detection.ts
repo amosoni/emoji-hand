@@ -103,28 +103,28 @@ export function detectLanguage(text: string): LanguageInfo {
 export function getLanguageSpecificPrompt(language: string, promptType: string): string {
   const prompts: Record<string, Record<string, string>> = {
     emoji: {
-      zh: '请使用中文回复，保持自然流畅的表达',
+      zh: 'Please respond in Chinese, maintain natural and fluent expression',
       en: 'Please respond in English, maintain natural and fluent expression',
-      ja: '日本語で返信してください。自然で流暢な表現を保ってください',
-      ko: '한국어로 답변해 주세요. 자연스럽고 유창한 표현을 유지하세요',
-      es: 'Por favor responde en español, mantén una expresión natural y fluida',
-      fr: 'Veuillez répondre en français, maintenez une expression naturelle et fluide',
-      pt: 'Por favor responda em português, mantenha uma expressão natural e fluida',
-      de: 'Bitte antworten Sie auf Deutsch, behalten Sie einen natürlichen und flüssigen Ausdruck bei',
-      it: 'Per favore rispondi in italiano, mantieni un\'espressione naturale e fluida',
-      ru: 'Пожалуйста, отвечайте на русском языке, сохраняйте естественное и плавное выражение'
+      ja: 'Please respond in Japanese, maintain natural and fluent expression',
+      ko: 'Please respond in Korean, maintain natural and fluent expression',
+      es: 'Please respond in Spanish, maintain natural and fluent expression',
+      fr: 'Please respond in French, maintain natural and fluent expression',
+      pt: 'Please respond in Portuguese, maintain natural and fluent expression',
+      de: 'Please respond in German, maintain natural and fluent expression',
+      it: 'Please respond in Italian, maintain natural and fluent expression',
+      ru: 'Please respond in Russian, maintain natural and fluent expression'
     },
     design: {
-      zh: '请使用中文进行设计分析和建议',
+      zh: 'Please provide design analysis and suggestions in Chinese',
       en: 'Please provide design analysis and suggestions in English',
-      ja: '日本語でデザイン分析と提案を行ってください',
-      ko: '한국어로 디자인 분석과 제안을 제공해 주세요',
-      es: 'Por favor proporcione análisis de diseño y sugerencias en español',
-      fr: 'Veuillez fournir une analyse de conception et des suggestions en français',
-      pt: 'Por favor forneça análise de design e sugestões em português',
-      de: 'Bitte geben Sie Designanalyse und Vorschläge auf Deutsch',
-      it: 'Per favore fornisci analisi di design e suggerimenti in italiano',
-      ru: 'Пожалуйста, предоставьте анализ дизайна и предложения на русском языке'
+      ja: 'Please provide design analysis and suggestions in Japanese',
+      ko: 'Please provide design analysis and suggestions in Korean',
+      es: 'Please provide design analysis and suggestions in Spanish',
+      fr: 'Please provide design analysis and suggestions in French',
+      pt: 'Please provide design analysis and suggestions in Portuguese',
+      de: 'Please provide design analysis and suggestions in German',
+      it: 'Please provide design analysis and suggestions in Italian',
+      ru: 'Please provide design analysis and suggestions in Russian'
     }
   };
 

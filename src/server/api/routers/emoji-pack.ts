@@ -62,26 +62,23 @@ export const emojiPackRouter = createTRPCRouter({
         throw new Error(`Daily limit exceeded. You can generate ${dailyLimit - currentUsage} more packs today. Please upgrade your subscription for more daily usage.`);
       }
 
-      // 使用Vision API分析图片内容
+      // 简化图片分析，只提取关键信息
       const visionResponse = await openai.chat.completions.create({
-        model: 'gpt-4o',
+        model: "gpt-4o",
         messages: [
           {
-            role: 'user',
+            role: "system",
+            content: "Analyze the main elements in the image, describe briefly in 50 words or less."
+          },
+          {
+            role: "user",
             content: [
               {
-                type: 'text',
-                text: `分析这张图片中的主体内容，识别主要元素、表情、动作、风格等特征。请用中文详细描述图片内容，包括：
-1. 主体对象（人物、动物、物品等）
-2. 表情和情感状态
-3. 动作和姿态
-4. 视觉风格和色彩
-5. 适合制作表情包的元素
-                
-分析结果将用于生成5个不同风格的表情包设计。`
+                type: "text",
+                text: "Please briefly analyze the main elements in this image:"
               },
               {
-                type: 'image_url',
+                type: "image_url",
                 image_url: {
                   url: input.imageUrl
                 }
@@ -89,35 +86,21 @@ export const emojiPackRouter = createTRPCRouter({
             ]
           }
         ],
-        max_tokens: 500
-      }).catch((error: any) => {
-        // 处理API错误并返回用户友好的错误信息
-        console.error('Vision API error:', error);
-        if (error?.message?.includes('deprecated')) {
-          throw new Error('apiModelDeprecated');
-        } else if (error?.message?.includes('rate limit')) {
-          throw new Error('apiRateLimit');
-        } else if (error?.message?.includes('quota')) {
-          throw new Error('apiQuotaExceeded');
-        } else {
-          throw new Error('imageAnalysisFailed');
-        }
+        max_tokens: 100,
+        temperature: 0.8
       });
 
       const imageAnalysis = visionResponse.choices[0]?.message?.content ?? '';
 
-      // 根据用户选择生成不同数量的表情包
-      const allPrompts = [
-        `${imageAnalysis} 可爱风格表情包, 卡通化, 大眼睛, 萌系, 适合社交媒体`,
-        `${imageAnalysis} 搞笑风格表情包, 夸张表情, 幽默元素, 适合聊天`,
-        `${imageAnalysis} 经典风格表情包, 简洁设计, 通用性强, 适合各种场景`,
-        `${imageAnalysis} 酷炫风格表情包, 时尚感, 潮流元素, 适合年轻人`,
-        `${imageAnalysis} 创意风格表情包, 独特设计, 艺术感, 适合特殊场合`
+      // 直接生成表情包，使用英文提示词
+      const emojiPrompts = [
+        `${imageAnalysis} cute style emoji pack, cartoon style, big eyes, kawaii`,
+        `${imageAnalysis} funny style emoji pack, exaggerated expressions, humorous elements`,
+        `${imageAnalysis} classic style emoji pack, simple design, universal appeal`,
+        `${imageAnalysis} cool style emoji pack, trendy, fashion elements`,
+        `${imageAnalysis} creative style emoji pack, unique design, artistic`
       ];
       
-      const emojiPrompts = allPrompts.slice(0, input.packCount);
-
-      // 生成5个表情包图片
       const emojiResults = await Promise.all(
         emojiPrompts.map(async (prompt, index) => {
           try {
@@ -128,43 +111,21 @@ export const emojiPackRouter = createTRPCRouter({
               size: '1024x1024',
               quality: 'hd'
             });
-                         return {
-               url: response.data?.[0]?.url ?? null,
-               style: ['可爱', '搞笑', '经典', '酷炫', '创意'][index],
-               description: prompt
-             };
+            return {
+              url: response.data?.[0]?.url ?? null,
+              style: ['可爱', '搞笑', '经典', '酷炫', '创意'][index],
+              description: `${['可爱', '搞笑', '经典', '酷炫', '创意'][index]}风格表情包`
+            };
           } catch (error) {
             console.error(`Emoji generation error ${index}:`, error);
             return {
               url: null,
               style: ['可爱', '搞笑', '酷炫', '经典', '创意'][index],
-              description: prompt
+              description: `${['可爱', '搞笑', '经典', '酷炫', '创意'][index]}风格表情包`
             };
           }
         })
       );
-
-      // 生成表情包描述和建议
-      const descriptionResponse = await openai.chat.completions.create({
-        model: 'gpt-4',
-        messages: [
-          {
-            role: 'system',
-            content: '你是一个表情包设计专家，需要为用户生成的表情包提供专业建议。'
-          },
-          {
-            role: 'user',
-            content: `基于以下图片分析：${imageAnalysis}
-
-请提供：
-1. 表情包设计理念
-2. ${input.packCount}个表情包的使用场景建议
-3. 商业价值评估（如果用户选择商业用途）
-4. 优化建议`
-          }
-        ],
-        max_tokens: 800
-      });
 
       // 更新每日使用量
       await prisma.user.update({
@@ -185,9 +146,9 @@ export const emojiPackRouter = createTRPCRouter({
       });
 
       return {
-        imageAnalysis,
+        imageAnalysis: imageAnalysis, // 简化的分析
         emojiPacks: emojiResults.filter(result => result.url !== null),
-        designAdvice: descriptionResponse.choices[0]?.message?.content ?? '',
+        designAdvice: null, // 移除啰嗦的设计建议
         targetAudience: input.targetAudience,
         commercialUse: input.commercialUse,
         remainingCredits: dailyLimit - (currentUsage + input.packCount)
