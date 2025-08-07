@@ -124,7 +124,6 @@ export default function EmojiPackGenerator() {
         emojiPackMutation.mutate({
           imageUrl,
           style: style || undefined,
-          emotion: emotion || undefined,
           targetAudience: targetAudience || undefined,
           commercialUse,
           packCount

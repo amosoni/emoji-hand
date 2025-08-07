@@ -789,7 +789,7 @@
     "promptPlaceholder": "描述您想要的表情包效果...",
     "textOptions": "文本选项",
     "includeText": "在表情包中包含文本",
-    "customTextLabel": "自定义文本（可选）：",
+    "customTextLabel": "自定义文字（可选）：",
     "customTextPlaceholder": "输入要添加到表情包的文本...",
     "textHint": "留空让AI根据图片和风格生成合适的文本",
     "generating": "AI生成中...",

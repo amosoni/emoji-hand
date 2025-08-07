@@ -1,0 +1,14 @@
+{
+    "register": {
+      "emailSent": "Registrierung erfolgreich! Bitte überprüfen Sie Ihre E-Mails, um Ihr Konto zu aktivieren."
+    },
+    "verify": {
+      "verifying": "Wird verifiziert...",
+      "successTitle": "E-Mail Verifiziert!",
+      "errorTitle": "Verifizierung Fehlgeschlagen",
+      "success": "E-Mail erfolgreich verifiziert!",
+      "error": "Verifizierung fehlgeschlagen.",
+      "invalidToken": "Ungültiger Verifizierungslink.",
+      "loginNow": "Jetzt Anmelden"
+    }
+} 

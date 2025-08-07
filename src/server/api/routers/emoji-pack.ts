@@ -9,11 +9,10 @@ export const emojiPackRouter = createTRPCRouter({
     .input(z.object({
       imageUrl: z.string(), // 用户上传的图片URL
       style: z.string().optional(),
-      emotion: z.string().optional(), // 情感风格
+      customPrompt: z.string().optional(),
       targetAudience: z.string().optional(),
       commercialUse: z.boolean().default(false),
-      packCount: z.number().min(1).max(5).default(3), // 生成数量：1-5个
-      customPrompt: z.string().optional()
+      packCount: z.number().min(1).max(5).default(3) // 生成数量：1-5个
     }))
     .mutation(async ({ ctx, input }) => {
       const userId = ctx.session?.userId;
@@ -108,7 +107,8 @@ export const emojiPackRouter = createTRPCRouter({
         return stylePrompts[style as keyof typeof stylePrompts] ?? stylePrompts.cute;
       };
 
-      // 合并用户自定义提示词
+      // 只拼接风格提示词和自定义prompt
+      const customText = '';
       const userPrompt = input.customPrompt ? `, ${input.customPrompt}` : '';
       const basePrompt = getStylePrompt(input.style ?? 'cute') + userPrompt;
       
@@ -125,9 +125,7 @@ export const emojiPackRouter = createTRPCRouter({
               'version 5, artistic angle, creative lighting, unique perspective'
             ];
             
-            // 基于原图进行风格转换，保持原图主体不变
-            const customText = input.emotion ? `, add the text \"${input.emotion}\" in large, bold, clear font on the image, make sure the text is highly visible and readable, overlay the text on the image, do not hide or blend the text, the text must be present in the final image` : '';
-            // 合并自定义提示词
+            // 只拼接风格提示词和自定义prompt
             const userPrompt = input.customPrompt ? `, ${input.customPrompt}` : '';
             const variationPrompt = `${basePrompt}, ${variations[index] ?? `version ${index + 1}`}, based on the original image, maintain the original characters and composition, apply ${input.style ?? 'cute'} style transformation, high quality, clean background${customText}${userPrompt}`;
             

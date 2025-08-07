@@ -29,8 +29,6 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
   const [selectedStyle, setSelectedStyle] = useState('cute');
   const [batchSize, setBatchSize] = useState(1);
   const [customPrompt, setCustomPrompt] = useState('');
-  const [includeText, setIncludeText] = useState(false);
-  const [customText, setCustomText] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [analysis, setAnalysis] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -138,7 +136,6 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
           imageUrl,
           packCount: batchSize,
           style: selectedStyle,
-          emotion: includeText ? customText : undefined,
           customPrompt: customPrompt || undefined,
           targetAudience: undefined,
           commercialUse: false
@@ -193,8 +190,6 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
     setAnalysis(null);
     setError(null);
     setCustomPrompt('');
-    setIncludeText(false);
-    setCustomText('');
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -341,45 +336,6 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
                   className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-400"
                   rows={3}
                 />
-            </div>
-
-            {/* Text Options */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-              <h3 className="text-lg font-semibold mb-4">
-                {t('emojiGenerator.textOptions', 'Text Options')}
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <input
-                    type="checkbox"
-                    id="includeText"
-                    checked={includeText}
-                    onChange={(e) => setIncludeText(e.target.checked)}
-                    className="w-4 h-4 text-purple-500 bg-white/10 border-white/30 rounded focus:ring-purple-500 focus:ring-2 checked:bg-purple-500 checked:border-purple-500"
-                  />
-                  <label htmlFor="includeText" className="text-white cursor-pointer">
-                    {t('emojiGenerator.includeText', 'Include text in emoji pack')}
-                  </label>
-                </div>
-                
-                {includeText && (
-                  <div className="space-y-3">
-                    <label className="block text-sm text-white">
-                      {t('emojiGenerator.customTextLabel', 'Custom text (optional):')}
-                    </label>
-                    <input
-                      type="text"
-                      value={customText}
-                      onChange={(e) => setCustomText(e.target.value)}
-                      placeholder={t('emojiGenerator.customTextPlaceholder', 'Enter text to add to emoji pack...')}
-                      className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-purple-400"
-                    />
-                    <p className="text-xs text-white/80">
-                      {t('emojiGenerator.textHint', 'Leave empty to let AI generate appropriate text based on the image and style')}
-                    </p>
-                  </div>
-                )}
-              </div>
             </div>
 
             {/* Generate Button */}

@@ -32,19 +32,8 @@ export default function LoginModal() {
       const data = await res.json() as { error?: string };
       if (res.ok) {
         setSuccess(true);
-        // 注册成功后，等待一下再登录
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const signInResult = await signIn('credentials', { email, password, redirect: false });
-        if (signInResult?.ok) {
-          await getSession(); // 强制刷新 session
-          setTimeout(() => {
-            window.location.reload(); // 使用 reload 而不是 href
-          }, 1000);
-        } else {
-          // 如果自动登录失败，提示用户手动登录
-          setError(t('register.loginFailed', 'Registration successful! Please login manually.'));
-        }
-        close();
+        // 注册成功后提示去邮箱激活，不自动登录
+        return;
       } else {
         setError((data as { error?: string })?.error ?? t('register.error', 'Registration failed'));
       }
@@ -70,7 +59,11 @@ export default function LoginModal() {
         }, 300);
         close();
       } else {
-        setError(t('login.error', 'Login failed'));
+        if (res?.error === 'EMAIL_NOT_VERIFIED') {
+          setError(t('login.emailNotVerified', 'Please verify your email before logging in.'));
+        } else {
+          setError(t('login.error', 'Login failed'));
+        }
       }
     } catch (err) {
       setError(t('login.error', 'Login failed'));
@@ -132,7 +125,7 @@ export default function LoginModal() {
               {loading ? t('register.loading', 'Registering...') : t('register.continue', 'Continue')}
             </button>
             {error && <div className="modal-error">{error}</div>}
-            {success && <div className="modal-success">{t('register.success', 'Registration successful!')}</div>}
+            {success && <div className="modal-success">{t('register.emailSent', 'Registration successful! Please check your email to activate your account.')}</div>}
           </form>
         ) : (
           <form onSubmit={handleLogin} className="login-form">

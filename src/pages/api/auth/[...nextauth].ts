@@ -38,8 +38,13 @@ export const authOptions = {
           email?: string;
           image?: string;
           passwordHash?: string;
+          emailVerified?: Date | null;
         } | null;
         if (!user || !user.passwordHash) return null;
+        if (!user.emailVerified) {
+          // 未激活邮箱，抛出自定义错误
+          throw new Error('EMAIL_NOT_VERIFIED');
+        }
         const valid = await bcrypt.compare(credentials.password, user.passwordHash);
         if (!valid) return null;
         return {

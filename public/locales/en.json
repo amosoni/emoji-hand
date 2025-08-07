@@ -13,5 +13,17 @@
   "unlockPremiumBtn": "Unlock Premium",
   "continueNormalBtn": "Continue with normal mode",
   "shareButton": "Share / Copy",
-  "hotEmojis": "🔥 Hot Emojis"
+  "hotEmojis": "🔥 Hot Emojis",
+  "register": {
+    "emailSent": "Registration successful! Please check your email to activate your account."
+  },
+  "verify": {
+    "verifying": "Verifying...",
+    "successTitle": "Email Verified!",
+    "errorTitle": "Verification Failed",
+    "success": "Email verified successfully!",
+    "error": "Verification failed.",
+    "invalidToken": "Invalid verification link.",
+    "loginNow": "Login Now"
+  }
 } 

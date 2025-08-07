@@ -1,0 +1,8 @@
+{
+    "register": {
+      "emailSent": "Inscription réussie ! Veuillez vérifier votre e-mail pour activer votre compte."
+    },
+    "login": {
+      "emailNotVerified": "Veuillez vérifier votre e-mail avant de vous connecter."
+    }
+} 
