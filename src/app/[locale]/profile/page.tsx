@@ -3,7 +3,7 @@ import UnifiedNavBar from '../../components/UnifiedNavBar';
 import Footer from '../../components/Footer';
 import { useTranslation } from "react-i18next";
 import { useSession } from "next-auth/react";
-// import { api } from "~/trpc/react";
+import { api } from "~/trpc/react";
 import { RechargeButton } from '../../components/RechargeButton';
 
 // 在顶部添加 User 类型定义
@@ -31,7 +31,12 @@ export default function ProfilePage() {
   const { data: session } = useSession();
   // 在获取 user 时加类型断言
   const user = session?.user as User | undefined;
-  // const { data: profile } = api.profile.getProfile.useQuery(undefined, { enabled: !!user });
+  
+  // 获取用户使用统计
+  const { data: usageStats } = api.usageLimits.getUserUsageStats.useQuery(undefined, { 
+    enabled: !!user,
+    refetchInterval: 30000 // 每30秒刷新一次
+  });
 
   // 订阅套餐限制配置
   const subscriptionLimits = {
@@ -79,6 +84,21 @@ export default function ProfilePage() {
                 ) : null}
               </div>
               <div className="text-white/80 mb-4">{user.email}</div>
+              {/* 邮箱验证状态 */}
+              <div className="mb-4 flex items-center gap-2">
+                <span className="text-white/90">{t('profile.emailStatus', 'Email Status')}:</span>
+                {user.emailVerified ? (
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">
+                    <span className="mr-1">✅</span>
+                    {t('profile.emailVerified', 'Verified')}
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-yellow-500 text-white">
+                    <span className="mr-1">⚠️</span>
+                    {t('profile.emailNotVerified', 'Not Verified')}
+                  </span>
+                )}
+              </div>
               <div className="w-full flex flex-col gap-2 text-white/90 text-base">
                 {user.subscriptionPlan && (
                   <div className="flex justify-between"><span>{t('profile.subscriptionPlan', 'Subscription Plan')}</span><span className="capitalize">{t(`subscriptionPlans.${user.subscriptionPlan}`, user.subscriptionPlan)}</span></div>
@@ -87,48 +107,48 @@ export default function ProfilePage() {
                   <div className="flex justify-between"><span>{t('profile.subscriptionExpireAt', 'Subscription until')}</span><span>{new Date(user.subscriptionExpireAt).toLocaleDateString()}</span></div>
                 )}
                 {/* 翻译使用情况 */}
-                {user.translationUsesToday !== undefined && (
+                {usageStats?.usage?.translation && (
                   <>
                     <div className="flex justify-between">
                       <span>{t('profile.translationUsesToday', 'Translation uses today')}</span>
-                      <span className="text-yellow-300 font-semibold">{user.translationUsesToday} / {currentLimits.translation}</span>
+                      <span className="text-yellow-300 font-semibold">{usageStats.usage.translation.used} / {usageStats.usage.translation.limit}</span>
                     </div>
                     {/* 翻译使用进度条 */}
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                       <div 
                         className="bg-gradient-to-r from-yellow-400 to-orange-500 h-2 rounded-full transition-all duration-300"
                         style={{ 
-                          width: `${Math.min(100, ((user.translationUsesToday ?? 0) / currentLimits.translation) * 100)}%` 
+                          width: `${Math.min(100, (usageStats.usage.translation.used / usageStats.usage.translation.limit) * 100)}%` 
                         }}
                       ></div>
                     </div>
                     <div className="flex justify-between">
                       <span>{t('profile.remainingTranslation', 'Remaining translations')}</span>
-                      <span className="text-green-300 font-semibold">{Math.max(0, currentLimits.translation - (user.translationUsesToday ?? 0))}</span>
+                      <span className="text-green-300 font-semibold">{Math.max(0, usageStats.usage.translation.limit - usageStats.usage.translation.used)}</span>
                     </div>
                   </>
                 )}
                 {/* 图片生成使用情况 */}
-                {user.imageGenerationUsesToday !== undefined && (
+                {usageStats?.usage?.imageGeneration && (
                   <>
                     <div className="flex justify-between">
                       <span>{t('profile.imageGenerationUsesToday', 'Image generation uses today')}</span>
-                      <span className="text-yellow-300 font-semibold">{user.imageGenerationUsesToday} / {currentLimits.imageGeneration}</span>
+                      <span className="text-yellow-300 font-semibold">{usageStats.usage.imageGeneration.used} / {usageStats.usage.imageGeneration.limit}</span>
                     </div>
-                    {currentLimits.imageGeneration > 0 && (
+                    {usageStats.usage.imageGeneration.limit > 0 && (
                       <>
                         {/* 图片生成使用进度条 */}
                         <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                           <div 
                             className="bg-gradient-to-r from-pink-400 to-purple-500 h-2 rounded-full transition-all duration-300"
                             style={{ 
-                              width: `${Math.min(100, ((user.imageGenerationUsesToday ?? 0) / currentLimits.imageGeneration) * 100)}%` 
+                              width: `${Math.min(100, (usageStats.usage.imageGeneration.used / usageStats.usage.imageGeneration.limit) * 100)}%` 
                             }}
                           ></div>
                         </div>
                         <div className="flex justify-between">
                           <span>{t('profile.remainingImageGeneration', 'Remaining image generations')}</span>
-                          <span className="text-green-300 font-semibold">{Math.max(0, currentLimits.imageGeneration - (user.imageGenerationUsesToday ?? 0))}</span>
+                          <span className="text-green-300 font-semibold">{Math.max(0, usageStats.usage.imageGeneration.limit - usageStats.usage.imageGeneration.used)}</span>
                         </div>
                       </>
                     )}

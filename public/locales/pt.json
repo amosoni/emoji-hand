@@ -8,5 +8,10 @@
     "resendEmail": "O e-mail de verificação será reenviado.",
     "dismiss": "Fechar"
   },
-  "verificationSuccess": "E-mail verificado com sucesso! Agora você pode usar todos os recursos."
+  "verificationSuccess": "E-mail verificado com sucesso! Agora você pode usar todos os recursos.",
+  "profile": {
+    "emailStatus": "Status do E-mail",
+    "emailVerified": "Verificado",
+    "emailNotVerified": "Não Verificado"
+  }
 } 

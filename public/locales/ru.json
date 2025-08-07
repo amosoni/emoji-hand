@@ -18,4 +18,10 @@
       "dismiss": "Закрыть"
     },
     "verificationSuccess": "Почта успешно подтверждена! Теперь вы можете использовать все функции."
+  },
+  "profile": {
+    "emailStatus": "Статус Почты",
+    "emailVerified": "Подтверждена",
+    "emailNotVerified": "Не Подтверждена"
+  }
 } 

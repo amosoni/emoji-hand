@@ -8,5 +8,10 @@
       "resendEmail": "验证邮件将重新发送。",
       "dismiss": "关闭"
     },
-    "verificationSuccess": "邮箱验证成功！您现在可以使用所有功能了。"
+    "verificationSuccess": "邮箱验证成功！您现在可以使用所有功能了。",
+    "profile": {
+      "emailStatus": "邮箱状态",
+      "emailVerified": "已验证",
+      "emailNotVerified": "未验证"
+    }
 } 

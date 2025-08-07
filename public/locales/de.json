@@ -17,5 +17,10 @@
       "resendEmail": "Die Bestätigungs-E-Mail wird erneut gesendet.",
       "dismiss": "Schließen"
     },
-    "verificationSuccess": "E-Mail erfolgreich bestätigt! Sie können jetzt alle Funktionen nutzen."
+    "verificationSuccess": "E-Mail erfolgreich bestätigt! Sie können jetzt alle Funktionen nutzen.",
+    "profile": {
+      "emailStatus": "E-Mail Status",
+      "emailVerified": "Bestätigt",
+      "emailNotVerified": "Nicht Bestätigt"
+    }
 } 

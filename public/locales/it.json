@@ -20,5 +20,10 @@
       "resendEmail": "L'email di verifica sarà rinviata.",
       "dismiss": "Chiudi"
     },
-    "verificationSuccess": "Email verificata con successo! Ora puoi utilizzare tutte le funzionalità."
+    "verificationSuccess": "Email verificata con successo! Ora puoi utilizzare tutte le funzionalità.",
+    "profile": {
+      "emailStatus": "Stato Email",
+      "emailVerified": "Verificata",
+      "emailNotVerified": "Non Verificata"
+    }
 } 

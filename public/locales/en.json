@@ -33,4 +33,10 @@
       "dismiss": "Dismiss"
     },
     "verificationSuccess": "Email verified successfully! You can now use all features."
+  },
+  "profile": {
+    "emailStatus": "Email Status",
+    "emailVerified": "Verified",
+    "emailNotVerified": "Not Verified"
+  }
 } 
