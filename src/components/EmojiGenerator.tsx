@@ -57,6 +57,15 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
     }
   });
 
+  const { data: usageStats, isLoading: usageLoading, refetch: refetchUsage } = api.usageLimits.getUserUsageStats.useQuery(
+    undefined,
+    { 
+      enabled: true, // 总是启用查询，无论用户是否登录
+      refetchInterval: 5000 // 每5秒刷新一次
+    }
+  );
+  const recordUsageMutation = api.usageLimits.recordServiceUsage.useMutation();
+
   useEffect(() => {
     console.log('EmojiGenerator: locale =', locale, 'Current i18n language =', i18n.language);
     // 移除强制语言切换，让AppProviders处理
@@ -180,24 +189,24 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
           </div>
 
           {/* 使用量显示 */}
-          {session?.user && (
+          {session?.user && usageStats && (
             <div className="mb-8 bg-white/10 backdrop-blur-sm rounded-lg p-4">
               <div className="flex items-center justify-between text-white">
                 <div className="flex items-center gap-4">
                   <span className="text-sm">
                     {t('profile.imageGenerationUsesToday', 'Image generation uses today')}: 
-                    <span className="ml-1 font-semibold text-blue-400">0</span> / 
-                    <span className="ml-1 font-semibold text-green-400">10</span>
+                    <span className="ml-1 font-semibold text-blue-400">{usageStats.usage.imageGeneration.used}</span> / 
+                    <span className="ml-1 font-semibold text-green-400">{usageStats.usage.imageGeneration.limit}</span>
                   </span>
                   <span className="text-sm">
                     {t('profile.remainingImageGeneration', 'Remaining image generations')}: 
-                    <span className="ml-1 font-semibold text-yellow-400">10</span>
+                    <span className="ml-1 font-semibold text-yellow-400">{usageStats.usage.imageGeneration.remaining}</span>
                   </span>
                 </div>
                 <div className="w-32 bg-white/20 rounded-full h-2">
                   <div 
                     className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
-                    style={{ width: '0%' }}
+                    style={{ width: `${Math.min(100, (usageStats.usage.imageGeneration.used / usageStats.usage.imageGeneration.limit) * 100)}%` }}
                   />
                 </div>
               </div>
