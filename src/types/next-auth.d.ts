@@ -6,6 +6,7 @@ declare module "next-auth" {
       id: string;
       points?: number;
       premiumExpireAt?: string | null;
+      subscriptionPlan?: string | null;
       createdAt?: string | null;
       username?: string | null;
       quotaResetAt?: string | null;
