@@ -17,13 +17,19 @@
   "register": {
     "emailSent": "Registration successful! Please check your email to activate your account."
   },
-  "verify": {
-    "verifying": "Verifying...",
-    "successTitle": "Email Verified!",
-    "errorTitle": "Verification Failed",
-    "success": "Email verified successfully!",
-    "error": "Verification failed.",
-    "invalidToken": "Invalid verification link.",
-    "loginNow": "Login Now"
-  }
+      "verify": {
+      "verifying": "Verifying...",
+      "successTitle": "Email Verified!",
+      "errorTitle": "Verification Failed",
+      "success": "Email verified successfully!",
+      "error": "Verification failed.",
+      "invalidToken": "Invalid verification link.",
+      "loginNow": "Login Now"
+    },
+    "emailVerification": {
+      "pleaseVerify": "Please verify your email address to unlock all features.",
+      "resend": "Resend Email",
+      "resendEmail": "Verification email will be resent.",
+      "dismiss": "Dismiss"
+    }
 } 

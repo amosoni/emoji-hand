@@ -103,32 +103,38 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
     });
 
-    // 发送多语言激活邮件
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    });
-    const verifyUrl = `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/verify-email?token=${token}`;
-    const html = `
-      <div style="font-family:sans-serif;max-width:480px;margin:auto;">
-        <h2>${getI18nText(lang, 'hello')},</h2>
-        <p>${getI18nText(lang, 'body')}</p>
-        <a href="${verifyUrl}" style="display:inline-block;padding:12px 24px;background:#7c3aed;color:#fff;text-decoration:none;border-radius:6px;margin:16px 0;">${getI18nText(lang, 'button')}</a>
-        <p style="color:#888;font-size:12px;">${verifyUrl}</p>
-        <p style="color:#888;font-size:12px;">${getI18nText(lang, 'ignore')}</p>
-      </div>
-    `;
-    await transporter.sendMail({
-      from: process.env.SMTP_FROM || 'no-reply@emojihand.com',
-      to: email,
-      subject: getI18nText(lang, 'subject'),
-      html
-    });
+    // 发送多语言激活邮件（即使失败也不影响注册成功）
+    try {
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT) || 465,
+        secure: true,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS
+        }
+      });
+      const verifyUrl = `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/verify-email?token=${token}`;
+      const html = `
+        <div style="font-family:sans-serif;max-width:480px;margin:auto;">
+          <h2>${getI18nText(lang, 'hello')},</h2>
+          <p>${getI18nText(lang, 'body')}</p>
+          <a href="${verifyUrl}" style="display:inline-block;padding:12px 24px;background:#7c3aed;color:#fff;text-decoration:none;border-radius:6px;margin:16px 0;">${getI18nText(lang, 'button')}</a>
+          <p style="color:#888;font-size:12px;">${verifyUrl}</p>
+          <p style="color:#888;font-size:12px;">${getI18nText(lang, 'ignore')}</p>
+        </div>
+      `;
+      await transporter.sendMail({
+        from: process.env.SMTP_FROM || 'no-reply@emojihand.com',
+        to: email,
+        subject: getI18nText(lang, 'subject'),
+        html
+      });
+      console.log('Email sent successfully to:', email);
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError);
+      // 邮件发送失败不影响注册成功
+    }
 
     return res.status(201).json({ ok: true, user: { id: user.id, name: user.name, email: user.email }, message: 'register.emailSent' });
   } catch (e) {

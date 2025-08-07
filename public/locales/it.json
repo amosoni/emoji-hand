@@ -5,13 +5,19 @@
   "login": {
     "emailNotVerified": "Verifica la tua email prima di accedere."
   },
-  "verify": {
-    "verifying": "Verifica in corso...",
-    "successTitle": "Email Verificata!",
-    "errorTitle": "Verifica Fallita",
-    "success": "Email verificata con successo!",
-    "error": "La verifica è fallita.",
-    "invalidToken": "Link di verifica non valido.",
-    "loginNow": "Accedi Ora"
-  }
+      "verify": {
+      "verifying": "Verifica in corso...",
+      "successTitle": "Email Verificata!",
+      "errorTitle": "Verifica Fallita",
+      "success": "Email verificata con successo!",
+      "error": "La verifica è fallita.",
+      "invalidToken": "Link di verifica non valido.",
+      "loginNow": "Accedi Ora"
+    },
+    "emailVerification": {
+      "pleaseVerify": "Per favore, verifica il tuo indirizzo email per sbloccare tutte le funzionalità.",
+      "resend": "Rinvia Email",
+      "resendEmail": "L'email di verifica sarà rinviata.",
+      "dismiss": "Chiudi"
+    }
 } 

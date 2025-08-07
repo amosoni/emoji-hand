@@ -59,11 +59,7 @@ export default function LoginModal() {
         }, 300);
         close();
       } else {
-        if (res?.error === 'EMAIL_NOT_VERIFIED') {
-          setError(t('login.emailNotVerified', 'Please verify your email before logging in.'));
-        } else {
-          setError(t('login.error', 'Login failed'));
-        }
+        setError(t('login.error', 'Login failed'));
       }
     } catch (err) {
       setError(t('login.error', 'Login failed'));

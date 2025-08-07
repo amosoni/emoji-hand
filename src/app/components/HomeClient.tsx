@@ -17,6 +17,7 @@ import { useSession } from 'next-auth/react';
 import { signOut } from 'next-auth/react';
 import { RechargeButton } from './RechargeButton';
 import UnifiedNavBar from './UnifiedNavBar';
+import EmailVerificationBanner from '../../components/EmailVerificationBanner';
 
 function ClientOnly({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
@@ -49,6 +50,7 @@ export default function HomeClient({ hello }: { hello: unknown }) {
     <ClientOnly>
         <div className="min-h-screen bg-gradient-to-r from-yellow-400 via-orange-300 to-pink-500">
           <UnifiedNavBar />
+          <EmailVerificationBanner />
           <HomeHero />
           <Translator />
           <div className="mt-4 text-white/80 text-center">

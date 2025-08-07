@@ -10,5 +10,11 @@
       "error": "Verifizierung fehlgeschlagen.",
       "invalidToken": "Ungültiger Verifizierungslink.",
       "loginNow": "Jetzt Anmelden"
+    },
+    "emailVerification": {
+      "pleaseVerify": "Bitte bestätigen Sie Ihre E-Mail-Adresse, um alle Funktionen freizuschalten.",
+      "resend": "E-Mail erneut senden",
+      "resendEmail": "Die Bestätigungs-E-Mail wird erneut gesendet.",
+      "dismiss": "Schließen"
     }
 } 

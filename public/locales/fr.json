@@ -4,5 +4,11 @@
     },
     "login": {
       "emailNotVerified": "Veuillez vérifier votre e-mail avant de vous connecter."
+    },
+    "emailVerification": {
+      "pleaseVerify": "Veuillez vérifier votre adresse e-mail pour débloquer toutes les fonctionnalités.",
+      "resend": "Renvoyer l'Email",
+      "resendEmail": "L'e-mail de vérification sera renvoyé.",
+      "dismiss": "Fermer"
     }
 } 

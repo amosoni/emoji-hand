@@ -1,5 +1,11 @@
 {
   "register": {
     "emailSent": "Registro bem-sucedido! Por favor, verifique seu e-mail para ativar sua conta."
+  },
+  "emailVerification": {
+    "pleaseVerify": "Por favor, verifique seu endereço de e-mail para desbloquear todos os recursos.",
+    "resend": "Reenviar Email",
+    "resendEmail": "O e-mail de verificação será reenviado.",
+    "dismiss": "Fechar"
   }
 } 

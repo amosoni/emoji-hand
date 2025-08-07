@@ -1,5 +1,11 @@
 {
     "register": {
       "emailSent": "注册成功！请前往邮箱激活账号。"
+    },
+    "emailVerification": {
+      "pleaseVerify": "请验证您的邮箱地址以解锁所有功能。",
+      "resend": "重新发送邮件",
+      "resendEmail": "验证邮件将重新发送。",
+      "dismiss": "关闭"
     }
 } 

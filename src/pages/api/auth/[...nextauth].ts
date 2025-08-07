@@ -41,10 +41,10 @@ export const authOptions = {
           emailVerified?: Date | null;
         } | null;
         if (!user || !user.passwordHash) return null;
-        if (!user.emailVerified) {
-          // 未激活邮箱，抛出自定义错误
-          throw new Error('EMAIL_NOT_VERIFIED');
-        }
+        // 移除邮箱验证检查，允许未验证用户登录
+        // if (!user.emailVerified) {
+        //   throw new Error('EMAIL_NOT_VERIFIED');
+        // }
         const valid = await bcrypt.compare(credentials.password, user.passwordHash);
         if (!valid) return null;
         return {
