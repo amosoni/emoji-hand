@@ -74,7 +74,7 @@ export const usageLimitsRouter = createTRPCRouter({
       
       // 定义各计划的限制
       const plans = {
-        free: { translation: 8, imageGeneration: 3 },
+        free: { translation: 8, imageGeneration: 0 },
         starter: { translation: 15, imageGeneration: 5 },
         pro: { translation: 35, imageGeneration: 12 },
         enterprise: { translation: 70, imageGeneration: 20 }
