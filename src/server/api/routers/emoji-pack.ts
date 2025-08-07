@@ -92,17 +92,17 @@ export const emojiPackRouter = createTRPCRouter({
 
       const imageAnalysis = visionResponse.choices[0]?.message?.content ?? '';
 
-      // 根据用户选择的风格生成多个变体
+      // 根据用户选择的风格对原图进行转换
       const getStylePrompt = (style: string) => {
         const stylePrompts = {
-          'cute': `${imageAnalysis} cute style emoji pack, cartoon style, big eyes, kawaii`,
-          'funny': `${imageAnalysis} funny style emoji pack, exaggerated expressions, humorous elements`,
-          'cool': `${imageAnalysis} cool style emoji pack, trendy, fashion elements`,
-          'savage': `${imageAnalysis} savage style emoji pack, sharp expressions, attitude elements`,
-          'genz': `${imageAnalysis} GenZ style emoji pack, youthful, modern colors`,
-          'tiktok': `${imageAnalysis} TikTok style emoji pack, viral elements, social media style`,
-          'vintage': `${imageAnalysis} vintage style emoji pack, classic design, retro colors`,
-          'minimalist': `${imageAnalysis} minimalist style emoji pack, clean lines, single color`
+          'cute': `${imageAnalysis} transform to cute style, soft colors, gentle expressions, maintain original characters`,
+          'funny': `${imageAnalysis} transform to funny style, playful expressions, keep original characters`,
+          'cool': `${imageAnalysis} transform to cool style, modern aesthetic, maintain original composition`,
+          'savage': `${imageAnalysis} transform to savage style, edgy look, keep original characters`,
+          'genz': `${imageAnalysis} transform to GenZ style, contemporary colors, maintain original composition`,
+          'tiktok': `${imageAnalysis} transform to TikTok style, trendy look, keep original characters`,
+          'vintage': `${imageAnalysis} transform to vintage style, retro colors, classic aesthetic`,
+          'minimalist': `${imageAnalysis} transform to minimalist style, clean design, simplified colors`
         };
         return stylePrompts[style as keyof typeof stylePrompts] ?? stylePrompts.cute;
       };
@@ -122,9 +122,9 @@ export const emojiPackRouter = createTRPCRouter({
               'version 5, artistic angle, creative lighting, unique perspective'
             ];
             
-            // 添加用户自定义文字到提示词中
-            const customText = input.emotion ? `, include text: "${input.emotion}"` : '';
-            const variationPrompt = `${basePrompt}, ${variations[index] ?? `version ${index + 1}`}, high quality, transparent background, emoji style${customText}`;
+            // 基于原图进行风格转换，保持原图主体不变
+            const customText = input.emotion ? `, subtly incorporate the text "${input.emotion}" into the design if requested, but prioritize maintaining the original image composition and characters` : '';
+            const variationPrompt = `${basePrompt}, ${variations[index] ?? `version ${index + 1}`}, based on the original image, maintain the original characters and composition, apply ${input.style ?? 'cute'} style transformation, high quality, clean background${customText}`;
             
             const response = await openai.images.generate({
               model: 'dall-e-3',

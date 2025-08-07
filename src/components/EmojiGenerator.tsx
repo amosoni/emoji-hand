@@ -151,13 +151,38 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
     }
   };
 
-  const downloadPack = (pack: EmojiPack) => {
-    const link = document.createElement('a');
-    link.href = pack.url ?? ''; // Assuming pack.url is the image URL
-    link.download = `emoji-pack-${pack.style ?? 'unknown'}-${(pack.description ?? '').split(' ').join('-')}.png`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const downloadPack = async (pack: EmojiPack) => {
+    if (!pack.url) return;
+    
+    try {
+      // 获取图片数据
+      const response = await fetch(pack.url);
+      const blob = await response.blob();
+      
+      // 创建下载链接
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `emoji-pack-${pack.style ?? 'unknown'}-${Date.now()}.png`;
+      
+      // 触发下载
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // 清理URL对象
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // 如果fetch失败，回退到直接链接方式
+      const link = document.createElement('a');
+      link.href = pack.url;
+      link.download = `emoji-pack-${pack.style ?? 'unknown'}-${Date.now()}.png`;
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   const resetForm = () => {
