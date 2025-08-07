@@ -98,6 +98,7 @@ export const authOptions = {
       (session.user as any).id = user.id;
       (session.user as any).points = user.points;
       (session.user as any).premiumExpireAt = user.premiumExpireAt ? user.premiumExpireAt.toISOString() : null;
+      (session.user as any).emailVerified = user.emailVerified;
       (session.user as any).createdAt = user.createdAt ? user.createdAt.toISOString() : null;
       // 添加订阅相关字段
       (session.user as any).subscriptionPlan = user.subscriptionPlan;

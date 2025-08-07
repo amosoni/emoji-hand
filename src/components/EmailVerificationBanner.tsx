@@ -8,7 +8,8 @@ export default function EmailVerificationBanner() {
   const [isVisible, setIsVisible] = useState(true);
 
   // 如果用户已登录但邮箱未验证，显示横幅
-  if (!session?.user || (session.user as any).emailVerified || !isVisible) {
+  const user = session?.user as { emailVerified?: Date | null } | undefined;
+  if (!user || user.emailVerified !== null || !isVisible) {
     return null;
   }
 
