@@ -35,7 +35,7 @@ export default function ProfilePage() {
 
   // 订阅套餐限制配置
   const subscriptionLimits = {
-    free: { translation: 3, imageGeneration: 0 },
+    free: { translation: 3, imageGeneration: 3 },
     starter: { translation: 10, imageGeneration: 5 },
     pro: { translation: 20, imageGeneration: 10 },
     enterprise: { translation: 50, imageGeneration: 25 }

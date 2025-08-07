@@ -48,6 +48,8 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
       const errorKey = error.message;
       if (errorKey && ['apiModelDeprecated', 'apiRateLimit', 'apiQuotaExceeded', 'imageAnalysisFailed'].includes(errorKey)) {
         setError(t(`emojiGenerator.error.${errorKey}`, error.message));
+      } else if (errorKey === 'User not found') {
+        setError(t('emojiGenerator.error.loginRequired', '请登录后生成表情包'));
       } else {
         setError(error.message);
       }

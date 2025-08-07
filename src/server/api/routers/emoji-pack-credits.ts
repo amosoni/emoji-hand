@@ -197,10 +197,10 @@ export const emojiPackCreditsRouter = createTRPCRouter({
       if (isSubscriptionActive) {
         // 使用订阅系统
         const plans = {
-          free: { translation: 8, imageGeneration: 0 },
-          starter: { translation: 15, imageGeneration: 5 },
-          pro: { translation: 35, imageGeneration: 12 },
-          enterprise: { translation: 70, imageGeneration: 20 }
+                  free: { translation: 8, imageGeneration: 3 },
+        starter: { translation: 15, imageGeneration: 5 },
+        pro: { translation: 35, imageGeneration: 12 },
+        enterprise: { translation: 70, imageGeneration: 20 }
         };
 
         const plan = user.subscriptionPlan || 'free';

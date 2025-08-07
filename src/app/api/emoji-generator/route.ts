@@ -77,7 +77,7 @@ export async function POST(req: NextRequest) {
 
     // 定义各计划的图片生成限制
     const plans = {
-      free: { imageGeneration: 0 },
+      free: { imageGeneration: 3 },
       starter: { imageGeneration: 5 },
       pro: { imageGeneration: 12 },
       enterprise: { imageGeneration: 20 }

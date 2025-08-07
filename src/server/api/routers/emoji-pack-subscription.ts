@@ -124,9 +124,9 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
     }
 
     const plans = {
-      free: { translation: 3, imageGeneration: 0 },
-      starter: { translation: 10, imageGeneration: 5 },
-      pro: { translation: 20, imageGeneration: 10 },
+              free: { translation: 3, imageGeneration: 3 },
+        starter: { translation: 10, imageGeneration: 5 },
+        pro: { translation: 20, imageGeneration: 10 },
       enterprise: { translation: 50, imageGeneration: 25 }
     };
 
@@ -176,7 +176,7 @@ export const emojiPackSubscriptionRouter = createTRPCRouter({
       }
 
       const plans = {
-        free: { translation: 3, imageGeneration: 0 },
+        free: { translation: 3, imageGeneration: 3 },
         starter: { translation: 10, imageGeneration: 5 },
         pro: { translation: 20, imageGeneration: 10 },
         enterprise: { translation: 50, imageGeneration: 25 }
