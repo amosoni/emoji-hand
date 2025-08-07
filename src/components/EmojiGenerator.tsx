@@ -138,7 +138,7 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
           imageUrl,
           packCount: batchSize,
           style: selectedStyle,
-          emotion: customPrompt ?? undefined,
+          emotion: includeText ? customText : undefined,
           targetAudience: undefined,
           commercialUse: false
         });
@@ -416,35 +416,20 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
                     {t('emojiGenerator.reset', 'Reset')}
                   </button>
                 </div>
-                
                 <div className="grid gap-4">
-                  {generatedPacks.map((pack) => (
-                    <div key={pack.style} className="bg-white/5 rounded-xl p-4 border border-white/10">
-                      <div className="flex gap-4">
-                        <img 
-                          src={pack.url ?? ''} 
-                          alt={`Emoji Pack ${pack.style}`}
-                          className="w-24 h-24 object-cover rounded-lg"
-                        />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start mb-2">
-                            <div>
-                              <h4 className="font-medium">
-                                {styles.find(s => s.id === pack.style)?.name} 
-                              </h4>
-                              <p className="text-sm text-white/80">
-                                {pack.description}
-                              </p>
-                            </div>
-                            <button
-                              onClick={() => downloadPack(pack)}
-                              className="bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-lg text-sm transition-colors"
-                            >
-                              {t('emojiGenerator.download', 'Download')}
-                            </button>
-                          </div>
-                        </div>
-                      </div>
+                  {generatedPacks.map((pack, idx) => (
+                    <div key={pack.url ?? idx} className="bg-white/5 rounded-xl p-4 border border-white/10 flex items-center gap-4">
+                      <img 
+                        src={pack.url ?? ''} 
+                        alt=""
+                        className="w-24 h-24 object-cover rounded-lg"
+                      />
+                      <button
+                        onClick={() => downloadPack(pack)}
+                        className="bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-lg text-sm transition-colors"
+                      >
+                        {t('emojiGenerator.download', 'Download')}
+                      </button>
                     </div>
                   ))}
                 </div>

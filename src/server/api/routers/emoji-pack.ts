@@ -92,36 +92,59 @@ export const emojiPackRouter = createTRPCRouter({
 
       const imageAnalysis = visionResponse.choices[0]?.message?.content ?? '';
 
-      // 直接生成表情包，使用英文提示词
-      const emojiPrompts = [
-        `${imageAnalysis} cute style emoji pack, cartoon style, big eyes, kawaii`,
-        `${imageAnalysis} funny style emoji pack, exaggerated expressions, humorous elements`,
-        `${imageAnalysis} classic style emoji pack, simple design, universal appeal`,
-        `${imageAnalysis} cool style emoji pack, trendy, fashion elements`,
-        `${imageAnalysis} creative style emoji pack, unique design, artistic`
-      ];
+      // 根据用户选择的风格生成多个变体
+      const getStylePrompt = (style: string) => {
+        const stylePrompts = {
+          'cute': `${imageAnalysis} cute style emoji pack, cartoon style, big eyes, kawaii`,
+          'funny': `${imageAnalysis} funny style emoji pack, exaggerated expressions, humorous elements`,
+          'cool': `${imageAnalysis} cool style emoji pack, trendy, fashion elements`,
+          'savage': `${imageAnalysis} savage style emoji pack, sharp expressions, attitude elements`,
+          'genz': `${imageAnalysis} GenZ style emoji pack, youthful, modern colors`,
+          'tiktok': `${imageAnalysis} TikTok style emoji pack, viral elements, social media style`,
+          'vintage': `${imageAnalysis} vintage style emoji pack, classic design, retro colors`,
+          'minimalist': `${imageAnalysis} minimalist style emoji pack, clean lines, single color`
+        };
+        return stylePrompts[style as keyof typeof stylePrompts] ?? stylePrompts.cute;
+      };
+
+      const basePrompt = getStylePrompt(input.style ?? 'cute');
       
+      // 生成多个变体
       const emojiResults = await Promise.all(
-        emojiPrompts.map(async (prompt, index) => {
+        Array.from({ length: input.packCount }, async (_, index) => {
           try {
+            // 为每个变体添加不同的修饰词，确保明显的视觉差异
+            const variations = [
+              'version 1, original design, front view, centered composition',
+              'version 2, side profile, dynamic pose, action shot',
+              'version 3, close-up portrait, detailed facial expression',
+              'version 4, wide angle, full body, environmental context',
+              'version 5, artistic angle, creative lighting, unique perspective'
+            ];
+            
+            // 添加用户自定义文字到提示词中
+            const customText = input.emotion ? `, include text: "${input.emotion}"` : '';
+            const variationPrompt = `${basePrompt}, ${variations[index] ?? `version ${index + 1}`}, high quality, transparent background, emoji style${customText}`;
+            
             const response = await openai.images.generate({
               model: 'dall-e-3',
-              prompt: `${prompt}, high quality, transparent background, emoji style, ${input.style ?? ''}`,
+              prompt: variationPrompt,
               n: 1,
               size: '1024x1024',
               quality: 'hd'
             });
+            
             return {
               url: response.data?.[0]?.url ?? null,
-              style: ['可爱', '搞笑', '经典', '酷炫', '创意'][index],
-              description: `${['可爱', '搞笑', '经典', '酷炫', '创意'][index]}风格表情包`
+              style: input.style ?? 'cute',
+              description: `${input.style ?? 'cute'}风格表情包 - 变体${index + 1}`
             };
           } catch (error) {
             console.error(`Emoji generation error ${index}:`, error);
             return {
               url: null,
-              style: ['可爱', '搞笑', '酷炫', '经典', '创意'][index],
-              description: `${['可爱', '搞笑', '经典', '酷炫', '创意'][index]}风格表情包`
+              style: input.style ?? 'cute',
+              description: `${input.style ?? 'cute'}风格表情包 - 变体${index + 1}`
             };
           }
         })
