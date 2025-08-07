@@ -19,5 +19,6 @@
       "resend": "Rinvia Email",
       "resendEmail": "L'email di verifica sarà rinviata.",
       "dismiss": "Chiudi"
-    }
+    },
+    "verificationSuccess": "Email verificata con successo! Ora puoi utilizzare tutte le funzionalità."
 } 

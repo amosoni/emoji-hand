@@ -69,21 +69,33 @@ const getI18nText = (lang: string, key: string): string => {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { token, lang = 'en' } = req.query;
-  if (!token || typeof token !== 'string') return res.status(400).json({ error: getI18nText(lang as string, 'expired') });
+  const langStr = Array.isArray(lang) ? lang[0] ?? 'en' : lang ?? 'en';
+  
+  if (!token || typeof token !== 'string') {
+    return res.redirect(302, `/${langStr}/verify-email?status=error&message=${encodeURIComponent(getI18nText(langStr, 'expired'))}`);
+  }
+  
   try {
     const record = await prisma.verificationToken.findUnique({ where: { token } });
     if (!record || record.expires < new Date()) {
-      return res.status(400).json({ error: getI18nText(lang as string, 'expired') });
+      return res.redirect(302, `/${langStr}/verify-email?status=error&message=${encodeURIComponent(getI18nText(langStr, 'expired'))}`);
     }
+    
     const user = await prisma.user.findFirst({ where: { email: record.identifier } });
-    if (!user) return res.status(400).json({ error: getI18nText(lang as string, 'error') });
-    if (user.emailVerified) {
-      return res.status(200).json({ ok: true, message: getI18nText(lang as string, 'already') });
+    if (!user) {
+      return res.redirect(302, `/${langStr}/verify-email?status=error&message=${encodeURIComponent(getI18nText(langStr, 'error'))}`);
     }
+    
+    if (user.emailVerified) {
+      return res.redirect(302, `/${langStr}/verify-email?status=already&message=${encodeURIComponent(getI18nText(langStr, 'already'))}`);
+    }
+    
     await prisma.user.update({ where: { id: user.id }, data: { emailVerified: new Date() } });
     await prisma.verificationToken.delete({ where: { token } });
-    return res.status(200).json({ ok: true, message: getI18nText(lang as string, 'success') });
+    
+    // 验证成功，重定向到首页
+    return res.redirect(302, `/${langStr}?verified=true`);
   } catch (e) {
-    return res.status(500).json({ error: getI18nText(lang as string, 'error') });
+    return res.redirect(302, `/${langStr}/verify-email?status=error&message=${encodeURIComponent(getI18nText(langStr, 'error'))}`);
   }
 } 

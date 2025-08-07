@@ -7,5 +7,6 @@
     "resend": "Reenviar Email",
     "resendEmail": "O e-mail de verificação será reenviado.",
     "dismiss": "Fechar"
-  }
+  },
+  "verificationSuccess": "E-mail verificado com sucesso! Agora você pode usar todos os recursos."
 } 

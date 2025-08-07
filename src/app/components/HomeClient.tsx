@@ -43,7 +43,17 @@ export default function HomeClient({ hello }: { hello: unknown }) {
     };
   }
   const { show } = useLoginModal();
+  
+  // 检查URL参数，显示验证成功提示
+  const [showVerificationSuccess, setShowVerificationSuccess] = useState(false);
+  
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('verified') === 'true') {
+      setShowVerificationSuccess(true);
+      // 3秒后自动隐藏提示
+      setTimeout(() => setShowVerificationSuccess(false), 3000);
+    }
     setOpen(false); // 语言切换时自动关闭菜单，下次打开就是新语言
   }, [i18n.language]);
   return (

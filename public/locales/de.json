@@ -16,5 +16,6 @@
       "resend": "E-Mail erneut senden",
       "resendEmail": "Die Bestätigungs-E-Mail wird erneut gesendet.",
       "dismiss": "Schließen"
-    }
+    },
+    "verificationSuccess": "E-Mail erfolgreich bestätigt! Sie können jetzt alle Funktionen nutzen."
 } 

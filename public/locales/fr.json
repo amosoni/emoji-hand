@@ -10,5 +10,6 @@
       "resend": "Renvoyer l'Email",
       "resendEmail": "L'e-mail de vérification sera renvoyé.",
       "dismiss": "Fermer"
-    }
+    },
+    "verificationSuccess": "E-mail vérifié avec succès ! Vous pouvez maintenant utiliser toutes les fonctionnalités."
 } 

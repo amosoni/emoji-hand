@@ -7,5 +7,6 @@
       "resend": "重新发送邮件",
       "resendEmail": "验证邮件将重新发送。",
       "dismiss": "关闭"
-    }
+    },
+    "verificationSuccess": "邮箱验证成功！您现在可以使用所有功能了。"
 } 

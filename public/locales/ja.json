@@ -7,5 +7,6 @@
     "resend": "メール再送信",
     "resendEmail": "確認メールを再送信します。",
     "dismiss": "閉じる"
-  }
+  },
+  "verificationSuccess": "メール認証が完了しました！すべての機能をご利用いただけます。"
 } 

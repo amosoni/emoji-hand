@@ -31,5 +31,6 @@
       "resend": "Resend Email",
       "resendEmail": "Verification email will be resent.",
       "dismiss": "Dismiss"
-    }
+    },
+    "verificationSuccess": "Email verified successfully! You can now use all features."
 } 
