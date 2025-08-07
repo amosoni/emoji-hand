@@ -12,7 +12,7 @@ import { useParams } from 'next/navigation';
 export default function TikTokEmojisPage() {
   const { t, i18n } = useTranslation();
   const params = useParams();
-  const locale = params?.locale as string || 'zh';
+  const locale = params?.locale as string || 'en';
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-pink-400 via-purple-500 to-blue-600">

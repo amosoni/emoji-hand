@@ -32,8 +32,8 @@ void i18n
       it: { translation: it },
       ru: { translation: ru },
     },
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: 'en', // 默认语言为英文
+    fallbackLng: 'en', // 回退语言为英文
     supportedLngs: languages,
     interpolation: { escapeValue: false },
     react: {
@@ -41,6 +41,21 @@ void i18n
     },
     debug: false,
     initImmediate: false,
+    // 禁用自动语言保存
+    saveMissing: false,
+    saveMissingTo: 'fallback',
+    // 禁用语言检测
+    detection: {
+      order: [],
+      caches: [],
+    },
   });
+
+// 添加调试信息
+console.log('=== I18N INITIALIZATION ===');
+console.log('Default language:', i18n.language);
+console.log('Fallback language:', i18n.options.fallbackLng);
+console.log('Supported languages:', i18n.options.supportedLngs);
+console.log('==========================');
 
 export default i18n; 

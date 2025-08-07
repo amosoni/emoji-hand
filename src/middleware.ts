@@ -28,16 +28,18 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  // 获取用户偏好的语言
-  const acceptLanguage = request.headers.get('accept-language') ?? '';
-  const preferredLanguage = acceptLanguage.split(',')[0]?.split('-')[0] ?? 'en';
-  
-  // 检查首选语言是否支持
-  const supportedLanguage = locales.includes(preferredLanguage) ? preferredLanguage : 'en';
-  
-  // 对于没有语言代码的路径，重定向到用户偏好的语言
+  // 对于根路径，默认重定向到英文
+  if (pathname === '/') {
+    const response = NextResponse.redirect(
+      new URL('/en', request.url)
+    );
+    response.headers.set('X-Robots-Tag', 'index, follow');
+    return response;
+  }
+
+  // 对于其他没有语言代码的路径，也重定向到英文
   const response = NextResponse.redirect(
-    new URL(`/${supportedLanguage}${pathname}`, request.url)
+    new URL(`/en${pathname}`, request.url)
   );
   response.headers.set('X-Robots-Tag', 'index, follow');
   return response;
