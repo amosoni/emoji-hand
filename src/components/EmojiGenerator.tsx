@@ -139,6 +139,7 @@ export default function EmojiGenerator({ session, showLoginModal, locale }: Emoj
           packCount: batchSize,
           style: selectedStyle,
           emotion: includeText ? customText : undefined,
+          customPrompt: customPrompt || undefined,
           targetAudience: undefined,
           commercialUse: false
         });

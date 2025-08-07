@@ -12,7 +12,8 @@ export const emojiPackRouter = createTRPCRouter({
       emotion: z.string().optional(), // 情感风格
       targetAudience: z.string().optional(),
       commercialUse: z.boolean().default(false),
-      packCount: z.number().min(1).max(5).default(3) // 生成数量：1-5个
+      packCount: z.number().min(1).max(5).default(3), // 生成数量：1-5个
+      customPrompt: z.string().optional()
     }))
     .mutation(async ({ ctx, input }) => {
       const userId = ctx.session?.userId;
@@ -107,7 +108,9 @@ export const emojiPackRouter = createTRPCRouter({
         return stylePrompts[style as keyof typeof stylePrompts] ?? stylePrompts.cute;
       };
 
-      const basePrompt = getStylePrompt(input.style ?? 'cute');
+      // 合并用户自定义提示词
+      const userPrompt = input.customPrompt ? `, ${input.customPrompt}` : '';
+      const basePrompt = getStylePrompt(input.style ?? 'cute') + userPrompt;
       
       // 生成多个变体
       const emojiResults = await Promise.all(
@@ -124,7 +127,9 @@ export const emojiPackRouter = createTRPCRouter({
             
             // 基于原图进行风格转换，保持原图主体不变
             const customText = input.emotion ? `, subtly incorporate the text "${input.emotion}" into the design if requested, but prioritize maintaining the original image composition and characters` : '';
-            const variationPrompt = `${basePrompt}, ${variations[index] ?? `version ${index + 1}`}, based on the original image, maintain the original characters and composition, apply ${input.style ?? 'cute'} style transformation, high quality, clean background${customText}`;
+            // 合并自定义提示词
+            const userPrompt = input.customPrompt ? `, ${input.customPrompt}` : '';
+            const variationPrompt = `${basePrompt}, ${variations[index] ?? `version ${index + 1}`}, based on the original image, maintain the original characters and composition, apply ${input.style ?? 'cute'} style transformation, high quality, clean background${customText}${userPrompt}`;
             
             const response = await openai.images.generate({
               model: 'dall-e-3',
