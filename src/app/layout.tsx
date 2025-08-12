@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import AppProviders from "./components/AppProviders";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     },
   manifest: '/site.webmanifest',
   verification: {
-    google: 'your-google-verification-code',
+    google: 'google68fv3n1qzr',
   },
 };
 
@@ -95,6 +96,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <html lang={locale}>
       <body>
+        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         <AppProviders locale={locale}>
           {children}
         </AppProviders>
