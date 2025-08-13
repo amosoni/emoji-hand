@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import AppProviders from "./components/AppProviders";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -96,7 +97,9 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <html lang={locale}>
       <body>
-        <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        <Suspense fallback={null}>
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        </Suspense>
         <AppProviders locale={locale}>
           {children}
         </AppProviders>
