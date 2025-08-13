@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import ModeSelector from "@/components/ModeSelector";
 import { api } from "@/utils/api";
@@ -52,8 +52,12 @@ export default function Translator() {
   const subscriptionExpireAt = typeof user === 'object' && user && 'subscriptionExpireAt' in user ? (user as { subscriptionExpireAt?: string | null }).subscriptionExpireAt : null;
   const subscriptionPlan = typeof user === 'object' && user && 'subscriptionPlan' in user ? (user as { subscriptionPlan?: string | null }).subscriptionPlan : 'free';
   const isPremium = !!subscriptionExpireAt && new Date(subscriptionExpireAt) > new Date() && subscriptionPlan !== 'free';
-  const availableModes = isPremium ? ["normal", "savage", "genz", "tiktok"] : ["normal"];
   
+  // 使用useMemo优化availableModes，避免每次渲染都重新计算
+  const availableModes = useMemo(() => {
+    return isPremium ? ["normal", "savage", "genz", "tiktok"] : ["normal"];
+  }, [isPremium]);
+
   // 临时强制刷新函数
   const forceRefresh = () => {
     window.location.reload();

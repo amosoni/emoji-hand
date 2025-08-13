@@ -1,68 +1,160 @@
-# Emoji Translate
+# Emoji Hand - AI Emoji Translator & Generator
 
-让你的文字更有感染力，避免沟通误解！Emoji Translate 是一个基于AI的表情包翻译工具，专为欧美Z世代设计，支持多种表达模式和文化适配。
+Emoji Hand is the ultimate AI-powered emoji translator and generator. Transform any text into expressive emoji messages instantly. Free emoji translation, TikTok emojis, emoji packs, and more!
 
-## 🌟 特性
-- 文本转emoji表达，支持普通/毒舌/GenZ模式
-- AI智能理解语境，文化适配，敏感词过滤
-- 多语言国际化（en, es, fr, de, ja）
-- 病毒式分享与品牌合作入口
-- 免费额度+付费解锁高级功能
+## 🚀 Features
 
-## 🚀 快速开始
-1. 克隆仓库：
+- **AI-Powered Translation**: Convert text to emojis using advanced AI
+- **Multi-language Support**: English, Chinese, Korean, Japanese, Spanish, French, Portuguese, German, Italian, Russian
+- **TikTok Emojis**: Specialized emoji sets for TikTok content
+- **Emoji Packs**: Curated collections for different use cases
+- **Real-time Generation**: Instant emoji creation
+- **User Authentication**: Secure login and profile management
+- **Subscription System**: Premium features and credit system
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS 4
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: NextAuth.js
+- **AI Integration**: OpenAI API
+- **Email**: Resend
+- **Internationalization**: i18next
+- **State Management**: TanStack Query (React Query)
+
+## 📦 Installation
+
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/emoji-translate.git
+   git clone https://github.com/yourusername/emoji-hand.git
+   cd emoji-hand
    ```
-2. 安装依赖：
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
-3. 配置环境变量：
+
+3. **Set up environment variables**
    ```bash
-   REACT_APP_OPENAI_KEY=your_openai_api_key
-   REACT_APP_PADDLE_VENDOR_ID=your_paddle_vendor_id
-   ```
-4. 启动开发环境：
-   ```bash
-   npm start
+   cp .env.example .env
+   # Edit .env with your configuration
    ```
 
-## 💻 技术栈
-- React + Tailwind CSS
-- OpenAI GPT-3.5 API
-- i18next 国际化
-- Paddle.js 支付
-- Vercel 部署
+4. **Set up database**
+   ```bash
+   npm run db:generate
+   npm run db:push
+   ```
 
-## 🌍 国际化
-在 `public/locales/` 下添加语言包，参考 `en.json`。
+5. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-## 💰 盈利模式
-- 免费额度+高级模式付费
-- 品牌合作与数据产品
+## 🔧 Environment Variables
 
-## 🤝 贡献
-欢迎PR和issue！
+Create a `.env` file with the following variables:
 
-## 📜 License
-MIT License 
+```env
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/emojihand"
 
-## 🧑‍💻 用户规则说明
+# Authentication
+AUTH_SECRET="your-auth-secret-here"
+AUTH_DISCORD_ID="your-discord-client-id"
+AUTH_DISCORD_SECRET="your-discord-client-secret"
 
-### 免费用户
-- 每天有 5 次免费额度（每日凌晨自动重置）
-- 仅可使用默认风格（普通模式）
-- 仅可使用 GPT-3.5 模型
-- 无法使用高级风格和 GPT-4.0
-- 无法通过积分兑换更多额度（如需更多请升级会员）
+# OpenAI
+OPENAI_API_KEY="your-openai-api-key"
 
-### 会员用户
-- 每天有 20 次使用额度（每日凌晨自动重置）
-- 可使用所有风格（普通/毒舌/GenZ）
-- 可使用 GPT-4.0 模型
-- 会员到期后自动降级为免费用户
+# Google Analytics
+NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
 
-### 其他说明
-- 当前积分仅用于展示，暂未开放积分兑换功能
-- 充值/续费会员不会增加积分，仅延长会员有效期 
+# Email (Resend)
+RESEND_API_KEY="your-resend-api-key"
+```
+
+## 🚀 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run typecheck` - Run TypeScript type checking
+- `npm run db:generate` - Generate Prisma client
+- `npm run db:push` - Push database schema
+- `npm run db:studio` - Open Prisma Studio
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **ESLint Configuration Errors**
+   - Run `npm run lint` to check for issues
+   - Ensure all dependencies are properly installed
+
+2. **TypeScript Errors**
+   - Run `npm run typecheck` to identify type issues
+   - Check for missing type annotations
+
+3. **Database Connection Issues**
+   - Verify DATABASE_URL in .env
+   - Ensure PostgreSQL is running
+   - Run `npm run db:generate` to regenerate Prisma client
+
+4. **Build Failures**
+   - Clear `.next` folder: `rm -rf .next`
+   - Reinstall dependencies: `rm -rf node_modules && npm install`
+
+### Performance Issues
+
+- Check for unnecessary re-renders in React components
+- Optimize image loading and lazy loading
+- Monitor bundle size with `npm run build`
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                 # Next.js app directory
+│   ├── [locale]/       # Internationalized routes
+│   ├── api/            # API routes
+│   └── components/     # Shared components
+├── components/         # Legacy components
+├── config/            # Configuration files
+├── server/            # Server-side utilities
+├── trpc/              # tRPC configuration
+├── types/             # TypeScript type definitions
+└── utils/             # Utility functions
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the troubleshooting section above
+2. Search existing issues on GitHub
+3. Create a new issue with detailed information
+4. Contact the development team
+
+## 🔄 Recent Updates
+
+- Fixed ESLint configuration issues
+- Optimized component performance
+- Enhanced internationalization support
+- Improved error handling and type safety
+- Added comprehensive documentation 

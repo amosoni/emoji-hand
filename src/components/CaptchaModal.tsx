@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { api } from '~/utils/api';
 
 interface CaptchaModalProps {
@@ -17,7 +17,7 @@ export const CaptchaModal = ({ isOpen, onClose, onSuccess }: CaptchaModalProps) 
   const generateCaptcha = api.captcha.generate.useMutation();
   const verifyCaptcha = api.captcha.verify.useMutation();
 
-  const handleGenerateCaptcha = async () => {
+  const handleGenerateCaptcha = useCallback(async () => {
     try {
       setIsLoading(true);
       setError('');
@@ -29,7 +29,7 @@ export const CaptchaModal = ({ isOpen, onClose, onSuccess }: CaptchaModalProps) 
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [generateCaptcha]);
 
   const handleVerify = async () => {
     if (!answer.trim()) {
@@ -58,7 +58,7 @@ export const CaptchaModal = ({ isOpen, onClose, onSuccess }: CaptchaModalProps) 
     if (isOpen && !captchaId) {
       handleGenerateCaptcha();
     }
-  }, [isOpen]);
+  }, [isOpen, captchaId, handleGenerateCaptcha]);
 
   if (!isOpen) return null;
 

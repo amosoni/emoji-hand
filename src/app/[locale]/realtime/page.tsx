@@ -32,12 +32,12 @@ export default function RealtimePage() {
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">2. Connect & Chat</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">2. Connect &amp; Chat</h3>
                 <ul className="text-white/80 space-y-2">
-                  <li>• Click "Connect" to establish WebSocket connection</li>
+                  <li>• Click &quot;Connect&quot; to establish WebSocket connection</li>
                   <li>• Choose your translation mode</li>
                   <li>• Type your message and watch it transform in real-time</li>
-                  <li>• See streaming responses as they're generated</li>
+                  <li>• See streaming responses as they&apos;re generated</li>
                 </ul>
               </div>
             </div>

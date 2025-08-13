@@ -8,9 +8,9 @@ async function testRegister() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: '451502315@qq.com',
-        password: 'test123456',
-        username: 'sonice',
+        email: process.env.TEST_EMAIL || 'test@example.com',
+        password: process.env.TEST_PASSWORD || 'test123456',
+        username: process.env.TEST_USERNAME || 'testuser',
         lang: 'en'
       })
     });

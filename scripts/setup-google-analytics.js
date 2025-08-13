@@ -17,6 +17,10 @@ const rl = readline.createInterface({
 console.log('🚀 Google Analytics 设置向导');
 console.log('========================\n');
 
+/**
+ * @param {string} query - 要显示的问题
+ * @returns {Promise<string>} 用户输入的回答
+ */
 function question(query) {
   return new Promise(resolve => rl.question(query, resolve));
 }

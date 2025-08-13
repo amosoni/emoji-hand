@@ -1,12 +1,13 @@
 import { Resend } from 'resend';
 
-const resend = new Resend('re_KcVHk5AJ_5J35NRAgKQxHMxDRHe8gtzpY');
+// 从环境变量获取API密钥，避免硬编码
+const resend = new Resend(process.env.RESEND_API_KEY || 'your-api-key-here');
 
 async function testEmail() {
   try {
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['soniceono@gmail.com'],
+      to: ['test@example.com'], // 使用测试邮箱
       subject: 'Test Email from EmojiHand',
       html: '<p>This is a test email from EmojiHand using Resend</p>'
     });
